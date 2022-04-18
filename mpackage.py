@@ -2,38 +2,17 @@
 import os
 import json
 import re
-import shutil
 import sys
 from xml.etree import ElementTree as ET
 
 
-class PackageExtractor:
+class MudletXMLPackageExtractor:
     NUMBERED_JSON_REGEX = re.compile(r'\.?[\d+]*\.json')
+    PACKAGE_TAGS = tuple(('%sPackage' % tag for tag in
+                         ('Trigger', 'Timer', 'Alias', 'Script', 'Key')))
 
     def __init__(self, overwrite=False):
         self.overwrite = bool(overwrite)
-
-    def _create_dirpath(self, dirpath):
-        try:
-            os.makedirs(dirpath, exist_ok=False)
-        except FileExistsError:
-            if not self.overwrite:
-                raise
-            shutil.rmtree(dirpath)
-            os.makedirs(dirpath, exist_ok=True)
-
-    def _get_next_available_filename(self, dirpath, filename):
-        i = 1
-        while os.path.exists(os.path.join(dirpath, filename)):
-            filename = self.NUMBERED_JSON_REGEX.sub('.%i.json' % i,
-                                                    filename)
-            i += 1
-        return filename
-
-
-class MudletXMLPackageExtractor(PackageExtractor):
-    PACKAGE_TAGS = tuple(('%sPackage' % tag for tag in
-                         ('Alias', 'Key', 'Script', 'Timer', 'Trigger')))
 
     def __call__(self, tree, dirpath):
         root = tree.getroot()
@@ -44,54 +23,46 @@ class MudletXMLPackageExtractor(PackageExtractor):
             print("Parsing Mudlet Package (version: %s)" % root.attrib.get('version',
                                                                            'unknown'))
 
-        self.paths_created = set()
+        dirpath = os.path.abspath(dirpath)
         for pkg_tag in self.PACKAGE_TAGS:
-            for section in root.find(pkg_tag) or ():
-                self.extract_section(section, dirpath)
+            group_tag = pkg_tag.replace('Package', 'Group')
+            node_tag = group_tag.replace('Group', '')
+            for group in root.find(pkg_tag) or ():
+                self.extract_group(group, dirpath, node_tag)
 
-    def extract_section(self, root, dirpath):
-        if dirpath not in self.paths_created:
-            self._create_dirpath(dirpath)
-            self.paths_created.add(dirpath)
+    def extract_group(self, group, dirpath, node_tag):
+        group_info = self.get_node_info(group)
+        group_name = group_info['name']
+        if group_info.get('attribs', {}).get('isActive') == 'no':
+            group_name = '.%s' % group_name
+        dirpath = os.path.join(dirpath, group_name)
+        try:
+            os.mkdir(dirpath)
+        except FileExistsError:
+            pass
 
-        group_tag = root.tag.replace('Package', 'Group')
-        node_tag = group_tag.replace('Group', '')
-
-        if 'Group' in group_tag:
-            for node in root.findall(node_tag):
-                self.write_node(node, dirpath)
-            for group_node in root.findall(group_tag):
-                node_info = self.get_node_info(group_node)
-                grouppath = os.path.join(dirpath, node_info['name'])
-                self.extract_section(group_node, grouppath)
-        else:
-            self.write_node(root, dirpath)
-
-    def get_matches(self, root):
-        return zip((tag.text for tag in root.find('regexCodeList')),
-                   (tag.text for tag in root.find('regexCodePropertyList')))
+        for node in group.findall(node_tag):
+            self.write_node(node, dirpath)
+        for subgroup in group.findall('%sGroup' % node_tag):
+            self.extract_group(subgroup, dirpath, node_tag)
 
     def get_node_info(self, node):
         self.unknowns = getattr(self, 'unknowns', 1)
-        node_info = {'enabled': node.attrib.get('isActive') == 'yes',
-                     'type': node.tag.lower()}
-
-        for child in ('name', 'script', 'command', 'regex', 'keyCode',
-                      'keyModifier', 'time'):
-            child_node = node.find(child)
-            if child_node is not None:
-                node_info[child] = child_node.text
+        node_info = {'attribs': node.attrib, 'type': node.tag.lower()}
+        node_info.update({child.tag: child.text for child in node})
 
         if node_info.get('name') is None:
             node_info['name'] = 'Unknown %s %i' % (node.tag, self.unknowns)
             self.unknowns += 1
 
-        node_info['name'] = (node_info['name'].replace('/', 'Slash')
-                                              .replace('\\', 'Backslash'))
+        node_info['name'] = (node_info['name'].replace('/', '-')
+                                              .replace('\\', '|'))
 
         if node.tag == 'Trigger':
-            node_info['matches'] = list(self.get_matches(node))
-            node_info['multiline'] = node.attrib.get('isMultiline') == 'yes'
+            node_info['matches'] = list(zip(
+                (tag.text for tag in node.find('regexCodeList')),
+                (tag.text for tag in node.find('regexCodePropertyList')),
+            ))
 
         return node_info
 
@@ -99,12 +70,23 @@ class MudletXMLPackageExtractor(PackageExtractor):
         node_info = self.get_node_info(node)
         filename = '%s.json' % node_info['name']
         filename = self._get_next_available_filename(dirpath, filename)
+        is_active = node_info.get('attribs', {}).get('isActive') == 'yes'
+        if not is_active:
+            filename = '.%s' % filename     # 'hidden' file
         with open(os.path.join(dirpath, filename), 'w') as filestore:
             filestore.write(json.dumps(node_info, indent=4))
         if node_info.get('script'):
             lua_filename = filename.replace('.json', '.lua')
             with open(os.path.join(dirpath, lua_filename), 'w') as luafile:
                 print(node_info['script'], file=luafile)
+
+    def _get_next_available_filename(self, dirpath, filename):
+        i = 1
+        while os.path.exists(os.path.join(dirpath, filename)):
+            filename = self.NUMBERED_JSON_REGEX.sub('.%i.json' % i,
+                                                    filename)
+            i += 1
+        return filename
 
 
 class MudletXMLCompiler:
@@ -113,10 +95,16 @@ class MudletXMLCompiler:
         self.package = ET.Element('MudletPackage')
         self.package.attrib['version'] = '1.001'
         self.tree = ET.ElementTree(self.package)
-        self.package_path = os.path.normpath(
-            os.path.abspath(package_path or os.getcwd())).split('/')
 
-    def _add_to_package(self, dirpath, filename):
+        package_tags = list(MudletXMLPackageExtractor.PACKAGE_TAGS)
+        package_tags.insert(3, 'ActionPackage')
+        for package_tag in package_tags:
+            ET.SubElement(self.package, package_tag)
+        ET.SubElement(ET.SubElement(self.package, 'HelpPackage'), 'helpURL')
+
+        self.package_path = os.path.abspath(package_path or os.getcwd())
+
+    def add_to_package(self, dirpath, filename):
         with open(os.path.join(dirpath, filename)) as filestore:
             data = json.loads(filestore.read())
 
@@ -128,29 +116,32 @@ class MudletXMLCompiler:
             with open(os.path.join(dirpath, lua_filename)) as luafile:
                 data['script'] = luafile.read()
         except (IOError, OSError):
-            print('WARNING: No script for %s found.' % data['name'])
+            pass
 
-        subpackage = ET.SubElement(self.package, '%sPackage' % data_type)
-        attribs = self._get_attribs_by_type(data_type)
+        dirpath = (os.path.abspath(dirpath)
+                    .replace(self.package_path, '')
+                    .lstrip('/'))
+        subgroup = self.package.find('%sPackage' % data_type)
+        attribs = data.pop('attribs', self._get_attribs_by_type(data_type))
         attribs['isFolder'] = 'yes'
-        group = ET.SubElement(subpackage, '%sGroup' % data_type, attribs)
-        for tag_name, tag_text in sub_node_info.items():
-            tag = ET.SubElement(group, tag_name)
-            tag.text = tag_text
-
         for key in os.path.normpath(dirpath).split('/'):
-            if key and key not in self.package_path:
-                elem = self.package.find(key)
-                if elem is None:
-                    attribs['isActive'] = self.attrib_bool(key.startswith('.'))
-                    group = ET.SubElement(group, '%sGroup' % data_type, attribs)
-                    for tag_name, tag_text in sub_node_info.items():
-                        tag = ET.SubElement(group, tag_name)
+            group, is_active, key = None, key.startswith('.'), key.lstrip('.')
+            for g in subgroup.findall('%sGroup' % data_type):
+                group_name = g.find('name')
+                if group_name is not None and group_name.text == key:
+                    group = g
+                    break
+            if group is None:
+                attribs['isActive'] = self.attrib_bool(is_active)
+                group = ET.SubElement(subgroup, '%sGroup' % data_type, attribs)
+                for tag_name, tag_text in sub_node_info.items():
+                    tag = ET.SubElement(group, tag_name)
+                    if tag_name == 'name':
+                        tag.text = key
+                    else:
                         tag.text = tag_text
+            subgroup = group
 
-        attribs['isActive'] = self.attrib_bool(data.pop('enabled'))
-        if 'isMultiline' in attribs:
-            attribs['isMultiline'] = self.attrib_bool(data.pop('multiline'))
         attribs['isFolder'] = 'no'
         matches = data.pop('matches', ())
         sub_node_info.update(data)
@@ -182,6 +173,12 @@ class MudletXMLCompiler:
                 'isColorTrigger': 'no',
                 'isColorTriggerFg': 'no',
                 'isColorTriggerBg': 'no',
+            },
+            'timer': {
+                'isActive': 'yes',
+                'isFolder': 'no',
+                'isTempTimer': 'no',
+                'isOffsetTimer': 'no',
             }
         }.get(type_.lower(), {'isActive': 'yes', 'isFolder': 'no'})
 
@@ -244,12 +241,13 @@ class MudletXMLCompiler:
         return '%s.xml' % self.package_name
 
     def compile(self):
-        pkg_path = '/' + os.path.join(*self.package_path)
-        for dirpath, _, filenames in os.walk(pkg_path):
+        for dirpath, _, filenames in os.walk(self.package_path):
             for filename in filenames:
                 if filename.endswith('.json'):
-                    self._add_to_package(dirpath, filename)
-        self.tree.write(os.path.join(pkg_path, self.package_file))
+                    self.add_to_package(dirpath, filename)
+        pkg_path = os.path.join(self.package_path, self.package_file)
+        self.tree.write(pkg_path)
+        print('%s successfully written.' % pkg_path)
 
 
 def run_interactive():
@@ -270,8 +268,6 @@ def run_interactive():
     Enter the path to your source code: """
     target_path_question = """
     Enter the path to store the result: """
-    confirm_overwrite = """
-    Overwrite the target directory? (Y/n) """
 
     def die(code=1):
         print()
@@ -299,10 +295,10 @@ def run_interactive():
         except (KeyboardInterrupt, EOFError):
             die()
         else:
-            overwrite = False
-            if os.path.exists(tgt_path):
-                overwrite = input(confirm_overwrite).lower() == 'y'
-            extractor = MudletXMLPackageExtractor(overwrite=overwrite)
+            if len(os.listdir(tgt_path)):
+                print('Remove the target directory first!', file=sys.stderr)
+                die()
+            extractor = MudletXMLPackageExtractor(overwrite=False)
             data = ET.parse(pkg_path)
             extractor(data, tgt_path)
     elif menu_opt == 2:
