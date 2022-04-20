@@ -172,6 +172,15 @@ class MudletXMLCompiler:
             subtag = ET.SubElement(elem, key)
             subtag.text = config.get(key, default)
 
+        regex_list = elem.find('regexCodeList')
+        regex_prop_list = elem.find('regexCodePropertyList')
+        if regex_list is not None and regex_prop_list is not None:
+            for code, prop in config.get('matches', ()):
+                string = ET.SubElement(regex_list, 'string')
+                string.text = code
+                integer = ET.SubElement(regex_prop_list, 'integer')
+                integer.text = prop
+
     def compile(self):
         package_path = os.path.abspath(self.package_path)
         for subpackage in ('Triggers', 'Timers', 'Aliases', 'Scripts', 'Keys'):
