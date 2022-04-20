@@ -352,7 +352,6 @@ def run_interactive():
 
 if __name__ == "__main__":
     from optparse import OptionParser
-    from pathlib import PurePath
 
     parser = OptionParser()
 
@@ -364,10 +363,10 @@ if __name__ == "__main__":
                       help='Run interactively (supercedes other options)')
     parser.add_option('-o', '--output',
                       action='store', type='string', dest='path_to_output',
-                      help='Where to store the output (used with -c or -x)')
+                      help='Where to store the output (used with -x)')
     parser.add_option('-n', '--package-name',
                       action='store', type='string', dest='package_name',
-                      help='Name of the compiled package')
+                      help='Name of the compiled package (used with -c)')
     parser.add_option('-x', '--extract',
                       action='store', type='string', dest='path_to_xml',
                       help='Extract a Mudlet .xml package into files and directories')
