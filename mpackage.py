@@ -189,11 +189,13 @@ class MudletXMLCompiler:
                 for dirpath, subdirs, filenames in os.walk(subpackage_path):
                     groups = [dirname for dirname in os.path.normpath(
                         dirpath.replace(subpackage_path, '')
-                    ).lstrip('/').split('/') if dirname != '.']
+                    ).lstrip('/').split('/')
+                        if dirname != '.' and not dirname.startswith('_')]
                     parent = self.create_groups(groups, subpackage_path)
                     for filename in filenames:
                         if (filename.endswith('.json') and
-                                not filename.endswith('__group.json')):
+                                not filename.endswith('__group.json') and
+                                not filename.startswith('_')):
                             self.create_leaf(dirpath, filename, parent)
         pkg_path = os.path.join(package_path, self.package_file)
         self.tree.write(pkg_path)
