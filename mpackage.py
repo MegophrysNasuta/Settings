@@ -6,10 +6,6 @@ import sys
 from xml.etree import ElementTree as ET
 
 
-class BranchTypeError(TypeError):
-    pass
-
-
 class MudletXMLPackageExtractor:
     NUMBERED_JSON_REGEX = re.compile(r'\.?[\d+]*\.json')
     PACKAGE_TAGS = tuple(('%sPackage' % tag for tag in
