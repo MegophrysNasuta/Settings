@@ -283,6 +283,12 @@ class MudletXMLCompiler:
         }.get(type_.lower(), {})
 
 
+def die(code=1):
+    print()
+    print('Exiting...', file=sys.stderr)
+    sys.exit(int(code))
+
+
 def run_interactive():
     main_menu = """
     Nasuta's Mudlet Packaging Tools
@@ -301,11 +307,6 @@ def run_interactive():
     Enter the path to your source code: """
     target_path_question = """
     Enter the path to store the result: """
-
-    def die(code=1):
-        print()
-        print('Exiting...', file=sys.stderr)
-        sys.exit(int(code))
 
     menu_opt = 0
     while not (0 < menu_opt < 4):
@@ -350,4 +351,42 @@ def run_interactive():
 
 
 if __name__ == "__main__":
-    run_interactive()
+    from optparse import OptionParser
+    from pathlib import PurePath
+
+    parser = OptionParser()
+
+    parser.add_option('-c', '--compile',
+                      action='store', type='string', dest='path_to_package',
+                      help='Build a Mudlet package out of directories and files')
+    parser.add_option('-i', '--interactive',
+                      action='store_true', dest='interactive',
+                      help='Run interactively (supercedes other options)')
+    parser.add_option('-o', '--output',
+                      action='store', type='string', dest='path_to_output',
+                      help='Where to store the output (used with -c or -x)')
+    parser.add_option('-n', '--package-name',
+                      action='store', type='string', dest='package_name',
+                      help='Name of the compiled package')
+    parser.add_option('-x', '--extract',
+                      action='store', type='string', dest='path_to_xml',
+                      help='Extract a Mudlet .xml package into files and directories')
+
+    opts, args = parser.parse_args()
+    if opts.interactive:
+        run_interactive()
+    elif opts.path_to_package:  # compile
+        if not opts.package_name:
+            print('Must use -n flag with this option', file=sys.stderr)
+            die()
+        compiler = MudletXMLCompiler(opts.package_name, opts.path_to_package)
+        compiler.compile()
+    elif opts.path_to_xml:      # extract
+        if not opts.path_to_output:
+            print('Must use -o flag with this option', file=sys.stderr)
+            die()
+        extractor = MudletXMLPackageExtractor(overwrite=False)
+        data = ET.parse(opts.path_to_xml)
+        extractor(data, opts.path_to_output)
+    else:
+        parser.print_help()
