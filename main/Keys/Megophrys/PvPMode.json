@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "PvPMode",
+    "packageName": null,
+    "script": "if Megophrys.class == 'Psion' then\n  Megophrys.setMode('bonk')\nelseif Megophrys.class == 'Magi' then\n  Megophrys.setMode('pummel')\nelseif Megophrys.class == 'Blademaster' then\n  Megophrys.setMode('bstar')\nelseif Megophrys.class == 'Alchemist' then\n  Megophrys.setMode('aurify')\nend",
+    "command": null,
+    "keyCode": "16777266",
+    "keyModifier": "0"
+}

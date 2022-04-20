@@ -1,0 +1,14 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTimer": "no",
+        "isOffsetTimer": "no"
+    },
+    "type": "timer",
+    "name": "Test Timer for Afflictions",
+    "script": "expandAlias(\"lua xtarget.afflictions\")",
+    "command": null,
+    "packageName": null,
+    "time": "00:00:01.500"
+}

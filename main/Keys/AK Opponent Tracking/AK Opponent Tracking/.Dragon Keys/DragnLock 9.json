@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "DragnLock 9",
+    "packageName": null,
+    "script": "if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then\n\nelse\n\tak.stack = \"dlock\"\n\tcecho(\"\\n\\n<cyan> CHANGING STACK TO:        Dragon LOCK!!\\n\\n\")\n\tsend(\"wipe dirk\")\n\tsend(\"wipe claws\")\n\tak.scoreup(target)\nend",
+    "command": null,
+    "keyCode": "57",
+    "keyModifier": "536870912"
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Dragonform detection",
+    "packageName": null,
+    "script": "wsys.race = \"unformed mass\"\n\nfunction wsys.dragonformDetection()\n  if wsys.parseDragon(gmcp.Char.Status.race):lower() == \"dragon\" then\n    wsys.dragonformed()\n    if wsys.race ~= \"Dragon\" then\n      wsys.race = \"Dragon\"\n      wsys.dragonformedDefs()\n    end\n    wsys.race = \"Dragon\"\n  else\n    wsys.race = gmcp.Char.Status.race\n    wsys.lesserformed()\n  end\nend\n\nfunction wsys.dragonformed()\n  --cecho(\"<green>dformed\")\n  wsys.settings.dform = true\n  wsys.lostallchannels()\n\n  if wsys.settings.affprio[wsys.profile][\"dragon\"] == nil then\n    wsys.newclasstables(\"dragon\")\n  end\nend\n\nfunction wsys.lesserformed()\n  wsys.settings.dform = false\n  wsys.def.dragonarmour = false\n  wsys.def.dragonbreath = false\n\n  if wsys.settings.affprio[wsys.profile][wsys.myClass()] == nil then\n    wsys.newclasstables(wsys.myClass())\n  end\nend\n\nfunction wsys.dragonformedDefs()\n  for k,v in pairs(wsys.def) do\n    local sk = false\n    if not wsys.tb.defenceTable[k] then --cecho(\"<red>Unknown defense for '\"..k..\"'\\n\")\n      wsys.def[k] = nil\n    else\n      if wsys.tb.defenceTable[k][\"skillset\"] then sk = wsys.tb.defenceTable[k][\"skillset\"] end\n      if not (table.contains(sk, \"dragoncraft\") or table.contains(sk, \"tattoos\") or table.contains(sk, \"survival\") or table.contains(sk, \"vision\") or table.contains(sk, \"curative\") or table.contains(sk, \"enchantment\")) then\n        wsys.def[k] = false\n      end\n    end\n  end\nend\n\nfunction wsys.dragonBreath( breath )\n  local weapons = { acid = \"black\", ice = \"blue\", psi = \"gold\", venom = \"green\",\t dragonfire = \"red\", lightning = \"silver\" }\n  if breath and weapons[breath] then\n    wsys.settings.dcolor = weapons[breath]\n  end\nend",
+    "eventHandlerList": null
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Lightwall Detection",
+    "packageName": null,
+    "script": "wsys.lightwall = false\n\nfunction wsys.lightwallCheck()\n  for k,v in pairs(wsys.roomitems) do\n    if v == \"a lightwall\" then\n      wsys.lightwall = true\n      return\n    end\n  end\n\n  --if no lightwall found in gmcp then set it false\n  wsys.lightwall = false\nend\n\nregisterAnonymousEventHandler(\"roomitems changed\", \"wsys.lightwallCheck\")\n\n",
+    "eventHandlerList": null
+}

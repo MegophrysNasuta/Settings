@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Hamstring",
+    "script": "if IsTargetted(matches[3]) then\n  local smashlimb = matches[2]..\"leg\"\n\tak.limbs.LimbHit(matches[3], \"Me\", \"psion\", smashlimb, \"percent\")\n  if affstrack.score[smashlimb] < 100 then\n\t\tOppGainedAff(smashlimb)\n  end\n\tif IsTargetted(matches[3]) and affstrack.score.haemophilia > 0 then \t\n\t\tlocal bleedr = 55\n\t\tak.bleeding = ak.bleeding + bleedr\n\t\tcecho(ak.bleeding)\n\t\tak.scoreup(matches[3])\n\tend\nend\n\n\n      \n-- LIMB HIT: leg",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You duck low, your blade slicing into the (left|right) leg of ([\\w'\\-]+)\\.$",
+            "1"
+        ]
+    ]
+}

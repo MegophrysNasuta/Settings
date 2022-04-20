@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Dragon Healing",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then \n   if affstrack.score.weariness>0 and affstrack.score.recklessness>0 then \n     if ak.thoughtIhad then ak.thoughtIhad(\"weariness\") else affstrack.score.weariness = 0 end\n   end\n   affstrack.score.weariness = 0\n   affstrack.score.recklessness = 0\n\t if affstrack.score.prone == 100 then\n\t ak.cure.passive()\n\t else\n   ak.cure.passive()\n   ak.cure.passive()\n   ak.cure.passive() \n\t ak.resetbacktrack()\n\t end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "([\\w'\\-]+) lets out a great keening, casting the impurities from (?:her|his) form.",
+            "1"
+        ]
+    ]
+}

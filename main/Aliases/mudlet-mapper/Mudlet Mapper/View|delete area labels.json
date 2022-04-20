@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "View|delete area labels",
+    "script": "mmp.areaLabels(matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^area labels ?(.+)?$"
+}

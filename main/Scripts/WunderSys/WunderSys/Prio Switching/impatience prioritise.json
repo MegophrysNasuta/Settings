@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "impatience prioritise",
+    "packageName": null,
+    "script": "function wsys.impatiencePrio(event, affliction, class)\n  if event == \"got aff\" then\n    if wsys.aff.paralysis and wsys.aff.asthma and not wsys.classTimerExists(\"alchemist\") then\n      wsys.switchPrios(\"impatience\", 1 )\n\t\telse -- Sentinel petrify kill requires unblind + 4 mentals\n\t\t\tlocal focus_count = wsys.affamount(\"focus\")\n\t\t\tif wsys.aff.impatience and focus_count >= 2 then\n\t\t\t\twsys.switchPrios(\"impatience\", 2 )\n\t\t\tend\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"got aff\", \"wsys.impatiencePrio\")\nregisterAnonymousEventHandler(\"reset aff prios\", \"wsys.impatiencePrio\")\n\nfunction wsys.impatienceLost(event, affliction)\n  if event == \"lost aff\" then\n\t\tlocal focus_count = wsys.affamount(\"focus\")\n    if (wsys.affPosition(\"impatience\") ~= wsys.defaultAffPosition(\"impatience\")) and not (wsys.aff.paralysis and wsys.aff.asthma and focus_count < 2) then\n      wsys.affPrioRestore( \"impatience\" )\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"lost aff\", \"wsys.impatienceLost\")",
+    "eventHandlerList": null
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "SWAP",
+    "script": null,
+    "command": "psi projection swap",
+    "packageName": null,
+    "regex": "^swp$"
+}

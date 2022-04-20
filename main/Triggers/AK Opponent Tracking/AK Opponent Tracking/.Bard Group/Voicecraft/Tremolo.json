@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "yes",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Tremolo",
+    "script": "ak.limbs.ScoreRun = true\nak.limbs.LimbHit(multimatches[2][2],\"Me\", \"tremolo\", multimatches[2][3]..\"leg\")\n",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "Using a heavy tremolo you brutally punish",
+            "2"
+        ],
+        [
+            "^Using a heavy tremolo you brutally punish ([\\w'\\-]+)\\'s already shattered ([\\w'\\-]+) leg\\.$",
+            "1"
+        ]
+    ]
+}

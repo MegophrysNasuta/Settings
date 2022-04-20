@@ -1,0 +1,1 @@
+wsys.def.bearstance = true

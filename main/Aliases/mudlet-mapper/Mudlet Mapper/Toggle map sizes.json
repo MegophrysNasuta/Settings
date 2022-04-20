@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Toggle map sizes",
+    "script": "local size = matches[2]\n\nif size == \"biggest\" then\n  mapper = Geyser.Mapper:new({\n    name = \"mapper\",\n    x = 0, y = 0,\n    width = \"100%\", height = \"97%\"\n  })\n  mmp.echo(\"Map size set to pretty damn big.\")\n\nelseif size == \"small\" then\n  mapper = Geyser.Mapper:new({\n    x = \"70%\", y = 0,\n    width = \"28%\", height = \"50%\"\n  })\n  mmp.echo(\"Map size set to comfortable.\")\n\nelseif size == \"big\" then\n  local window_width, window_height = getMainWindowSize()\n  local used_width = getMainConsoleWidth()\n\n  local available_space = window_width - used_width\n\n  if matches[3] then available_space = available_space - tonumber(matches[3]) end\n\n  mapper = Geyser.Mapper:new({\n    x = available_space*-1, y = 0,\n    width = available_space, height = \"100%\"\n  })\n\n  mmp.echo(\"Set the map size to big - it'll cover all of the space on the right that game text isn't using. You'll want to call this alias again if you resize the window to update.\")\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^(small|big|biggest)map(?: (\\d+))?$"
+}

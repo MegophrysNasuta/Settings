@@ -1,0 +1,14 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTimer": "no",
+        "isOffsetTimer": "no"
+    },
+    "type": "timer",
+    "name": "AK_TendonTimer",
+    "script": "ak.tendonscount = ak.tendonscount or 0\nak.tendonscount = ak.tendonscount + 1\nif ak.twoh.tendons == 0 then\n\tdisableTimer(\"AK_TendonTimer\")\n\tak.tendonscount = 0\nelseif ak.twoh.tendons == 1 and ak.tendonscount == 5 then\n\tak.tendonscount = 0\n\tOppGainedAff(\"clumsiness\")\nelseif ak.twoh.tendons == 2 and ak.tendonscount == 4 then\n\tak.tendonscount = 0\n\tOppGainedAff(\"clumsiness\")\nelseif ak.twoh.tendons == 3 and ak.tendonscount == 3  then\n\tak.tendonscount = 0\n\tOppGainedAff(\"clumsiness\")\nelseif ak.twoh.tendons == 4 and ak.tendonscount == 2 then\n\tak.tendonscount = 0\n\tOppGainedAff(\"clumsiness\")\nelseif ak.twoh.tendons == 5 and ak.tendonscount == 1 then\n\tak.tendonscount = 0\n\tOppGainedAff(\"clumsiness\")\nend ",
+    "command": null,
+    "packageName": null,
+    "time": "00:00:01.000"
+}

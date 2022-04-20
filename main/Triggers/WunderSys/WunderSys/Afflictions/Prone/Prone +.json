@@ -1,0 +1,72 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Prone +",
+    "script": "wsys.affadd(\"prone\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#0000ff",
+    "mBgColor": "#ffffff",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You sit yourself down.",
+            "3"
+        ],
+        [
+            "The wave of force knocks you to the ground.",
+            "3"
+        ],
+        [
+            "You regain consciousness with a start.",
+            "3"
+        ],
+        [
+            "It knocks you off your feet.",
+            "3"
+        ],
+        [
+            "^Drawing an enormous breath\\, [A-Z][a-z]+ exhales\\, expelling a gale of wind with such force that you are knocked over\\.$",
+            "1"
+        ],
+        [
+            "^With a quick thrust from the butt end of an? .+, \\w+ knocks you to the ground\\.$",
+            "1"
+        ],
+        [
+            "You lie down.",
+            "3"
+        ],
+        [
+            "The ground heaves, knocking you off your feet.",
+            "3"
+        ],
+        [
+            "^\\w+ gives a yell and slaps .*, who powerfully kicks you with its hind legs and sends you sailing \\w+ with arms flailing.$",
+            "1"
+        ],
+        [
+            "^\\w+ knocks your legs out from under you and sends you sprawling to the floor\\.$",
+            "1"
+        ]
+    ]
+}

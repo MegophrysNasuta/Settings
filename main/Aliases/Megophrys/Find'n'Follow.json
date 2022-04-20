@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Find'n'Follow",
+    "script": "send('walk to '.. matches[2] ..'| fol '.. matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^ff (\\w+)$"
+}

@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "WhisperFail",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then\n   for i=1, #affstrack.whisperlist do\n    if affstrack.score[affstrack.whisperlist[i]] > 0 then\n      if ak.thoughtIhad then \n        ak.thoughtIhad(affstrack.whisperlist[i]) \n        return  \n      end \n    end\n   end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You pass your hand in front of (\\w+)\\. \\w+ shakes \\w+ head as if clearing \\w+ mind\\.$",
+            "1"
+        ]
+    ]
+}

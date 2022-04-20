@@ -1,0 +1,14 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "keygroup",
+    "name": "AK Opponent Tracking",
+    "packageName": null,
+    "script": null,
+    "command": null,
+    "keyCode": "-1",
+    "keyModifier": "0",
+    "KeyGroup": "\n\t\t\t\t\t"
+}

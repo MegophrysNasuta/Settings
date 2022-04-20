@@ -1,0 +1,44 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Attack Clumsy",
+    "script": null,
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Your blow strikes ([\\w'\\-]+) but is robbed of much of its impact by your faulty technique\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+)\\'s blow lands upon you but is robbed of much of its impact by ([\\w'\\-]+) flawed technique\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) lashes out with a clumsy blow at ([\\w'\\-]+)\\, landing with far reduced force\\.$",
+            "1"
+        ]
+    ]
+}

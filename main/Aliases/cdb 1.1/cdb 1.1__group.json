@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "aliasgroup",
+    "name": "cdb 1.1",
+    "script": null,
+    "command": null,
+    "packageName": "cdb 1.1",
+    "regex": null,
+    "AliasGroup": "\n\t\t\t\t"
+}

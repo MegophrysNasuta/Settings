@@ -1,0 +1,1 @@
+enableTrigger("Confirmed Counter Hit")

@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Toggle 4",
+    "packageName": null,
+    "script": "(Megophrys[Megophrys.class].toggleFour or Megophrys.toggleFour)()",
+    "command": null,
+    "keyCode": "16777274",
+    "keyModifier": "0"
+}

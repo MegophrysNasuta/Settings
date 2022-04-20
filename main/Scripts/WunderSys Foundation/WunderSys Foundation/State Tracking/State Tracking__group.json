@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "scriptgroup",
+    "name": "State Tracking",
+    "packageName": null,
+    "script": "-- Does not include mounted. Need to track that separately\n-- For affs, need to track counts for 2h and alchemist separately",
+    "eventHandlerList": null,
+    "ScriptGroup": "\n\t\t\t\t\t\t"
+}

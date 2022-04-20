@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "yes",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Justice",
+    "script": "wsys.affadd(\"justice\", \"tarot\")\n",
+    "triggerType": "0",
+    "conditonLineDelta": "39",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ffaa7f",
+    "mBgColor": "#000000",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^[A-Z][a-z]+ bows (?:his|her) head and mutters something, then flings a tarot card at you\\. A set of scales appears above your head and one side of the scale quickly descends\\. You have a bad feeling about this\\.$",
+            "1"
+        ]
+    ]
+}

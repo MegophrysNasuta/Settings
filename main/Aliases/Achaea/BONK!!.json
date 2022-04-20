@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "BONK!!",
+    "script": "local tgt = matches[2] or target\nsendAll(\n  'weave prepare disruption',\n  'weave overhand '.. tgt,\n  'say BONK!!'\n)",
+    "command": null,
+    "packageName": null,
+    "regex": "^bnk(?: (\\w+))?$"
+}

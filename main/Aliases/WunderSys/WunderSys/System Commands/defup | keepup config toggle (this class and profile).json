@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "defup | keepup config toggle (this class and profile)",
+    "script": "--example usage wconfig defup profile fangbarrier\nwsys.defToggle(matches[2], wsys.profile, wsys.myClass(), matches[4])",
+    "command": null,
+    "packageName": null,
+    "regex": "^wconfig (defup|keepup) (\\w+)$"
+}

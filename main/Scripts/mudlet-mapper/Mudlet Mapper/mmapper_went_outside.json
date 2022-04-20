@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "mmapper_went_outside",
+    "packageName": null,
+    "script": "--genericized version of the went_outside event handlers.\n--when you go outside, it sees if a shorter path can be found using external links. If so, routes you on the new path instead.\nfunction mmapper_went_outside()\n  if\n    not mmp.autowalking or\n    (mmp.currentroom == mmp.speedWalkPath[#mmp.speedWalkPath]) or\n    table.contains(gmcp.Room.Info.details, \"indoors\") or\n    table.contains(gmcp.Room.Info.details, \"considered indoors\") or\n    mmp.orbed(mmp.currentroom)\n  then\n    return\n  end\n  -- repath, maybe that'll allow us to use wings now.\n  local previousDirection = mmp.speedWalkDir[speedWalkCounter + 1]\n  if mmp.speedWalk.type == \"room\" then\n    raiseEvent(\"mmp link externals\")\n    mmp.getPath(mmp.currentroom, mmp.speedWalkPath[#mmp.speedWalkPath])\n    raiseEvent(\"mmp clear externals\")\n    -- don't need to check return value since that fact shouldnt've changed\n  else\n    mmp.gotoAreaID(getRoomArea(mmp.speedWalkPath[#mmp.speedWalkPath]))\n  end\n  -- if our path didn't change, re-instate it as it was (since the new path starts from this room that we checked at)\n  if speedWalkDir[1] ~= previousDirection then\n    speedWalkCounter = 0\n    mmp.echo(\"We got outside - going to shortcut with travel device.\")\n    if mmp.speedWalk.type == \"room\" then\n      mmp.gotoRoom(mmp.speedWalkPath[#mmp.speedWalkPath])\n    else\n      mmp.gotoAreaID(getRoomArea(mmp.speedWalkPath[#mmp.speedWalkPath]))\n    end\n    mmp.ignore_speedwalking = true\n  end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t"
+}

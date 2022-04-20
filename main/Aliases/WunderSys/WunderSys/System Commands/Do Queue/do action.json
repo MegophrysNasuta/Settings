@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "do action",
+    "script": "wsys.doadd(matches[2])\n\n",
+    "command": null,
+    "packageName": null,
+    "regex": "^do (.*)$"
+}

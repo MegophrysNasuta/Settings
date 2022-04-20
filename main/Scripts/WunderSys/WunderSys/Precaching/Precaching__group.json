@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "scriptgroup",
+    "name": "Precaching",
+    "packageName": null,
+    "script": null,
+    "eventHandlerList": null
+}

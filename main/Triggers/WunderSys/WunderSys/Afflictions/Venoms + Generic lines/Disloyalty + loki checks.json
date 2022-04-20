@@ -1,0 +1,44 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Disloyalty + loki checks",
+    "script": "wsys.affadd(\"disloyalty\")",
+    "triggerType": "0",
+    "conditonLineDelta": "99",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ffaa7f",
+    "mBgColor": "#000000",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You stand in such dishonour that not even your loyal friends will help you.",
+            "3"
+        ],
+        [
+            "You feel ugliness radiating from you.",
+            "3"
+        ],
+        [
+            "Your spirit writhes in torment as it achieves new depths of dishonour.",
+            "3"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "DoubleSlash Venoms",
+    "script": "if IsTargetted(matches[2]) then\n   weaponattack = weaponattack or {}\n   enableTrigger(\"Missed Single Removal\")                --DO NOT CHANGE!\n   enableTrigger(\"Confirmed Hit\")  \n   table.insert(weaponattack, matches[3])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You lay open the flesh of ([\\w'\\-]+) with an expert lateral slice with (.*)\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Plist",
+    "script": "wsys.pipelist()",
+    "command": null,
+    "packageName": null,
+    "regex": "^plist$"
+}

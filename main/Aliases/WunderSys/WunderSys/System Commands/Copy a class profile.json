@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Copy a class profile",
+    "script": "-- Copy the given class profile into your current class\nwsys.copyProfileClass( matches[2] )",
+    "command": null,
+    "packageName": null,
+    "regex": "^wconfig profile copyclass (\\w+)$"
+}

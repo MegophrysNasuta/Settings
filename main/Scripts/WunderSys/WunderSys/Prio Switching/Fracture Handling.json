@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Fracture Handling",
+    "packageName": null,
+    "script": "function wsys.fracturetree(event, affliction)\n  if wsys.fracturecount() > 2 and not wsys.bals.hm and wsys.treeAffs() == 0 and (not wsys.aff.paralysis and wsys.bals.tree) and not wsys.timer.treewait then\n    wsys.tree()\n  end\nend\n\nregisterAnonymousEventHandler(\"got aff\", \"wsys.fracturetree\")\nregisterAnonymousEventHandler(\"lost aff\", \"wsys.fracturetree\")",
+    "eventHandlerList": null
+}

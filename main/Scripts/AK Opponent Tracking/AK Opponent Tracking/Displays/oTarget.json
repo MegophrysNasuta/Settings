@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "oTarget",
+    "packageName": null,
+    "script": "-------------------------------------------------\n--         Put your Lua functions here.        --\n--                                             --\n-- Note that you can also use external Scripts --\n-------------------------------------------------\nfunction targetrelay ()\n\t\t\t\tif not target then return end\n        cecho(\"aff_display\",\"\\n<blue>****************\\n\")\n        cecho(\"aff_display\",\"\\n0Targets: \"..target..\"\\n\\n\")\n        if target1 ~= nil then cecho(\"aff_display\",\"\\nTarget1:<yellow> \"..target1..\"\\n\\n\") end\n        if target2 ~= nil then cecho(\"aff_display\",\"Target2:<yellow> \"..target2..\"\\n\\n\") end\n        if target3 ~= nil then cecho(\"aff_display\",\"Target3:<yellow> \"..target3..\"\\n\\n\") end\n        cecho(\"aff_display\",\"\\n<blue>****************\\n\")\nend",
+    "eventHandlerList": null
+}

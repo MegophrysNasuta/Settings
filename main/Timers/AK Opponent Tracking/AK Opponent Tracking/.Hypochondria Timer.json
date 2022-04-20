@@ -1,0 +1,14 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTimer": "no",
+        "isOffsetTimer": "no"
+    },
+    "type": "timer",
+    "name": "Hypochondria Timer",
+    "script": "if affstrack.score.hypochondria > 0 then\n   for i = 1, #affstrack.hypo do\n      if affstrack.score[affstrack.hypo[i]] ~= 100 then\n         if affstrack.hypo[i] ~= \"impatience\" then\n            affstrack.score[affstrack.hypo[i]] = 100\n            ak.scoreup(target)\n            return\n         end\n      end\n   end\nelse\n   disableTimer(\"Hypochondria Timer\")\nend",
+    "command": null,
+    "packageName": null,
+    "time": "00:00:02.500"
+}

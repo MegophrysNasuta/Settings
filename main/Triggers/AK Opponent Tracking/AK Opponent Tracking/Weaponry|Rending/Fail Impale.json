@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Fail Impale",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then\n  affstrack.score.prone = 0\n  affstrack.score.paralysis = 0\n  affstrack.score.transfixed = 0  \n  affstrack.score.frozen = 0 \n  ak.scoreup(matches[2])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You thrust your blade towards ([\\w'\\-]+) but \\w+ dodges easily out of the way\\.$",
+            "1"
+        ]
+    ]
+}

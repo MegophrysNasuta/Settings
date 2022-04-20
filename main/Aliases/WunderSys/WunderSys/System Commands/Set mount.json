@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Set mount",
+    "script": "wsys.settings.mount = matches[2]\nwsys.settings.havevault = true\nsend(\"vault \" .. wsys.settings.mount)",
+    "command": null,
+    "packageName": null,
+    "regex": "^vault (\\w+)$"
+}

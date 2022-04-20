@@ -1,0 +1,2 @@
+currentvenoms = {}
+ak.deleteFull()

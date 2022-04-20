@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Diagnose",
+    "script": "if wsys.bals.b and wsys.bals.e then\n  enableTrigger(\"Diagnose\")\nwsys.salviaSend(\"diagnose\")\nif wsys.timer.diagwait then\n  killTimer(tostring(wsys.timer.diagwait))\n  end\nwsys.timer.diagwait = tempTimer(wsys.myPing() * 3, [[wsys.timer.diagwait = nil;disableTrigger(\"Diagnose\")]])\nelseif not wsys.doqueue_pending or wsys.doqueue_pending.element.ac ~= \"diagnose\" then\n  enableTrigger(\"Diagnose\")\n  wsys.dofirst( \"diagnose\", 5, true )\n  if wsys.timer.diagwait then\n    killTimer(tostring(wsys.timer.diagwait))\n  end\n  wsys.timer.diagwait = tempTimer( 8, [[wsys.timer.diagwait = nil;disableTrigger(\"Diagnose\")]])\nelseif wsys.doqueue_pending and wsys.doqueue_pending.element.ac == \"diagnose\" then\n  if wsys.timer.diagwait then\n    killTimer(tostring(wsys.timer.diagwait))\n  end\n  wsys.timer.diagwait = tempTimer( 8, [[wsys.timer.diagwait = nil;disableTrigger(\"Diagnose\")]])\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^(dv|diag)$"
+}

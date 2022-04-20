@@ -1,0 +1,72 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Missed Single Removal",
+    "script": "if ak.ai() then return end\nboardaffs = boardaffs or {}\nweaponattack = weaponattack or {}\nif #boardaffs > 0 then\n   table.remove(boardaffs, #boardaffs)\nelseif #weaponattack > 0 then\n\t if weaponattack[#weaponattack] == \"the thorny vines covering your arms\" and affstrack.crushedherb then\n\t \t  table.remove(weaponattack, #weaponattack)\t \n\t end\n   table.remove(weaponattack, #weaponattack)\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) dodges nimbly out of the way\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) quickly jumps back, avoiding the attack\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) twists (his|her) body out of harm's way\\.$",
+            "1"
+        ],
+        [
+            "^A reflection of ([\\w'\\-]+) blinks out of existence.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) parries the attack with a deft manoeuvre.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) steps into the attack, grabs your arm, and throw",
+            "1"
+        ],
+        [
+            "^A chaos orb intercepts the attack against (\\+) and renders it harmless\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) moves into your attack, knocking your blow aside before viciously countering with a strike to your head\\.$",
+            "1"
+        ],
+        [
+            "^Cracks spider across the surface of the crimson shield surrounding ([\\w'\\-]+)\\, before it abruptly winks out of existence\\.$",
+            "1"
+        ],
+        [
+            "^Grey fog begins to rise from the suddenly panicked\\-looking ([\\w'\\-]+)\\.$",
+            "1"
+        ]
+    ]
+}

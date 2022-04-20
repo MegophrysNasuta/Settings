@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "wshow",
+    "script": "wsys.wshow()",
+    "command": null,
+    "packageName": null,
+    "regex": "^wshow$"
+}

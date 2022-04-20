@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "test",
+    "script": "display(gmcp)",
+    "command": null,
+    "packageName": null,
+    "regex": "^test$"
+}

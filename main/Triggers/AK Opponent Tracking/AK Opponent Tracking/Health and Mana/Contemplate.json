@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Contemplate",
+    "script": "ak.currentmana = matches[3]\nak.maxmana = matches[4]\nlocal currMana = math.ceil((matches[3]/matches[4])*100)\ncecho(\"\\n<white>[<blue>Mana<white>]: <yellow>\"..currMana..\"%\")\nif not ak.pause then send(\"pt \"..matches[2]..\"'s mana at \"..ak.currentmana..\"/\"..ak.maxmana) end\nif (currMana <= 40) then\n\tcecho(\"\\n READY TO GO!!\")\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+)\\'s mana stands at (\\d+)\\/(\\d+)\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Scalded",
+    "script": "if ak.ai() then return end\nak.limbs.ParseonLine()\nif IsTargetted(matches[2]) then\n   OppGainedAff(\"scalded\")\n   if ak.scaldTimer then killTimer(ak.scaldTimer) end\n   ak.scaldTimer = tempTimer(17,[[\n   \taffstrack.score.scalded = 0\n   \tak.scoreup(]]..matches[2]..[[)\n   ]])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Leaning down over the incapacitated form of ([\\w'\\-]+)\\, a crystalline golem sprays a stream of super\\-heated steam directly into [\\w'\\-]+ face\\.$",
+            "1"
+        ]
+    ]
+}

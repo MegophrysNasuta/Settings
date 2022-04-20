@@ -1,0 +1,1 @@
+Megophrys.setOpponentClass('DWC Knight')

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Curingset Management",
+    "packageName": null,
+    "script": "function wsys.checkCuringSets()\n  wsys.curingsets = {}\n\tsend(\"CURINGSET LIST\")\n  enableTrigger(\"Curingset Begin\")\n\tenableTrigger(\"Curingset None\")\nend\n\nfunction wsys.addCuringSets()\n  send(\"CURINGSET NEW wundersys\")\n\tsend(\"CURINGSET NEW wundersys_default\")\n\tsend(\"CURINGSET SWITCH wundersys_default\")\n\tif wsys.settings.curingsets ~= \"true\" then\n\t  wsys.setSettings(\"curingsets\", \"true\" )\n\tend\n\twsys.resetAffPrios()\n\ttempTimer(1.5, function()\n\t\tsend(\"CURINGSET SWITCH WUNDERSYS\")\n\t\twsys.cloneDefaultCuringSet()\n\t\tend)\nend\n\nfunction wsys.cloneDefaultCuringSet()\n\tsend(\"CURINGSET CLONE wundersys_default\")\nend",
+    "eventHandlerList": null
+}

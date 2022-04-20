@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Summary",
+    "script": "talisman.summary(matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^(?:tlist|TLIST)(?: (\\w+))?$"
+}

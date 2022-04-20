@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Resist",
+    "packageName": null,
+    "script": "Megophrys.autoResist()",
+    "command": null,
+    "keyCode": "16777300",
+    "keyModifier": "0"
+}

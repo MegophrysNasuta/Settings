@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Undo All",
+    "script": "wsys.undoall()",
+    "command": null,
+    "packageName": null,
+    "regex": "^undoall$"
+}

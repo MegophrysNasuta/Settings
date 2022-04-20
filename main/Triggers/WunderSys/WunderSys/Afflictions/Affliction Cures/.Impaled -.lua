@@ -1,0 +1,2 @@
+wsys.writhedimpaled()
+-- statrefresh()

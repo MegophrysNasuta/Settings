@@ -1,0 +1,14 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTimer": "no",
+        "isOffsetTimer": "no"
+    },
+    "type": "timer",
+    "name": "Show Time",
+    "script": "sendGMCP([[IRE.Time.Request]])",
+    "command": null,
+    "packageName": null,
+    "time": "00:00:04.000"
+}

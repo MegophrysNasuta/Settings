@@ -1,0 +1,14 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTimer": "no",
+        "isOffsetTimer": "no"
+    },
+    "type": "timer",
+    "name": "AK_RibsTimer",
+    "script": "ak.ribscount = ak.ribscount or 0\nak.ribscount = ak.ribscount + 1\nif ak.twoh.ribs == 0 then\n\tdisableTimer(\"AK_RibsTimer\")\n\tak.ribscount = 0\nelseif ak.twoh.ribs == 1 and ak.ribscount == 5 then\n\tak.ribscount = 0\n\tOppGainedAff(\"prefarar\")\nelseif ak.twoh.ribs == 2 and ak.ribscount == 4 then\n\tak.ribscount = 0\n\tOppGainedAff(\"prefarar\")\nelseif ak.twoh.ribs == 3 and ak.ribscount == 3  then\n\tak.ribscount = 0\n\tOppGainedAff(\"prefarar\")\nelseif ak.twoh.ribs == 4 and ak.ribscount == 2 then\n\tak.ribscount = 0\n\tOppGainedAff(\"prefarar\")\nelseif ak.twoh.ribs == 5 and ak.ribscount == 1 then\n\tak.ribscount = 0\n\tOppGainedAff(\"prefarar\")\nend ",
+    "command": null,
+    "packageName": null,
+    "time": "00:00:01.000"
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Fullstats action",
+    "script": "wsys.fullstatsf(matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^fl\\s+(.+)?$"
+}

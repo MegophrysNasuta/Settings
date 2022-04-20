@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "DragonStack(SetAlias)",
+    "packageName": null,
+    "script": "-------------------------------------------------\n--         Put your Lua functions here.        --\n--                                             --\n-- Note that you can also use external Scripts --\n-------------------------------------------------\nfunction ak.dragon.default.setalias() \n\tak.setalias(\"oattackrl\", PreAliasGeneral()..\"/wield shield/dragoncurse \"..target..\" \"..dragoncurse..\" 1/rend \"..target..\" right leg \"..vcombo[1]..\"/breathgust \"..target)\n\tak.setalias(\"oattackll\", PreAliasGeneral()..\"/wield shield/dragoncurse \"..target..\" \"..dragoncurse..\" 1/rend \"..target..\" left leg \"..vcombo[1]..\"/breathgust \"..target)\n\tak.setalias(\"oattackra\", PreAliasGeneral()..\"/wield shield/dragoncurse \"..target..\" \"..dragoncurse..\" 1/rend \"..target..\" right arm \"..vcombo[1]..\"/breathgust \"..target)\n\tak.setalias(\"oattackla\", PreAliasGeneral()..\"/wield shield/dragoncurse \"..target..\" \"..dragoncurse..\" 1/rend \"..target..\" left arm \"..vcombo[1]..\"/breathgust \"..target)\n\tak.setalias(\"oattackt\", PreAliasGeneral()..\"/wield shield/dragoncurse \"..target..\" \"..dragoncurse..\" 1/rend \"..target..\" torso \"..vcombo[1]..\"/breathgust \"..target)\n\tak.setalias(\"oattackh\", PreAliasGeneral()..\"/wield shield dirk/dragoncurse \"..target..\" \"..dragoncurse..\" 1/rend \"..target..\" head \"..vcombo[1]..\"/breathgust \"..target)\nend",
+    "eventHandlerList": null
+}

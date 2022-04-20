@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Deliverance Up",
+    "script": "cecho(\"\\n<white:blue>DELIVERANCE UP, DON'T HIT <yellow:blue>\" .. matches[2] .. \"!\\n<white:blue>DELIVERANCE UP, DON'T HIT <yellow:blue>\" .. matches[2] .. \"!\\n<white:blue>DELIVERANCE UP, DON'T HIT <yellow:blue>\" .. matches[2] .. \"!\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([A-Z][a-z]+) slowly raises (?:his|her) head and you see (?:his|her) eyes glowing bright white\\.$",
+            "1"
+        ]
+    ]
+}

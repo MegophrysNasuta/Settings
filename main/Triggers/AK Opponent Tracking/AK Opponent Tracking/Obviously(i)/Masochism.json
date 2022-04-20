@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Masochism",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then \n   if ak.ProTrackingConfirmed then \n      ak.ProTrackingConfirmed(\"masochism\") \n   else\n      affstrack.score.masochism = 100\n      ak.scoreup(matches[2])\n   end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) drives a clenched fist into [\\w'\\-]+ gut\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) uses [\\w'\\-]+ right foot to stomp on [\\w'\\-]+ left as hard as possible\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) smiles as [\\w'\\-]+ rams [\\w'\\-]+ fist into [\\w'\\-]+ jaw\\.$",
+            "1"
+        ],
+        [
+            "^With the heel of [\\w'\\-]+ palm\\, ([\\w'\\-]+) smacks [\\w'\\-]+ upside the head\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) uses [\\w'\\-]+ [\\w'\\-]+ foot to stomp on [\\w'\\-]+ [\\w'\\-]+ as hard as possible\\.$",
+            "1"
+        ]
+    ]
+}

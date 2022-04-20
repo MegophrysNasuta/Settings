@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Target",
+    "packageName": null,
+    "script": "xtarget = xtarget or {}\nxtarget.name = xtarget.name or nil\nxtarget.rebounding = xtarget.rebounding or true\nxtarget.shield = xtarget.shield or false\nxtarget.afflictions = xtarget.afflictions or {}\nillusion = illusion or false\n\nfunction amIinParty()\n  local i\n  for i = 1, #gmcp.Comm.Channel.List do\n    if gmcp.Comm.Channel.List[i].name == \"party\" then\n      return true\n    end\n  end\n  return false\nend\n\nfunction setTarget(who)\n\txtarget.name = string.lower(xtarget.name)\n  Tragedy.echo(\"<light_blue> Target is set to: <red>\"..xtarget.name)\n  xtarget.rebounding = true\n  xtarget.shield = false\n\tresetTracking()\n  xtarget.afflictions = {}\n\tTragedy.hits = {}\n\tvenom1 = nil\n\tvenom2 = nil\nend\n\nfunction isTarget(p)\n\tif xtarget.name then\n\t\treturn string.starts(p, string.title(xtarget.name))\n\tend\nend",
+    "eventHandlerList": null
+}

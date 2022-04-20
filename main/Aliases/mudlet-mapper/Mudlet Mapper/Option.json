@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Option",
+    "script": "if not matches[2] then\n\tmmp.settings:showAllOptions(mmp.game)\n\treturn\nend\n\nlocal val = matches[4]\nif val == \"true\" or val == \"yes\" or val == \"on\" then val = true end\nif val == \"false\" or val == \"no\" or val == \"off\" then val = false end\nlocal numberVal = tonumber(val)\nval = numberVal and numberVal or val\nmmp.settings:setOption(matches[3], val)",
+    "command": null,
+    "packageName": null,
+    "regex": "^mconfig( (\\w+) (.*))?$"
+}

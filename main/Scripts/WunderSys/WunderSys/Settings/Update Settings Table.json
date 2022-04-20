@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Update Settings Table",
+    "packageName": null,
+    "script": "function wsys.updateSettingsTable()\n\n  if wsys.settings.autotree == nil then\n    wsys.settings.autotree = false\n    wsys.report(\"Added the 'autotree' setting at default value <red>false\")\n  end\n  \nend\n\nwsys.updateSettingsTable()\nwsys.saveSettings()",
+    "eventHandlerList": null
+}

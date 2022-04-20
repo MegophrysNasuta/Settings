@@ -1,0 +1,44 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Shrugging|WaterLord|EarthLord",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then \n   if affstrack.score.weariness>0 then \n     if ak.thoughtIhad then ak.thoughtIhad(\"weariness\") else affstrack.score.weariness = 0 end \n   end\n   ak.cure.passive()\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) hunches (?:her|his) shoulders and lets out a soft hiss.",
+            "1"
+        ],
+        [
+            "^The amorphous form of ([\\w'\\-]+) trembles\\, some of the liquid composing it falling away from the greater whole\\.$",
+            "1"
+        ],
+        [
+            "^Magma erupts forth from beneath the plates that cover ([\\w'\\-]+)\\.$",
+            "1"
+        ]
+    ]
+}

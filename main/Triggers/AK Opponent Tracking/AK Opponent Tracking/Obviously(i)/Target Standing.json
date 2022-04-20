@@ -1,0 +1,48 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Target Standing",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then\n\t ak.limbs.limb_table_check(matches[2])\n   affstrack.score.prone = 0\n\t if applycure.lastapplied and applycure.lastapplied == \"legs\" then\n      AKcalculateSalve()\n\t end\n\t if ocured and ocured.bloodroot and ocured.bloodroot.paralysis and ocured.bloodroot.slickness and ak.ProTrackingConfirmed then\n\t \tak.ProTrackingConfirmed(\"slickness\")\t\n\t end\n\t affstrack.score.paralysis = 0\n   --if affstrack.score.rightleg>0 and affstrack.score.rightleg<100 then\n   --   if ak.thoughtIhad then ak.thoughtIhad(\"rightleg\") else affstrack.score.rightleg = 0 end \n   --   --ak.limbs.limbcount[target].rightleg = (ak.limbs.limbcount[target].lastpercentrightleg)\n   --   _G[target..\"rightlegdisablelimbdamage\"] = nil\n   --   --ak.limbs.limbcount[target].leftleg = (ak.limbs.limbcount[target].lastpercentleftleg)\n   --   _G[target..\"leftlegdisablelimbdamage\"] = nil\n   --   affstrack.score.leftleg = 0\n   --elseif affstrack.score.leftleg>0 and affstrack.score.leftleg<100 then\n   --   if ak.thoughtIhad then ak.thoughtIhad(\"leftleg\") else affstrack.score.leftleg = 0 end\n   --   --ak.limbs.limbcount[target].leftleg = (ak.limbs.limbcount[target].lastpercentleftleg)\n   --   _G[target..\"leftlegdisablelimbdamage\"] = nil\n   --   --ak.limbs.limbcount[target].rightleg = (ak.limbs.limbcount[target].lastpercentrightleg)\n   --   _G[target..\"rightlegdisablelimbdamage\"] = nil\n   --   affstrack.score.rightleg = 0\n   --else\n      if applycure and applycure.possiblemendings and #applycure.possiblemendings == 1 and applycure.possiblemendings[1] == \"leftleg\" then\n         AKcalculateSalve()\n         if affstrack.score.rightleg >= 100 then\n            ak.limbs.limbcount[target].rightleg = ak.limbs.limbcount[target].lastpercentrightleg\n            cecho(\"\\n\\n<cyan>\"..target..\"'s <yellow>Right Leg <cyan>Count Is Off! Attempting To Correct!\\n\\n\")\n            _G[target..\"rightlegdisablelimbdamage\"] = nil\n            if ak.thoughtIhad then ak.thoughtIhad(\"rightleg\") else affstrack.score.rightleg = 0 end\n         end\n      elseif applycure and applycure.possiblemendings and #applycure.possiblemendings == 1 and applycure.possiblemendings[1] == \"rightleg\" then\n         AKcalculateSalve()\n         if affstrack.score.leftleg >= 100 then\n            ak.limbs.limbcount[target].leftleg = ak.limbs.limbcount[target].lastpercentleftleg\n            cecho(\"\\n\\n<cyan>\"..target..\"'s <yellow>Left Leg <cyan>Count Is Off! Attempting To Correct!\\n\\n\")\n            _G[target..\"leftlegdisablelimbdamage\"] = nil\n            if ak.thoughtIhad then ak.thoughtIhad(\"leftleg\") else affstrack.score.leftleg = 0 end\n         end\n      else\n\t\t\t\tif ak.limbs.limbcount[target].maxbreaks.rightleg < ak.limbs.limbcount[target].maxbreaks.leftleg and affstrack.score.leftleg >= 100 and affstrack.score.rightleg >= 100 then\n\t\t\t\t\tak.limbs.limbcount[target].leftleg = ak.limbs.limbcount[target].lastpercentleftleg\n\t\t\t\t\tcecho(\"\\n\\n<cyan>\"..target..\"'s <yellow>Left Leg <cyan>Count Is Off! Attempting To Correct!\\n\\n\")\n\t\t\t\t\t_G[target..\"leftlegdisablelimbdamage\"] = nil\n\t\t\t\t\tif ak.thoughtIhad then ak.thoughtIhad(\"leftleg\") else affstrack.score.leftleg = 0 end\t\t\t\t\n\t\t\t\telseif ak.limbs.limbcount[target].maxbreaks.rightleg > ak.limbs.limbcount[target].maxbreaks.leftleg and affstrack.score.rightleg >= 100 and affstrack.score.leftleg >= 100 then\n\t\t\t\t\tak.limbs.limbcount[target].rightleg = ak.limbs.limbcount[target].lastpercentrightleg\n\t\t\t\t\tcecho(\"\\n\\n<cyan>\"..target..\"'s <yellow>Right Leg <cyan>Count Is Off! Attempting To Correct!\\n\\n\")\n\t\t\t\t\t_G[target..\"rightlegdisablelimbdamage\"] = nil\n\t\t\t\t\tif ak.thoughtIhad then ak.thoughtIhad(\"rightleg\") else affstrack.score.rightleg = 0 end\n\t\t\t\telse\n\t\t\t\t\tif ak.limbs.FindLastBrokenLeg() == \"leftleg\" and affstrack.score.leftleg > 100 then\n         \t   ak.limbs.limbcount[target].leftleg = ak.limbs.limbcount[target].lastpercentleftleg\n         \t   cecho(\"\\n\\n<cyan>\"..target..\"'s <yellow>Left Leg <cyan>Count Is Off! Attempting To Correct!\\n\\n\")\n         \t   _G[target..\"leftlegdisablelimbdamage\"] = nil\n         \t   if ak.thoughtIhad then ak.thoughtIhad(\"leftleg\") else affstrack.score.leftleg = 0 end\n\t\t\t\t\telseif affstrack.score.rightleg > 100 then\n         \t   ak.limbs.limbcount[target].rightleg = ak.limbs.limbcount[target].lastpercentrightleg\n         \t   cecho(\"\\n\\n<cyan>\"..target..\"'s <yellow>Right Leg <cyan>Count Is Off! Attempting To Correct!\\n\\n\")\n         \t   _G[target..\"rightlegdisablelimbdamage\"] = nil\n         \t   if ak.thoughtIhad then ak.thoughtIhad(\"rightleg\") else affstrack.score.rightleg = 0 end\n\t\t\t\t\tend\n\t\t\t\tend\n      end\n   --end\n   affstrack.score.leftleg = 0\n   affstrack.score.rightleg = 0\n   ak.scoreup(matches[2])\n   cecho(\"<cyan>\\n\\n\"..target.. \" IS NO LONGER PRONE.  HE|SHE IS UP!!\\n\\n\")\n   cecho(\"<cyan>\"..target.. \" IS NO LONGER PRONE.  HE|SHE IS UP!!\\n\\n\")\n   cecho(\"<cyan>\"..target.. \" IS NO LONGER PRONE.  HE|SHE IS UP!!\\n\\n\")\n   cecho(\"<cyan>\"..target.. \" IS NO LONGER PRONE.  HE|SHE IS UP!!\\n\\n\")\n   if ak.limbs.limbcount[matches[2]] then\n      _G[target..\"rightlegdisablelimbdamage\"] = nil\n      _G[target..\"leftlegdisablelimbdamage\"] = nil\n   end\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) stands up\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) rolls smoothly back to [\\w'\\-]+ feet\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) backs away and out of your reach\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) pushes off the ground, coming back up into a guard position\\.$",
+            "1"
+        ]
+    ]
+}

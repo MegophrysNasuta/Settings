@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Lua command",
+    "script": "local f,e = loadstring(\"return \"..matches[2])\nif not f then\n\tf,e = assert(loadstring(matches[2]))\nend\n\nlocal r = f()\nif r ~= nil then display(r) end",
+    "command": null,
+    "packageName": null,
+    "regex": "^/(.*)$"
+}

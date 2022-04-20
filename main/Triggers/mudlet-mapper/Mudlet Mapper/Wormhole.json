@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Wormhole",
+    "script": "mmp.customwalkdelay(4)",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You hurl yourself forwards through the air, and sure enough a swirling vortex of colours springs into existence to swallow you.",
+            "3"
+        ],
+        [
+            "You reach out with the vibrating stick to probe for a wormhole, and as it connects with one, you are sucked through.",
+            "3"
+        ]
+    ]
+}

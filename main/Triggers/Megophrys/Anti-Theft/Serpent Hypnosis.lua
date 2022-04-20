@@ -1,0 +1,1 @@
+Megophrys.shout('HYPNOSIS! SERPENT FUCKERY AFOOT!! HYPNOSIS! SERPENT FUCKERY AFOOT!! ('.. matches[2] ..')')

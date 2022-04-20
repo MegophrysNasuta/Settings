@@ -1,0 +1,232 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Ignore",
+    "script": "ak.deleteFull()",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "Travelling the world more quickly due to time dilation.",
+            "3"
+        ],
+        [
+            "He is highfavoured by ",
+            "0"
+        ],
+        [
+            "She is highfavoured by ",
+            "0"
+        ],
+        [
+            "He is performing retaliatory strikes against his attackers.",
+            "3"
+        ],
+        [
+            "She is performing retaliatory strikes against her attackers.",
+            "3"
+        ],
+        [
+            "^He has engaged ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^She has engaged ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "He is protected from the creation of physical images of himself.",
+            "3"
+        ],
+        [
+            "She is protected from the creation of physical images of herself.",
+            "3"
+        ],
+        [
+            "He is protected from damage by a tune of safety.",
+            "3"
+        ],
+        [
+            "She is protected from damage by a tune of safety.",
+            "3"
+        ],
+        [
+            "She is vigilantly watching for potential danger.",
+            "3"
+        ],
+        [
+            "He is vigilantly watching for potential danger.",
+            "3"
+        ],
+        [
+            "She is protected by the bell tattoo.",
+            "3"
+        ],
+        [
+            "He is protected by the bell tattoo.",
+            "3"
+        ],
+        [
+            "She has augmented her own body for enhanced defence.",
+            "3"
+        ],
+        [
+            "He has augmented his own body for enhanced defence.",
+            "3"
+        ],
+        [
+            "He is poised to glide across the surface of water.",
+            "3"
+        ],
+        [
+            "She is poised to glide across the surface of water.",
+            "3"
+        ],
+        [
+            "He has a great affinity with his spirit form.",
+            "3"
+        ],
+        [
+            "She has a great affinity with his spirit form.",
+            "3"
+        ],
+        [
+            "He is bonded to his spirit totem.",
+            "3"
+        ],
+        [
+            "She is bonded to his spirit totem.",
+            "3"
+        ],
+        [
+            "Diamond-hard skin protects her.",
+            "3"
+        ],
+        [
+            "Diamond-hard skin protects him",
+            "3"
+        ],
+        [
+            "Magically supple granite coats her body.",
+            "3"
+        ],
+        [
+            "Magically supple granite coats his body.",
+            "3"
+        ],
+        [
+            "Her water weird allows her to walk on water.",
+            "3"
+        ],
+        [
+            "His water weird allows him to walk on water.",
+            "3"
+        ],
+        [
+            "He is attuned to local telepathic interference.",
+            "3"
+        ],
+        [
+            "She is attuned to local telepathic interference.",
+            "3"
+        ],
+        [
+            "He is concentrating on maintaining distance from the dreamworld.",
+            "3"
+        ],
+        [
+            "She is concentrating on maintaining distance from the dreamworld.",
+            "3"
+        ],
+        [
+            "He is utilising hypersight.",
+            "3"
+        ],
+        [
+            "She is utilising hypersight.",
+            "3"
+        ],
+        [
+            "He is concentrating on mastery of bladecraft.",
+            "3"
+        ],
+        [
+            "She is concentrating on mastery of bladecraft.",
+            "3"
+        ],
+        [
+            "^He has a critical hit bonus lasting \\d+ hour and \\d+ minutes\\.$",
+            "1"
+        ],
+        [
+            "^She has a critical hit bonus lasting \\d+ hour and \\d+ minutes\\.$",
+            "1"
+        ],
+        [
+            "^He is truefavoured by [\\w'\\-]+ for over \\d+ Achaean month \\(which is about \\d+ hours\\)\\.$",
+            "1"
+        ],
+        [
+            "^She is truefavoured by [\\w'\\-]+ for over \\d+ Achaean month \\(which is about \\d+ hours\\)\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) is protected by the power of a [\\w'\\-]+ Spiritshield\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ is regenerating [\\w'\\-]+ at an increased rate\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ limbs are suffused with divinely-inspired strength\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ is using [\\w'\\-]+ superior constitution to prevent nausea\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ is regenerating lost health through the power of Kaido\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ is cloaking [\\w'\\-]+ attempts at establishing a mindlock\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ is utilising the trance to store Kai energy\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ has boosted the power of [\\w'\\-]+ Kai Trance\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ has tentacles flailing from [\\w'\\-]+ body\\.$",
+            "1"
+        ]
+    ]
+}

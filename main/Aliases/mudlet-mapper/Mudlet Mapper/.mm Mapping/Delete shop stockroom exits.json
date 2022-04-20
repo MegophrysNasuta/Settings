@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Delete shop stockroom exits",
+    "script": "mmp.echo(\"Deleting all known stockroom exits (rooms with $ and a down exit)\")\nlocal c = 0\n\nfor area, areaname in pairs(mmp.areatabler) do\n  local rooms = getAreaRooms(area) or {}\n  for i = 0, #rooms do\n    if rooms[i] then\n      local char = getRoomChar(rooms[i])\n      if char == '$' then\n        local exits = getRoomExits(rooms[i]) -- retrieve after $, more efficient\n\n        if exits.down then\n          setExit(rooms[i], -1, 'down')\n          mmp.echo(string.format(\"Deleted the stockroom exit at %s (#%d in %s)\", getRoomName(rooms[i]), rooms[i], mmp.areatabler[getRoomArea(rooms[i])]))\n          c = c + 1\n        end\n      end\n    end\n\n  end\nend\n\nmmp.echo(string.format(\"Deleted %s known stockroom exit%s.\", c, (c ~= 1 and 's' or '')))\ncenterview(mmp.currentroom)",
+    "command": null,
+    "packageName": null,
+    "regex": "^delete known stockrooms$"
+}

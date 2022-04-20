@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Lyre Functions",
+    "packageName": null,
+    "script": "wsys.uselyre = wsys.uselyre or false\n\nfunction wsys.lyre()\n enableTrigger(\"Lyre +\")\n if wsys.timer.lyrewait then\n  killTimer(tostring(wsys.timer.lyrewait))\n end\n wsys.timer.lyrewait = tempTimer(wsys.waittime, [[wsys.timer.lyrewait = nil;wsys.addqueue(\"lyre\")]])\n wsys.salviaSend(\"strum lyre\")\nend -- func\n\n\nfunction wsys.lyred()\n if wsys.timer.lyrewait then\n  disableTrigger(\"Lyre +\")\n  if wsys.timer.lyrewait then\n   killTimer(tostring(wsys.timer.lyrewait))\n  end\n  wsys.timer.lyrewait = nil\n  wsys.def.lyre = true\n end -- if\nend -- func\n\n\nfunction wsys.lyrelost()\n wsys.def.lyre = false\n wsys.addqueue(\"lyre\")\nend -- func",
+    "eventHandlerList": null
+}

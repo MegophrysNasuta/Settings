@@ -1,0 +1,1 @@
+Megophrys[Megophrys.class].doSpecial()

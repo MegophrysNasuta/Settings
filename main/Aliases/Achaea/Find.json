@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Find",
+    "script": "if gmcp.Char.Status.class == 'Magi' then\n  send('cast scry at '..(matches[2] or target))\nelseif gmcp.Char.Status.class == 'Blademaster' then\n  send('detect '..(matches[2] or target))\nelseif gmcp.Char.Status.class == 'Alchemist' then\n  send('ether seek '..(matches[2] or target))\nelseif gmcp.Char.Status.class == 'Apostate' then\n  send('sense '..(matches[2] or target))\nelse\n  send('farsee '..(matches[2] or target))\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^find(?: (\\w+))?$"
+}

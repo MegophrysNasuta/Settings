@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Room list",
+    "script": "mmp.echoRoomList(matches[2] or mmp.areatabler[getRoomArea(mmp.currentroom)])",
+    "command": null,
+    "packageName": null,
+    "regex": "^room list(?: (.+))?$"
+}

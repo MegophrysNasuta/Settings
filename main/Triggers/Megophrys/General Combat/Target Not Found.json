@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Target Not Found",
+    "script": "if Megophrys.autoAttacking then\n  Megophrys.stopAttack('Targeting failure')\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t",
+    "matches": [
+        [
+            "Nothing can be seen here by that name.",
+            "3"
+        ],
+        [
+            "You detect nothing here by that name.",
+            "3"
+        ],
+        [
+            "I do not recognise anything called that here.",
+            "3"
+        ],
+        [
+            "You cannot see that being here.",
+            "3"
+        ],
+        [
+            "Ahh, I am truly sorry, but I do not see anyone by that name here.",
+            "3"
+        ]
+    ]
+}

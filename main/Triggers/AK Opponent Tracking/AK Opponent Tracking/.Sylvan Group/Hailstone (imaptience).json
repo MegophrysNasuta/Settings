@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Hailstone (imaptience)",
+    "script": "if IsTargetted(matches[2]) then\n\tif affstrack.score.clumsiness < 100 and affstrack.score.clumsiness > 0 then\n      if ak.ProTrackingConfirmed then \n         ak.ProTrackingConfirmed(\"clumsiness\")\n      else \n         affstrack.score.clumsiness = 100\n         ak.scoreup(matches[2])\n      end\n\telseif affstrack.score.epilepsy < 100 and affstrack.score.epilepsy > 0 then\n      if ak.ProTrackingConfirmed then \n         ak.ProTrackingConfirmed(\"epilepsy\") \n      else \n         affstrack.score.epilepsy = 100\n         ak.scoreup(matches[2])\n      end\n\tend\n\tOppGainedAff(\"impatience\")\n\tif affstrack.overcharge == true then\n\t\tOppGainedAff(\"weariness\")\n\tend\nend\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^A puzzled expression crosses the face of ([\\w'\\-]+).$",
+            "1"
+        ]
+    ]
+}

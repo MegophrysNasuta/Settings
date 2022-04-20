@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Speed",
+    "script": "ak.deleteFull()\nak.defs.speed = true\n      if not SpeedTimer then\n         SpeedTimer = tempTimer(4,[[\n                ak.defs.speed = true\n                SpeedTimer = false \n                ak.scoreup(target) \n                ]])\n      end",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "Her sense of time is heightened, and her reactions are speeded.",
+            "3"
+        ],
+        [
+            "His sense of time is heightened, and his reactions are speeded.",
+            "3"
+        ]
+    ]
+}

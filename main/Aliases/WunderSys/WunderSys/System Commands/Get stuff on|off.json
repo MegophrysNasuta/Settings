@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Get stuff on|off",
+    "script": "if wsys.settings.gstuff then\n wsys.settings.gstuff = false\n wsys.report(\"<gold>No longer picking up gold, shards, and bodies.\")\nelse\n wsys.settings.gstuff = true\n wsys.report(\"<gold>Picking up gold, shards, and bodies now.\")\n wsys.balqueue()\nend -- if",
+    "command": null,
+    "packageName": null,
+    "regex": "^gstuff$"
+}

@@ -1,0 +1,5 @@
+wsys.cannotdef("putrefaction")
+wsys.cannotdef("deathaura")
+wsys.cannotdef("vengeance")
+wsys.cannotdef("blackwind")
+wsys.cannotdef("soulcage")

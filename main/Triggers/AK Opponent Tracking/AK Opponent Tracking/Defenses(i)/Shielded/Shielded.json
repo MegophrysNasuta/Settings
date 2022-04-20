@@ -1,0 +1,56 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Shielded",
+    "script": "if IsTargetted(matches[2]) then\n\t if ak.ai() then return end\n   ak.shieldwhore = true\n   tempTimer(5,[[ak.shieldwhore = false]])\n   ak.defs.shield = true\n   ak.scoreup(matches[2])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^A nearly invisible magical shield forms around ([\\w'\\-]+).$",
+            "1"
+        ],
+        [
+            "^A dizzying beam of energy strikes you as your attack rebounds off of ([\\w'\\-]+)\\'s shield\\.$",
+            "1"
+        ],
+        [
+            "^The magical shield surrounding ([\\w'\\-]+) makes that impossible\\.$",
+            "1"
+        ],
+        [
+            "^A shimmering barrier of crystal forms about ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^A guardian angel surrounds ([\\w'\\-]+) with a protective shield\\.$",
+            "1"
+        ],
+        [
+            "^A gentle hum arises from (\\w+)\\'s angel, as it raises a shield to protect \\w+\\.$",
+            "1"
+        ]
+    ]
+}

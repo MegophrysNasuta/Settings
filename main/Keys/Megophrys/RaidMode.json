@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "RaidMode",
+    "packageName": null,
+    "script": "Megophrys.setMode('raid')",
+    "command": null,
+    "keyCode": "16777265",
+    "keyModifier": "0"
+}

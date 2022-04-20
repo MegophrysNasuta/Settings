@@ -1,0 +1,56 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "blademaster basic",
+    "script": "Megophrys.setOpponentClass('blademaster')",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^With a smooth lunge to the \\w+, (\\w+) draws .+ from its scabbard and delivers a powerful slash across your \\w+\\.$",
+            "1"
+        ],
+        [
+            "^Lashing out with a clenched fist, (\\w+) aims a precise strike at your sternum\\.$",
+            "1"
+        ],
+        [
+            "^Sweeping out with a blade hand, (\\w+) strikes at the back of your knee.$",
+            "1"
+        ],
+        [
+            "^As (\\w+) draws .+ from its scabbard, s?he drives the pommel into your chin\\.$",
+            "1"
+        ],
+        [
+            "^With a fluid motion, (\\w+) aims a blow just below your shoulder.$",
+            "1"
+        ],
+        [
+            "^With masterful technique, (\\w+) draws .+ from its scabbard and unleashes \\w+ precise strikes towards you\\.$",
+            "1"
+        ]
+    ]
+}

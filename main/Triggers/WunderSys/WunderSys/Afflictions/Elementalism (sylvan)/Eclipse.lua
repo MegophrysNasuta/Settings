@@ -1,0 +1,1 @@
+cecho("\n<orange>DIAGNOSE!!!")

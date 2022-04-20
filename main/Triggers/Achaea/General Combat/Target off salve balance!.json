@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "yes",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Target off salve balance!",
+    "script": "if matches[2] == target then\n  cecho('\\n<gold>TARGET SALVED '.. matches[4] ..'\\n')\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#00ff00",
+    "mBgColor": "#000000",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^(\\w+) takes some salve from a vial and rubs it on (his|her) (arms|legs|torso|head).$",
+            "1"
+        ]
+    ]
+}

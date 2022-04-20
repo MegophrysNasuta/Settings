@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Delete a link",
+    "script": "-- need the current room, but we're lost\nif not mmp.currentroom or not mmp.roomexists(mmp.currentroom) then mmp.echo(\"Don't know where we are at the moment.\") return end\n\n-- make sure the dir is valid\nlocal dir = mmp.anytolong(matches[2])\nif not dir then mmp.echo(matches[2]..\" isn't a valid normal exit.\") return end\n\n-- gone already?\nif not getRoomExits(mmp.currentroom)[dir] then mmp.echo(dir..\" link doesn't exist already.\") end\n\n-- locate the room on the other end, so we can unlink it from there as well if necessary\nlocal otherroom\nif getRoomExits(getRoomExits(mmp.currentroom)[dir])[mmp.ranytolong(dir)] then\n  otherroom = getRoomExits(mmp.currentroom)[dir]\nend\n\nif setExit(mmp.currentroom, -1, dir) then\n  if otherroom then\n    if setExit(otherroom, -1, mmp.ranytolong(dir)) then\n      mmp.echo(string.format(\"Deleted the %s exit from %s (%d).\",\n        dir, getRoomName(mmp.currentroom), mmp.currentroom))\n     else mmp.echo(\"Couldn't delete the incoming exit.\") end\n  else\n    mmp.echo(string.format(\"Deleted the one-way %s exit from %s (%d).\",\n      dir, getRoomName(mmp.currentroom), mmp.currentroom))\n  end\nelse\n  mmp.echo(\"Couldn't delete the outgoing exit.\")\nend\ncenterview(mmp.currentroom)",
+    "command": null,
+    "packageName": null,
+    "regex": "^(?:urlk|room unlink) (\\w+)$"
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Char Stats",
+    "packageName": null,
+    "script": "wsysf.vitals = wsysf.vitals or {}\nwsysf.stats = wsysf.stats or {}\nwsysf.char_stat_tracking = wsysf.char_stat_tracking or {}\n\nlocal vitals = {\n\t\"wp\", \"eq\", \"ep\", \"maxhp\", \"hp\", \"nl\", \"maxpep\", \"maxpwp\", \"mp\", \"maxwp\", \"bal\"\n}\n-- \n\nfunction wsysf.char_stat_tracking.vitals()\n\twsysf.core.debug.display( 10, gmcp.Char.Vitals, \"Vitals\" )\n\t\n\t-- Vitals (excluding charstats)\n\tlocal new_vitals = {}\n\twsysf.vitals.prev = nil\n\tnew_vitals.prev = wsysf.vitals\n\t\n\tfor _,v in ipairs( vitals ) do\n\t\tif gmcp.Char.Vitals[v] then\n\t\t\tnew_vitals[v] = tonumber( gmcp.Char.Vitals[v] )\n\t\tend\n\tend\n\t\n\twsysf.vitals = new_vitals\n\t\n\t-- Charstats parsing \n\tlocal new_stats = {}\n\twsysf.stats.prev = nil\n\tnew_stats.prev = wsysf.stats\n\t\n\tfor _,v in ipairs( gmcp.Char.Vitals.charstats ) do\n    local key,value = v:match(\"(%w+): (.+)\")\n\t\tif key and value then\n\t\t\tif value:sub(-1) == \"%\" then value = value:sub(1,-2) end\n\t\t\tif tonumber(value) then value = tonumber(value) end\n\t\t\tnew_stats[key:lower()] = value\n\t\tend\n  end\n\t\n\twsysf.stats = new_stats\n\t\n\twsysf.core.debug.display( 9, wsysf.vitals, \"Vitals\" )\n\twsysf.core.debug.display( 9, wsysf.stats, \"Stats\" )\n\twsysf.core.debug.print(7, \"Got Vitals\")\n\t\nend\n\nif wsysf.char_stat_tracking.id then killAnonymousEventHandler( wsysf.char_stat_tracking.id ) end\n-- EVENT HANDLERS\nwsysf.char_stat_tracking.id = registerAnonymousEventHandler(\"gmcp.Char.Vitals\", \"wsysf.char_stat_tracking.vitals\")",
+    "eventHandlerList": null
+}

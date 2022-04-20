@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Anti Illusion",
+    "packageName": null,
+    "script": "\nif ak.ai then return end\n\nfunction ak.ai()\n\treturn false\nend",
+    "eventHandlerList": null
+}

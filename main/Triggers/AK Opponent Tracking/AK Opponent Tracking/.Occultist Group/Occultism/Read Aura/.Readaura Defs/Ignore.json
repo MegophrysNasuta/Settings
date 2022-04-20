@@ -1,0 +1,232 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Ignore",
+    "script": "ak.deleteFull()",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "She is focussing on quelling her bleeding more efficiently.",
+            "3"
+        ],
+        [
+            "She has a will of iron.",
+            "3"
+        ],
+        [
+            "He has a will of iron.",
+            "3"
+        ],
+        [
+            "He is enhancing his precision through the power of Terminus.",
+            "3"
+        ],
+        [
+            "She is enhancing her precision through the power of Terminus.",
+            "3"
+        ],
+        [
+            "He is enhancing his durability against denizens.",
+            "3"
+        ],
+        [
+            "She is enhancing her durability against denizens.",
+            "3"
+        ],
+        [
+            "Concealed by a shifting veil of shadow.",
+            "3"
+        ],
+        [
+            "You are masking your egress.",
+            "3"
+        ],
+        [
+            "^He has a small critical bonus lasting another .+\\.$",
+            "1"
+        ],
+        [
+            "^She has a small critical bonus lasting another .+\\.$",
+            "1"
+        ],
+        [
+            "Serpentine scales protect his body.",
+            "3"
+        ],
+        [
+            "Serpentine scales protect her body.",
+            "3"
+        ],
+        [
+            "He is lipreading to overcome deafness.",
+            "3"
+        ],
+        [
+            "She is lipreading to overcome deafness.",
+            "3"
+        ],
+        [
+            "He is paced for bursts of exertion.",
+            "3"
+        ],
+        [
+            "She is paced for bursts of exertion.",
+            "3"
+        ],
+        [
+            "He is able to detect wormholes due to possessing the second sight.",
+            "3"
+        ],
+        [
+            "She is able to detect wormholes due to possessing the second sight.",
+            "3"
+        ],
+        [
+            "He is resonating with the sun's energy.",
+            "3"
+        ],
+        [
+            "She is resonating with the sun's energy.",
+            "3"
+        ],
+        [
+            "He is favoured by .*\\.$",
+            "1"
+        ],
+        [
+            "She is favoured by .*\\.$",
+            "1"
+        ],
+        [
+            "His skin is toughened.",
+            "3"
+        ],
+        [
+            "Her skin is toughened.",
+            "3"
+        ],
+        [
+            "He is alert to incoming projectiles.",
+            "3"
+        ],
+        [
+            "She is alert to incoming projectiles.",
+            "3"
+        ],
+        [
+            "He has cast a mindnet over the local area.",
+            "3"
+        ],
+        [
+            "She has cast a mindnet over the local area.",
+            "3"
+        ],
+        [
+            "He is deep within the Shin trance.",
+            "3"
+        ],
+        [
+            "She is deep within the Shin trance.",
+            "3"
+        ],
+        [
+            "He is maintaining consciousness at all times.",
+            "3"
+        ],
+        [
+            "She is maintaining consciousness at all times.",
+            "3"
+        ],
+        [
+            "He is seeing the world around him with greater clarity of vision.",
+            "3"
+        ],
+        [
+            "She is seeing the world around him with greater clarity of vision.",
+            "3"
+        ],
+        [
+            "He is diverting excess Shin energy into regeneration.",
+            "3"
+        ],
+        [
+            "She is diverting excess Shin energy into regeneration.",
+            "3"
+        ],
+        [
+            "He is using his superior constitution to prevent nausea.",
+            "3"
+        ],
+        [
+            "She is using his superior constitution to prevent nausea.",
+            "3"
+        ],
+        [
+            "He has softened the focus of his eyes.",
+            "3"
+        ],
+        [
+            "She has softened the focus of her eyes.",
+            "3"
+        ],
+        [
+            "His hands are gripping his wielded items tightly.",
+            "3"
+        ],
+        [
+            "Her hands are gripping her wielded items tightly.",
+            "3"
+        ],
+        [
+            "You are attempting to deflect arrows toward less vital areas.",
+            "3"
+        ],
+        [
+            "He has earned the blessing of the gods.",
+            "3"
+        ],
+        [
+            "She has earned the blessing of the gods.",
+            "3"
+        ],
+        [
+            "He is concentrating on maintaining control over his faculties.",
+            "3"
+        ],
+        [
+            "She is concentrating on maintaining control over his faculties.",
+            "3"
+        ],
+        [
+            "He has augmented his own body for enhanced defence.",
+            "3"
+        ],
+        [
+            "She has augmented his own body for enhanced defence.",
+            "3"
+        ]
+    ]
+}

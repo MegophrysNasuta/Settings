@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "punch",
+    "script": "if wsys.bals.la then\n  wsys.bals.la = false\nelse\n  wsys.bals.ra = false\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You ball up one fist and hammerfist",
+            "2"
+        ],
+        [
+            "You launch a powerful uppercut at ",
+            "2"
+        ],
+        [
+            "You form a spear hand and stab out towards ",
+            "2"
+        ],
+        [
+            "You unleash a powerful hook towards ",
+            "2"
+        ],
+        [
+            "You throw your force behind a forward palmstrike",
+            "2"
+        ]
+    ]
+}

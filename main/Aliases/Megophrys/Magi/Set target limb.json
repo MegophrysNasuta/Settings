@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Set target limb",
+    "script": "if matches[2] == 'l' then \n  Megophrys.targetLimb = 'left' \nelseif matches[2] == 'r' then\n  Megophrys.targetLimb = 'right'\nelse\n  Megophrys.targetLimb = ''\nend\ncecho('\\n<cyan>Target limb set to: '.. (Megophrys.targetLimb or 'none') ..'\\n')",
+    "command": null,
+    "packageName": null,
+    "regex": "^stl (l|r|n)$"
+}

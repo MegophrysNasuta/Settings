@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Toggle mapping mode",
+    "script": "if (matches[2] and matches[2] == \"on\") or (not matches[2] and not mmp.editing) then\n  mmp.editing = true\n  enableAlias(\"mm Mapping\")\n\n  mmp_regenerate_areas()\n  mmp.highlight_unfinished_rooms()\n\n  mmp.echo(\"Mapping mode enabled. Happy mapping!\")\nelseif (matches[2] and matches[2] == \"off\") or (not matches[2] and mmp.editing) then\n  mmp.editing = false\n  disableAlias(\"mm Mapping\")\n  mmp.echo(\"Mapping mode disabled.\")\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^(?:mc|map create) ?(on|off)?$"
+}

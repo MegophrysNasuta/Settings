@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Asphyxiate",
+    "script": "ak = ak or {}\nak.duress = ak.duress or {}\nif target == matches[2] then\n  ak.duress.asphyxiate = true\n\tkillTimer(tostring(ak.duress.asphyxiatetimer))\n  ak.duress.asphyxiatetimer = tempTimer(10, [[ak.duress.asphyxiate = false]])\n\tak.scoreup(matches[2])\nend\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You rip the air from the lungs of ([\\w'\\-]+) in a single instant, blood and mucus dripping from (?:her|his) mouth as (?:he|she) doubles over with hacking coughs\\.$",
+            "1"
+        ]
+    ]
+}

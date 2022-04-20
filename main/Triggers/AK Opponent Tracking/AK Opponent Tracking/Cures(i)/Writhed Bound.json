@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Writhed Bound",
+    "script": "if ak.ai() then return end\n--send(\"outr rope\")\nif IsTargetted(matches[2]) then\n   affstrack.score.bound = 0\n   ak.scoreup(matches[2])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "([\\w'\\-]+) has writhed free of [\\w'\\-]+ entanglement by ropes.",
+            "1"
+        ],
+        [
+            "^Gritting [\\w'\\-]+ glistening teeth into a rictus grin, ([\\w'\\-]+) emits a low rumble as [\\w'\\-]+ flexes [\\w'\\-]+ rippling muscles, bursting the bindings that hold [\\w'\\-]+\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Formulation",
+    "script": "local brewTable = {intox=\"intoxicant\", devit=\"devitalisation\",\n                   tox=\"toxin\", incen=\"incendiary\", vap=\"vaporisation\",\n                   mon=\"monoxide\"}\nlocal brew = brewTable[matches[2]]\n\nif brew then\n  send('wield '.. brew)\n  if matches[3] then\n    send('throw '.. brew ..' '.. matches[3])\n  else\n    send('throw '.. brew ..' at ground')\n  end\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^(intox|devit|incen|tox|vap|mon)(?: (n|e|s|w|ne|nw|se|sw|in|out|up|down|u|d|))?$"
+}

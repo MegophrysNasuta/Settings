@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Prompt after dstab",
+    "script": "if table.contains(tableofhits, \"hit1\") then\n  if venom1 then\n\t\tif venom1 == \"epteth\" then\n\t\t\tif tarAff(\"lepteth\") then\n\t\t\t\tTragedy.TrackerAdd(\"repteth\")\n\t\t\telse\n\t\t\t\tTragedy.TrackerAdd(\"lepteth\")\n\t\t\tend\n\t\telse\n\t\t\tTragedy.TrackerAdd(venom1)\n\t\tend\n\tend\n\tif target.lastlimb then\n\t\ttarget.limbs[target.lastlimb] = target.limbs[target.lastlimb] + 1\n\tend\nend\nif table.contains(tableofhits, \"hit2\") then\n  if venom2 then\n\t\tif venom2 == \"epteth\" then\n\t\t\tif tarAff(\"lepteth\") then\n\t\t\t\tTragedy.TrackerAdd(\"repteth\")\n\t\t\telse\n\t\t\t\tTragedy.TrackerAdd(\"lepteth\")\n\t\t\tend\n\t\telse\n\t\t\tTragedy.TrackerAdd(venom2)\n\t\tend\n\tend\n\t--[[if target.lastlimb then\n\t\ttarget.limbs[target.lastlimb] = target.limbs[target.lastlimb] + 1\t\n\tend]]--\nend\n--[[if target.martellato then\n\tnoshowAdd(\"prone\")\nend\nif target.pesante then\n\tnoshowAdd(\"undeaf\")\nend\nif target.lastlimb then\n\tcecho(\"<green>test: \"..target.limbs[target.lastlimb])\nend]]--\nTragedy.hits = {}\nvenom1 = nil\nvenom2 = nil\n--target.lastlimb = nil\nillusion = false\n--target.martellato = false\n--target.pesante = false",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            null,
+            "7"
+        ]
+    ]
+}

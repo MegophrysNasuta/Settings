@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "echo to test",
+    "script": "local s = matches[2]\n\ns = string.gsub(s, \"%$\", \"\\n\")\nfeedTriggers(\"\\n\" .. s .. \"\\n\")\necho(\"\\n\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^echo (.+)"
+}

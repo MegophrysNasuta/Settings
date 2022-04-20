@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Shikudo Alias Split",
+    "packageName": null,
+    "script": "-------------------------------------------------\n--         Put your Lua functions here.        --\n--                                             --\n-- Note that you can also use external Scripts --\n-------------------------------------------------\nfunction ak.shikudo.AliasSplit(blah)\n\tak.shikudo.AttackAlias = {}\n\tlocal checktable = blah\n\tlocal attacks = {\"ruku\",\"kuro\", \"hiru\", \"nervestrike\",\"livestrike\", \"dart\", \"hiraku\", \"thrust\", \"needle\"}\n\tfor i = 1, #blah do\n\t\tif table.contains(attacks,blah[i]) then\n\t\t\tif blah[i+1] and blah[i+1] == \"light\" then\n\t\t\t\ttable.insert(ak.shikudo.AttackAlias,\"light\")\n\t\t\telse\n\t\t\t\ttable.insert(ak.shikudo.AttackAlias,\"regular\")\n\t\t\tend\n\t\tend\n\tend\nend\n\nfunction ak.shikudo.LimbBlock()\n\tak.shikudo.AttackAlias = ak.shikudo.AttackAlias or {}\n\tif #ak.shikudo.AttackAlias > 0 then\n\t\tif ak.shikudo.AttackAlias[1] == \"light\" then\n\t\t\treturn true\t\n\t\tend\n\t\ttable.remove(ak.shikudo.AttackAlias,1)\n\tend\n\treturn false\nend",
+    "eventHandlerList": null
+}

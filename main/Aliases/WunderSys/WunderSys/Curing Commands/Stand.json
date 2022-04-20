@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Stand",
+    "script": "wsys.stand()",
+    "command": null,
+    "packageName": null,
+    "regex": "^stand$"
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "On Death",
+    "packageName": null,
+    "script": "function wsys.resetOnDeath()\n  wsys.normalsipping()\n\twsys.resetAffPrios()\n  wsys.lostallchannels()\nend\n\nregisterAnonymousEventHandler(\"You Died\", \"wsys.resetOnDeath\")",
+    "eventHandlerList": null
+}

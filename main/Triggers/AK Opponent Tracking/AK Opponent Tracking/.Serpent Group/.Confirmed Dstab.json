@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Confirmed Dstab",
+    "script": "if ak.ai() then return end\ncecho(\"<cyan>.\")\nhitrelay = {\"1\"}\ncurrentvenoms = currentvenoms or {}\nweaponattack = weaponattack or {}\nif #weaponattack > 0 then \n   for i = 1, #weaponattack do\n      currentvenoms[weaponattack[i]] = currentvenoms[weaponattack[i]] or {1}\n      table.insert(hitrelay, affstrack.venoms[currentvenoms[weaponattack[i]][1]])\n      table.remove(currentvenoms[weaponattack[i]], 1)  \n   end\nend\nif #hitrelay > 1 then \n   if table.contains(hitrelay, \"1\") then table.remove(hitrelay, \"1\") end\n   OppGainedAff(table.concat(hitrelay, \" \")) \nend\nweaponattack = nil\ndisableTrigger(\"Missed Dstab Removal\")                --DO NOT CHANGE!\ndisableTrigger(\"Confirmed Dstab\")  \n--ak.deleteFull()\ndeleteLine()\nak.showPrompt()\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            null,
+            "7"
+        ]
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Avp 9",
+    "packageName": null,
+    "script": "if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then\n\nelse\n\nend",
+    "command": null,
+    "keyCode": "57",
+    "keyModifier": "536870912"
+}

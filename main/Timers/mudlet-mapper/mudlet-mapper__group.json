@@ -1,0 +1,15 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes",
+        "isTempTimer": "no",
+        "isOffsetTimer": "no"
+    },
+    "type": "timergroup",
+    "name": "mudlet-mapper",
+    "script": null,
+    "command": null,
+    "packageName": "mudlet-mapper",
+    "time": "00:00:00.000",
+    "TimerGroup": "\n\t\t\t\t"
+}

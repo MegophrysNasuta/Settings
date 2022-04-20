@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Pursue",
+    "packageName": null,
+    "script": "Megophrys.pursue()",
+    "command": null,
+    "keyCode": "16777301",
+    "keyModifier": "1073741824"
+}

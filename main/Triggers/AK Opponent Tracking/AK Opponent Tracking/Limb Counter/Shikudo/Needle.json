@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Needle",
+    "script": "if ak.ai() then return end\nak.limbs.ParseonLine()\nif ak.shikudo.LimbBlock() then return end\nlocal augment = \"none\"\nlocal weapon = \"needle\"\nlocal limb = ak.limbs.standardizeLimb(\"head\")\ntable.insert(ak.limbs.currentbreak.weapon,weapon)\ntable.insert(ak.limbs.currentbreak.limb,limb)\ntable.insert(ak.limbs.currentbreak.attacker,\"Me\")\ntable.insert(ak.limbs.currentbreak.who,matches[2])\ntable.insert(ak.limbs.currentbreak.augment,\"Shikudo\")\nenableTrigger(\"Missed Single Removal Limbs\")          \nenableTrigger(\"Confirmed Hit Limbs\")\nenableTrigger(\"Parry locate\")\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^With pinpoint precision\\, you drive .+ at the throat of ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^Reversing your grip on .+\\, you drive the top of the weapon into the throat of ([\\w'\\-]+).$",
+            "1"
+        ]
+    ]
+}

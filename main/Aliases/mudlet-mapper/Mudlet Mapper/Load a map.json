@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Load a map",
+    "script": "local function s(loc)\n  if string.ends(loc, \".json\") and not loadJsonMap then\n    mmp.echo(\"Your Mudlet can't load maps in JSON, please upgrade first.\")\n    return\n  end\n\n  local allok = true\n  if string.ends(loc, \".json\") then\n    allok = loadJsonMap(loc)\n  else\n    allok = loadMap(loc)\n  end\n\n  if not allok then\n    mmp.echo(\"Couldn't load the map :(\")\n  else\n    mmp.lockWormholes();\n    mmp.lockSewers();\n    mmp.lockPebble();\n    if mmp.settings.waterwalk then\n      mmp.enableWaterWalk()\n    else\n      mmp.disableWaterWalk()\n    end\n    if loc ~= \"\" then\n      mmp.echo(\"Map loaded.\")\n    else\n      mmp.echo(\"Loaded the default map.\")\n    end\n    raiseEvent(\"mmapper updated map\")\n  end\nend\n\nif matches[2] and matches[2] == \"custom\" then\n  s(invokeFileDialog(true, \"Please select the map file and click Open to load it\"))\nelseif matches[2] then\n  s(getMudletHomeDir() .. \"/map/\" .. matches[2])\nelse\n  s(\"\")\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^map load(?: (.+))?$"
+}

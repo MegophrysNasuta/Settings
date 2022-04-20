@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "S {Ctrl + Numpad}",
+    "packageName": null,
+    "script": null,
+    "command": "homunculus move s",
+    "keyCode": "16777237",
+    "keyModifier": "603979776"
+}

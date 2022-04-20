@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Awake",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then\n\tOppLostAff(\"sleep\")\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) wakes up with a gasp of pain\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) opens (?:his|her) eyes and stretches languidly, a smile on (?:his|her) face\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) opens (?:his|her) eyes and yawns mightily\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) awakens with a start\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) opens [\\w'\\-]+ eyes and yawns mightily\\.$",
+            "1"
+        ]
+    ]
+}

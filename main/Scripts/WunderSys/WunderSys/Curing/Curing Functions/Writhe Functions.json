@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Writhe Functions",
+    "packageName": null,
+    "script": "function wsys.emptywrithe()\n  wsys.writhesub()\n  if wsys.timer.writhewait then\n   killTimer(tostring(wsys.timer.writhewait))\n  end\n  wsys.timer.writhewait = nil\n  for k,v in pairs(wsys.tb.cures.writhe) do\n    wsys.predicted[v] = nil\n    if wsysf.affs[v] then\n      wsysf.core.debug.print(2, \"Empty writhe should clear \".. v..\"?\")\n    end\n    disableTrigger(string.title(v) .. \" -\")\n  end -- for\n  wsys.cure = nil\nend -- func\n\n\nfunction wsys.writhedimpaled()\n if not wsys.lifevision then\n  if wsys.timer.writhebalimpaled then\n   wsys.writhesub()\n   wsys.cure = \"writhe\"\n   killTimer(tostring(wsys.timer.writhebalimpaled))\n   wsys.timer.writhebalimpaled = nil\n   if wsys.aff.impaled then\n     wsys.affcured(\"impaled\")\n   elseif wsys.aff.daeggerimpale then\n     wsys.affcured(\"daeggerimpale\")\n   end\n   wsys.cure = nil\n  end -- if\n end -- if\nend -- func\n\n\nfunction wsys.writhed(what)\n if not wsys.lifevision then\n  if wsys.timer.writhebal then\n   --wsys.writhesub()\n   wsys.cure = \"writhe\"\n   killTimer(tostring(wsys.timer.writhebal))\n   wsys.timer.writhebal = nil\n   wsys.affcured(what)\n   wsys.cure = nil\n  end -- if\n end -- if\nend -- func\n\n\n\nfunction wsys.writhestart(line)\n  wsys.writhesub()\n  if wsys.timer.writhewait then\n   killTimer(tostring(wsys.timer.writhewait))\n  end\n  wsys.timer.writhewait = nil\n  if string.match(line, \"impaled you\") then\n   if wsys.damagedlegs() then\n    wsys.timer.writhebalimpaled = tempTimer(8, [[wsys.timer.writhebalimpaled=nil]])\n   else\n    wsys.timer.writhebalimpaled = tempTimer(4, [[wsys.timer.writhebalimpaled=nil]])\n   end -- if\n  else\n   wsys.timer.writhebal = tempTimer(5, [[wsys.timer.writhebal=nil]])\n  end -- if\nend -- func\n\n\nfunction wsys.writhing()\n if wsys.timer.writhebal then\n  wsys.writhesub()\n  killTimer(tostring(wsys.timer.writhebal))\n  wsys.timer.writhebal = tempTimer(4, [[wsys.timer.writhebal=nil]])\n end -- func\nend-- func",
+    "eventHandlerList": null
+}

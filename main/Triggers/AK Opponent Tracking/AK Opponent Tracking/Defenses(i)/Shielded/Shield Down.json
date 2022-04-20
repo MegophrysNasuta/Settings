@@ -1,0 +1,172 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Shield Down",
+    "script": "if IsTargetted(matches[2]) then\n\t if ak.ai() then return end\n   ak.defs.shield = false\n   ak.scoreup(matches[2])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You try to flay a non-existent shield from ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^You flay away ([\\w'\\-]+)'s shield defence\\.$",
+            "1"
+        ],
+        [
+            "^Calling upon Garash, you unleash a crushing blow at the magical shield surrounding ([\\w'\\-]+)\\, shattering it\\.$",
+            "1"
+        ],
+        [
+            "^Your cantata shatters the defences surrounding ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "([\\w'\\-]+)'s aura of weapons rebounding disappears.",
+            "1"
+        ],
+        [
+            "^You whip .* through the air in front of ([\\w'\\-]+)\\, to no effect\\.$",
+            "1"
+        ],
+        [
+            "^You command your gremlin to shatter the defences surrounding ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) has no shield for your gremlin to shatter\\, occultist\\.$",
+            "1"
+        ],
+        [
+            "^As the kick strikes the magical shield surrounding ([\\w'\\-]+)\\, it shatters into glimmering fragments\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+\\'s cantata shatters the defences surrounding ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^The othala rune on the ground suddenly erupts in a great gout of boiling magma\\, the concussive blast smashing into the magical shield surrounding ([\\w'\\-]+) and rendering it asunder\\.$",
+            "1"
+        ],
+        [
+            "^Lunging forward\\, you bring .* in a savage diagonal blow\\, carving through ([\\w'\\-]+)\\'s shield\\.$",
+            "1"
+        ],
+        [
+            "^Continuing your assault\\, you whip .* in a vicious rising slash at ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^You lunge toward ([\\w'\\-]+) with .*\\, but finding no resistance\\, you stumble hopelessly off balance\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+\\'s cantata shatters the defences surrounding ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^The end of your staff smashes the magical shield surrounding ([\\w'\\-]+) in an explosion of translucent shards\\.$",
+            "1"
+        ],
+        [
+            "^Your shadow leaps for ([\\w'\\-]+), hammering [\\w'\\-]+ shield in a silent frenzy that causes it to explode in a shower of prismatic shards\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) is not surrounded by a magical shield\\.$",
+            "1"
+        ],
+        [
+            "^Following the momentum of your initial strike, you come back around with a crushing blow that makes the magical shield surrounding ([\\w'\\-]+) explode into myriad shards\\.$",
+            "1"
+        ],
+        [
+            "^Bleeding off the momentum from your initial blow, you come around again, slicing cleanly through ([\\w'\\-]+)\\'s magical shield\\.$",
+            "1"
+        ],
+        [
+            "^You prepare yourself to flick your tail at ([\\w'\\-]+) before realising that doing so would not actually do anything\\.$",
+            "1"
+        ],
+        [
+            "^You flick your tail at ([\\w'\\-]+)\\, dismissively brushing aside the paltry shield protecting [\\w'\\-]+\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ dismissively flicks [\\w'\\-]+ tail at ([\\w'\\-]+)\\, annihilating the magical shield surrounding [\\w'\\-]+ with casual ease\\.$",
+            "1"
+        ],
+        [
+            "^You raze ([\\w'\\-]+)\\'s magical shield with .+\\.$",
+            "1"
+        ],
+        [
+            "^You conjure a blade of ice and send it to lacerate the flesh of ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^You conjure a blade of ice and drive it straight through the magical shield surrounding ([\\w'\\-]+)\\, causing it to explode in a shower of prismatic shards\\.$",
+            "1"
+        ],
+        [
+            "^You lurch forward at ([\\w'\\-]+)\\, swinging .* in a wildly innacurate blow\\.$",
+            "1"
+        ],
+        [
+            "^You deliver a single\\, powerful blow against the magical shield surrounding ([\\w'\\-]+)\\, fracturing it\\.$",
+            "1"
+        ],
+        [
+            "^You twist your torso and send a roundhouse towards ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^A miriad image of [\\w'\\-]+ brings a translucent battleaxe down in a powerful overhanded blow upon([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ brings a translucent battleaxe down in a powerful overhanded blow upon([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^Bracing your feet\\, you drive .+ towards ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^Your blow scythes through the air in front of ([\\w'\\-]+)\\, missing entirely\\.$",
+            "1"
+        ],
+        [
+            "^Your blow cleaves through the magical shield surrounding ([\\w'\\-]+), continuing on to drive him from(his|her) feet\\.$",
+            "1"
+        ],
+        [
+            "^You find no magical shield surrounding ([\\w'\\-]+), and your power is unable to take hold\\.$",
+            "1"
+        ]
+    ]
+}

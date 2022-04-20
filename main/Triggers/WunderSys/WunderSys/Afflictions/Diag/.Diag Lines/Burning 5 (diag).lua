@@ -1,0 +1,1 @@
+wsys.burningStacks( 5 )

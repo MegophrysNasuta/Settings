@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Stop smoking",
+    "script": "killTimer(cigarTimer)\ncecho('\\nStopped auto-puffing cigar.')",
+    "command": null,
+    "packageName": null,
+    "regex": "^stopcig$"
+}

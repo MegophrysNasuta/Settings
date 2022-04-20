@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Portals",
+    "script": "send('point wand600657 at '.. matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^port (\\w+)$"
+}

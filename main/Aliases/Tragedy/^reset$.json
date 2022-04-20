@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "^reset$",
+    "script": "xtarget.afflictions = {}\ncecho(\"<red>\\nAfflictions reset!\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^reset$"
+}

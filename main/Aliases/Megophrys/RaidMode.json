@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "RaidMode",
+    "script": "if matches[2] then\n  Megophrys.raidLeader = matches[2]\nend\nMegophrys.setMode('raid')",
+    "command": null,
+    "packageName": null,
+    "regex": "^raid(?: (\\w+))?$"
+}

@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Speared +",
+    "script": "wsys.psend(\"SOULSPEAR thrown at me by \" .. multimatches[2][2])\nselectString(line, 1) setBold(true) setItalics(true) fg(\"firebrick\") bg(\"black\") resetFormat() deselect()\nwsys.affadd(\"prone\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "A glowing spear comes flying in towards you, thrown ",
+            "2"
+        ],
+        [
+            "^A glowing spear comes flying in towards you, thrown by ([A-Z][a-z]+)\\. It buries itself in your gut, impaling you\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "aliasgroup",
+    "name": "Megophrys",
+    "script": null,
+    "command": null,
+    "packageName": "Megophrys",
+    "regex": null,
+    "AliasGroup": "\n\t\t\t\t"
+}

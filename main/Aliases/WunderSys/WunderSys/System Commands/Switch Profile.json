@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Switch Profile",
+    "script": "wsys.switchProfile( matches[2] )",
+    "command": null,
+    "packageName": null,
+    "regex": "^swp (\\w+)$"
+}

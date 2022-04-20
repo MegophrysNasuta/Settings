@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Show Colors",
+    "script": "showColors()",
+    "command": null,
+    "packageName": null,
+    "regex": "^showcolors$"
+}

@@ -1,0 +1,48 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Vertigo symptom",
+    "script": "wsys.affadd(\"vertigo\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You are gripped with fear - you cannot leave the ground.",
+            "3"
+        ],
+        [
+            "The thought of heights terrifies you far too much to fly.",
+            "3"
+        ],
+        [
+            "You look downwards and the ground spins dizzily.",
+            "3"
+        ],
+        [
+            "The thought of heights is more than you can bear.",
+            "3"
+        ]
+    ]
+}

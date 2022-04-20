@@ -1,0 +1,2 @@
+--wsys.useDeaf()
+--if not wsys.isRaid() then wsys.useBlind() end

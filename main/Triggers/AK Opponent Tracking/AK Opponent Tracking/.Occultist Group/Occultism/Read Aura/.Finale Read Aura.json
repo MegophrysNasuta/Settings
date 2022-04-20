@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Finale Read Aura",
+    "script": "disableTrigger(\"Finale Read Aura\")\ndisableTrigger(\"Readaura Defs\")\nenableTrigger(\"Wsys Tattoos\")\nenableTrigger(\"Lifegiver (def)\")\ncecho(\"<yellow>[<white>\"..ak.occie.aura.physical..\"|<cyan>\"..ak.occie.aura.mental..\"<yellow>]\")\nak.occie.aura.physical = matches[3] + 0\nak.occie.aura.mental = matches[4] + 0\nak.scoreup(matches[2])\nif (not ak.defs.speed) then cecho(\"\\n-- <red>-<white>SPEED<red>-<white>SPEED<red>\") end",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You perceive that ([\\w'\\-]+) suffers from (\\d+) physical afflictions and (\\d+) mental afflictions\\.$",
+            "1"
+        ]
+    ]
+}

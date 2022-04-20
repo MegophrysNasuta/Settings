@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "^lra$",
+    "script": "lb.resetAll(target)",
+    "command": null,
+    "packageName": null,
+    "regex": "^lra$"
+}

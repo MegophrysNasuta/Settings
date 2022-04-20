@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Caloric",
+    "script": "send(\"curing queue add caloric\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^ac$"
+}

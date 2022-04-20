@@ -1,0 +1,2 @@
+--immunity()
+wsys.affadd("selarnia")

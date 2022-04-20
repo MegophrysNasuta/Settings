@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "migrate features",
+    "script": "local translation\nif mmp.game == \"starmourn\" then\n  translation =\n  {\n    [\"@\"] = \"landing dock\",\n    [\"C\"] = \"cloning\",\n    [\"R\"] = \"repair\",\n    [\"$\"] = \"denizen shop\",\n    [\"I\"] = \"insurance office\",\n    [\"T\"] = \"transport\",\n    [\"J\"] = \"junk\",\n    [\"M\"] = \"mail\",\n    [\"L\"] = \"lift\",\n    [\"P\"] = \"ptp\",\n    [\"TT\"] = \"trade terminal\",\n  }\nelse\n  mmp.echo(\"Sorry, don't know which room character maps to which map feature for your game. Please contact us at https://discord.gg/PPUNnc3 to get this sorted out.\")\n\treturn\nend\nmmp.echo(\"Migrating room characters to map features...\")\nfor char, feature in pairs(translation) do\n  mmp.createMapFeature(feature, char)\nend\nfor key in pairs(getRooms()) do\n  local char = getRoomChar(key)\n  if char ~= \"\" then\n    if translation[char] then\n      if not mmp.roomCreateMapFeature(translation[char], key) then\n\t\t\t  mmp.echo(\"An error occurred when migrating room characters, see messages above for details. Migration incomplete!\")\n\t\t\t  return\n\t\t\tend\n    end\n  end\nend\nmmp.echo(\"Migration done.\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^feature migrate$"
+}

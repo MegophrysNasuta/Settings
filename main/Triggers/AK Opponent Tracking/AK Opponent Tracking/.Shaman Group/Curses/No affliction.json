@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "No affliction",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then\n   local nohave = matches[3]\n   if nohave == \"paralyse\" then nohave = \"paralysis\" end  \n   if nohave == \"plague\" then nohave = \"voyria\" end\n   if nohave == \"clumsy\" then nohave = \"clumsiness\" end\n   if nohave == \"dizzy\" then nohave = \"dizziness\" end\n   if nohave == \"stupid\" then nohave = \"stupidity\" end\n   if ak.thoughtIhad then ak.thoughtIhad(nohave) else affstrack.score[nohave] = 0 end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "([\\w'\\-]+) does not suffer from ([\\w'\\-]+) \\- you may not relapse it.",
+            "1"
+        ]
+    ]
+}

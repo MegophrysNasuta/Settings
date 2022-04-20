@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "demonnic_skillsList",
+    "packageName": null,
+    "script": "function demonnic_skillsList()\n  local group = gmcp.Char.Skills.List.group\n  local list = gmcp.Char.Skills.List.list\n  if group then\n    if not demonnic.skills then demonnic.skills = {} end\n    demonnic.skills[group] = list\n    raiseEvent(\"demonnicSkillFilled\", group)\n  end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t\t\t\t\t"
+}

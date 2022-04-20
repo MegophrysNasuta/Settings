@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "This gives ablaze and CURES spiritburn",
+    "script": "local aff = \"aflame\"\nif IsTargetted(matches[2]) then\n   OppGainedAff(aff)\n   OppLostAff(\"spiritburn\")\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^\"I deem you unfit for Creation!\" you proclaim, pointing imperiously at (\\w+)\\.$",
+            "1"
+        ],
+        [
+            "^\"And thus I deem you unfit for Creation!\" you proclaim, pointing imperiously at (\\w+)\\.$",
+            "1"
+        ]
+    ]
+}

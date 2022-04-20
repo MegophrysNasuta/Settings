@@ -1,0 +1,37 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Def",
+    "script": "for k in pairs(wsys.def) do\n wsys.def[k] = false\nend -- for",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "900",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "Trigger": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You have the following defences:",
+            "3"
+        ]
+    ]
+}

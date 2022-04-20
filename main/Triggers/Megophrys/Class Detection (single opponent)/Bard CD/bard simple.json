@@ -1,0 +1,60 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "bard simple",
+    "script": "Megophrys.setOpponentClass('bard')",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You feel as if the world has closed in on you after listening to \\w+'s droning, repetitive isorhythm\\.$",
+            "1"
+        ],
+        [
+            "^(\\w+) viciously jabs a Soulpiercer into you\\.$",
+            "1"
+        ],
+        [
+            "^With a wink, (\\w+) recites \\\"Ode to Elixirs\\\" to you\\.$",
+            "1"
+        ],
+        [
+            "The songblessing upon the rapier sings out with a piercing high note.",
+            "3"
+        ],
+        [
+            "The songblessing unleashes a stunning percussive blast.",
+            "3"
+        ],
+        [
+            "The Contradanse melody swells sharply in your ear with a discombobulating sonic burst.",
+            "3"
+        ],
+        [
+            "^\\w+ eyes gleaming, \\w+ smiles and quickly sings a jaunty limerick at you\\.$",
+            "1"
+        ]
+    ]
+}

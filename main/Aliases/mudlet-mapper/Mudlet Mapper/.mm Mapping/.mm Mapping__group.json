@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "yes"
+    },
+    "type": "aliasgroup",
+    "name": "mm Mapping",
+    "script": null,
+    "command": null,
+    "packageName": null,
+    "regex": null
+}

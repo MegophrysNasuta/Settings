@@ -1,0 +1,1 @@
+send('golem squeeze '.. target)

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "scriptgroup",
+    "name": "Get list of groups",
+    "packageName": null,
+    "script": "--[[\nThis will create demonnic.skills.skillgroup as a table, and send a GMCP request for the list of skills in each skillgroup\nIOW, this tells us what skills we can lookup (like AB with no argument)\nIt also sends a newline, so that we get all the returns from the gmcp requests\n]]",
+    "eventHandlerList": null
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Toggle pause",
+    "script": "mmp.pause(matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^mpp(?:\\s?(on|off))?$"
+}

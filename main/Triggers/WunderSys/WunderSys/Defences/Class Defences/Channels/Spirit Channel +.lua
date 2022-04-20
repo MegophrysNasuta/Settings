@@ -1,0 +1,1 @@
+wsys.channels.spirit = true

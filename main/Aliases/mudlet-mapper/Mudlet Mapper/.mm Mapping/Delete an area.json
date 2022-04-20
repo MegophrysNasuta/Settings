@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Delete an area",
+    "script": "mmp.deleteArea(matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^area delete (.+)$"
+}

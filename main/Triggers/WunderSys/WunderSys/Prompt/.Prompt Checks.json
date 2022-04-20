@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Prompt Checks",
+    "script": "wsys.firequeues()\ndisableTrigger(\"Prompt Checks\")\n\nif next(wsys.tb.justreckless) then\n if wsys.stats.h == wsys.stats.maxh and wsys.stats.m == wsys.stats.maxm and not wsys.lifevision then\n  moveCursor(\"main\", 0, wsys.tb.justreckless[2])\n  wsys.affprint(\"recklessness\", wsys.tb.justreckless[1])\n\twsys.affpredict( \"recklessness\" )\n  --herbqueue()\n end -- if\n wsys.tb.justreckless = {}\nend -- func\n\n\nif next(wsys.tb.restorationlist) then\n  local is_real = ((wsys.aff.recklessness or wsys.absorbed) or ((wsys.stats.h < wsys.stats.oh) or wsys.puppetmangle) or wsys.aff.blackout) and not wsys.lifevision\n  for k,v in ipairs(wsys.tb.restorationlist) do\n    local aff = v[1]\n    --Announce breaks regardless of checks if we know we have the affliction already\n    if is_real or wsys.aff[aff] then\n      wsys.brokenLimbListener(\"got aff\", v[1])\n\t\t\t\n      wsys.affadd(v[1])\n\t\t\t\n      local leg = v[1]:find(\"leg\")\n      local arm = v[1]:find(\"arm\")\n\t\t\t\n      wsys.boxDisplay(v[1] .. \" BROKE!\", ( (leg or arm) and \"white\" or \"LightGray\")..\":\"..(leg and \"orange\" or \"orange_red\") )\n    end\n  end -- for\nend\n\nwsys.puppetmangle = false\nwsys.tb.restorationlist = {}\nwsys.absorbed = false\nwsys.lifevision = false\nwsys.self_illusion = false\n\n--Starburst situations\nif wsys.starbursted then\n if not wsys.def.blindness and not wsys.def.deafness and not wsys.def.kola then\n  raiseEvent(\"You Starbursted\")\n\t\n  --wsys.aff = {}\n  for k,v in pairs(wsys.herbsout) do\n   wsys.herbsout[k] = 0\n  end -- for\n  for k in pairs(wsys.def) do\n   wsys.def[k] = false\n  end -- for\n  wsys.cleartimers()\n  cecho(\"\\n<red>[<orange>STARBURST<red>]\")\n end -- if\n wsys.lostallchannels()\n wsys.starbursted = false\nend -- if\n\nif wsys.mogged then\n if not wsys.def.blindness and not wsys.def.deafness and not wsys.def.kola then\n  --wsys.aff = {}\n  for k in pairs(wsys.def) do\n   wsys.def[k] = false\n  end -- for\n  wsys.cleartimers()\n  cecho(\"\\n<red>[<orange>MOGGED<red>]\")\n end --if\n wsys.mogged = false\nend -- if\n\nforced = nil\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "return isPrompt()",
+            "4"
+        ]
+    ]
+}

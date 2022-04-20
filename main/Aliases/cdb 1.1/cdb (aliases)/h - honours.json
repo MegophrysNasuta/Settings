@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "h - honours",
+    "script": "send(\"honours \" .. matches[2]) \n\n \n                                    -- z   $b$$F\n                                   -- F\"  4$$P\"\n                                    -- r *$$$\".c...\n                                    -- %-4$$$$$$$$\"\n                                     -- J$*$$$$$$P\n                                    -- ^r4$$$$$$\"\n                                      -- *f*$$*\"\n                                    -- \".4 *$$$$$$.                 HONOURS IS SPELT WITH A U!\n                              -- 4ee%.e.  .$$$$$$$$r\n                             -- 4$$$$$$b  P$**)$$$$b                   THE SUN NEVER SETS ON THE\n                          -- e..4$$$$$$$\"     $$$$$$c.                    BRITISH EMPIRE!!!!\n                          -- 3$$$$$$$$*\"   \"  ^\"$$$$$$c\n                         -- *$$$$$$$$$.        *$$$$$$$.\n                          -- ..$$$$$$$L    c ..J$$$$$$$b\n                          -- d\"$$$$$$$F   .@$$$$$$$$$$$P\"..\n                       -- ..$$$$$$$$$$      d$$$$$$$$$$$$$$$\n                       -- =$$$$$$P\"\" \"    .e$$$$$$$$$$$$$$$$\n                         -- *\"\"          $**$$$$$$$$$$$$$$*\n                                          -- \"\".$$$$$$$$$C .\n                                       -- .z$$$$$$$$$$$$$$\"\"\n                                      -- .$$$*\"^**\"  \"\n                                    -- =P\"  \"",
+    "command": null,
+    "packageName": null,
+    "regex": "^h (\\w+)$"
+}

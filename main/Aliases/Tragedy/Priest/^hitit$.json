@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "^hitit$",
+    "script": "send(selloutCity())",
+    "command": null,
+    "packageName": null,
+    "regex": "^hitit$"
+}

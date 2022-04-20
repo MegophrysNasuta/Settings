@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Smash high",
+    "script": "if isTarget(matches[2]) then\n  if not tarAff(\"dizziness\") then\n    Tragedy.TrackerAdd(\"dizziness\")\n  elseif tarAff(\"dizziness\") and not tarAff(\"recklessness\") then\n    Tragedy.TrackerAdd(\"recklessness\")\n  elseif tarAff(\"dizziness\") and tarAff(\"recklessness\") and not tarAff(\"stupidity\") then\n    Tragedy.TrackerAdd(\"stupidity\")\n  elseif tarAff(\"dizziness\") and tarAff(\"recklessness\") and tarAff(\"stupidity\") and not tarAff(\"confusion\") then\n    Tragedy.TrackerAdd(\"confusion\")\n  elseif tarAff(\"dizziness\") and tarAff(\"recklessness\") and tarAff(\"stupidity\") and tarAff(\"confusion\") and not tarAff(\"epilepsy\") then\n    Tragedy.TrackerAdd(\"epilepsy\")\n  end\nend\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You swing your shield around, smashing the temple of (.+) with a backhanded blow\\.$",
+            "1"
+        ]
+    ]
+}

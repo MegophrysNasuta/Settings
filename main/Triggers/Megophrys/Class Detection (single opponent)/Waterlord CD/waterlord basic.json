@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "waterlord basic",
+    "script": "Megophrys.setOpponentClass('waterlord')",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^A wave of nausea rolls over you as (\\w+) casually waves a hand in your direction\\.$",
+            "1"
+        ],
+        [
+            "^You double over and hack up water beneath the pitiless gaze of (\\w+)\\.$",
+            "1"
+        ],
+        [
+            "Your skin dries and cracks and a sudden, insatiable thirst overcomes you.",
+            "3"
+        ],
+        [
+            "^A sudden deluge of shockingly cold water drenches you, robbing you of strength by the will of (\\w+)\\.$",
+            "1"
+        ],
+        [
+            "^You feel suddenly light-headed as ripples race across the amorphous form of (\\w+)\\.$",
+            "1"
+        ]
+    ]
+}

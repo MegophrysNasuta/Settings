@@ -1,0 +1,14 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTimer": "no",
+        "isOffsetTimer": "no"
+    },
+    "type": "timer",
+    "name": "Wrench Torso Timer",
+    "script": "--ak.HeadWrench\nak = ak or {}\nif affstrack.score.wrenchhead then\n   if ak.InitialWrench then\n      ak.InitialWrench = false\n   else\n      local aff = \"epilepsy\"\n      OppGainedAff(aff)\n   end\nelse\n   disableTimer(\"Wrench Torso Timer\")\nend",
+    "command": null,
+    "packageName": null,
+    "time": "00:00:04.000"
+}

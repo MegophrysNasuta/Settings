@@ -1,0 +1,48 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Deathsight +",
+    "script": "wsys.deffed(\"deathsight\")",
+    "triggerType": "0",
+    "conditonLineDelta": "39",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You shut your eyes and concentrate on Thoth, the God of Death. A moment later, you feel inextricably linked with Death itself.",
+            "3"
+        ],
+        [
+            "Your mind is already touched by the Deathgod.",
+            "3"
+        ],
+        [
+            "You already possess the deathsight.",
+            "3"
+        ],
+        [
+            "A miasma of darkness passes over your eyes and you feel a link to Thoth, the God of Death, form in your mind.",
+            "3"
+        ]
+    ]
+}

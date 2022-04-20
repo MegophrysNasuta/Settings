@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Active Heal",
+    "script": "local healTries = {'touch crystal'}\n\nif gmcp.Char.Status.class == 'Magi' then\n  healTries[#healTries + 1] = 'absorb energy'\n  healTries[#healTries + 1] = 'cast bloodboil'\nelseif gmcp.Char.Status.class == 'Blademaster' then\n  healTries[#healTries + 1] = 'shin phoenix'\n  healTries[#healTries + 1] = 'alleviate'\nelseif gmcp.Char.Status.class == 'Psion' then\n  healTries[#healTries + 1] = 'psi expunge'\n  healTries[#healTries + 1] = 'psi breakthrough'\nelseif gmcp.Char.Status.class == 'Alchemist' then\n  healTries[#healTries + 1] = 'educe salt'\nend\n\nsendAll('setalias activeHeal '.. table.concat(healTries, ' / '),\n        'queue addclear eqbal activeHeal')",
+    "command": null,
+    "packageName": null,
+    "regex": "^heal$"
+}

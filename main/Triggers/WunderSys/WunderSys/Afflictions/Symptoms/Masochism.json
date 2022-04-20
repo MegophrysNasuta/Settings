@@ -1,0 +1,48 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Masochism",
+    "script": "wsys.affadd(\"masochism\")\n\n--should do if newHealth < oldHealth unless blackout etc check here.",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "With the heel of your palm, you smack yourself upside the head.",
+            "3"
+        ],
+        [
+            "You drive a clenched fist into your gut.",
+            "3"
+        ],
+        [
+            "You smile with pleasure as you ram your fist into your jaw.",
+            "3"
+        ],
+        [
+            "You use your right foot to stomp on your left as hard as possible.",
+            "3"
+        ]
+    ]
+}

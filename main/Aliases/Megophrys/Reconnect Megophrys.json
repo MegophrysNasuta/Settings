@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Reconnect Megophrys",
+    "script": "Megophrys.onConnect()",
+    "command": null,
+    "packageName": null,
+    "regex": "^reinit$"
+}

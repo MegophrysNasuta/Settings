@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Find Missing Defences",
+    "script": "local expectedDefs = {\n  \"starburst\",\n  \"blindness\",\n  \"deafness\",\n  \"moontattoo\",\n  \"mosstattoo\",\n  \"megalithtattoo\",\n  \"boartattoo\",\n  \"insomnia\",\n  \"belltattoo\",\n  \"insulation\",       -- caloric salve\n  \"levitating\",\n  \"temperance\",       -- frost elixir\n  \"kola\",\n  \"thirdeye\",\n  \"poisonresist\",\n  \"speed\",\n  \"selfishness\",\n  \"cloak\",\n  \"mindseye\",\n  \"fangbarrier\",      -- sileris\n  \"deathsight\",\n  \"electricresist\",   -- sunless hope\n  \"fireresist\",       -- sunless hope\n  \"coldresist\",       -- sunless hope\n  \"magicresist\",      -- sunless hope\n}\n\nif gmcp.Char.Status.Class == 'Psion' then\n  local psionDefs = {\n    \"secondskin\",\n    \"psitranscend\",\n    \"psicomprehend\",\n    \"guidedstrike\",\n  }\n  expectedDefs = table.n_union(expectedDefs, psionDefs)\nelseif gmcp.Char.Status.Class == 'Magi' then\n  local magiDefs = {\n    \"stoneskin\",\n    \"stonefist\",\n    \"diamondskin\",\n    \"chargeshield\",\n  }\n  expectedDefs = table.n_union(expectedDefs, magiDefs)\nend\n\nif gmcp.Char then\n  local defTable = {}\n  for _, def in pairs(gmcp.Char.Defences.List) do\n    defTable[#defTable + 1] = def.name\n  end\n  local missingDefs = {}\n  for _, def in pairs(expectedDefs) do\n    if not table.contains(defTable, def) then\n      missingDefs[#missingDefs + 1] = def\n    end\n  end\n  if #missingDefs > 0 then\n    cecho('\\n<cyan>Missing defences:\\n')\n    display(missingDefs)\n  else\n    cecho('\\n<cyan>No defences down.\\n')\n  end\nelse\n  cecho('\\n<red>GMCP not available.\\n')\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^mdef$"
+}

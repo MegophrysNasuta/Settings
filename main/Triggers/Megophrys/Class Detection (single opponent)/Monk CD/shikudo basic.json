@@ -1,0 +1,88 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "shikudo basic",
+    "script": "Megophrys.setOpponentClass('shikudo')",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^\\w+ lashes out with a straight kick at you\\.$",
+            "1"
+        ],
+        [
+            "^Pain blossoms as the instep of \\w+'s foot smashes into the vulnerable cluster of nerves beneath your right arm, sending you spinning from your mount\\.$",
+            "1"
+        ],
+        [
+            "^\\w+ spins a full rotation, bringing .+ around in a blur to crash into your .+\\.$",
+            "1"
+        ],
+        [
+            "^Dropping back into a low crouch, \\w+ whips .+ at your .+\\.$",
+            "1"
+        ],
+        [
+            "^\\w+ whips .+ at the side of your neck\\.$",
+            "1"
+        ],
+        [
+            "^\\w+ lashes out with a high kick at your head\\.$",
+            "1"
+        ],
+        [
+            "^Lunging off \\w+ back foot, \\w+ viciously drives the end of .+ into your solar plexus\\.$",
+            "1"
+        ],
+        [
+            "^The staff cracks across your \\w+ thigh, the muscles suddenly becoming weak\\.$",
+            "1"
+        ],
+        [
+            "^Your \\w+ arm goes numb as the length of the staff cracks across it\\.$",
+            "1"
+        ],
+        [
+            "Blinding pain radiates from your throat and you suddenly find yourself unable to draw breath.",
+            "3"
+        ],
+        [
+            "You feel your knee crunch under the force of the kick, nausea and pain racking you.",
+            "3"
+        ],
+        [
+            "The staff takes you off your feet, sending you sprawling.",
+            "3"
+        ],
+        [
+            "The end of the staff drives into your left leg, sending lances of pain along the entire limb.",
+            "3"
+        ],
+        [
+            "The staff drives into your torso, a shock of pain running through the limb.",
+            "3"
+        ]
+    ]
+}

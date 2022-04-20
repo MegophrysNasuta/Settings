@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "RiveStrike",
+    "script": "if IsTargetted(matches[2]) then \n   ak.defs.reRebounding = true\n   ak.defs.shield = false\n   ak.defs.rebounding = false\n   weaponattack = weaponattack or {}\n   enableTrigger(\"Missed Single Removal\")                --DO NOT CHANGE!\n   enableTrigger(\"Confirmed Hit\")  \n   table.insert(weaponattack, ak.spear)\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^The point of .* strikes the aura of rebounding surrounding ([\\w'\\-]+)\\, and rapid cracks begin to spread outward from the point of impact\\. Moments later\\, the protection shatters\\.$",
+            "1"
+        ],
+        [
+            "^Stepping forward\\, you continue the motion of your initial thrust\\, performing a second quick jab at ([\\w'\\-]+)\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Language, Voice|Accent",
+    "script": "local language = ''\nlocal speech_pattern = ''\nif matches[2] == 'h' then\n  language = 'human'\n  speech_pattern = 'accent strange, forced'\nelseif matches[2] == 'm' then\n  language = 'mhaldorian'\n  speech_pattern = 'voice rasping guttural'\nelseif matches[2] == 'a' then\n  language = 'common'\n  speech_pattern = 'voice rasping guttural'\nelseif matches[2] == 'g' then\n  language = 'grook'\n  speech_pattern = 'voice piercing metallic'\nend\nsend('speak ' .. language)\nsend('set ' .. speech_pattern)",
+    "command": null,
+    "packageName": null,
+    "regex": "^lng ([aghm]{1})$"
+}

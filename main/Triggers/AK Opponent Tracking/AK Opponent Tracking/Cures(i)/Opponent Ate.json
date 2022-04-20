@@ -1,0 +1,37 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Opponent Ate",
+    "script": "if ak.ai() then return end\nlocal donotrun = {\n\t\"azurite mote\",\n  \"gypsum crystal\",\n\t\"echinacea root\", \n\t\"bisemutum chip\",\n\t\"kola nut\",\n\t\"black cohosh root\",\n\t\"skullcap flower\",\n\t\"dolomite grain\",\n\t\"irid moss\",\n\t\"potash crystal\",\n\t\"quartz grain\",\n\t\"ball of myrrh gum\",\n\t\"antimony flake\",\n\t\"ginger root\",\n}\nif table.contains(donotrun, matches[3]) then\n\tsetTriggerStayOpen(\"Opponent Ate\", 0)\n\treturn\nelseif not IsTargetted(matches[2]) then\n\tsetTriggerStayOpen(\"Opponent Ate\", 0)\n\treturn\nelse\n\tak.currenteat = matches[3]\nend  ",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "2",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ffffff",
+    "mBgColor": "#5500ff",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "Trigger": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) eats (?:a|an|some) (.*)\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "aliasgroup",
+    "name": "AK Opponent Tracking",
+    "script": null,
+    "command": null,
+    "packageName": "AK Opponent Tracking",
+    "regex": null,
+    "AliasGroup": "\n\t\t\t\t"
+}

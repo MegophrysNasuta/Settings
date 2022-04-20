@@ -1,0 +1,56 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Focus aff priority shift gags",
+    "script": "deleteFull()",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You have set the 'weariness' affliction to the 6 priority.",
+            "3"
+        ],
+        [
+            "You have set the 'stupidity' affliction to the 9 priority.",
+            "3"
+        ],
+        [
+            "You have set the 'confusion' affliction to the 8 priority.",
+            "3"
+        ],
+        [
+            "You have set the 'recklessness' affliction to the 12 priority.",
+            "3"
+        ],
+        [
+            "You have set the 'dizziness' affliction to the 14 priority.",
+            "3"
+        ],
+        [
+            "You have set the 'shyness' affliction to the 14 priority.",
+            "3"
+        ]
+    ]
+}

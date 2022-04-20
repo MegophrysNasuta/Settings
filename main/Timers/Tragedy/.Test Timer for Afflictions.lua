@@ -1,0 +1,1 @@
+expandAlias("lua xtarget.afflictions")

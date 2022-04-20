@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "LightBind Down",
+    "script": "cecho('\\n<cyan>LIGHTBIND DOWN ON '.. matches[2]:title() ..'\\n')\n\nif matches[2]:lower() == target:lower() then\n  Megophrys.Psion.lightBindUp = false\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^The golden chains of light which bind (\\w+) dissipate\\.$",
+            "1"
+        ]
+    ]
+}

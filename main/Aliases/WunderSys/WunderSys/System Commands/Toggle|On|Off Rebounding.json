@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Toggle|On|Off Rebounding",
+    "script": "if matches[2] then\n  if matches[2] == \"on\" then\n    wsys.keepup(\"rebounding\", false)\n    wsys.report(\"Maintaining REBOUNDING\")\n  elseif matches[2] == \"off\" then\n    wsys.unkeepup(\"rebounding\", false)\n    wsys.report(\"No longer keeping rebounding\")\n  end\nelse\n  wsys.togglekeepup(\"rebounding\")\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^reb\\s?(on|off)?$"
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "scriptgroup",
+    "name": "Wings and other fast travel",
+    "packageName": null,
+    "script": "-------------------------------------------------\n--         Put your Lua functions here.        --\n--                                             --\n-- Note that you can also use external Scripts --\n-------------------------------------------------\n",
+    "eventHandlerList": null
+}

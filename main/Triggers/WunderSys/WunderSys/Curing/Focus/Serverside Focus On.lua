@@ -1,0 +1,1 @@
+wsys.settings.usefocus = true

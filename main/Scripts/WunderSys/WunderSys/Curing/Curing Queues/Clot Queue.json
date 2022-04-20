@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Clot Queue",
+    "packageName": null,
+    "script": "function wsys.clotqueue()\n if wsys.cancure() and wsys.bleeding > 30 and not wsys.aff.haemophilia and not wsys.settings.stopclot then\n  if wsys.bleedtype == \"health\" then\n   if (wsys.stats.m>wsys.manathreshold()) and wsys.stats.m > 500 then\n    wsys.clot()\n   end\n  elseif wsys.bleedtype == \"mana\" then\n   if wsys.stats.h > (wsys.stats.maxh * 0.75) then\n   --if we're off moss and sip bal (health prio on that) then stop at 75% hp, otherwise go to 60%\n    wsys.clot()\n   elseif wsys.bals.moss and (wsys.stats.h <= (wsys.stats.maxh *.70)) then\n    --got moss bal, so can clot more health away\n    wsys.clot()\n   elseif wsys.bals.hm and (wsys.stats.h <= (wsys.stats.maxh *.65)) then\n    --got health elixir bal, so can clot more health away\n    wsys.clot()\n   end\n  end --if\n end -- if\nend -- func",
+    "eventHandlerList": null
+}

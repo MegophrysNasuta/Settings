@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Strangle",
+    "script": "aff = \"deadening\"\nif IsTargetted(matches[2]) then\n   OppGainedAff(aff)\n\t ak.duress.stranglerelapse = true\n   ak.duress.stranglerelapsetimer = tempTimer(7,[[\n   \t ak.duress.stranglerelapse = false\n     ak.scoreup(]]..matches[2]..[[)\n   ]])\n\t killTimer(tostring(ak.duress.asphyxiatetimer))\n   ak.duress.asphyxiatetimer = tempTimer(10, [[ak.duress.asphyxiate = false]])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You increase the pressure in a band surrounding the throat of ([\\w'\\-]+), clenching a fist and causing it to violently constrict\\.$",
+            "1"
+        ]
+    ]
+}

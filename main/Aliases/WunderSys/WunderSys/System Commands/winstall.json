@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "winstall",
+    "script": "wsys.report(\"This will reset most settings to default, if you're sure you want to do this then do <green>winstall confirm\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^winstall$"
+}

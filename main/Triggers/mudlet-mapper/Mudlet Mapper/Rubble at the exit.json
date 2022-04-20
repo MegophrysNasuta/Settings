@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Rubble at the exit",
+    "script": "mmp.customwalkdelay(2)",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You begin to slowly clamber over the rubble that blocks your way.",
+            "3"
+        ],
+        [
+            "You begin to slowly clamber over a pile of rubble that blocks your way.",
+            "3"
+        ],
+        [
+            "You start plodding carefully across the constructed trenches.",
+            "3"
+        ],
+        [
+            "You struggle to climb over the snow drift in your way.",
+            "3"
+        ],
+        [
+            "You struggle to climb over the sand dune in your way.",
+            "3"
+        ]
+    ]
+}

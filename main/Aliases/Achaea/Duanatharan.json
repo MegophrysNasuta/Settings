@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Duanatharan",
+    "script": null,
+    "command": "say *human Duanatharan!",
+    "packageName": null,
+    "regex": "^hiclouds$"
+}

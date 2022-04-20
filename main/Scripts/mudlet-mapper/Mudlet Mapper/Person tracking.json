@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Person tracking",
+    "packageName": null,
+    "script": "--[[\nmmp will have 2 person tracking databases:\n- mmp.pdb  =  used to store the last known location of a person\n- mmp.pdb_lastupdate  =  used to store the output of the last locating command\n\nBoth databases work with the person's name as key and the location name as value.\n\n]]\nmmp.pdb = mmp.pdb or {}\nmmp.pdb_lastupdate = mmp.pdb_lastupdate or {}\n\nfunction mmp.is_here(who)\n  return (mmp.pdb[who] and mmp.pdb[who] == mmp.currentroomname) and true or false\nend",
+    "eventHandlerList": null
+}

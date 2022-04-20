@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "autolearn",
+    "script": null,
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": "learn 20 apostasy from maric",
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t",
+    "matches": [
+        [
+            "Maric, a filthy ratman turns away from you, pronouncing the lesson ended. ",
+            "2"
+        ],
+        [
+            "Maric, a filthy ratman gives you a wicked smile. The lesson in Apostasy",
+            "2"
+        ]
+    ]
+}

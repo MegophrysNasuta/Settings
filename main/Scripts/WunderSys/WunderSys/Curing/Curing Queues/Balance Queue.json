@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Balance Queue",
+    "packageName": null,
+    "script": "function wsys.balqueue()\nif wsys.cancure() and wsys.bals.b and wsys.bals.e then\n if not wsys.tanglecheck() and not wsys.damagedarms() and not wsys.aff.paralysis then\n  --parrying\n  if wsys.toparry then wsys.parryFunction() end\n\n  --transmuting for monks\n  if wsys.isClass(\"monk\") then\n   wsys.transmutequeue()\n  end -- if transmuting\n\n\n end -- if\nend\nend -- func",
+    "eventHandlerList": null
+}

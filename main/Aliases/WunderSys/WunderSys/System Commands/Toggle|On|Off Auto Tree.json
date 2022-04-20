@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Toggle|On|Off Auto Tree",
+    "script": "if matches[2] then\n  if matches[2] == \"on\" then\n    wsys.autoTreeOn()\n  elseif matches[2] == \"off\" then\n    wsys.autoTreeOff()\n  end\nelse\n  wsys.toggleAutoTree()\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^atr\\s?(on|off)?$"
+}

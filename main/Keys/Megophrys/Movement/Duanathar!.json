@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Duanathar!",
+    "packageName": null,
+    "script": null,
+    "command": "' *human Duanathar!",
+    "keyCode": "16777279",
+    "keyModifier": "0"
+}

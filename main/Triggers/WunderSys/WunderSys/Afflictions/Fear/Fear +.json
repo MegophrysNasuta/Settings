@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Fear +",
+    "script": "wsys.affadd(\"fear\")",
+    "triggerType": "0",
+    "conditonLineDelta": "39",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ffaa7f",
+    "mBgColor": "#ffffff",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You rush about in a state of utter panic.",
+            "3"
+        ],
+        [
+            "^[A-Z][a-z]+ takes a deep breath and breathes out\\. (?:His|her) face and body seem to melt and then twist and churn into something unspeakable\\.$",
+            "1"
+        ],
+        [
+            "Strange terrifying voices begin to whisper through your mind.",
+            "3"
+        ],
+        [
+            "You cry out as your mind is filled with abject terror!",
+            "3"
+        ],
+        [
+            "^[A-Z][a-z]+'s flashing blade dances before your eyes in a series of complicated feints. Time to run\\!$",
+            "1"
+        ]
+    ]
+}

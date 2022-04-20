@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Special",
+    "packageName": null,
+    "script": "Megophrys[Megophrys.class].doSpecial()",
+    "command": null,
+    "keyCode": "96",
+    "keyModifier": "0"
+}

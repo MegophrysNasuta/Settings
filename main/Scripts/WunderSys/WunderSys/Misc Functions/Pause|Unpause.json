@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Pause|Unpause",
+    "packageName": null,
+    "script": "wsys.paused = false\nwsys.softpaused = false\n\nfunction wsys.pause()\n  if not wsys.paused then\n    wsys.report(\"Paused\")\n    wsys.paused = true\n    send(\"curing off\")\n  end\nend\n\nfunction wsys.unpause()\n  if wsys.paused then\n    wsys.report(\"UNpaused\")\n    wsys.paused = false\n    send(\"curing on\")\n    --wsys.lyrequeue()\n\n    wsys.canaction()\n  end\nend\n\nfunction wsys.togglePause()\n  if wsys.paused then\n    wsys.unpause()\n  elseif not wsys.paused then\n    wsys.pause()\n  end\nend\n\nfunction wsys.softpause()\n  if not wsys.softpaused then\n    wsys.report(\"SoftPaused\")\n    wsys.softpaused = true\n    send(\"curing off\")\n  end\nend\n\nfunction wsys.unsoftpause()\n  if wsys.softpaused then\n    wsys.report(\"UNSoftPaused\")\n    wsys.softpaused = false\n    send(\"curing on\")\n    --wsys.lyrequeue()\n\n    wsys.canaction()\n  end\nend\n\nfunction wsys.toggleSoftPause()\n  if wsys.softpaused then\n    wsys.unsoftpause()\n  elseif not wsys.softpaused then\n    wsys.softpause()\n  end\nend",
+    "eventHandlerList": null
+}

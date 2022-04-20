@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Underhand",
+    "script": "if IsTargetted(matches[2]) then\n\tak.twoh.ribs = ak.twoh.ribs + ak.twoh.modifier\n\tif ak.twoh.ribs > 7 then ak.twoh.ribs = 7 end\n\tcecho(\"<yellow>ribs:<cyan> \"..ak.twoh.ribs)\n\tak.ribHit()\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) doubles over as the blade slams into [\\w'\\-]+ side\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) doubles over as the hammer savagely crunches into (his|her) ribcage.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Panacea proc",
+    "script": "if wsys.isClass(\"sylvan\") or wsys.isClass(\"druid\") then\n  wsys.cure = \"passive\"\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "50",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "Trigger": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "Cool mist brings the vibrant touch of Nature to refresh you.",
+            "3"
+        ]
+    ]
+}

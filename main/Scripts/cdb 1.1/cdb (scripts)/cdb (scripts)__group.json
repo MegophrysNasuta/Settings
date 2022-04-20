@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "scriptgroup",
+    "name": "cdb (scripts)",
+    "packageName": "cdb",
+    "script": null,
+    "eventHandlerList": null
+}

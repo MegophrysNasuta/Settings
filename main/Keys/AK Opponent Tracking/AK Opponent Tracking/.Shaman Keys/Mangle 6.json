@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Mangle 6",
+    "packageName": null,
+    "script": "if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then\n\nelse\n\tak.stack = \"Mangle33\"\n\tcecho(\"\\n\\n<cyan> CHANGING STACK TO: Mangle 33!\\n\\n\")\n\tak.scoreup(target)\nend\n",
+    "command": null,
+    "keyCode": "54",
+    "keyModifier": "536870912"
+}

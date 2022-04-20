@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "ofocus",
+    "packageName": null,
+    "script": "function ak.cure.focus(whom)\n\tak.occie.aura.parsereduct(\"focus\")\n   local affs = {}\n   ocured = ocured or {}\n   ocured.focused = {}\n   ak.randomaffs = ak.randomaffs or 0\n   affstrack.score.rixil = 0\n   if affstrack.score.impatience>0 then \n      if ak.thoughtIhad then ak.thoughtIhad(\"impatience\") else affstrack.score.impatience = 0 end\n      ocured = ocured or {}\n      ocured.focused = {}  \n   end\n   for i = 1, #affstrack.focused  do\n      if affstrack.score[affstrack.focused[i]] > 0 then\n         table.insert(affs, affstrack.focused[i])\n      end\n   end\n   if #affs == 1 and affstrack.score[affs[1]] < 100 and ak.randomaffs == 0 then\n      if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end\n      affstrack.score[affs[1]] = 0\n\t\t\tak.AfflictionCured(affs[1])\n\t\t\tak.ResetConfirmAff(affs[1])\n\t elseif #affs == 1 then\n      ak.echoForPossibleCures(table.concat(affs, \" \"))\n      ocured.focused[affs[1]] = affstrack.score[affs[1]]\n      affstrack.score[affs[1]] = 0\n\t\t\tak.AfflictionCured(affs[1])\n\t\t\tak.ResetConfirmAff(affs[1])\n   elseif #affs > 0 then\n      ak.echoForPossibleCures(table.concat(affs, \" \"))\n      for i = 1, #affs do\n         ocured.focused[affs[i]] = affstrack.score[affs[i]]\n         affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs\n         if affstrack.score[affs[i]] < ak.errorallowance then\n            affstrack.score[affs[i]] = 0\n\t\t\t\t\t\tak.AfflictionCured(affs[i])\n         end\n      end\n   elseif ak.randomaffs > 0 then\n      ak.randomaffs = ak.randomaffs - 1\n   else\n      if ak.WhyYouDoThat then ak.WhyYouDoThat(\"focused\") end\n   end\n   ak.scoreup(target)\nend\n\n\n\n",
+    "eventHandlerList": null
+}

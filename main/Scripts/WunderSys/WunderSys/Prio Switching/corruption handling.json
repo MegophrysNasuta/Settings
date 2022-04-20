@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "corruption handling",
+    "packageName": null,
+    "script": "function wsys.corruptionhandling(event, affliction)\n  if event == \"got aff\" then\n    if affliction == \"corruption\" and wsys.classTimerExists(\"alchemist\") then\n      wsys.settings.stopclot = true\n      send(\"curing clotat \" .. tostring(wsys.stats.maxh + 5000), false)\n    end\n  elseif event == \"lost aff\" then\n    if affliction == \"corruption\" and wsys.stats.m >= (wsys.manathreshold() + 100) and wsys.settings.useclot and wsys.settings.haveclot and wsys.settings.stopclot then\n      wsys.settings.stopclot = false\n      send(\"curing clotat 30\", false)\n    end\n  end\nend\n\nregisterAnonymousEventHandler(\"got aff\", \"wsys.corruptionhandling\")\nregisterAnonymousEventHandler(\"lost aff\", \"wsys.corruptionhandling\")",
+    "eventHandlerList": null
+}

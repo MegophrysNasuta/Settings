@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Dheal Functions",
+    "packageName": null,
+    "script": "function wsys.dheal()\n enableTrigger(\"Dheal\")\n if wsys.timer.dhealwait then\n   killTimer(tostring(wsys.timer.dhealwait))\n end\n wsys.timer.dhealwait = tempTimer(wsys.myPing() * 2, [[wsys.timer.dhealwait = nil;disableTrigger(\"Dheal\");wsys.lockqueue()]])\n wsys.doOnce(\"dragonheal\", 5 )\nend -- func\n\nlocal dhealprompt = false\n\nfunction wsys.dhealed()\n if wsys.timer.dhealwait then\n  wsys.dhealsub()\n  disableTrigger(\"Dheal\")\n  wsys.cure = \"dheal\"\n  wsys.lostBal(\"dragonheal\", 20)\n  if dhealprompt then killTrigger(tostring(dhealprompt)) end\n  if not wsys.aff.blackout then\n   dhealprompt = tempLineTrigger(1,1, [[if isPrompt() then wsys.emptydheal() end]])\n   if wsys.timer.dhealwait then\n     killTimer(tostring(wsys.timer.dhealwait))\n   end\n   wsys.timer.dhealwait = nil\n  end -- if\n end -- if\n if wsys.timer.reactivatecuring then \n   killTimer(wsys.timer.reactivatecuring)\n   wsys.timer.reactivatecuring = nil\n   send(\"curing on\")\n end\nend -- func\n\n\nfunction wsys.emptydheal()\n for k,v in pairs(wsys.tb.cures.dheal) do\n \tif wsysf.affs[v] then\n  \twsysf.core.debug.print(2, \"Empty dheal should clear \".. v..\"?\")\n\tend\n  disableTrigger(string.title(v) .. \" -\")\n end -- for\n wsys.pairscheck(\"dheal\")\n wsys.cure = nil\nend -- func\n\nfunction wsys.faileddheal()\n  if wsys.timer.dhealwait then\n    killTimer(tostring(wsys.timer.dhealwait))\n    wsys.timer.dhealwait = nil\n    wsys.cure = nil\n    wsys.lostBal(\"dragonheal\", 2)\n  end\nend",
+    "eventHandlerList": null
+}

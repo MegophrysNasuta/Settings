@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "SubMode 4",
+    "packageName": null,
+    "script": "Megophrys[Megophrys.class].subMode(4)",
+    "command": null,
+    "keyCode": "16777270",
+    "keyModifier": "0"
+}

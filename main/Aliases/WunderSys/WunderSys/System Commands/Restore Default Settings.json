@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Restore Default Settings",
+    "script": "--wsys.return_defaultsettings()\nwsys.report(\"Settings restored to default\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^wsystem restore default$"
+}

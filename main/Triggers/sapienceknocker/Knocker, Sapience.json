@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Knocker, Sapience",
+    "script": "knockareacheck = gmcp.Room.Info.num\n\nif knockareacheck == 57174 then\n  cecho(\"\\n<white>+--------- SAPIENCE KNOCKER EXITS ---------+\")\n  cecho(\"\\n<white>|     North: Morindar                      |\")\n  cecho(\"\\n<white>|     Northeast: Vents of Hthrak           |\")\n  cecho(\"\\n<white>|     East: Northreach                     |\")\n  cecho(\"\\n<white>|     Southeast: Eastern Shore             |\")\n  cecho(\"\\n<white>|     South: New Hope                      |\")\n  cecho(\"\\n<white>|     Southwest: Moghedu                   |\")\n  cecho(\"\\n<white>|     West: Azdun Catacombs                |\")\n  cecho(\"\\n<white>|     Northwest: Beastlord Dungeon         |\")\n  cecho(\"\\n<white>|     Out: Saiha'balan Grotto              |\")\n  cecho(\"\\n<white>|                                          |\")\n  cecho(\"\\n<white>| LOCATION GUIDE:                          |\")\n  cecho(\"\\n<white>|                                          |\")\n  cecho(\"\\n<white>| Sparks for tanks: NE                     |\")\n  cecho(\"\\n<white>| Istar/Istarion: NE, exit wilderness      |\")\n  cecho(\"\\n<white>| Tundra, Mirror Tower: N, exit wilderness |\")\n  cecho(\"\\n<white>| Quick duanathar: S then OUT              |\")\n  cecho(\"\\n<white>| Potash: OUT                              |\")\n  cecho(\"\\n<white>+------------------------------------------+\")\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t",
+    "matches": [
+        [
+            "The cavernous firmament. (indoors)",
+            "3"
+        ]
+    ]
+}

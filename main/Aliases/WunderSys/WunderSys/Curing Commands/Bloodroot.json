@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Bloodroot",
+    "script": "send(\"curing queue add bloodroot\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^blr$"
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Wildnodes toggle",
+    "script": "if mmp.game ~= \"lusternia\" then return end\nmmp.wildnodes(matches[2]:lower()==\"on\")\nmmp.echo(\"All astral nodes have been \"..(matches[2]:lower()==\"on\" and \"\" or \"un\")..\"linked.\")",
+    "command": null,
+    "packageName": null,
+    "regex": "(?i)^nodes (on|off)$"
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Stand Functions",
+    "packageName": null,
+    "script": "function wsys.stand()\n if wsys.timer.standwait then\n  killTimer(tostring(wsys.timer.standwait))\n end\n wsys.timer.standwait = tempTimer(wsys.waittime, [[wsys.timer.standwait = nil]])\n send(\"curing queue remove stand\")\n send(\"curing queue add stand\")\nend -- func\n\n\nfunction wsys.stood()\n if wsys.cure == \"stand\" then\n  wsys.affcured(\"prone\")\n  wsys.cure = nil\n end\nend -- func\n\nfunction wsys.mountCommand()\n  return wsys.settings.havevault and \"vault\" or \"mount\"\nend\n\nfunction wsys.mount()\n enableTrigger(\"Mount\")\n if wsys.timer.standwait then\n  killTimer(tostring(wsys.timer.standwait))\n end\n wsys.timer.standwait = tempTimer(wsys.waittime, [[wsys.timer.standwait = nil]])\n wsys.osend(\"drop \" .. wsys.settings.mount)\n wsys.osend(wsys.mountCommand()..\" \" .. wsys.settings.mount)\nend -- func\n\n\nfunction wsys.mountd()\n disableTrigger(\"Mount\")\n if wsys.timer.standwait then\n  killTimer(tostring(wsys.timer.standwait))\n  wsys.timer.standwait = nil\n  wsys.def.mounted = true\n end -- if\nend -- func\n\n\nfunction wsys.dismount()\n if wsys.timer.standwait then\n  killTimer(tostring(wsys.timer.standwait))\n end\n wsys.timer.standwait = tempTimer(wsys.waittime, [[wsys.timer.standwait = nil]])\n wsys.osend(\"dismount\", \"order \" .. wsys.settings.mount .. \" follow me\")\nend -- func\n\n\nfunction wsys.dismountd()\n if wsys.timer.standwait then\n  killTimer(tostring(wsys.timer.standwait))\n  wsys.timer.standwait = nil\n end -- if\nend -- func\n ",
+    "eventHandlerList": null
+}

@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Not Stacking 5",
+    "packageName": null,
+    "script": "if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then\n\nelse\n\tak.stack = \"NONE\"\n\tcecho(\"\\n\\n<cyan> CHANGING STACK TO:        NOTHING(WILL GUST ON RENDS)!!!!\\n\\n\")\n\tak.scoreup(target)\nend",
+    "command": null,
+    "keyCode": "53",
+    "keyModifier": "536870912"
+}

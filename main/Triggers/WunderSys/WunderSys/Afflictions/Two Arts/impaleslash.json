@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "impaleslash",
+    "script": "deleteLine()\ncecho(\"<red>IMPALESLASH turtle turtle turtle IMPALESLASH\")\ncecho(\"\\n<red>IMPALESLASH turtle turtle turtle IMPALESLASH\")\ncecho(\"\\n<red>IMPALESLASH turtle turtle turtle IMPALESLASH\")\ncecho(\"\\n<red>IMPALESLASH turtle turtle turtle IMPALESLASH\")\n--send(\"clot;clot;clot;clot;clot\")\nwsys.bleedingfor(200, \"health\")\n--wsys.osend(\"show bleeding\",false)",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^As [A-Z][a-z]+ shifts the blade transfixing your gut, the loathsome kiss of metal ravages your insides.$",
+            "1"
+        ],
+        [
+            "You feel weak and lightheaded.",
+            "3"
+        ]
+    ]
+}

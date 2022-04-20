@@ -1,0 +1,64 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Shivering +",
+    "script": "wsys.affadd(\"shivering\")\nwsys.undef(\"insulation\")\n\n\n--shivering.",
+    "triggerType": "0",
+    "conditonLineDelta": "39",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ffaa7f",
+    "mBgColor": "#000000",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You feel the strength ebb from your body as the cold takes its toll.",
+            "3"
+        ],
+        [
+            "Though still shivering, you are no longer frozen solid.",
+            "3"
+        ],
+        [
+            "The bubonis entity sinks its teeth into you, and you begin shivering.",
+            "3"
+        ],
+        [
+            "Your caloric salve dissolves as it ameliorates the extreme cold.",
+            "3"
+        ],
+        [
+            "You have a particularly intense shiver.",
+            "3"
+        ],
+        [
+            "^\\w+ points (?:his|her) fists at you and blasts you with frigidly cold air\\.$",
+            "1"
+        ],
+        [
+            "Savage and brutal, a storm of ice-infused droplets rain down upon you, assailing your body with its ferocious onslaught.",
+            "3"
+        ],
+        [
+            "^A snaking stream of ice from [A-Z][a-z]+'s maw forks into the room, blasting into you mercilessly\\.$",
+            "1"
+        ]
+    ]
+}

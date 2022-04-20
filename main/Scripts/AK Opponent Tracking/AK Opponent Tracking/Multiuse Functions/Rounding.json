@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Rounding",
+    "packageName": null,
+    "script": "function roundUp(number, places)\n\treturn math.ceil(number * math.pow(10,places)) / math.pow(10,places)\nend\n\nfunction roundDown(number, places)\n\treturn math.floor(number * math.pow(10,places)) / math.pow(10,places)\nend",
+    "eventHandlerList": null
+}

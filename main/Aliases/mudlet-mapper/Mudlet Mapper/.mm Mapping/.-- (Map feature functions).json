@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "-- (Map feature functions)",
+    "script": null,
+    "command": null,
+    "packageName": null,
+    "regex": null
+}

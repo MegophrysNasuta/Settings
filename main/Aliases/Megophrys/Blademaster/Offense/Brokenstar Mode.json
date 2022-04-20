@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Brokenstar Mode",
+    "script": "Megophrys.setMode('bstar')\nif matches[2] then\n  Megophrys.setTarget(matches[2])\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^bstar(?: (\\w+))?$"
+}

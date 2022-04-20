@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Fitness Functions",
+    "packageName": null,
+    "script": "function wsys.fitness()\n enableTrigger(\"Fitness\")\n if wsys.timer.fitnesswait then\n   killTimer(tostring(wsys.timer.fitnesswait))\n end\n wsys.timer.fitnesswait = tempTimer(5, [[wsys.timer.fitnesswait = nil;disableTrigger(\"Fitness\");wsys.addqueue(\"lock\")]])\n wsys.doOnce(\"fitness\", 5 )\nend -- func\n\n\nfunction wsys.fitnessd()\n if wsys.timer.fitnesswait then\n  disableTrigger(\"Fitness\")\n  if wsys.timer.fitnesswait then\n   killTimer(tostring(wsys.timer.fitnesswait))\n  end\n  wsys.timer.fitnesswait = nil\n  wsys.cure = \"fitness\"\n  wsys.affcured(\"asthma\")\n  wsys.cure = nil\n  wsys.lostBal(\"fitness\", 10)\n end -- if\n if wsys.timer.reactivatecuring then \n  killTimer(wsys.timer.reactivatecuring)\n  wsys.timer.reactivatecuring = nil\n  send(\"curing on\")\n end\nend -- func\n\nfunction wsys.aeonfitness()\n enableTrigger(\"Fitness\")\n if wsys.timer.fitnesswait then\n   killTimer(tostring(wsys.timer.fitnesswait))\n end\n wsys.timer.fitnesswait = tempTimer(1 + wsys.myPing()*1.5, [[wsys.timer.fitnesswait = nil;disableTrigger(\"Fitness\")]])\n wsys.salviaSend(\"fitness on\")\nend\n\nfunction wsys.failedfitness()\n  if wsys.timer.fitnesswait then\n    killTimer(tostring(wsys.timer.fitnesswait))\n    wsys.timer.fitnesswait = nil\n    wsys.cure = nil\n    lostBal(\"fitness\", 1)\n  end\nend\n\n\nfunction wsys.emptyfitness()\n if wsys.timer.fitnesswait then\n  disableTrigger(\"Fitness\")\n  if wsys.timer.fitnesswait then\n   killTimer(tostring(wsys.timer.fitnesswait))\n   wsys.timer.fitnesswait = nil\n  end\n  wsys.aff.asthma = nil\n  disableTrigger(\"Asthma -\")\n  wsys.pairscheck(\"fitness\")\n end -- if\nend -- func\n",
+    "eventHandlerList": null
+}

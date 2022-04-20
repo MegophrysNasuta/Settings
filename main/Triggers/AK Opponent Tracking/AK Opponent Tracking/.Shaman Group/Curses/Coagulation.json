@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Coagulation",
+    "script": "if ak.ai() then return end\ncecho(\"\\n<dodger_blue>Coagulated!\")\nak.shaman.coagulation = false\nak.bleeding = ak.bleeding - 140\nif ak.bleeding < 0 then\n\tak.bleeding = 0 \nend\nif invoked~= nil then\n   OppGainedAff(invoked)\nend\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#00aaff",
+    "mBgColor": "#ffffff",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^With methodical ruthlessness you cast your hand at [\\w'\\-]+, a wash of cold causing [\\w'\\-]+ blood to evolve",
+            "1"
+        ]
+    ]
+}

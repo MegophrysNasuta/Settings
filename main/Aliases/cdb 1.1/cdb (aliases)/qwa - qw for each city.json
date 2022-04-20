@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "qwa - qw for each city",
+    "script": "local cities = {\"rogue\", \"targossas\", \"mhaldor\", \"hashan\", \"ashtan\", \"eleusis\", \"cyrene\"}\nsend(\"qw \" .. table.concat(cities, cdb.cs .. \"qw \"))",
+    "command": null,
+    "packageName": null,
+    "regex": "^qwa$"
+}

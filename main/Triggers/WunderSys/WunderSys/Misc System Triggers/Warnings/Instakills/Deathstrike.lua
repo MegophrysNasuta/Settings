@@ -1,0 +1,1 @@
+cecho("\n<yellow:red>DEATHSTRIKE COMING FROM <blue:red>" .. matches[2] .. "!\n<yellow:red>DEATHSTRIKE COMING FROM <blue:red>" .. matches[2] .. "!\n<yellow:red>DEATHSTRIKE COMING FROM <blue:red>" .. matches[2] .. "!")

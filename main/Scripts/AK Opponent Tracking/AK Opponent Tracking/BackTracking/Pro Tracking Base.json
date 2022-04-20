@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Pro Tracking Base",
+    "packageName": null,
+    "script": "ak.ProTrackingConfirmed = ak.ProTrackingConfirmed or function(affliction) \n  affstrack.score[affliction] = 100\n  ak.scoreup(target)\nend",
+    "eventHandlerList": null
+}

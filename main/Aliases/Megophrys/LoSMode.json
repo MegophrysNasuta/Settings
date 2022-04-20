@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "LoSMode",
+    "script": "Megophrys.LOSDirection = matches[2]\nMegophrys.setMode('los')",
+    "command": null,
+    "packageName": null,
+    "regex": "^los (n|ne|nw|e|s|se|sw|w|in|out|u|d)$"
+}

@@ -1,0 +1,64 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Psion Limb Hits",
+    "script": "-- All break limbs in 4\nlocal limb = matches[2]\n\nlocal map = {\n\tguts = \"torso\",\n\tthroat = \"head\",\n\tskull = \"head\",\n\teyes = \"head\",\n\t[\"left shoulder\"] = \"left arm\",\n\t[\"right shoulder\"] = \"right arm\",\n}\n\nlimb = map[limb] or limb\n\nwsys.my_limb_hit( limb, \"psion\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Your ((left|right) arm) flops uselessly as \\w+ severs the muscles in it with a precise blow of (?:his|her) a translucent sword\\.$",
+            "1"
+        ],
+        [
+            "^Stars explode in front of your eyes as \\w+'s a translucent mace smashes into the side of your (head)\\.$",
+            "1"
+        ],
+        [
+            "^\\w+ ducks low, (?:his|her) blade slicing into your ((right|left) leg)\\.$",
+            "1"
+        ],
+        [
+            "^With a brutal thrust of a translucent sword, \\w+ sinks (?:his|her) weapon into your (guts), ripping it free in a spray of crimson\\.$",
+            "1"
+        ],
+        [
+            "^A sharp pain across your (throat) and a sudden lack of breath comes moments before you register the retreat of \\w+, bloody dagger in hand\\.$",
+            "1"
+        ],
+        [
+            "^Pain explodes through your (skull) as \\w+ brings a translucent mace around in a savage backhanded blow to your face\\.$",
+            "1"
+        ],
+        [
+            "^A terrible weariness overcomes you as \\w+ darts out (?:his|her) blade and drives the tip into you just beneath your ((right|left) shoulder)\\.$",
+            "1"
+        ],
+        [
+            "^Horrific pain overcomes you as \\w+ slashes a translucent dagger across your (eyes) in a lightning-fast motion, the world falling into darkness\\.$",
+            "1"
+        ]
+    ]
+}

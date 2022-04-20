@@ -1,0 +1,84 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Prone",
+    "script": "if isTarget(matches[2]) then \n\tTragedy.noshowAdd(\"prone\")\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Sweeping out with a blade hand, \\w+l strikes at the back of (.+)'s knee\\.$",
+            "1"
+        ],
+        [
+            "^Drawing an enormous breath\\, \\w+ exhales\\, expelling a gale of wind with such force that (.+) is knocked over\\.$",
+            "1"
+        ],
+        [
+            "^(.+) is knocked forcefully off (?:her|his) feet by the impact of \\w+\\'s huge tail\\.$",
+            "1"
+        ],
+        [
+            "^(.+)\\'s eyes close suddenly as (?:she|he) falls asleep\\.$",
+            "1"
+        ],
+        [
+            "^(.+) is knocked off h(?:is|er) feet by the heaving ground\\.$",
+            "1"
+        ],
+        [
+            "^\\w+ throws (?:his|her) palms forward, releasing a stream of deadly blue light to cripple (.+)\\.$",
+            "1"
+        ],
+        [
+            "^Drawing an enormous breath, you exhale, expelling a gale of wind with such force that (.+) is ",
+            "1"
+        ],
+        [
+            "(.+) is knocked forcefully off (?:his|her) feet by the impact of your huge tail\\.$",
+            "1"
+        ],
+        [
+            "^A .+ tangles itself in the legs of (.+), sending (?:him|her) sprawling to the ground\\.$",
+            "1"
+        ],
+        [
+            "^You knock the legs out from under (.+) and send (?:him|her) sprawling\\.$",
+            "1"
+        ],
+        [
+            "^(\\w+) staggers and falls to the ground\\.$",
+            "1"
+        ],
+        [
+            "^A gust of wind strikes (.+)\\, throwing (him|her) to the ground\\.$",
+            "1"
+        ],
+        [
+            "^The (?:.+) of (.+) buckles under the impact, and (she|he) goes sprawling\\.$",
+            "1"
+        ]
+    ]
+}

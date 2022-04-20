@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "SEAMONSTER",
+    "script": null,
+    "command": "load ballista with dart | fire ballista at seamonster",
+    "packageName": null,
+    "regex": "^sm$"
+}

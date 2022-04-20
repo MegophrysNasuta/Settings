@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Door in the way",
+    "script": "mmp.openDoor()",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "There is a door in the way, to the",
+            "2"
+        ],
+        [
+            "There is a door in the way.",
+            "3"
+        ],
+        [
+            "A closed door is in the way. You need to OPEN DOOR",
+            "2"
+        ],
+        [
+            "There is an? (?:walnut|pine|oak|iron|reinforced) door in the way.",
+            "1"
+        ],
+        [
+            "The door to the (\\w+) is closed.",
+            "1"
+        ]
+    ]
+}

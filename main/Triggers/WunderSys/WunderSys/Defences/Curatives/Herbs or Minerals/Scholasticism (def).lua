@@ -1,0 +1,1 @@
+wsys.defLine("scholasticism", "myrrh")

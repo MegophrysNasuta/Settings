@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Custom Diagnose Lines",
+    "packageName": null,
+    "script": "-------------------------------------------------\n-- Custom Diagnose Lines\n--\n-- We get a gmcp aff List event before every\n-- diagnose, before the prompt comes through.\n-- Add custom lines here for things that don't give\n-- the correct value through gmcp\n-------------------------------------------------\n\nwsysf.aff_tracking.diagnose_lines = wsysf.aff_tracking.diagnose_lines or {}\n\nlocal humour_diagnose = function()\n\tlocal aff = \"tempered\"..matches[2]\n\tlocal new_count = tonumber(matches[3])\n\t\n\twsysf.aff_tracking.set_aff_value( aff, new_count )\nend\n\nwsysf.aff_tracking.diagnose_lines.temperedcholeric = {\n\tregex_line = \"^your (choleric) humour has been tempered a total of (\\\\d+) times\\.$\",\n\tfunc = humour_diagnose,\n}\nwsysf.aff_tracking.diagnose_lines.temperedmelancholic = {\n\tregex_line = \"^your (melancholic) humour has been tempered a total of (\\\\d+) times\\.$\",\n\tfunc = humour_diagnose,\n}\nwsysf.aff_tracking.diagnose_lines.temperedphlegmatic = {\n\tregex_line = \"^your (phlegmatic) humour has been tempered a total of (\\\\d+) times\\.$\",\n\tfunc = humour_diagnose,\n}\nwsysf.aff_tracking.diagnose_lines.temperedsanguine = {\n\tregex_line = \"^your (sanguine) humour has been tempered a total of (\\\\d+) times\\.$\",\n\tfunc = humour_diagnose,\n}",
+    "eventHandlerList": null
+}

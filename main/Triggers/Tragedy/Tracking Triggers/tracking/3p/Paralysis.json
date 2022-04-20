@@ -1,0 +1,44 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Paralysis",
+    "script": "if isTarget(matches[2]) then \n\tTragedy.noshowAdd(\"paralysis\")\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Horror overcomes (.+)'s face as (?:his|her) body stiffens into paralysis\\.$",
+            "1"
+        ],
+        [
+            "^With fluid motions of (?:his|her) iron fingers, \\w+ strikes precisely at (.+)'s neck\\.$",
+            "1"
+        ],
+        [
+            "^(.+) stiffens suddenly, (?:his|her) features a masque frozen in agony\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "prio sensi when prone",
+    "packageName": null,
+    "script": "function wsys.proneSensiRevert(event, affliction)\n  if event == \"lost aff\" then\n    if affliction == \"prone\" then\n      wsys.affPrioRestore( \"sensitivity\" )\n    end\n  end\nend\n\nregisterAnonymousEventHandler(\"lost aff\", \"wsys.proneSensiRevert\")\n\n\nfunction wsys.proneSensi(event, affliction, class)\n  if event == \"got aff\" then\n    if affliction == \"prone\" then\n      if wsys.damagedlegs() then wsys.switchPrios(\"sensitivity\", 1) end\n    elseif affliction == \"damagedleftleg\" then\n      if wsys.aff.prone then wsys.switchPrios(\"sensitivity\", 1) end\n    elseif affliction == \"damagedrightleg\" then\n      if wsys.aff.prone then wsys.switchPrios(\"sensitivity\", 1) end\n    end --if\n  end --if\nend --func\n\nregisterAnonymousEventHandler(\"got aff\", \"wsys.proneSensi\")",
+    "eventHandlerList": null
+}

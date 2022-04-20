@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Air Fist",
+    "script": "if IsTargetted(matches[2]) then\n\tOppGainedAff(\"airfist\")\n   if airfisttimer then killTimer(airfisttimer) end\n\t if ak.limbs.blademaster.stance[\"Me\"] == \"Thyr\" then\n      airfisttimer = tempTimer(19.5, [[OppLostAff(\"airfist\")]])\t \n\t else\n      airfisttimer = tempTimer(14.5, [[OppLostAff(\"airfist\")]])\n   end\nend\n\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Freeing your mind to the unpredictable dance of the wind\\, you hurl a blow towards ([\\w'\\-]+)\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Perceive Enable",
+    "script": "ak = ak or {}\nak.twoh = ak.twoh or {}\nenableTrigger(\"Enemy Fractures\")\nak.deleteFull()",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "Narrowing your gaze upon",
+            "2"
+        ],
+        [
+            "^Narrowing your gaze upon ([\\w'\\-]+)\\, you take stock of [\\w'\\-]+ current injuries\\.$",
+            "1"
+        ]
+    ]
+}

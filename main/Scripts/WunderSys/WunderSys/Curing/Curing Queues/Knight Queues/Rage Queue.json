@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Rage Queue",
+    "packageName": null,
+    "script": "function wsys.ragequeue()\n if wsys.settings.haverage and wsys.settings.userage and wsys.cancure() and not wsys.timer.ragewait and wsys.bals.rage and wsys.stats.m > 500 and wsys.stats.w > 100 then\n  --use rage if there's one or more bellwort affs\n  if wsys.bellwortAffCount() >= 1 then\n    wsys.rage()\n  end\n end\nend -- func\n\n\nfunction wsys.bellwortAffCount()\n  local count = 0\n\n  if wsys.aff.justice then count = count + 1 end\n  if wsys.aff.peace then count = count + 1 end\n  if wsys.aff.generosity then count = count + 1 end\n  if wsys.aff.lovers then count = count + 1 end\n  if wsys.aff.pacified then count = count + 1 end\n  if wsys.aff.indifference then count = count + 1 end\n  if wsys.aff.retribution then count = count + 1 end\n  if wsys.aff.timeloop then count = count + 1 end\n\n  return count\nend",
+    "eventHandlerList": null
+}

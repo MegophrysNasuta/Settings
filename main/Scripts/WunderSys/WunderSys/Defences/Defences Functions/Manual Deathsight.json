@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Manual Deathsight",
+    "packageName": null,
+    "script": "--otherwise it tries to look for wsys.myClass() in gmcp and crashes.\nfunction wsys.manualdeathsight()\n  if wsys.settings.havedeathsight then\n    local dprio = 25\n    if wsys.settings.defprio[wsys.profile][wsys.myClass()] ~= nil then dprio = (wsys.settings.defprio[wsys.profile][wsys.myClass()][\"deathsight\"] or 25) end\n    return \"curing priority defence deathsight \" .. dprio\n  else\n    if wsys.settings.usetransmutation then\n      return \"outr azurite;eat azurite\"\n    else\n      return \"outr skullcap;eat skullcap\"\n    end\n  end\nend",
+    "eventHandlerList": null
+}

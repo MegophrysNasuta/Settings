@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Staff Strike",
+    "script": "if ak.ai() then return end\nak.defs.shield = false\nif matches[2] == \"Sllshya\" then\n   table.insert(ak.limbs.currentbreak.weapon, \"waterstaff\")\nelseif matches[2] == \"Garash\" then\n   table.insert(ak.limbs.currentbreak.weapon, \"earthstaff\")\nelseif matches[2] == \"Kkractle\" then\n   table.insert(ak.limbs.currentbreak.weapon, \"firestaff\")\nelseif matches[2] == \"Whiirh\" then\n   table.insert(ak.limbs.currentbreak.weapon, \"airstaff\")\nend\nlocal limb = ak.limbs.standardizeLimb(matches[4])\ntable.insert(ak.limbs.currentbreak.limb, limb)\ntable.insert(ak.limbs.currentbreak.attacker,\"Me\")\ntable.insert(ak.limbs.currentbreak.who,matches[3])\nenableTrigger(\"Missed Single Removal Limbs\")\nenableTrigger(\"Parry locate\")          \nenableTrigger(\"Confirmed Hit Limbs\")\n\n\n\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You call upon ([\\w'\\-]+) and unleash a forceful blow towards ([\\w'\\-]+)'s (right leg|left leg|right arm|left arm|head|torso) with your trusty staff\\.*",
+            "1"
+        ]
+    ]
+}

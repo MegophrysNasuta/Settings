@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Mounting",
+    "packageName": null,
+    "script": "wsys.mount_flags = wsys.mount_flags or {}\n\nfunction wsys.autoMount( enable )\n  if wsys.settings.automount == nil then wsys.settings.automount = false end\n  if enable then\n    wsys.setSettings( \"automount\", \"true\" )\n  else\n    wsys.setSettings( \"automount\", \"false\" )\n  end\n  wsys.checkAutoMount()\nend\n\nfunction wsys.mountToggle()\n  wsys.autoMount( not wsys.settings.automount )\nend\n\nfunction wsys.mountUp( mount )\n  if type(mount) == \"string\" then\n    wsys.setSettings( \"mount\", string.trim(mount) )\n    wsys.autoMount( true )\n  else\n    wsys.autoMount(mount)\n  end\nend\n\nfunction wsys.checkAutoMount()\n  local break_early = ( gmcp == nil or gmcp.Char == nil ) or wsys.isDragon()\n  if break_early then\n    return\n  end\n\n  if ( wsys.settings.automount and wsys.def.mounted ) or\n     ( not wsys.settings.automount and not wsys.def.mounted ) then\n    wsys.mount_flags.trying = false\n\t\n  elseif wsys.cancure() and not wsys.isHindered() and not wsys.mount_flags.trying and wsys.bals.b and wsys.bals.e and not wsys.aff.hamstrung then\n    if wsys.settings.automount and not wsys.def.mounted then\n      enableTrigger(\"Mount\")\n      wsys.osend(wsys.mountCommand()..\" \".. wsys.settings.mount )\n      wsys.mount_flags.trying = true\n      if wsys.mount_flags.remountTimer then killTimer(wsys.mount_flags.remountTimer) end\n      wsys.mount_flags.remountTimer=tempTimer(1,[[wsys.mount_flags.trying = false; wsys.checkAutoMount()]])\n    elseif not wsys.settings.automount and wsys.def.mounted then\n      wsys.dismount()\n      wsys.mount_flags.trying = true\n      if wsys.mount_flags.remountTimer then killTimer(wsys.mount_flags.remountTimer) end\n      wsys.mount_flags.remountTimer=tempTimer(1,[[wsys.mount_flags.trying = false; wsys.checkAutoMount()]])\n    end\n  end\nend\n\nif wsys.events.mount_aff_got then killAnonymousEventHandler( wsys.events.mount_aff_got ) end\nwsys.events.mount_aff_got = registerAnonymousEventHandler( \"got aff\", function( event, aff )\n\tif event == \"got aff\" and aff == \"prone\" then\n\t\twsys.def.mounted = false\n\tend\nend)\n\n",
+    "eventHandlerList": null
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "H Sip",
+    "script": "wsys.hmsip(\"health\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^h$"
+}

@@ -1,0 +1,232 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Ignore",
+    "script": "ak.deleteFull()",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "She has the following defences:",
+            "3"
+        ],
+        [
+            "He has the following defences:",
+            "3"
+        ],
+        [
+            "Her wounds are being staunched by the moss tattoo.",
+            "3"
+        ],
+        [
+            "His wounds are being staunched by the moss tattoo.",
+            "3"
+        ],
+        [
+            "Mentally bolstered by the power of the megalith.",
+            "3"
+        ],
+        [
+            "The endurance of the great ox flows through you.",
+            "3"
+        ],
+        [
+            "She is feeling extremely energetic.",
+            "3"
+        ],
+        [
+            "He is feeling extremely energetic.",
+            "3"
+        ],
+        [
+            "She is walking on a small cushion of air.",
+            "3"
+        ],
+        [
+            "He is walking on a small cushion of air.",
+            "3"
+        ],
+        [
+            "Her senses are magically heightened.",
+            "3"
+        ],
+        [
+            "His senses are magically heightened.",
+            "3"
+        ],
+        [
+            "She possess the sight of the third eye.",
+            "3"
+        ],
+        [
+            "He possess the sight of the third eye.",
+            "3"
+        ],
+        [
+            "She is tempered against fire damage.",
+            "3"
+        ],
+        [
+            "He is tempered against fire damage.",
+            "3"
+        ],
+        [
+            "He is holding his breath.",
+            "3"
+        ],
+        [
+            "She is holding her breath.",
+            "3"
+        ],
+        [
+            "^He is protected by \\d+ defences\\.$",
+            "1"
+        ],
+        [
+            "^She is protected by \\d+ defences\\.$",
+            "1"
+        ],
+        [
+            "He is extremely heavy and difficult to move.",
+            "3"
+        ],
+        [
+            "She is extremely heavy and difficult to move.",
+            "3"
+        ],
+        [
+            "Benefitting from the stolen life aura of your fallen foes.",
+            "3"
+        ],
+        [
+            "Her resistance to damage by poison has been increased.",
+            "3"
+        ],
+        [
+            "His resistance to damage by poison has been increased.",
+            "3"
+        ],
+        [
+            "Her mind has been attuned to the realm of Death.",
+            "3"
+        ],
+        [
+            "His mind has been attuned to the realm of Death.",
+            "3"
+        ],
+        [
+            "He has enhanced his vision to be able to see traces of lifeforce.",
+            "3"
+        ],
+        [
+            "She has enhanced her vision to be able to see traces of lifeforce.",
+            "3"
+        ],
+        [
+            "A curseward has been established about his person.",
+            "3"
+        ],
+        [
+            "A curseward has been established about her person.",
+            "3"
+        ],
+        [
+            "She is enchanted against magic damage.",
+            "3"
+        ],
+        [
+            "He is enchanted against magic damage.",
+            "3"
+        ],
+        [
+            "He is enchanted against cold damage.",
+            "3"
+        ],
+        [
+            "She is enchanted against cold damage.",
+            "3"
+        ],
+        [
+            "She is enchanted against electric damage.",
+            "3"
+        ],
+        [
+            "He is enchanted against electric damage.",
+            "3"
+        ],
+        [
+            "She is protected from the fangs of serpents.",
+            "3"
+        ],
+        [
+            "He is protected from the fangs of serpents.",
+            "3"
+        ],
+        [
+            "He has insomnia, and cannot easily go to sleep.",
+            "3"
+        ],
+        [
+            "She has insomnia, and cannot easily go to sleep.",
+            "3"
+        ],
+        [
+            "He is surrounded by draconic armour.",
+            "3"
+        ],
+        [
+            "She is surrounded by draconic armour.",
+            "3"
+        ],
+        [
+            "She is coated in an insulating unguent.",
+            "3"
+        ],
+        [
+            "He is coated in an insulating unguent.",
+            "3"
+        ],
+        [
+            "She has summoned her draconic breath weapon.",
+            "3"
+        ],
+        [
+            "He has summoned his draconic breath weapon.",
+            "3"
+        ],
+        [
+            "You will not go quietly into death.",
+            "3"
+        ],
+        [
+            "His mind is racing with enhanced speed.",
+            "3"
+        ],
+        [
+            "Her mind is racing with enhanced speed.",
+            "3"
+        ]
+    ]
+}

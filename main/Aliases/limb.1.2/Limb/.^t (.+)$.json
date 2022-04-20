@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "^t (.+)$",
+    "script": "send(\"settarget \" .. matches[2])\ntarget = matches[2]:lower():title()\n\n-- This is an example target alias. Note that the target variable has to be properly capitalised.",
+    "command": null,
+    "packageName": null,
+    "regex": "^t (.+)$"
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Set target",
+    "script": "Megophrys.setTarget(matches[3])\n-- set optional target2, target3\ntarget2 = matches[4] or nil\ntarget3 = matches[5] or nil\n\nif matches[2] ~= \"\" then\n  Megophrys.autoAttack()\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^t(a?) (['\\w]+)(?: (['\\w]+))?(?: (['\\w]+))?$"
+}

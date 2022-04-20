@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "IceMode",
+    "script": "Megophrys.setMode('pummel')\nif matches[2] then\n  Megophrys.setTarget(matches[2])\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^ice(?: (\\w+))?$"
+}

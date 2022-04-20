@@ -1,0 +1,2 @@
+-- yes this trigger belongs here and not with other cures, don't fucking touch it.
+--wsys.aff.homunculusmercury = nil

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Stats",
+    "packageName": null,
+    "script": "-- STATS TABLE\nwsys.stats = {\n\n h = 5000,\n m = 5000,\n e = 20000,\n w = 20000,\n maxh = 5000,\n maxm = 5000,\n maxw = 20000,\n maxe = 20000,\n oh = 5000, --old health\n om = 5000, --old mana\n xp = 0,\n oxp = 0, --old xp\n kai = 0,\n shin = 0,\n rage = 0,\n}\n\nlocal charstats = {\n  [\"Bleed\"] = function( val ) wsys.bleeding = tonumber( val ) end,\n  [\"Rage\"] = function( val ) wsys.stats.rage = tonumber( val ) end,\n}\n\nfunction wsys.statupdate()\n \n  wsys.stats.oh = wsys.stats.h or 5000\n  wsys.stats.om = wsys.stats.m or 5000\n  wsys.stats.oxp = wsys.stats.xp or 0\n\n  wsys.stats.h = tonumber(gmcp.Char.Vitals.hp)\n  wsys.stats.m = tonumber(gmcp.Char.Vitals.mp)\n  wsys.stats.e = tonumber(gmcp.Char.Vitals.ep)\n  wsys.stats.w = tonumber(gmcp.Char.Vitals.wp)\n\n  wsys.stats.maxh = tonumber(gmcp.Char.Vitals.maxhp)\n  wsys.stats.maxm = tonumber(gmcp.Char.Vitals.maxmp)\n  wsys.stats.maxe = tonumber(gmcp.Char.Vitals.maxep)\n  wsys.stats.maxw = tonumber(gmcp.Char.Vitals.maxwp)\n\n  for _,str in ipairs( gmcp.Char.Vitals.charstats ) do\n    local sep = str:find( \": \" )\n    if sep then\n      local key = str:sub( 1, sep - 1 )\n      local val = str:sub( sep + 2 )\n      if charstats[key] then charstats[key]( val ) end\n    end\n  end\n\n  if wsys.stats.oh ~= wsys.stats.h then\n    raiseEvent(\"health changed\")\n  end\n  if wsys.stats.om ~= wsys.stats.m then\n    raiseEvent(\"mana changed\")\n  end\nend -- func\n\nregisterAnonymousEventHandler(\"gmcp.Char.Vitals\", \"wsys.statupdate\")\n",
+    "eventHandlerList": null
+}

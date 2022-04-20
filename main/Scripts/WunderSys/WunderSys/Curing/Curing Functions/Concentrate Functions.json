@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Concentrate Functions",
+    "packageName": null,
+    "script": "function wsys.concentrated()\n  wsys.cure = \"concentrate\"\n  wsys.affcured(\"disrupted\")\n  wsys.cure = nil\nend -- func\n\nfunction wsys.concentrate()\n  send(\"curing queue add concentrate\")\nend",
+    "eventHandlerList": null
+}

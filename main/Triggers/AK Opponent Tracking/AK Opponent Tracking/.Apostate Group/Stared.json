@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Stared",
+    "script": "if ak.ai() then\n  return\nend\nif nextcurse then\n  if nextcurse == \"breach\" then\n  elseif nextcurse == \"sicken\" then\n    if affstrack.score.paralysis < 100 then\n      nextcurse = \"paralysis\"\n    elseif affstrack.score.healthleech < 100 then\n      nextcurse = \"manaleech\"\n    else\n      nextcurse = \"slickness\"\n    end\n  elseif nextcurse == \"plague\" then\n    nextcurse = \"voyria\"\n  elseif nextcurse == \"clumsy\" then\n    nextcurse = \"clumsiness\"\n  elseif nextcurse == \"dizzy\" then\n    nextcurse = \"dizziness\"\n  elseif nextcurse == \"stupid\" then\n    nextcurse = \"stupidity\"\n  elseif nextcurse == \"vomiting\" then\n    nextcurse = \"nausea\"\n  elseif nextcurse == \"reckless\" then\n    nextcurse = \"recklessness\"\n  end\n  OppGainedAff(nextcurse)\n  nextcurse = nil\n  return\nend\nif nextcurse2 then\n  if nextcurse2 == \"breach\" then\n  elseif nextcurse2 == \"sicken\" then\n    if affstrack.score.paralysis < 100 then\n      nextcurse2 = \"paralysis\"\n    elseif affstrack.score.healthleech < 100 then\n      nextcurse2 = \"manaleech\"\n    else\n      nextcurse2 = \"slickness\"\n    end\n  elseif nextcurse2 == \"plague\" then\n    nextcurse2 = \"voyria\"\n  elseif nextcurse2 == \"clumsy\" then\n    nextcurse2 = \"clumsiness\"\n  elseif nextcurse2 == \"dizzy\" then\n    nextcurse2 = \"dizziness\"\n  elseif nextcurse2 == \"stupid\" then\n    nextcurse2 = \"stupidity\"\n  elseif nextcurse2 == \"vomiting\" then\n    nextcurse2 = \"nausea\"\n  elseif nextcurse2 == \"reckless\" then\n    nextcurse2 = \"recklessness\"\n  end\n  OppGainedAff(nextcurse2)\n  nextcurse2 = nil\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You stare at ([\\w'\\-]+), giving [\\w'\\-]+ the evil eye\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Ironwill",
+    "script": "send('psi ironwill '.. matches[2])\nMegophrys.channeling = true",
+    "command": null,
+    "packageName": null,
+    "regex": "^iw (\\w+)$"
+}

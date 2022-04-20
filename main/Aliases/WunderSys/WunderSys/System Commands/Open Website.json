@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Open Website",
+    "script": "openUrl(\"https://dl.dropboxusercontent.com/u/6980966/ServersideSystem/documentation.html\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^whelp$"
+}

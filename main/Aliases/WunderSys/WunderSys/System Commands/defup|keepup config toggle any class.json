@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "defup|keepup config toggle any class",
+    "script": "--example usage wconfig defup basic runewarden fangbarrier\nwsys.defToggle(matches[2], matches[3], matches[4], matches[5])",
+    "command": null,
+    "packageName": null,
+    "regex": "^wconfig (defup|keepup) (\\w+) (\\w+) (\\w+)$"
+}

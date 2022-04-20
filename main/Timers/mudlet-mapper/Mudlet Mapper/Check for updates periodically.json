@@ -1,0 +1,14 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTimer": "no",
+        "isOffsetTimer": "no"
+    },
+    "type": "timer",
+    "name": "Check for updates periodically",
+    "script": "mmp.checkforupdate()",
+    "command": null,
+    "packageName": null,
+    "time": "01:00:00.000"
+}

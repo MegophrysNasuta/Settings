@@ -1,0 +1,160 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Clans",
+    "script": "demonnic.chat:append(\"Clans\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "(The Midnight Crew):",
+            "2"
+        ],
+        [
+            "(Project 9):",
+            "2"
+        ],
+        [
+            "(Mudlet Clan):",
+            "2"
+        ],
+        [
+            "(Antlion's Den):",
+            "2"
+        ],
+        [
+            "(Davey Jones' Locker):",
+            "2"
+        ],
+        [
+            "(The al'Dejan family):",
+            "2"
+        ],
+        [
+            "(Jester's Carousal):",
+            "2"
+        ],
+        [
+            "(Mischief 101):",
+            "2"
+        ],
+        [
+            "(Pirates of Meropis):",
+            "2"
+        ],
+        [
+            "(The Soaring Sodality):",
+            "2"
+        ],
+        [
+            "(Jin's Gin Joint):",
+            "2"
+        ],
+        [
+            "(The Dread Navy of Ashtan):",
+            "2"
+        ],
+        [
+            "(Ashuran Academy):",
+            "2"
+        ],
+        [
+            "(The Warriors of Sapience):",
+            "2"
+        ],
+        [
+            "(The Batcave):",
+            "2"
+        ],
+        [
+            "(Colloquium Iniquus):",
+            "2"
+        ],
+        [
+            "(WunderSys):",
+            "2"
+        ],
+        [
+            "(The Mera'din):",
+            "2"
+        ],
+        [
+            "(Flawless Victoly):",
+            "2"
+        ],
+        [
+            "(Military Institute of Baelgrim):",
+            "2"
+        ],
+        [
+            "(The Knights of Three Moons):",
+            "2"
+        ],
+        [
+            "(Gleamius Phallus):",
+            "2"
+        ],
+        [
+            "(Disciples of Ruin):",
+            "2"
+        ],
+        [
+            "(Thug Life):",
+            "2"
+        ],
+        [
+            "(Ashtani Ambassador Coalition):",
+            "2"
+        ],
+        [
+            "(Ashtan Culture Ministry):",
+            "2"
+        ],
+        [
+            "(The Hunting Gang):",
+            "2"
+        ],
+        [
+            "(NFL Fan Clan):",
+            "2"
+        ],
+        [
+            "(Al'Jafri):",
+            "2"
+        ],
+        [
+            "(The Spider's Web):",
+            "2"
+        ],
+        [
+            "(The Parthren Gare):",
+            "2"
+        ],
+        [
+            "(Market):",
+            "2"
+        ]
+    ]
+}

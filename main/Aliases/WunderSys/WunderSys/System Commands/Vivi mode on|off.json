@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Vivi mode on|off",
+    "script": "if wsys.vmode then\n wsys.vmode = false\n wsys.report(\"<maroon>VIVI MODE <red>DISABLED\")\nelse\n wsys.vmode = true\n wsys.report(\"<maroon>VIVI MODE <green>ENABLED\")\nend -- if",
+    "command": null,
+    "packageName": null,
+    "regex": "^vivi$"
+}

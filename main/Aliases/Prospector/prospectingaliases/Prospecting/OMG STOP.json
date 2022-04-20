@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "OMG STOP",
+    "script": "mmp.stop()\nkillTimer(tostring(prospectingtimer))\ngotopactive = false\nsend(\"stop\")\nprospecting = 0",
+    "command": null,
+    "packageName": null,
+    "regex": "^pstop$"
+}

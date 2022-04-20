@@ -1,0 +1,48 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "priest basic",
+    "script": "Megophrys.setOpponentClass('priest')",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^\"Know the pain which you have caused,\" (\\w+) proselytises, finger pointed directly at you\\.$",
+            "1"
+        ],
+        [
+            "^(\\w+) utters a prayer and smites you with .+\\.$",
+            "1"
+        ],
+        [
+            "^(\\w+) strikes you with a dark bolt of energy directed through his mace\\.$",
+            "1"
+        ],
+        [
+            "^\"Repent for your crimes\\!\" (\\w+) denounces you, hand raised in warding\\.$",
+            "1"
+        ]
+    ]
+}

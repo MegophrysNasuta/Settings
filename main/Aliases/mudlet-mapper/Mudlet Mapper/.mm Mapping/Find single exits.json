@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Find single exits",
+    "script": "local c = 0\n\nlocal getAreaRooms, getRoomExits, contains, echoLink, getRoomEnv, envidsr =\n  getAreaRooms, getRoomExits, table.contains, echoLink, getRoomEnv, mmp.envidsr\n\nfor area, id in pairs(getAreaTable()) do\n  for _, roomid in pairs(getAreaRooms(id)) do\n    local exits = getRoomExits(roomid)\n    for dir, otherroom in pairs(exits) do\n      local otherexits = getRoomExits(otherroom) or {}\n      if not contains(otherexits, roomid) then\n        echoLink(string.format(\"%s -> %s is oneway (%s->%s type)\\n\", roomid, otherroom,\n          (envidsr and envidsr[getRoomEnv(roomid)] or \"?\"),\n          (envidsr and envidsr[getRoomEnv(otherroom)] or \"?\")),\n        [[mmp.gotoRoom(]]..roomid..[[)]], \"Click to go to the start room \"..roomid, true)\n        c = c + 1\n     end\n    end\n  end\nend\n\nmmp.echo(string.format(\"Found %s oneways.%s\", c, (c > 10 and \" Have fun. Click on lines to go to the rooms.\" or \"\")))",
+    "command": null,
+    "packageName": null,
+    "regex": "^find single exits$"
+}

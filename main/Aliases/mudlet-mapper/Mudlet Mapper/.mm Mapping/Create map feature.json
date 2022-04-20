@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Create map feature",
+    "script": "mmp.createMapFeature(matches[2]:trim(), (matches[3] and matches[3]:trim()))",
+    "command": null,
+    "packageName": null,
+    "regex": "^feature create (.+?)(?: char (.+))?$"
+}

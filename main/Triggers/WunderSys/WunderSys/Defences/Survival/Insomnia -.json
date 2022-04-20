@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Insomnia -",
+    "script": "wsys.undef(\"insomnia\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "Your insomnia has cleared up.",
+            "3"
+        ],
+        [
+            "Your mind relaxes and you feel as if you could sleep.",
+            "3"
+        ],
+        [
+            "You open your eyes and yawn mightily.",
+            "3"
+        ],
+        [
+            "You close your eyes, curl up in a ball, and fall asleep.",
+            "3"
+        ],
+        [
+            "You are not an insomniac.",
+            "3"
+        ]
+    ]
+}

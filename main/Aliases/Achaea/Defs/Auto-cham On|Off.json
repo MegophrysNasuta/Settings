@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Auto-cham On|Off",
+    "script": "if matches[2] == 'on' then keepChameleonUp = true else keepChameleonUp = false end\nsend('touch chameleon nasuta')",
+    "command": null,
+    "packageName": null,
+    "regex": "^cham (on|off)$"
+}

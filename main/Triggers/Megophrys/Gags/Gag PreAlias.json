@@ -1,0 +1,76 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Gag PreAlias",
+    "script": "Megophrys.Util.gagLine()",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You are not fallen or kneeling.",
+            "3"
+        ],
+        [
+            "You are already wielding that.",
+            "3"
+        ],
+        [
+            "Your aura of weapons rebounding disappears.",
+            "3"
+        ],
+        [
+            "[System]: Queued eqbal commands cleared.",
+            "3"
+        ],
+        [
+            "[System]: Added NEXTATTACK to your eqbal queue.",
+            "3"
+        ],
+        [
+            "You cannot use that ability again so soon.",
+            "3"
+        ],
+        [
+            "You do not have enough rage to perform that ability.",
+            "3"
+        ],
+        [
+            "You must wait a short time before you can use a battlerage ability again.",
+            "3"
+        ],
+        [
+            "Alias \"nextAttack\" will now execute:",
+            "2"
+        ],
+        [
+            "You are not a member of any party.",
+            "3"
+        ],
+        [
+            "You do not have enough Shin power stored to do that.",
+            "3"
+        ]
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Kelp vs Ginseng Handling",
+    "packageName": null,
+    "script": "function wsys.kelpVsGinseng()\n  local ginsengs = wsys.affamount(\"ginseng\")\n  local kelps = wsys.affamount(\"kelp\")\n  if wsys.classTimerExists(\"shaman\") and not wsys.classTimerExists(\"serpent\") then\n    if ginsengs > kelps then\n      --move haemophilia to same spot as paralysis if ginseng stacked\n      --wsys.switchPrios( \"haemophilia\", wsys.affPosition(\"paralysis\") )\n    elseif kelps > ginsengs then\n      --move haemophilia down if not\n      wsys.affPrioRestore( \"haemophilia\" )\n    end\n  elseif wsys.classTimerExists(\"serpent\") and not wsys.classTimerExists(\"shaman\") then\n\n  elseif wsys.classTimerExists(\"apostate\") then\n\n  end\nend\n\nregisterAnonymousEventHandler(\"got aff\", \"wsys.kelpVsGinseng\")",
+    "eventHandlerList": null
+}

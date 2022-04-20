@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "asthma weariness slickness",
+    "packageName": null,
+    "script": "function wsys.asthmaWearinessSlicknessGained(event, affliction, class)\n  --[[if event == \"got aff\" then\n      if wsys.aff.slickness and (wsys.aff.asthma and wsys.aff.weariness) then --1 scenario\n        wsys.switchPrios( \"asthma\", 2 )\n      end\n  end]]\nend --func\n\n--registerAnonymousEventHandler(\"got aff\", \"wsys.asthmaWearinessSlicknessGained\")\n--registerAnonymousEventHandler(\"reset aff prios\", \"wsys.asthmaWearinessSlicknessGained\")\n\nfunction wsys.asthmaLost(event, affliction)\n  --[[if event == \"lost aff\" then\n    if affliction == \"asthma\" and (wsys.affPosition(\"asthma\") ~= wsys.defaultAffPosition(\"asthma\")) then\n      wsys.affPrioRestore( \"asthma\" )\n    end\n  end]]\nend --func\n\n--registerAnonymousEventHandler(\"lost aff\", \"wsys.asthmaLost\")",
+    "eventHandlerList": null
+}

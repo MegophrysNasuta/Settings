@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Focus Functions",
+    "packageName": null,
+    "script": "function wsys.focus()\n send(\"curing queue remove focus\")\n send(\"curing queue add focus\")\nend -- func\n\n\nfunction wsys.focusbal()\n wsys.focusbalsub()\n wsys.gotBal(\"focus\")\n disableTrigger(\"FocusBalance\")\nend -- func\n\nlocal focusprompt = false\n\nfunction wsys.focused()\n  wsys.cure = \"focus\"\n  wsys.focussub()\n  enableTrigger(\"FocusBalance\")\n  if wsys.aff.weakenedmind then\n    cecho(\"<red>Longer focus balance RIXIL\")\n    wsys.lostBal(\"focus\", 7.7)\n  else\n    wsys.lostBal(\"focus\", 3.8)\n  end\n  if focusprompt then killTrigger(tostring(focusprompt)) end\n  if not wsys.aff.blackout then\n   focusprompt = tempLineTrigger(1,1, [[if isPrompt() then wsys.emptyfocus() end]])\n  end -- if\nend -- func\n\n\nfunction wsys.emptyfocus()\n if wsys.stats.m < wsys.stats.om then\n   for k,v in pairs(wsys.tb.cures.focus) do\n     wsys.predicted[v] = nil\n     if wsysf.affs[v] then\n       wsysf.core.debug.print(2, \"Empty focus should clear \".. v..\"?\")\n     end\n     disableTrigger(string.title(v) .. \" -\")\n   end -- for\n   wsys.pairscheck(\"focus\")\n end -- if\n wsys.cure = nil\nend -- func\n\n\nfunction wsys.focusAffCount()\n  local fCount = \n    wsysf.affv.stupidity +\n    wsysf.affv.epilepsy +\n    wsysf.affv.dizziness +\n    wsysf.affv.shyness +\n    wsysf.affv.recklessness +\n    wsysf.affv.masochism +\n    wsysf.affv.loneliness +\n    wsysf.affv.claustrophobia +\n    wsysf.affv.agoraphobia +\n    wsysf.affv.vertigo +\n    wsysf.affv.confusion +\n    wsysf.affv.anorexia +\n    wsysf.affv.dementia +\n    wsysf.affv.paranoia +\n    wsysf.affv.hallucinations\n  \n  return fCount\nend\n\nfunction wsys.hasFocusAffs()\n  if wsys.focusAffCount() == 0 then\n    return false\n  else\n    return true\n  end\nend\n\nfunction wsys.hasDisruptedElement()\n  return wsys.aff.waterdisrupt or wsys.aff.airdisrupt or wsys.aff.firedisrupt or wsys.aff.earthdisrupt\nend",
+    "eventHandlerList": null
+}

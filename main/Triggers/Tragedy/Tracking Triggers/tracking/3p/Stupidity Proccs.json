@@ -1,0 +1,120 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Stupidity Proccs",
+    "script": "if isTarget(matches[2]) then\n  if not tarAff(\"stupidity\") then\n    Tragedy.noshowAdd(\"stupidity\")\n  end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^(.+) gives up a round of applause\\.$",
+            "1"
+        ],
+        [
+            "^(.+) giggles happily\\.$",
+            "1"
+        ],
+        [
+            "^(.+) falls to (his|her) knees in worship\\.$",
+            "1"
+        ],
+        [
+            "^(.+) lets out a loud, long \\\"MOOOOOOOOOOO\\!\\\"$",
+            "1"
+        ],
+        [
+            "^(.+) fondles (himself|herself) absently\\.$",
+            "1"
+        ],
+        [
+            "^(.+) blinks\\.$",
+            "1"
+        ],
+        [
+            "^(.+) grunts a bit and then lets out a loud \\\"OINK\\!\\\"$",
+            "1"
+        ],
+        [
+            "^(.+) drops to one knee\\.$",
+            "1"
+        ],
+        [
+            "^(.+) pulls down (his|her) pants and moons the world\\.$",
+            "1"
+        ],
+        [
+            "^(.+) twitches spasmodically\\.$",
+            "1"
+        ],
+        [
+            "^Tears fill (.+)'s eyes and begin to slowly run down (his|her) face\\.$",
+            "1"
+        ],
+        [
+            "^(.+) hugs (himself|herself) compassionately\\.$",
+            "1"
+        ],
+        [
+            "^(.+) sweeps across the floor, leaping and twirling like a true master\\.$",
+            "1"
+        ],
+        [
+            "^(.+) flaps (his|her) arms madly\\.$",
+            "1"
+        ],
+        [
+            "^(.+) stumbles and pokes (himself|herself) in the eye\\.$",
+            "1"
+        ],
+        [
+            "^(.+) burps obscenely\\.$",
+            "1"
+        ],
+        [
+            "^\\\"The voices\\! The voices\\! Get them out of my head\\!\\!\\\" (.+) moans\\, holding (his|her) head\\.$",
+            "1"
+        ],
+        [
+            "^(.+) gets down on one knee and serenades the world\\.$",
+            "1"
+        ],
+        [
+            "^(.+) waggles (his|her) eyebrows comically\\.$",
+            "1"
+        ],
+        [
+            "^(.+) looks around vainly for a partner to tango with\\.$",
+            "1"
+        ],
+        [
+            "^(.+) picks (his|her) nose absently\\.$",
+            "1"
+        ],
+        [
+            "^(.+) breaks down and sobs uncontrollably\\.$",
+            "1"
+        ]
+    ]
+}

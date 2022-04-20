@@ -1,0 +1,44 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Tangled trap",
+    "script": "wsys.affadd(\"entangled\", \"sentinel\")\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You spring a trap!! A loop of rope entwines around you, pulling you off your feet and looping around your neck.",
+            "3"
+        ],
+        [
+            "You gasp and choke as you your entanglement impedes your breathing.",
+            "3"
+        ],
+        [
+            "You spring a trap!! A loop of rope entwines around you, pulling you off your feet.",
+            "3"
+        ]
+    ]
+}

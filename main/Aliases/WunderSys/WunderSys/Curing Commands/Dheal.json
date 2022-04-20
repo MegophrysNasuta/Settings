@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Dheal",
+    "script": "wsys.dheal()",
+    "command": null,
+    "packageName": null,
+    "regex": "^(dh|dheal|dragonheal)$"
+}

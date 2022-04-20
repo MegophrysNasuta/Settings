@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "shit to do on snapping",
+    "packageName": null,
+    "script": "local gotSnapped = false\n\n\nfunction wsys.realSnap()\n\tgotSnapped = true\n\tif wsys.timer.gotSnappedTimer then killTimer(wsys.timer.gotSnappedTimer) end\n\twsys.timer.gotSnappedTimer = tempTimer(15, [[wsys.timer.gotSnappedTimer = nil;gotSnapped = false]])\n\twsys.mwOnSnap()\nend\n\nfunction wsys.is_GotSnapped()\n\treturn gotSnapped\nend\n\n\nfunction wsys.mwOnSnap()\n\twsys.dofreeadd(\"metawake on\")\n\tif wsys.timer.mwOnSnapTimer then killTimer(wsys.timer.mwOnSnapTimer) end\n\twsys.timer.mwOnSnapTimer = tempTimer(7, [[ wsys.sleepLockCheck() ]])\nend\n\nfunction wsys.sleepLockCheck()\n   wsys.timer.mwOnSnapTimer = nil\n\tif not wsys.aff.hypersomnia and wsys.def.insomnia then\n\t\tsend(\"metawake off\")\n\tend\nend\n",
+    "eventHandlerList": null
+}

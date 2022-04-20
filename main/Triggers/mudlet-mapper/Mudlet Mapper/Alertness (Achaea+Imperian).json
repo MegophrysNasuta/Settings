@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Alertness (Achaea+Imperian)",
+    "script": "mmp.alertness = mmp.alertness or {}\nlocal alertness = mmp.alertness\n\nlocal roomexists, getRoomName, anytolong, matches, deleteLine = mmp.roomexists, getRoomName, mmp.anytolong, matches, deleteLine\n\nif mmp.debug then\n mmp.alertnessTime = mmp.alertnessTime or createStopWatch()\n startStopWatch(mmp.alertnessTime)\nend\n\nif matches[4] ~= \"location\" then\n  local longexitname = matches[4]\n  alertness[longexitname] = alertness[longexitname] or {}\n  alertness[longexitname][#alertness[longexitname]+1] = matches[2]\n  deleteLine()\nelseif matches[4] == \"location\" then\n  local currentroomname = mmp.cleanroomname(mmp.currentroomname)\n  if matches[3] == currentroomname then\n    alertness.here = alertness.here or {}\n    alertness.here[#alertness.here+1] = matches[2]\n    deleteLine()\n  end\nend\n\n\nif not mmp.firstAlert then\n\tmmp.firstAlert = true\n\tmmp.pdb_lastupdate = {}\nend\n\nmmp.pdb[matches[2]] = matches[3]\nmmp.pdb_lastupdate[matches[2]] = true\n\nenableTrigger\"Mudlet Mapper prompt trigger\"\n\nif mmp.debug then mmp.echo(\"alertness trigger for \"..matches[2]..\" took \"..stopStopWatch(mmp.alertnessTime)..\"s.\") end",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Your enhanced senses inform you that (\\w+) has entered (.+?)(?:, to the| at your) (\\w+)\\.$",
+            "1"
+        ]
+    ]
+}

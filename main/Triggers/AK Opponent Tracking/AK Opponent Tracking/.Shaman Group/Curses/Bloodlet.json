@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Bloodlet",
+    "script": "if ak.ai() then return end\ncecho(\"\\n<medium_violet_red>Bloodlet!\")\nak.shaman.bloodlet = false\nif affstrack.score.haemophilia > 0 then\n\tak.bleeding = ak.bleeding + ak.bloodletbleed()\n\techo(ak.bleeding)\nend\nOppGainedAff(\"haemophilia\")\nak.dontremovehaemo = true\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ffffff",
+    "mBgColor": "#ff557f",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Lacerations appear upon ([\\w'\\-]+) form, as if slashed by an invisible blade\\.$",
+            "1"
+        ]
+    ]
+}

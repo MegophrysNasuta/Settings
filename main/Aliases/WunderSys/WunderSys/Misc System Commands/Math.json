@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Math",
+    "script": "display(assert(loadstring(\"return \"..matches[2]))())",
+    "command": null,
+    "packageName": null,
+    "regex": "^math (.+)$"
+}

@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Infestation",
+    "script": "if ak.ai() then return end\nif IsTargetted(multimatches[2][2]) then \n   if ak.ProTrackingConfirmed then\n      ak.ProTrackingConfirmed(multimatches[2][3]) \n   else\n      affstrack.score[multimatches[2][3]] = 100\n      ak.scoreup(multimatches[2][2])\n   end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You sense through your malignant connection to your infestation that ",
+            "2"
+        ],
+        [
+            "^You sense through your malignant connection to your infestation that ([\\w'\\-]+) has been cursed with ([\\w'\\-]+)\\.$",
+            "1"
+        ]
+    ]
+}

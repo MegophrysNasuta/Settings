@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "System Status Checking",
+    "packageName": null,
+    "script": "-------------------------------------------------\n--         Put your Lua functions here.        --\n--                                             --\n-- Note that you can also use external Scripts --\n-------------------------------------------------\nfunction ak.syspause()\n   if svo then \n      if svo.affl.retardation then \n         return true\n      else\n         return false\n      end\n   elseif wsys then\n      if wsys.paused or wsys.softpaused then \n         return true\n      else\n         return false\n      end\n   else\n       return false\n   end\nend\n\nfunction inretardation()\n   if svo then \n      if svo.affl.retardation then \n         return true\n      else\n         return false\n      end\n   elseif wsys then\n      if wsys.isslowed() then \n         return true\n      else\n         return false\n      end\n   else\n       return false\n   end\nend\n\nfunction inaeon()\n   if svo then \n      if svo.affl.aeon then \n         return true\n      else\n         return false\n      end\n   elseif wsys then\n      if wsys.isslowed() then \n         return true\n      else\n         return false\n      end\n   else\n       return false\n   end\nend\n\nfunction inlyre()\n   if svo then\n      if svo.conf.lyre then\n         return true\n      else\n         return false\n      end\n   elseif wsys then\n\t\tif wsys.uselyre == true and wsys.def.lyre == true then\n       \treturn true\n\t\telse\n\t\t\treturn false\n\t\tend\n   else \n       return false\n   end\nend \n\n",
+    "eventHandlerList": null
+}

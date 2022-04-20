@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "yes",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Auto-follow Friends",
+    "script": "local beckoner = matches[2]\n\nlocal acceptable_beckoners = {\n}\n\nfor _, ok_guy in pairs(acceptable_beckoners) do\n  if beckoner == ok_guy then send('fol '.. beckoner) end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ffffff",
+    "mBgColor": "#0055ff",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t",
+    "matches": [
+        [
+            "^(\\w+) beckons you to (him|her).$",
+            "1"
+        ]
+    ]
+}

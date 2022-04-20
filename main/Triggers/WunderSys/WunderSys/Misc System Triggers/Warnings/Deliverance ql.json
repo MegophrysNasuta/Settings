@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Deliverance ql",
+    "script": "local person = multimatches[2][2]:trim()\n\nif selectString(person, 1) > 0 then fg(\"red\") setBold(true) deselect() resetFormat() end\nwsys.setPrefixWarning(\"deliverance in room\", 1)",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "glowing white nimbus",
+            "0"
+        ],
+        [
+            "([^\\.]+) is here(?:\\.|, sleeping soundly\\.|, shrouded\\.) (?:She|He) is surrounded by a glowing white nimbus\\.",
+            "1"
+        ]
+    ]
+}

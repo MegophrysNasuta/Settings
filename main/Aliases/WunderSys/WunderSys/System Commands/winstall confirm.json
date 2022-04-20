@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "winstall confirm",
+    "script": "wsys.wunderSysInstall()\nwsys.report(\"WunderSys primary settings configured and installed.\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^winstall confirm$"
+}

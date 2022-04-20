@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Stop walking",
+    "script": "mmp.stop()",
+    "command": null,
+    "packageName": null,
+    "regex": "^mstop$"
+}

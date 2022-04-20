@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Choke",
+    "script": "if ak.ai() then return end\nif not IsTargetted(matches[2]) then\n\treturn \nend\nif affstrack.score.asthma == 100 then\n\tOppGainedAff(\"hallucinations\")\nelse\t\n\tOppGainedAff(\"asthma\")\nend\nak.pervasion.hitcount = ak.pervasion.hitcount + 1\nak.fluxline = matches[1]\nak.fluxcheck = \"choke\"\nenableTrigger(\"Flux Enhance\")\t\n",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You manifest water inside the lungs of ([\\w'\\-]+)\\, causing [\\w'\\-]+ to hack and cough violently\\.$",
+            "1"
+        ]
+    ]
+}

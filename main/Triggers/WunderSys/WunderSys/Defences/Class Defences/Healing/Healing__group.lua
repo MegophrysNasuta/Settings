@@ -1,0 +1,1 @@
+-- not a funky gate trig since they can bless others, damn priests.

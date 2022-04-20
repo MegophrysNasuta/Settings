@@ -1,0 +1,1 @@
+wsys.affadd("stupidity", "priest")

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "ProspectingArrived",
+    "packageName": null,
+    "script": "-------------------------------------------------\n--         Put your Lua functions here.        --\n--                                             --\n-- Note that you can also use external Scripts --\n-------------------------------------------------\n\nLodeList = {}\n\n\nfunction ProspectingArrived()\n\n\tif ProspectList[1] and prospecting == 1 then\n\t\ttable.remove(ProspectList,1)\n\t\tif ProspectList[1] then \n\t\t\tprospectingtimer = tempTimer(0.8, [[mmp.gotoRoom(ProspectList[1])]]) \n\t\telse \n\t\t\techo(\"Area fully explored!\")\n\t\t\tprospecting=0\n\t\tend\n\tsend(\"prospect\") \n\tsend(\"read sign\")\n\tend\n\n\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}

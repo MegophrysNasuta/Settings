@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Toggle softpause",
+    "script": "wsys.toggleSoftPause()",
+    "command": null,
+    "packageName": null,
+    "regex": "^sp$"
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Concentrate",
+    "script": "send(\"curing queue add concentrate\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^c$"
+}

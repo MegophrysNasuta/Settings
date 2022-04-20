@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Give while selfish",
+    "script": "local amt = matches[2]\nlocal item = matches[3]\nlocal tgt = matches[4]\nMegophrys.giveWhileSelfish(amt, item, tgt)",
+    "command": null,
+    "packageName": null,
+    "regex": "^gi( \\d+)? (\\w+) (\\w+)$"
+}

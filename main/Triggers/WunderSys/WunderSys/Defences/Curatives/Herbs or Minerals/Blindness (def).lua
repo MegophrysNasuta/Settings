@@ -1,0 +1,1 @@
+wsys.defLine("blindness", "blind")

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "osmoke",
+    "packageName": null,
+    "script": "ak.smoke = ak.smoke or {}\n\nfunction affssmoke()\n\tak.smoke.mass = {}\n\tak.occie.aura.parsereduct(\"smoke\")\n   local affs = {}\n   ocured = ocured or {}\n   ak.randomaffs = ak.randomaffs or 0\n   ocured.smoked = {}\n   if affstrack.score.asthma>0 then \n      if ak.thoughtIhad then ak.thoughtIhad(\"asthma\") else affstrack.score.asthma = 0 end\n      ocured = ocured or {}\n      ocured.smoked = {}\n   end\n   for i = 1, #affstrack.smoked do\n      if affstrack.score[affstrack.smoked[i]] > 0 then\n         table.insert(affs, affstrack.smoked[i])\n      end\n   end\n   if #affs == 1 then\n\t \t\tif affstrack.score[affs[1]] < 100 and ak.randomaffs == 0 then\n      \tif ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end\n      end\n\t\t\tak.smoke.RetainMass(affs[1], affstrack.score[affs[1]])\n\t\t\taffstrack.score[affs[1]] = 0\t\n\t\t\tak.smoke.RestoreMass(affs[1])\n\t\t\tif affstrack.score[affs[1]] == 0 then\n\t\t\t\t ak.AfflictionCured(affs[1])\n\t\t\t\t ak.ResetConfirmAff(affs[1])\n\t\t\tend\n   elseif #affs > 0 then\n      ak.echoForPossibleCures(table.concat(affs, \" \"))\n      for i = 1, #affs do\n         ocured.smoked[affs[i]] = affstrack.score[affs[i]]\n\t\t\t\t ak.smoke.RetainMass(affs[1], affstrack.score[affs[1]])\n         affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs\n         if affstrack.score[affs[i]] < ak.errorallowance then\n            affstrack.score[affs[i]] = 0\n         end\n\t\t\t\t ak.smoke.RestoreMass(affs[i])\n\t\t\t\t if affstrack.score[affs[i]] == 0 then\n\t\t\t\t \t  ak.AfflictionCured(affs[i])\n\t\t\t\t end\n      end\n   elseif ak.randomaffs > 0 then\n      ak.randomaffs = ak.randomaffs - 1\n   else\n       reboundingaccountak = true\n       if reboundingaktime then killTimer(reboundingaktime) end\n       reboundingaktime = tempTimer(11,[[reboundingaccountak = false]])\n   end\n   ak.scoreup(target)\nend\n\nfunction ak.smoke.RetainMass(aff, count)\n\tak.smoke.mass[aff] = roundDown(count-1,-2)\nend\n\nfunction ak.smoke.RestoreMass(aff)\n\tlocal returner = ak.smoke.mass[aff] or 0\n\taffstrack.score[aff] = affstrack.score[aff] + returner\nend\n",
+    "eventHandlerList": null
+}

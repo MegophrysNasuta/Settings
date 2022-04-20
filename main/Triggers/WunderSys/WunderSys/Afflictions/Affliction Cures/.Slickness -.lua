@@ -1,0 +1,2 @@
+wsys.affcured("slickness")
+

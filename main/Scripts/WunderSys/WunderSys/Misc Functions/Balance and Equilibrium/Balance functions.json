@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Balance functions",
+    "packageName": null,
+    "script": "function wsys.canaction()\n if wsys.timer.balwait then\n  killTimer(tostring(wsys.timer.balwait))\n  wsys.timer.balwait = nil\n end\n wsys.balqueue()\nend -- func",
+    "eventHandlerList": null
+}

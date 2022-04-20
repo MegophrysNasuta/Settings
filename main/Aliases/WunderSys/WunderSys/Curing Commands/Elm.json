@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Elm",
+    "script": "send(\"curing queue add elm\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^selm$"
+}

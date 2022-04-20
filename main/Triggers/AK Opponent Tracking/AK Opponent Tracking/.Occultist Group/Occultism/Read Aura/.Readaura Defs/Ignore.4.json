@@ -1,0 +1,124 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Ignore",
+    "script": "ak.deleteFull()",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^[\\w'\\-]+ is bouncing around acrobatically\\.$",
+            "1"
+        ],
+        [
+            "A songbird is perched upon his shoulder.",
+            "3"
+        ],
+        [
+            "A songbird is perched upon her shoulder.",
+            "3"
+        ],
+        [
+            "He has sworn vengeance upon those who would slay him.",
+            "3"
+        ],
+        [
+            "She has sworn vengeance upon those who would slay her.",
+            "3"
+        ],
+        [
+            "He is bathed in the glorious protection of decaying flesh.",
+            "3"
+        ],
+        [
+            "She is bathed in the glorious protection of decaying flesh.",
+            "3"
+        ],
+        [
+            "He is enhancing his ocular prowess.",
+            "3"
+        ],
+        [
+            "She is enhancing her ocular prowess.",
+            "3"
+        ],
+        [
+            "^She has a small [\\w'\\-]+ bonus lasting another \\d+ days\\, \\d+ hours and \\d+ minutes\\.$",
+            "1"
+        ],
+        [
+            "^He has a small [\\w'\\-]+ bonus lasting another \\d+ days\\, \\d+ hours and \\d+ minutes\\.$",
+            "1"
+        ],
+        [
+            "^He has been granted a bonus to [\\w'\\-]+ regeneration\\.$",
+            "1"
+        ],
+        [
+            "^She has been granted a bonus to [\\w'\\-]+ regeneration\\.$",
+            "1"
+        ],
+        [
+            "He will lose less experience in the event of death.",
+            "3"
+        ],
+        [
+            "She will lose less experience in the event of death.",
+            "3"
+        ],
+        [
+            "He has been granted the ability to levitate above the ground.",
+            "3"
+        ],
+        [
+            "She has been granted the ability to levitate above the ground.",
+            "3"
+        ],
+        [
+            "He has been granted the boon of travelling to mutual allies.",
+            "3"
+        ],
+        [
+            "She has been granted the boon of travelling to mutual allies.",
+            "3"
+        ],
+        [
+            "The vitality of the boar is energising him.",
+            "3"
+        ],
+        [
+            "The vitality of the boar is energising her.",
+            "3"
+        ],
+        [
+            "^(He|She) is benefitting from a \\d+\\% bonus to critical hits\\.$",
+            "1"
+        ],
+        [
+            "^(He|She) is blocking the exit [\\w'\\-]+\\.$",
+            "1"
+        ]
+    ]
+}

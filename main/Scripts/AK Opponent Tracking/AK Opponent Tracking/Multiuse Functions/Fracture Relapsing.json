@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Fracture Relapsing",
+    "packageName": null,
+    "script": "function ak.skullHit()\n  if isActive(\"AK_SkullTimer\",\"timer\") == 0 and ak.twoh.skull > 0 then\n\t\tak.skullcount = 0\n\t\tOppGainedAff(\"nausea\")\n\t\tenableTimer(\"AK_SkullTimer\")\n\telseif ak.twoh.skull == 0 then\n\t\tak.skullcount = 0\n\t\tdisableTimer(\"AK_SkullTimer\")\n\tend\nend\n\nfunction ak.tendonHit()\n\tif isActive(\"AK_TendonTimer\",\"timer\") == 0 and ak.twoh.tendons > 0 then\n\t\tak.tendonscount = 0\n\t\tOppGainedAff(\"clumsiness\")\n\t\tenableTimer(\"AK_TendonTimer\")\n\telseif ak.twoh.tendons == 0 then\n\t\tak.tendonscount = 0\n\t\tdisableTimer(\"AK_TendonTimer\")\n\tend\nend\n\nfunction ak.ribHit()\n\tif isActive(\"AK_RibsTimer\",\"timer\") == 0 and ak.twoh.ribs > 0 then\n\t\tak.ribscount = 0\n\t\tOppGainedAff(\"prefarar\")\n\t\tenableTimer(\"AK_RibsTimer\")\n\telseif ak.twoh.ribs == 0 then\n\t\tak.ribscount = 0\n\t\tdisableTimer(\"AK_RibsTimer\")\n\tend\nend\n\nfunction ak.wristHit()\n\tif ak.twoh.wrist < 1 then\n\t\tif ak.wristTimer then killTimer(ak.wristTimer) end\n\telseif ak.twoh.wrist == 1 then\n\t\tif ak.wristTimer then killTimer(ak.wristTimer) end\n\t\tak.wristTimer = tempTimer(5, [[ak.wristTick()]])\n\telseif ak.twoh.wrist == 2 then\n\t\tif ak.wristTimer then killTimer(ak.wristTimer) end\n\t\tak.wristTimer = tempTimer(4, [[ak.wristTick()]])\n\telseif ak.twoh.wrist == 3 then\n\t\tif ak.wristTimer then killTimer(ak.wristTimer) end\n\t\tak.wristTimer = tempTimer(3, [[ak.wristTick()]])\n\telseif ak.twoh.wrist == 4 then\n\t\tif ak.wristTimer then killTimer(ak.wristTimer) end\n\t\tak.wristTimer = tempTimer(2, [[ak.wristTick()]])\n\telseif ak.twoh.wrist >= 5 then\n\t\tif ak.wristTimer then killTimer(ak.wristTimer) end\n\t\tak.wristTimer = tempTimer(1, [[ak.wristTick()]])\n\tend \nend\n\nfunction ak.wristTick()\n\tak.wristHit()\nend\n\n",
+    "eventHandlerList": null
+}

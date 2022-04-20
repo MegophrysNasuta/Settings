@@ -1,0 +1,2 @@
+ak.deleteFull()
+--deleteFull()

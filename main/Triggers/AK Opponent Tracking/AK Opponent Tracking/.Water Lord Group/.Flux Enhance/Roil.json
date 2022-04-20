@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Roil",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then\n\t--cecho(\"<cyan>Flux: <white>\"..ak.fluxcheck)\n\tif affstrack.score.weariness ~= 100 then\n\t\tak.ProTrackingConfirmed(\"asthma\")\n\t\taffstrack.score.weariness = 100\n\t\tak.scoreup(matches[2])\n\telse\n\t\tak.ProTrackingConfirmed(\"weariness\")\n\tend\n\tOppGainedAff(\"anorexia\")\nend\ndisableTrigger(\"Flux Enhance\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^The skin of ([\\w'\\-]+) takes on a green tinge\\.$",
+            "1"
+        ]
+    ]
+}

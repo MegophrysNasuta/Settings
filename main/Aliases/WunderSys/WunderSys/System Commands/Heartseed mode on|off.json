@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Heartseed mode on|off",
+    "script": "if wsys.heartseedmode then\n wsys.heartseedmode = false\n wsys.report(\"<firebrick>HEART<LimeGreen>SEED <white>MODE <red>DISABLED\")\nelse\n wsys.heartseedmode = true\n wsys.report(\"<firebrick>HEART<LimeGreen>SEED <white>MODE <green>ENABLED\")\nend -- if",
+    "command": null,
+    "packageName": null,
+    "regex": "^hseed$"
+}

@@ -1,0 +1,44 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Shikudo Leg Hit",
+    "script": "local limb = \"\"\nif matches[2] == \"left thigh\" then\n\tlimb = \"left leg\"\nelseif matches[2] == \"right thigh\" then\n\tlimb = \"right leg\"\nelse\n\tlimb = matches[2]\nend\n\nwsys.my_limb_hit(limb, \"shikudo\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Dropping back into a low crouch, [A-Z][a-z]+ whips .+ at your (.*).$",
+            "1"
+        ],
+        [
+            "^[\\w'-]+ spins a full rotation, bringing .+ around in a blur to crash intoyour (\\w+)\\.$",
+            "1"
+        ],
+        [
+            "^Whirling around, [\\w'-]+ brings the ball of \\w+ foot crashing into the side of your (head)\\.$",
+            "1"
+        ]
+    ]
+}

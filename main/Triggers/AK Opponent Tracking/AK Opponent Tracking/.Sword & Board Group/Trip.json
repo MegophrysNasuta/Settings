@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Trip",
+    "script": "if ak.ai() then return end\nboardaffs = boardaffs or {}\nlocal aff = \"prone\"\nif IsTargetted(matches[2]) then\n   table.insert(boardaffs, aff)\nend\nenableTrigger(\"Missed Single Removal\")                --DO NOT CHANGE!\nenableTrigger(\"Confirmed Hit\")                        --DO NOT CHANGE!",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You duck low and smash your shield into the knees of ([\\w'\\-]+), causing them to buckle underneath (him|her)\\.$",
+            "1"
+        ]
+    ]
+}

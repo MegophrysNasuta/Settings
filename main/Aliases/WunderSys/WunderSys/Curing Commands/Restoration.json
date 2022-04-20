@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Restoration",
+    "script": "local limbsa = {\n a = \"arms\",\n l = \"legs\",\n h = \"head\",\n t = \"torso\",\n}\nsend(\"curing queue remove restoration to \" .. limbsa[matches[2]])\nsend(\"curing queue add restoration to \" .. limbsa[matches[2]])",
+    "command": null,
+    "packageName": null,
+    "regex": "^ar(a|l|h|t)$"
+}

@@ -1,0 +1,2 @@
+wsys.deffed("blademastery")
+

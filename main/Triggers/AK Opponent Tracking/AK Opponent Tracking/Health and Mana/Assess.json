@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Assess",
+    "script": "ak.knownmaxhealth = ak.knownmaxhealth or {}\nak.knownmaxhealth[multimatches[2][2]] = multimatches[2][4] \nak.currenthealth = multimatches[2][3]\nak.maxhealth = multimatches[2][4]\nlocal currHealth = math.ceil((multimatches[2][3]/multimatches[2][4])*100)\nak.healthpercent = currHealth\ncecho(\"\\n<white>[<blue>Health<white>]: <yellow>\"..currHealth..\"%\")\nif not ak.pause then send(\"pt \"..multimatches[2][2]..\"'s health at \"..ak.currenthealth..\"/\"..ak.maxhealth) end\nak.scoreup(multimatches[2][2])\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You glance over",
+            "2"
+        ],
+        [
+            "^You glance over ([\\w'\\-]+) and see that (?:her|his) health is at (\\d+)\\/(\\d+)\\.$",
+            "1"
+        ]
+    ]
+}

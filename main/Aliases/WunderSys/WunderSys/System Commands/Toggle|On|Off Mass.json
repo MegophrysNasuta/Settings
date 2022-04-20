@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Toggle|On|Off Mass",
+    "script": "if matches[2] then\n  if matches[2] == \"on\" then\n    wsys.keepup(\"mass\", true)\n    wsys.report(\"<yellow>Maintaining MASS\")\n  elseif matches[2] == \"off\" then\n    wsys.unkeepup(\"mass\", true)\n    wsys.report(\"<yellow>No longer keeping MASS\")\n  end\nelse\n  wsys.togglekeepup(\"mass\")\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^mass\\s?(on|off)?$"
+}

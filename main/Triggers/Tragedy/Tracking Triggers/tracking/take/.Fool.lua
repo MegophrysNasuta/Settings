@@ -1,0 +1,2 @@
+target.afflictions = {}
+resetTracking()

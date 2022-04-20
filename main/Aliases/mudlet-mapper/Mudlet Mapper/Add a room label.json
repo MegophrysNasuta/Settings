@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Add a room label",
+    "script": "mmp.roomLabel(matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^room label (.+)$"
+}

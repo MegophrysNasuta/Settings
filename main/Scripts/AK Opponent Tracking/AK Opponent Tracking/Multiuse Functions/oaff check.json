@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "oaff check",
+    "packageName": null,
+    "script": "-------------------------------------------------\n--         Put your Lua functions here.        --\n--                                             --\n-- Note that you can also use external Scripts --\n-------------------------------------------------\nfunction ak.check(what, number)\n   if not number then local number = 100 end\n   if table.contains(affstrack.score, what) then\n      if affstrack.score[what] >= number then\n         return true\n      else\n         return false\n      end\n   elseif table.contains(affstrack.venoms, what) then\n      if affstrack.score[affstrack.venoms[what]] >= number then\n         return true\n      else\n         return false\n      end\n   end\nend",
+    "eventHandlerList": null
+}

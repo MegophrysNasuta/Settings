@@ -1,0 +1,2 @@
+-- Does not include mounted. Need to track that separately
+-- For affs, need to track counts for 2h and alchemist separately

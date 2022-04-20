@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Debug",
+    "packageName": null,
+    "script": "wsysf.core.debug = wsysf.core.debug or {}\nwsysf.core.debug.level = 2\t -- 1 = ERROR, 2 = WARN, 3 = INFO, 4 = DEBUG, 5-10 = Verbose\n-- TODO lower debug level before release. Probably to 1 or 2 by default\n\nlocal levels = {\n\t[1] = { color = \"red\", name = \"ERROR\" },\n\t[2] = { color = \"OrangeRed\", name = \"WARNING\" },\n\t[3] = { color = \"gold\", name = \"INFO\" },\n\t[4] = { color = \"PaleGoldenrod\", name = \"DEBUG\" },\n\tdefault = { color = \"light_grey\", name = \"VERBOSE\" },\n}\n\nfunction wsysf.core.debug.print( level, str )\n\tif wsysf.core.debug.level >= level then\n\t\tlocal border = \"lime_green\"\n\t\tlocal level_t = levels[level] or levels.default\n\t\tlocal color = level_t.color\n\t\t\n\t\tcecho( string.format(\"\\n<%s>[<%s>%s<%s>](<%s>%d<%s>): <%s>%s\", \n\t\t\t\t\tborder, color, level_t.name, border, color, level, border, color, str ) )\n\tend\nend\n\nfunction wsysf.core.debug.display( level, t, str )\n\tif wsysf.core.debug.level >= level then\n\t\twsysf.core.debug.print( level, ( str or \"\" ) .. \"\\n\" )\n\t\tdisplay( t )\n\tend\nend",
+    "eventHandlerList": null
+}

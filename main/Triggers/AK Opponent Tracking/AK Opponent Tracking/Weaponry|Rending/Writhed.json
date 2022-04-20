@@ -1,0 +1,60 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Writhed",
+    "script": "if ak.ai() then return end\nif matches[2] and IsTargetted(matches[2]) then\n   affstrack.impale = false\n   ak.scoreup(matches[2])\nelseif not matches[2] then\n   affstrack.impale = false\n   ak.scoreup(target)\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^With a look of agony on [\\w'\\-]+ face\\, ([\\w'\\-]+) manages to writhe (herself|himself) free of the weapon which impaled [\\w'\\-]+\\.$",
+            "1"
+        ],
+        [
+            "^With a vicious snarl you carve a merciless swathe through the steaming guts of ([\\w'\\-]+)\\, who gurgles and chokes as you withdraw your dripping blade\\, glistening with gore\\.$",
+            "1"
+        ],
+        [
+            "^With a vicious snarl [\\w'\\-]+ carves a merciless swathe through the steaming guts of ([\\w'\\-]+)\\, who gurgles and chokes as [\\w'\\-]+ withdraws [\\w'\\-]+ dripping blade\\, glistening with gore\\.$",
+            "1"
+        ],
+        [
+            "^With a snarl of contempt\\, you allow ([\\w'\\-]+) to slide free of your weapon\\.$",
+            "1"
+        ],
+        [
+            "You have no victim impaled to be able to perform a disembowelment.",
+            "3"
+        ],
+        [
+            "^As ([\\w'\\-]+) wrenches away from you\\, your blade rips through his innards in a violentfashion\\, leaving a pool of viscera where your foe once lay\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) tumbles out to the .*\\.$",
+            "1"
+        ]
+    ]
+}

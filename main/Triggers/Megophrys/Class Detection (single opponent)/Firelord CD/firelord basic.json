@@ -1,0 +1,48 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "firelord basic",
+    "script": "Megophrys.setOpponentClass('firelord')",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^(\\w+) fashions a weave of flame and casts it about you, its burning tendrils.+\\.$",
+            "1"
+        ],
+        [
+            "^The flames that are the eyes of \\w+ flare as \\w+ rakes them across you in an imperious glare\\.$",
+            "1"
+        ],
+        [
+            "^A whip of flame coalesces in the hand of \\w+, with which \\w+ viciously lashes you\\.$",
+            "1"
+        ],
+        [
+            "^The flaming brand which marks your brow burns ever brighter, seeking only to consume you\\.$",
+            "1"
+        ]
+    ]
+}

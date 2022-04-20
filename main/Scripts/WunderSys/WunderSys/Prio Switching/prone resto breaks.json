@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "prone resto breaks",
+    "packageName": null,
+    "script": "function wsys.proneGained(event, affliction, class)\n  if event == \"got aff\" then\n    if (wsys.aff.damagedleftleg or wsys.aff.mangledleftleg or wsys.aff.damagedrightleg or wsys.aff.mangledrightleg or wsys.aff.bleg) and wsys.aff.prone and not wsys.vmode and not wsys.heartseedmode and not wsys.dwbmode and not wsys.bardmode then\n      wsys.switchPrios( \"damagedleftleg\", 6 )\n      wsys.switchPrios( \"damagedrightleg\", 6 )\n      wsys.switchPrios( \"mangledleftleg\", 6 )\n      wsys.switchPrios( \"mangledrightleg\", 6 )\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"got aff\", \"wsys.proneGained\")\nregisterAnonymousEventHandler(\"reset aff prios\", \"wsys.proneGained\")\n\n\nfunction wsys.proneLost(event, affliction)\n  if event == \"lost aff\" then\n    if affliction == \"prone\" and not wsys.vmode and not wsys.heartseedmode and not wsys.dwbmode and not wsys.bardmode then\n      wsys.affPrioRestore( \"damagedleftleg\" )\n      wsys.affPrioRestore( \"damagedrightleg\" )\n      wsys.affPrioRestore( \"mangledleftleg\" )\n      wsys.affPrioRestore( \"mangledrightleg\" )\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"lost aff\", \"wsys.proneLost\")",
+    "eventHandlerList": null
+}

@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Salve Highlighter",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then\n   cecho(\"\\n\\n\\n<cyan>OPPONENT APPLIED TO THEIR <yellow>\"..matches[3]..\"!!\\n\\n\\n\")\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#0000ff",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) takes some balm from a vial and rubs it on (?:her|his) ([\\w'\\-]+).$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) takes some salve from a vial and rubs it on (?:her|his) ([\\w'\\-]+).$",
+            "1"
+        ]
+    ]
+}

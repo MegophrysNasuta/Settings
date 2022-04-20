@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "inra",
+    "script": "wsys.osend(\"inrift all\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^inra$"
+}

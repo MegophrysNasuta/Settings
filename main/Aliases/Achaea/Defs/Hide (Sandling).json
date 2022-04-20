@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Hide (Sandling)",
+    "script": null,
+    "command": "cast sandling",
+    "packageName": null,
+    "regex": "^hide$"
+}

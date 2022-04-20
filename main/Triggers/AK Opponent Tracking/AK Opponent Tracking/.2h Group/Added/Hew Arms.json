@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Hew Arms",
+    "script": "if IsTargetted(matches[3]) then\n\tak.twoh.wrist = ak.twoh.wrist + ak.twoh.modifier\n\tif ak.twoh.wrist > 8 then ak.twoh.wrist = 8 end\n\tcecho(\"<yellow>wrist:<cyan> \"..ak.twoh.wrist)\n\tak.wristHit()\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^The sickening crunch of bone can be heard as the blade smashes into the ([\\w'\\-]+) arm of ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^The wet crunch of bone can be heard as the hammer smashes into the (right|left) arm of ([\\w'\\-]+).$",
+            "1"
+        ]
+    ]
+}

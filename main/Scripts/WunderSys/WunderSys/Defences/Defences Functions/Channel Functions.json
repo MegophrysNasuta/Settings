@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Channel Functions",
+    "packageName": null,
+    "script": "wsys.channels = {\n  [\"fire\"] = false,\n  [\"earth\"] = false,\n  [\"air\"] = false,\n  [\"water\"] = false,\n  [\"spirit\"] = false,\n}\n\nfunction wsys.lostallchannels()\n  wsys.channels.fire = false\n  wsys.channels.earth = false\n  wsys.channels.air = false\n  wsys.channels.water = false\n  wsys.channels.spirit = false\nend\n\nfunction wsys.missingChannels()\n  local c = 0\n  if not wsys.channels.fire then c = c + 1 end\n  if not wsys.channels.earth then c = c + 1 end\n  if not wsys.channels.air then c = c + 1 end\n  if not wsys.channels.water then c = c + 1 end\n  if wsys.isClass(\"priest\") and not wsys.channels.spirit then c = c + 1 end\n\n  return c\nend\n\nfunction wsys.defChannels()\n  if wsys.settings.havesimultaneity and wsys.missingChannels() > 2 then\n    wsys.doadd(\"simultaneity\")\n  else\n    if not wsys.channels.fire then wsys.doadd(\"channel fire\") end\n    if not wsys.channels.earth then wsys.doadd(\"channel earth\") end\n    if not wsys.channels.air then wsys.doadd(\"channel air\") end\n    if not wsys.channels.water then wsys.doadd(\"channel water\") end\n    if wsys.isClass(\"priest\") and not wsys.channels.spirit then wsys.doadd(\"channel spirit\") end\n  end\n\nend",
+    "eventHandlerList": null
+}

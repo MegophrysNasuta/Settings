@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Bank while selfish",
+    "script": "local amt = matches[2]\nlocal org = matches[3]\nlocal reason = matches[4]\n\nif reason then\n  sendAll('get '.. amt .. ' sovereigns from pack',\n          'deposit '.. amt ..' gold '.. org ..' '.. reason)\nelseif org then\n  sendAll('get '.. amt .. ' sovereigns from pack',\n          'deposit '.. amt ..' gold '.. org)\nelse\n  sendAll('get '.. amt .. ' sovereigns from pack',\n          'deposit '.. amt ..' gold')\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^bank (\\d+)(?: (\\w+))?(?: (.*))?$"
+}

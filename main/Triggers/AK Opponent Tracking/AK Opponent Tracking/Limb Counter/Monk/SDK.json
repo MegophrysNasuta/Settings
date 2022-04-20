@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "SDK",
+    "script": "if ak.ai() then return end\ntable.insert(ak.limbs.currentbreak.weapon,\"sdk\")\ntable.insert(ak.limbs.currentbreak.limb, \"torso\")\ntable.insert(ak.limbs.currentbreak.attacker,\"Me\")\ntable.insert(ak.limbs.currentbreak.who,target)\ntable.insert(ak.limbs.currentbreak.augment,\"none\")\nenableTrigger(\"Missed Single Removal Limbs\")          \nenableTrigger(\"Confirmed Hit Limbs\")\nenableTrigger(\"Parry locate\")\ndisableTrigger(\"Monk Parry\")\n\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You pump out at",
+            "2"
+        ],
+        [
+            "^You pump out at ([\\w'\\-]+) with a powerful side kick\\.$",
+            "1"
+        ]
+    ]
+}

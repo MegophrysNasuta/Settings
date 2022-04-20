@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "HM Priority Switch",
+    "script": "hmtoggle()",
+    "command": null,
+    "packageName": null,
+    "regex": "^hm$"
+}

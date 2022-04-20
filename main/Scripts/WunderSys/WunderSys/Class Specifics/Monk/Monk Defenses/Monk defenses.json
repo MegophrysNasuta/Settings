@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Monk defenses",
+    "packageName": null,
+    "script": "--TEKURA\n--Stances\nwsys.def.scorpionstance = false\nwsys.def.dragonstance = false\nwsys.def.bearstance = false\nwsys.def.catstance = false\nwsys.def.eaglestance = false\nwsys.def.horsestance = false\nwsys.def.ratstance = false\n\n--Blocks\nwsys.def.bodyblock = false\nwsys.def.pinchblock = false\nwsys.def.evadeblock = false\n\n--Guarding\n\n\n--KAIDO\n\nwsys.def.kaitrance = false  --done\nwsys.def.kaiboost = false  --done\nwsys.def.numbness = false\nwsys.def.dodging = false  --done\nwsys.def.splitmind = false\nwsys.def.boosting = false\nwsys.def.vitality = false\nwsys.def.regeneration = false\n\n\n\n\n\n--TELEPATHY\nwsys.def.mindcloak = false\nwsys.def.mindnet = false",
+    "eventHandlerList": null
+}

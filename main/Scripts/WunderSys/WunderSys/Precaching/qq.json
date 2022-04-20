@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "qq",
+    "packageName": null,
+    "script": "function wsys.qq()\n  if wsys.innewsroom then\n    send(\"quit\")\n  else\n    wsys.qqing = true\n    send(\"qq\")\n  end\nend\n\nfunction wsys.startedqq()\n  if not wsys.innewsroom then\n    wsys.saveSettings(true)\n    send(\"inrift all\")\n    wsys.keepout = {}\n    --start a 30s failsafe to keep herbs out\n    if wsys.timer.qqfailsafe then killTimer(wsys.timer.qqfailsafe) end\n    wsys.timer.qqfailsafe = tempTimer(30, [[wsys.timer.qqfailsafe = nil;wsys.setkeepouttable();wsys.outrqueue()]])\n  else\n    wsys.report(\"In a news room location, please go somewhere else if you wish to QQ/QUIT.\")\n  end\nend\n\nfunction wsys.stoppedqq()\n   wsys.qqing = false\n   wsys.setkeepouttable()\n   wsys.outrqueue()\nend",
+    "eventHandlerList": null
+}

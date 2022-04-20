@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "NW {Numpad}",
+    "packageName": null,
+    "script": "Megophrys.goDir('nw')",
+    "command": null,
+    "keyCode": "16777232",
+    "keyModifier": "536870912"
+}

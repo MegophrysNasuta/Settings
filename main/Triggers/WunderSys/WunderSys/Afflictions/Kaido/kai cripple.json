@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "kai cripple",
+    "script": "wsys.affadd(\"brokenleftarm\")\nwsys.affadd(\"brokenleftleg\")\nwsys.affadd(\"brokenrightarm\")\nwsys.affadd(\"brokenrightleg\")\nwsys.affadd(\"prone\", \"monk\")",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^[A-Z][a-z]+ raises (?:his|her) arms above (?:his|her) head, and a strange blue light begins to emanate from between (?:his|her) palms.$",
+            "1"
+        ],
+        [
+            "^Blue light crackles forth from [A-Z][a-z]+\\'s palms\\, striking you down and snapping your puny limbs\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Clear the map completely",
+    "script": "if not mmp.map_delete_warning then\n  mmp.echo(\"Are you really, really, really sure you want to delete all of the map to go to a blank state? Do the command again if you're certain.\")\n  mmp.map_delete_warning = true\n  return\nend\n\nmmp.echo(\"Okay, deleting...\")\n\ntempTimer(.1, function()\n  for name, id in pairs(getAreaTable()) do\n    deleteArea(tonumber(id))\n  end\n\n  mmp.echo(\"Deleted everything. It's all gone.\")\n  mmp.map_delete_warning = nil\n  centerview(1)\nend)",
+    "command": null,
+    "packageName": null,
+    "regex": "^map delete all$"
+}

@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Party tracking affs",
+    "script": "--deleteFull()\n--add your own party's call style\nif isTarget(matches[3]) then\n\tif matches[2] == \"Batter\" then\n\t\tTragedy.noshowAdd(\"stupidity\")\n\t\tTragedy.noshowAdd(\"epilepsy\")\n\t\tTragedy.noshowAdd(\"dizziness\")\n\telse\n\t\tTragedy.noshowAdd(string.lower(matches[2]))\n\tend\nend\n\n--who tf do I trust?\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^\\(Party\\)\\: \\w+ says, \"(\\w+) on (.+)\\.\"$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "On|Off Lyre Mode",
+    "script": "if matches[2] then\n wsys.uselyre = false\n wsys.checkaffs()\n wsys.report(\"<yellow>Lyre Mode<red> DISABLED\")\n send(\"curing on\", false)\nelse\n wsys.uselyre = true\n wsys.lyrequeue()\n wsys.report(\"<yellow>Lyre Mode<red> ENABLED\")\n send(\"curing off\", false)\nend -- if",
+    "command": null,
+    "packageName": null,
+    "regex": "^sl(o)?$"
+}

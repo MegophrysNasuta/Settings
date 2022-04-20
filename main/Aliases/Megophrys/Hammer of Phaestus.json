@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Hammer of Phaestus",
+    "script": "local hammer = 'hammer480738'\nsendAll('wield '.. hammer ..' left', 'smite ground with hammer', 'unwield '.. hammer)",
+    "command": null,
+    "packageName": null,
+    "regex": "^hmr$"
+}

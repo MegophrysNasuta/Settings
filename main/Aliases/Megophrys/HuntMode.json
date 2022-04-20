@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "HuntMode",
+    "script": "Megophrys.setMode('denizen')\nif matches[3] then\n  Megophrys.huntingGround = matches[3]\n  cecho('\\n<cyan>Hunting ground: '..\n        Megophrys.huntingGround:title()\n        ..'\\n')\n  Megophrys.setTarget(matches[2])\nelseif matches[2] then\n  Megophrys.setTarget(matches[2])\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^hunt(?: (\\w+))?(?: (.*))?$"
+}

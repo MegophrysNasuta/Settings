@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Web",
+    "script": "send('touch web '.. (matches[2] or target))",
+    "command": null,
+    "packageName": null,
+    "regex": "^web(?: (\\w+))?$"
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Automounting toggle",
+    "script": "if matches[2] then\n  local mount = matches[2]\n  if matches[2] == \" on\" then mount = true end\n  if matches[2] == \" off\" then mount = false end\n  wsys.mountUp(  mount )\nelse\n  wsys.mountToggle()\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^va( \\w+)?$"
+}

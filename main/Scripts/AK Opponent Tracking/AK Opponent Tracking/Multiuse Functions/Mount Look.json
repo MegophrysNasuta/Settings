@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Mount Look",
+    "packageName": null,
+    "script": "\nfunction ak.MountLook()\n\tenableTrigger(\"Look Prompt\")\n\tif WhoHereTable and not table.contains(WhoHereTable,target) then return end\n\tak.lookmountedupdate = true\n\tak.mountedcheck = target\n\tif ak.lookmounted then killTrigger(ak.lookmounted) end\n\tif ak.lookmountedtwo then killTrigger(ak.lookmountedtwo) end\n  if ak.lookmountedthree then killTrigger(ak.lookmountedthree) end\n  if ak.lookmountedfour then killTrigger(ak.lookmountedfour) end\n\tak.lookmounted = tempRegexTrigger(ak.mountedcheck..\"(?: |.*)is here.\",[[\n\t\tak.MountLookUnMounted()\n\t]])\n\tak.lookmountedtwo = tempRegexTrigger(ak.mountedcheck..\"(?: |.*)flows ever onwards.\",[[\n\t\tak.MountLookUnMounted()\n\t]])\n\tak.lookmountedthree = tempRegexTrigger(ak.mountedcheck..\"(?: |.*)\\'s imposing form looms.\",[[\n\t\tak.MountLookUnMounted()\n\t]])\n  \tak.lookmountedfour = tempRegexTrigger(ak.mountedcheck..\"(?: |.*)towers here, clad in skin of living stone.\",[[\n\t\tak.MountLookUnMounted()\n\t]])\nend\n\nfunction ak.MountLookPrompt()\n\tdisableTrigger(\"Look Prompt\")\n\tak.GHLookPrompt()\n\tak.submergedLookPrompt()\n\tak.FloodLookPrompt()\n  ak.distortionLookPrompt()\n\tif WhoHereTable and not table.contains(WhoHereTable,target) then return end\n\tif ak.mounted == ak.lookmountedupdate then return end\n\tak.mounted = ak.lookmountedupdate\n\tif ak.lookmounted then killTrigger(ak.lookmounted) end\n\tif ak.lookmountedtwo then killTrigger(ak.lookmountedtwo) end\n\tif ak.lookmountedthree then killTrigger(ak.lookmountedthree) end\n  if ak.lookmountedfour then killTrigger(ak.lookmountedfour) end\n\tak.lookmounted = nil\n\tak.lookmountedtwo = nil\n\tak.lookmountedthree = nil\n\tak.scoreup(target)\nend\n\nfunction ak.MountLookUnMounted()\n\tif ak.lookmounted then killTrigger(ak.lookmounted) end\n\tif ak.lookmountedtwo then killTrigger(ak.lookmountedtwo) end\n\tif ak.lookmountedthree then killTrigger(ak.lookmountedthree) end\n  if ak.lookmountedfour then killTrigger(ak.lookmountedfour) end\n\tak.lookmountedupdate = false\nend",
+    "eventHandlerList": null
+}

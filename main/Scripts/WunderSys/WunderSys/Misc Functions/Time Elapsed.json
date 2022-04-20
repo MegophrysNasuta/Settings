@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Time Elapsed",
+    "packageName": null,
+    "script": "--check time difference between input and now in milliseconds\n--input string format is \"hr:min:sec:millisec\" with or without preceding zeros\n--getTime(true, \"HH:mm:ss:zzz\" ) is how you get a valid input string\nfunction wsys.timeElapsed(time)\n  --change time string into time values\n  local timetable = string.split(time, \":\")\n  local hr = tonumber(timetable[1])\n  local min = tonumber(timetable[2])\n  local sec = tonumber(timetable[3])\n  local msec = tonumber(timetable[4])\n  --get current time values\n  local hrnow   = tonumber(getTime(true, \"H\"))\n  local minnow  = tonumber(getTime(true, \"m\"))\n  local secnow  = tonumber(getTime(true, \"s\"))\n  local msecnow = tonumber(getTime(true, \"z\"))\n  --calculate time elapsed\n  local totalmsec = ((hrnow - hr) % 24) * 60 * 60 * 1000 +\n                    ((minnow - min)) * 60 * 1000 +\n                    ((secnow - sec)) * 1000 +\n                    (msecnow - msec)\n\n  return totalmsec\nend\n\n--check time difference between two times in milliseconds\n--input string format for the times is \"hr:min:sec:millisec\" with or without preceding zeros\n--t1 is the newer time, t2 is the older one\nfunction wsys.timeDifference(t1, t2)\n  --change t1 string into time values\n  local timetable1 = string.split(t1, \":\")\n  local hr1 = tonumber(timetable1[1])\n  local min1 = tonumber(timetable1[2])\n  local sec1 = tonumber(timetable1[3])\n  local msec1 = tonumber(timetable1[4])\n  --change t2 string into time values\n  local timetable2 = string.split(t2, \":\")\n  local hr2   = tonumber(timetable2[1])\n  local min2  = tonumber(timetable2[2])\n  local sec2  = tonumber(timetable2[3])\n  local msec2 = tonumber(timetable2[4])\n  --calculate time difference\n  local totalmsec = ((hr1 - hr2) % 24) * 60 * 60 * 1000 +\n                    ((min1 - min2)) * 60 * 1000 +\n                    ((sec1 - sec2)) * 1000 +\n                    (msec1 - msec2)\n\n  return totalmsec\nend",
+    "eventHandlerList": null
+}

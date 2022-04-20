@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "cdb CONFIG",
+    "packageName": null,
+    "script": "-- IN-GAME COMMAND SEPARATOR\ncdb.cs = \"|\"\n\ncdb.politics = {\n  targossas = {\n    enemy = false,\n  },\n  mhaldor = {\n    enemy = false,\n  },\n  eleusis = {\n    enemy = false,\n  },\n  cyrene = {\n    enemy = false,\n  },\n  hashan = {\n    enemy = false,\n  },\n  ashtan = {\n    enemy = false,\n  },\n  [\"(none)\"] = {\n    enemy = false,\n  },\n  divine = {\n    enemy = false,\n    -- For those who like to live dangerously.\n  },\n}\n\ncdb.styles = {\n  targossas = {\n    color = \"gold\",\n    underline = false,\n    italics = false,\n    bold = false,\n  },\n  mhaldor = {\n    color = \"blood\",\n    underline = false,\n    italics = false,\n    bold = false,\n  },\n  eleusis = {\n    color = \"OliveDrab\",\n    underline = false,\n    italics = false,\n    bold = false,\n  },\n  cyrene = {\n    color = \"jet\",\n    underline = false,\n    italics = false,\n    bold = false,\n  },\n  hashan = {\n    color = \"sienna\",\n    underline = false,\n    italics = false,\n    bold = false,\n  },\n  ashtan = {\n    color = \"purple\",\n    underline = false,\n    italics = false,\n    bold = false,\n  },\n  [\"(none)\"] = { -- Rogues\n    color = \"salmon\",\n    underline = false,\n    italics = false,\n    bold = false,\n  },\n  enemies = { -- City enemies\n    color = \"\",\n    underline = false,\n    italics = true,\n    bold = false,\n  },\n  divine = {\n    color = \"pink\",\n    underline = false,\n    italics = false,\n    bold = true,\n  },\n  [\"(hidden)\"] = {\n    color = \"yellow\",\n    underline = true,\n    italics = false,\n    bold = false,\n  },\n}\n\ncolor_table.jet = { 48, 48, 48 }\ncolor_table.charcoal = { 63, 63, 63 }\ncolor_table.night = { 69, 69, 69 }\ncolor_table.obs = { 100, 100, 100 }\ncolor_table.moon = { 150, 150, 150 }\ncolor_table.smoke = { 237, 237, 237 }\ncolor_table.blood = { 221, 37, 37 }\ncolor_table.badblood = { 107, 16, 16 }",
+    "eventHandlerList": null
+}

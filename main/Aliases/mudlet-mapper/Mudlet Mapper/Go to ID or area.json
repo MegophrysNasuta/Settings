@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Go to ID or area",
+    "script": "local where = matches[2]:lower()\nlocal gallop\nif command:ends(\"gallop\") then\n  gallop = \"gallop\"\n  where = where:sub(1, -8)\nelseif command:ends(\"sprint\") then\n  gallop = \"sprint\"\n  where = where:sub(1, -8)\nelseif command:ends(\"dash\") then\n  gallop = \"dash\"\n  where = where:sub(1, -6)\nelseif command:ends(\"runaway\") then\n  gallop = \"runaway\"\n  where = where:sub(1, -9)\nelseif command:ends(\"glide\") then\n  gallop = \"glide\"\n  where = where:sub(1, -7)\nend\nif mmp.debug then\n  mmp.gotoPerf = mmp.gotoPerf or createStopWatch()\n  startStopWatch(mmp.gotoPerf)\nend\n-- goto room ID\nif tonumber(where) then\n  mmp.gotoRoom(where, gallop)\nelse\n  -- goto area or feature\n  local split = where:split(\" \")\n  if split[1] == \"feature\" then\n\t  table.remove(split, 1)\n    mmp.gotoFeature(table.concat(split, \" \"), gallop)\n  else\n    if tonumber(split[#split]) then\n      mmp.gotoArea(where:sub(1, -#(split[#split]) - 2), tonumber(split[#split]), gallop)\n    else\n      mmp.gotoArea(where, nil, gallop)\n    end\n  end\nend\nif mmp.debug then\n  mmp.echo(\"goto alias took \" .. stopStopWatch(mmp.gotoPerf) .. \"s to run.\")\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^goto (.+)$"
+}

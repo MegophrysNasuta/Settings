@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "yes"
+    },
+    "type": "keygroup",
+    "name": "Shaman Keys",
+    "packageName": null,
+    "script": null,
+    "command": null,
+    "keyCode": "-1",
+    "keyModifier": "0"
+}

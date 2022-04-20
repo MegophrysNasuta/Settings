@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Haemo handling",
+    "packageName": null,
+    "script": "function wsys.haemoBleedGain(event, affliction, class)\n  if event == \"got aff\" then\n    if affliction == \"bleeding\" and wsys.classTimerExists(\"shaman\") then\n      local bleedthreshold = (wsys.stats.h - 1500) / 6 * 0.66\n      if wsys.bleedtype == \"health\" and wsys.bleeding > bleedthreshold then\n        wsys.switchPrios( \"haemophilia\", 1 )\n      end\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"got aff\", \"wsys.haemoBleedGain\")\nregisterAnonymousEventHandler(\"reset aff prios\", \"wsys.haemoBleedGain\")\n\n\nfunction wsys.haemoLost(event, affliction)\n  if event == \"lost aff\" then\n    if affliction == \"haemophilia\" and (wsys.affPosition(\"haemophilia\") ~= wsys.defaultAffPosition(\"haemophilia\")) then\n      wsys.affPrioRestore( \"haemophilia\" )\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"lost aff\", \"wsys.haemoLost\")\n",
+    "eventHandlerList": null
+}

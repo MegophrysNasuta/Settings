@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Report a bug",
+    "script": "send(\"msg tynil //WunderSys(\"..wsys.myVersion..\") Bug: \" .. matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^wbug (.*)$"
+}

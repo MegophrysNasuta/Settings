@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "defprio set",
+    "script": "wsys.defprioset(matches[2], tonumber(matches[3]))",
+    "command": null,
+    "packageName": null,
+    "regex": "^wconfig defprio (\\w+) (\\d+)$"
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "meditate toggle",
+    "script": "wsys.toggleMeditate()",
+    "command": null,
+    "packageName": null,
+    "regex": "^med$"
+}

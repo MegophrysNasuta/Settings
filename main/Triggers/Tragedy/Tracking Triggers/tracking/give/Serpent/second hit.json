@@ -1,0 +1,64 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "second hit",
+    "script": "if table.is_empty(Tragedy.hits) then\n    table.insert(Tragedy.hits, \"hit1\")\nelseif table.contains(Tragedy.hits, \"hit1\") or table.contains(Tragedy.hits, \"miss1\") then\n    table.insert(Tragedy.hits, \"hit2\")\nend\n--if checkLimbHit(matches[1]) then\n--\twhatLimb(matches[1])\n--end\n\t",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Striking like a snake, you prick (.+) a second time with your dirk\\.$",
+            "1"
+        ],
+        [
+            "^You slash into (.+)(.*)\\.$",
+            "1"
+        ],
+        [
+            "^Lightning-quick, you jab (.+)(.*)\\.$",
+            "1"
+        ],
+        [
+            "^You viciously jab (.+) into (.+)(.*)\\.$",
+            "1"
+        ],
+        [
+            "^You swing (.+) at (.+)(.*)with all your might\\.$",
+            "1"
+        ],
+        [
+            "^You viciously jab the Rageblade into (.+)(.*)\\.$",
+            "1"
+        ],
+        [
+            "^You whip (.+) toward the (.*) of (\\w+)\\.$",
+            "1"
+        ],
+        [
+            "^You skilfully whirl (.+) toward the (.*) of (\\w+).$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Hypochondria handling",
+    "packageName": null,
+    "script": "function wsys.hypochondriaFull(event, affliction, class)\n  if event == \"got aff\" then\n    if (wsys.aff.lethargy or wsys.aff.nausea or wsys.aff.addiction or wsys.aff.darkshade) and wsys.aff.hypochondria then\n      wsys.switchPrios( \"hypochondria\", 1 )\n      wsys.switchPrios( \"impatience\", 4)\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"got aff\", \"wsys.hypochondriaFull\")\nregisterAnonymousEventHandler(\"reset aff prios\", \"wsys.hypochondriaFull\")\n\nfunction wsys.hypochondriaLost(event, affliction)\n  if event == \"lost aff\" then\n    if affliction == \"hypochondria\" then\n      wsys.affPrioRestore( \"hypochondria\" )\n      wsys.affPrioRestore( \"impatience\" )\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"lost aff\", \"wsys.hypochondriaLost\")",
+    "eventHandlerList": null
+}

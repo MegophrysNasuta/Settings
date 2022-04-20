@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "No wormhole",
+    "script": "if mmp.speedWalkDir and mmp.speedWalkDir[speedWalkCounter] and mmp.speedWalkDir[speedWalkCounter]==\"worm warp\" then\n  mmp.echo(\"Missing wormhole detected, locking wormhole and trying new path...\")\n\n  lockSpecialExit(mmp.currentroom, mmp.speedWalkPath[speedWalkCounter], \"worm warp\", true)\n\n  local destination = mmp.speedWalkPath[#mmp.speedWalkPath]\n\n  mmp.stop()\n\n  mmp.clearpathcache() -- clear cache so mmp.getPath accounts for the new way\n\n  if not mmp.getPath(mmp.currentroom, destination) then\n    mmp.echo(string.format(\"Don't know how to get to %d (%s) anymore :( Move into a room we know of to continue\", destination, getRoomName(destination)))\n  else\n    mmp.gotoRoom(destination)\n  end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t",
+    "matches": [
+        [
+            "There is no wormhole here.",
+            "3"
+        ]
+    ]
+}

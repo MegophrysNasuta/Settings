@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "delete | gag action + one prompt",
+    "packageName": null,
+    "script": "function deleteTwoLines()\n\tdeleteLine() -- deletes second line\n\tmoveCursor(0,getCurrentLineNumber()-1) --moves cursor up one line\n\tdeleteLine() -- deletes first line\nend",
+    "eventHandlerList": null
+}

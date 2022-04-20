@@ -1,0 +1,44 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Devastate 2",
+    "script": "--gmcp aff added will trigger before this does. Rely on that for determining the level break\nif matches[2] == \"arms\" then\n  if wsys.aff.mangledrightarm then\n    wsys.restobreakcheck(\"mangledrightarm\")\n  else\n    wsys.restobreakcheck(\"damagedrightarm\")\n  end\n  if wsys.aff.mangledleftarm then\n    wsys.restobreakcheck(\"mangledleftarm\")\n  else\n    wsys.restobreakcheck(\"damagedleftarm\")\n  end\nelseif matches[2] == \"legs\" then\n  if wsys.aff.mangledrightleg then\n    wsys.restobreakcheck(\"mangledrightleg\")\n  else\n    wsys.restobreakcheck(\"damagedrightleg\")\n  end\n  if wsys.aff.mangledleftleg then\n    wsys.restobreakcheck(\"mangledleftleg\")\n  else\n    wsys.restobreakcheck(\"damagedleftleg\")\n  end\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^[A-Z][a-z]+ aims a devastating blow with .+ at your already injured (legs|arms)\\.$",
+            "1"
+        ],
+        [
+            "^[A-Z][a-z]+ whips .+ in a savage arc, cleaving at your (arms|legs)\\.$",
+            "1"
+        ],
+        [
+            "^[A-Z][a-z]+ brings .+ whirling about to cleave deeply into your already damaged (arms|legs)\\.$",
+            "1"
+        ]
+    ]
+}

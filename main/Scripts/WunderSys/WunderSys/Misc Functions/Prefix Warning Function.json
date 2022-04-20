@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Prefix Warning Function",
+    "packageName": null,
+    "script": "-- Set the prefixWarning that gets used in the @warning prompt tag\n\nwsys.prefixWarning = \"\"\n\nfunction wsys.setPrefixWarning(message, duration, key)\n  wsys.prefixWarning = \"<MediumVioletRed>{!\" .. message .. \"!}\"\n\twsys.prefixWarningKey = key\n  if wsys.timer.prefixWarningTimer then killTimer(wsys.timer.prefixWarningTimer) end\n  wsys.timer.prefixWarningTimer = tempTimer(duration, [[wsys.timer.prefixWarningTimer = nil;wsys.prefixWarning = \"\"]])\nend\n\nfunction wsys.clearPrefixWarning(key)\n\tif wsys.prefixWarningKey == key then\n\t\tif wsys.timer.prefixWarningTimer then killTimer(wsys.timer.prefixWarningTimer) end\n\t\t\twsys.timer.prefixWarningTimer = nil\n\t\t\twsys.prefixWarning = \"\"\n\tend\nend",
+    "eventHandlerList": null
+}

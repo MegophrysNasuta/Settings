@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Fox HealthLeech",
+    "script": "if IsTargetted(matches[2]) then \n   OppGainedAff(\"healthleech\")\nend\nak.animalsup = ak.animalsup or {}\nlocal animaltoremove = \"fox\"\nif table.contains(ak.animalsup, animaltoremove) then\n   for i = 1, #ak.animalsup do\n      if ak.animalsup[i] == animaltoremove then\n         table.remove(ak.animalsup,i)\n      end\n   end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^A cunning red fox leaps upon ([\\w'\\-]+)\\, sinking its teeth into [\\w'\\-]+ skin\\.$",
+            "1"
+        ]
+    ]
+}

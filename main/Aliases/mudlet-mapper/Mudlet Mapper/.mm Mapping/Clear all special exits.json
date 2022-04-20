@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Clear all special exits",
+    "script": "-- want the current room, but we're lost\nif not matches[2] and (not mmp.currentroom or not mmp.roomexists(mmp.currentroom)) then mmp.echo(\"Don't know where we are at the moment.\") return end\n\n-- want another room, but it doesn't exist\nif matches[2] and tonumber(matches[2]) and not mmp.roomexists(matches[2]) then mmp.echo(\"v\"..matches[2]..\" doesn't exist.\") return end\n\n-- or a relative one\nif matches[2] and not tonumber(matches[2]) and not mmp.relativeroom(mmp.currentroom, matches[2]) then mmp.echo(\"There is no room \"..matches[2].. \" of us.\") return end\n\nlocal rid = (not matches[2] and mmp.currentroom or (tonumber(matches[2]) or mmp.relativeroom(mmp.currentroom, matches[2])))\n\nclearSpecialExits(rid)\nmmp.echo(string.format(\"Cleared all special exits in %s (%d).\\n\", getRoomName(rid), rid))",
+    "command": null,
+    "packageName": null,
+    "regex": "^(?:spe clear|exit special clear) ?(\\w+)?$"
+}

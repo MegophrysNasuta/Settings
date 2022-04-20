@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Steal Monolith",
+    "script": "sendAll('g monolith', 'g box302675 from pack370332',\n        'g group monolith from box302675', 'combine monolith fully',\n        'put group monolith in box302675', 'put box302675 in pack370332')",
+    "command": null,
+    "packageName": null,
+    "regex": "^stealmono$"
+}

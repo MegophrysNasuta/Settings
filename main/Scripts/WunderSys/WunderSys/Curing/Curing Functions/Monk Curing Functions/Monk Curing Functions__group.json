@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "scriptgroup",
+    "name": "Monk Curing Functions",
+    "packageName": null,
+    "script": null,
+    "eventHandlerList": null
+}

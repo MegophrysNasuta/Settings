@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Scour",
+    "script": "aff = \"disloyalty\"\nif IsTargetted(matches[2]) then\n   OppGainedAff(aff)\n\t ak.duress.scourrelapse = true\n\t killTimer(tostring(ak.duress.scourrelapsetimer))\n   ak.duress.scourrelapsetimer = tempTimer(7,[[\n   \t ak.duress.scourrelapse = false\n     ak.scoreup(]]..matches[2]..[[)\n   ]])\n\t \n\t killTimer(tostring(ak.duress.asphyxiatetimer))\n   ak.duress.asphyxiatetimer = tempTimer(10, [[ak.duress.asphyxiate = false]])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You bend your will upon ([\\w'\\-]+), summoning forth a howling wind to rip the flesh from (?:her|his) bones\\.$",
+            "1"
+        ]
+    ]
+}

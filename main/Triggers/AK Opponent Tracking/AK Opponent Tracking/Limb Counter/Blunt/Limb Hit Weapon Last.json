@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Limb Hit Weapon Last",
+    "script": "if ak.ai() then return end\nlocal weapon = matches[3]\nlocal limb = ak.limbs.standardizeLimb(matches[2])\ntable.insert(ak.limbs.currentbreak.weapon,weapon)\ntable.insert(ak.limbs.currentbreak.limb,limb)\ntable.insert(ak.limbs.currentbreak.attacker,\"Me\")\ntable.insert(ak.limbs.currentbreak.who,target)\ntable.insert(ak.limbs.currentbreak.augment,\"blunt\")\nenableTrigger(\"Missed Single Removal Limbs\")          \nenableTrigger(\"Confirmed Hit Limbs\")\nenableTrigger(\"Parry locate\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^With a steady hand\\, you batter [\\w'\\-]+\\'s (right leg|left leg|right arm|left arm|head|torso) with (.*)\\.$",
+            "1"
+        ],
+        [
+            "^You smash [\\w'\\-]+\\'s (right leg|left leg|right arm|left arm|head|torso) with (.*)\\.$",
+            "1"
+        ]
+    ]
+}

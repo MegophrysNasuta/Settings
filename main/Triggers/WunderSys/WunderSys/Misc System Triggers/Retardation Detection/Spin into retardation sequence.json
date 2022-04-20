@@ -1,0 +1,37 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Spin into retardation sequence",
+    "script": "vibeSpinner = matches[2]",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "999",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "Trigger": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([A-Z][a-z]+) vigorously spins (?:a pyramid carved of crystal|an opaque crystal disc), and it begins to hover in the air.$",
+            "1"
+        ]
+    ]
+}

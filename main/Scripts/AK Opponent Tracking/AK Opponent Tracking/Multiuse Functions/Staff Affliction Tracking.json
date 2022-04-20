@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Staff Affliction Tracking",
+    "packageName": null,
+    "script": "-------------------------------------------------\n--         Put your Lua functions here.        --\n--                                             --\n-- Note that you can also use external Scripts --\n-------------------------------------------------\nfunction ak.staffaff(staffhit)\n  if staffhit == \"airstaff\" then\n\t   OppGainedAff(\"prone\")\n  elseif staffhit == \"firestaff\" then\n\t   ak.flameon(\"notadditive\")\n  --elseif staffhit == \"earthstaff\" then\n\t   --OppGainedAff(\"prone\")\n  elseif staffhit == \"waterstaff\" then\n\t   OppGainedAff(\"frozen\")\n  end\nend\n\n--DO NOT MESS WITH THIS--",
+    "eventHandlerList": null
+}

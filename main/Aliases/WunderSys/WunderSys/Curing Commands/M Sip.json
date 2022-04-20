@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "M Sip",
+    "script": "wsys.hmsip(\"mana\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^m$"
+}

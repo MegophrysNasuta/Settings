@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Amnesia",
+    "packageName": null,
+    "script": "function wsys.onAmnesiaCheck(event, affliction)\n  if event == \"got aff\" and affliction == \"amnesia\" then\n    if not wsys.paused and not wsys.softpaused then\n    \tsend(\"touch flaws\", false)\n    end -- if\n  end\nend\n\nif wsys.events.on_amnesia then killAnonymousEventHandler( wsys.events.on_amnesia ) end\nwsys.events.on_amnesia = registerAnonymousEventHandler(\"got aff\", \"wsys.onAmnesiaCheck\")",
+    "eventHandlerList": null
+}

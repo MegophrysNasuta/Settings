@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Aff Priority Shift Gag",
+    "script": "local newPrio = tonumber(multimatches[2][3])\nlocal theAff = multimatches[2][2]\nwsys.affPrioChanged( theAff, newPrio )\nif (wsys.defaultAffPosition(theAff) == newPrio) or wsys.settings.gagaffshift then\n  deleteFull()\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You have set the ",
+            "2"
+        ],
+        [
+            "^You have set the \\'(\\w+)\\' affliction to the (\\d+) priority\\.$",
+            "1"
+        ]
+    ]
+}

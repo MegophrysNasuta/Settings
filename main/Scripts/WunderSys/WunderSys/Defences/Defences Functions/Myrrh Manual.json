@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Myrrh Manual",
+    "packageName": null,
+    "script": "function wsys.manualmyrrh()\n  if wsys.settings.usetransmutation then\n    return \"outr bisemutum;eat bisemutum\"\n  else\n    return \"outr myrrh;eat myrrh\"\n  end\nend",
+    "eventHandlerList": null
+}

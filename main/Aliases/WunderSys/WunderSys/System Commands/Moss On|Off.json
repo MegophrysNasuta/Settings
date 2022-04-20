@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Moss On|Off",
+    "script": "if matches[2] == \"on\" then\n  wsys.setSettings(\"usemoss\", \"true\")\n  wsys.report(\"Will use moss\")\n  wsys.mossThreshholdDown()\nelseif matches[2] == \"off\" then\n  wsys.setSettings(\"usemoss\", \"false\")\n  wsys.report(\"Won't use moss\")\n  send(\"curing mosshealth 0\", false)\n  send(\"curing mossmana 0\", false)\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^moss (on|off)$"
+}

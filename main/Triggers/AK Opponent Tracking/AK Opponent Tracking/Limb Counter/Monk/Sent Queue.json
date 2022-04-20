@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Sent Queue",
+    "script": "local combodraw = multimatches[2][2]\nif not string.findPattern(combodraw,\"hfp\") and not string.findPattern(combodraw,\"snk\") and not string.findPattern(combodraw,\"spp\") and not string.findPattern(combodraw,\"mnk\") and not string.findPattern(combodraw,\"drawslash\") then\n\treturn\nend\ncombodraw = string.gsub(combodraw, \"/\", \" \")\ncombodraw = combodraw:split(\" \")\nak.limbs.parriedlimbs = {}\nfor i = 1, #combodraw do\n   if string.findPattern(combodraw[i],\"hfp\") then\n      table.insert(ak.limbs.parriedlimbs,combodraw[i+1]:lower()..\"leg\")\n   elseif string.findPattern(combodraw[i],\"snk\") then\n      table.insert(ak.limbs.parriedlimbs,combodraw[i+1]:lower()..\"leg\")\n   elseif string.findPattern(combodraw[i],\"spp\") then\n      table.insert(ak.limbs.parriedlimbs,combodraw[i+1]:lower()..\"arm\")\n   elseif string.findPattern(combodraw[i],\"mnk\") then\n      table.insert(ak.limbs.parriedlimbs,combodraw[i+1]:lower()..\"arm\")\n\t elseif string.findPattern(combodraw[i],\"drawslash\") then\n      table.insert(ak.limbs.parriedlimbs,combodraw[i+2]:lower()..\"arm\")\n   end \nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "Alias \"",
+            "2"
+        ],
+        [
+            "Alias \\\"\\w+\\\" will now execute\\: \\\"(.*)\\\"",
+            "1"
+        ]
+    ]
+}

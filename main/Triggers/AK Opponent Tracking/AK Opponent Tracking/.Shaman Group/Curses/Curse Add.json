@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "yes",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Curse Add",
+    "script": "if ak.ai() then return end\nif not IsTargetted(multimatches[2][2]) then return end\nak.bleedincrease = 40 --curse\nlocal curse = multimatches[2][3]\nif curse then\n\t curse = curse:lower()\n   if curse ~= \"breach\" and curse ~= \"tzantza\" and curse ~= \"inflame\" then\n\t \t\tif affstrack.score[curse] then\n\t\t\t\tOppGainedAff(curse)\n\t\t\telseif curse == \"peace\" then \n         curse = \"pacifism\"\n\t\t\t\t OppGainedAff(curse)  \n      elseif curse == \"paralyse\" then \n         curse = \"paralysis\"\n\t\t\t\t OppGainedAff(curse)  \n      elseif curse == \"plague\" then\n          curse = \"voyria\"\n\t\t\t\t\tOppGainedAff(curse)\n      elseif curse == \"clumsy\" then\n          curse = \"clumsiness\" \n\t\t\t\t\tOppGainedAff(curse)\n      elseif curse == \"dizzy\" then\n          curse = \"dizziness\" \n\t\t\t\t\tOppGainedAff(curse)\n      elseif curse == \"stupid\" then\n          curse = \"stupidity\" \n\t\t\t\t\tOppGainedAff(curse)\n      elseif curse == \"vomiting\" then\n          curse = \"nausea\" \n\t\t\t\t\tOppGainedAff(curse)\n      elseif curse == \"reckless\" then\n          curse = \"recklessness\"\n\t\t\t\t\tOppGainedAff(curse)\n\t\t\telseif curse == \"fear\" then\n          ak.tumbling = false\n\t\t\t\t\tak.scoreup(multimatches[2][2])\n\t\t\telseif curse == \"bleed\" then\n\t\t\t\n\t\t\telse\n\t\t\t\tcecho(\"Unknown Curse <cyan>\"..curse) \n      end\n   end\nend\nif ak.shaman and ak.shaman.pararedo and ak.shaman.pararedo == \"init\" then \n\tak.shaman.pararedo = true \nelseif ak.shaman and ak.shaman.pararedo then\n\tak.shaman.pararedo = false\t\nend\n\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You point an imperious finger at",
+            "2"
+        ],
+        [
+            "^You point an imperious finger at ([\\w'\\-]+)\\, bringing the curse of ([\\w'\\-]+) down upon [\\w'\\-]+\\.$",
+            "1"
+        ]
+    ]
+}

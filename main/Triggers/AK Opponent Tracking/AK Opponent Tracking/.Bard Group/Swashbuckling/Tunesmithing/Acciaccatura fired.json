@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "yes",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Acciaccatura fired",
+    "script": "tunesmithing = \"none\"\nif ak.ai() then return end\n--ak.limbs.ParseonLine()\nif IsTargetted(matches[2]) then\n   local smashlimb = ak.limbs.standardizeLimb(matches[3])\n   if affstrack.score[smashlimb] < 100 then\n      OppGainedAff(smashlimb)\n   end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "1",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^A bell\\-like tone rings out from your songblessed rapier\\, echoed by the sound of cracking bone as ([\\w'\\-]+)\\'s (left leg|right leg|left arm|right arm) snaps\\.$",
+            "1"
+        ]
+    ]
+}

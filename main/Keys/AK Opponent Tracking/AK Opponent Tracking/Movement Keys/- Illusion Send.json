@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "- Illusion Send",
+    "packageName": null,
+    "script": "if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then\n  local presend = \"\"\n  local postsend = \"\"\n  if wsys.def.phased then\n    postsend = \"|look at shrine|look at guard\"\n  end\n\t\tif TumbleEngaged then\n    send(presend..\"up\"..postsend)\n  else\n    send(\"queue addclear eqbal \" .. presend .. \"up\" .. postsend)\n\tend\nelse\n\tak.scoreup(target)\n\tak.illusions_send()\n\tif gmcp.Char.Status.race:match(\"Dragon\") == \"Dragon\" then \n\t   send(\"conjure \" ..target.. \" illusion \" .. illusion)\n\telseif gmcp.Char.Status.class == \"Serpent\" then \n\t   send(\"conjure \" ..target.. \" illusion \" .. illusion)\n\telseif gmcp.Char.Status.class == \"Magi\" or gmcp.Char.Status.class == \"Sylvan\" then\n\t   send(\"cast \" ..target.. \" illusion \" .. illusion)\n\tend\n\tillusionredo = 1\nend",
+    "command": null,
+    "keyCode": "45",
+    "keyModifier": "536870912"
+}

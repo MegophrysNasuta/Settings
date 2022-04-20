@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Spur Skywards",
+    "script": null,
+    "command": "spur hippogriff skywards",
+    "packageName": null,
+    "regex": "^fly$"
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Homunculus give|get",
+    "script": "if matches[3] then\n  send('homunculus give '.. matches[2] ..' to '.. matches[3])\nelse\n  send('homunculus get '.. matches[2])\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^hg (\\w+)(?: (\\w+))?$"
+}

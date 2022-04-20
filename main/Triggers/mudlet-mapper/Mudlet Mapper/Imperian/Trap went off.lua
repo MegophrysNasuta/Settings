@@ -1,0 +1,5 @@
+selectCurrentLine()
+replace("")
+mmp.echon("Your trap at " .. multimatches[2][2])
+mmp.roomEcho(multimatches[2][2])
+echo(" was set off by " .. multimatches[2][3] .. "!!!\n")

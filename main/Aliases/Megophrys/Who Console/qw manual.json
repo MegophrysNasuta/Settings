@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "qw manual",
+    "script": "disableTrigger(\"Who Console\")\nsend('qw')\ntempTimer(.25, function() enableTrigger(\"Who Console\") end)",
+    "command": null,
+    "packageName": null,
+    "regex": "^qw$"
+}

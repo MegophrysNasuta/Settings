@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Focused",
+    "script": "if ak.ai() then return end\nif IsTargetted(matches[2]) then\n\tif ak.bals.focus then\n\t\taffstrack.score.rixil = 0\n\t\tak.bals.focus = false\n\t\tak.timers.focus = tempTimer(2.2,[[ak.bals.focus = true;ak.timers.focus = nil]])--2.2\n\t\tak.cure.focus(matches[2])\n\tend\n\tak.currentmana = ak.currentmana - 250\n  affstrack.score.rixil = 0\n  if not ak.timers.focus then \n     if not ak.bals.focus then  \n         ak.bals.focus = true \n         cecho(\"<cyan>Ignored Cures\")\n         if ak.thoughtIhad then ak.thoughtIhad(\"impatience\") else affstrack.score.impatience = 0 end\n      end \n  end\n  if affstrack.score.impatience>0 then\n     if ak.thoughtIhad then ak.thoughtIhad(\"impatience\") else affstrack.score.impatience = 0 end\n     cecho(\"\\n\\n<yellow>IMPATIENCE CURED!!\")\n     cecho(\"\\n\\n<yellow>IMPATIENCE CURED!!\")\n     cecho(\"\\n\\n<yellow>IMPATIENCE CURED!!\")\n  end\nend\n\n\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^A look of extreme focus crosses the face of ([\\w'\\-]+).$",
+            "1"
+        ]
+    ]
+}

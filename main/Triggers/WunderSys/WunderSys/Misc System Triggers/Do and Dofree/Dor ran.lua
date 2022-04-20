@@ -1,0 +1,2 @@
+wsys.dosent("dor")
+deleteFull()

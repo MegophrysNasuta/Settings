@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "salve",
+    "script": "if isTarget(matches[2]) and not illusion then \n\tif matches[3] == \"body\" or matches[3] == \"skin\" then\n    if tarAff(\"ablaze\") then\n      Tragedy.curedaff(\"ablaze\")\n    else\n\t\t  Tragedy.curedaff(\"anorexia\")\n    end\n\t--else\n\t\t--salve_track.applied(matches[3])\n  elseif matches[3] == \"legs\" then\n    if tarAff(\"brokenleftleg\") and tarAff(\"brokenrightleg\") then\n      Tragedy.curedaff(\"brokenleftleg\")\n    elseif tarAff(\"brokenleftleg\") and not tarAff(\"brokenrightleg\") then\n      Tragedy.curedaff(\"brokenleftleg\")\n    elseif tarAff(\"brokenrightleg\") and not tarAff(\"brokenleftleg\") then\n      Tragedy.curedaff(\"brokenrightleg\")\n    elseif tarAff(\"damagedleftleg\") and tarAff(\"damagedrightleg\") then\n      tempTimer(3.5, [[Tragedy.curedaff(\"damagedleftleg\")]])\n      tempTimer(3.5, [[Tragedy.noshowAdd(\"brokenleftleg\")]])\n    elseif tarAff(\"damagedleftleg\") and not tarAff(\"damagedrightleg\") then\n      tempTimer(3.5, [[Tragedy.curedaff(\"damagedleftleg\")]])\n      tempTimer(3.5, [[Tragedy.noshowAdd(\"brokenleftleg\")]])\n    elseif tarAff(\"damagedrightleg\") and not tarAff(\"damagedleftleg\") then\n      tempTimer(3.5, [[Tragedy.curedaff(\"damagedrightleg\")]])\n      tempTimer(3.5, [[Tragedy.noshowAdd(\"brokenrightleg\")]])\n    end\n\tend\n\tbacktrack2(\"slickness\")\nend\n\t--[[else\n\t\tcuredaff(\"anorexia\")\n\tend\nend]]--\n\nif gmcp.Char.Status.class == \"Priest\" then\n  if tarAff(\"tenderskin\") then\n    tarMana = tarMana-8\n  end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^(.+) takes some (?:salve|balm) from a vial and rubs it on (?:his|her) (torso|body|skin|arms|legs|head)\\.$",
+            "1"
+        ]
+    ]
+}

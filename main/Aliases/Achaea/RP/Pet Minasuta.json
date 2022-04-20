@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Pet Minasuta",
+    "script": "if Megophrys.homunculus then\n  send('petnice '.. Megophrys.homunculus)\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^peth$"
+}

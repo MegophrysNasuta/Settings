@@ -1,0 +1,1 @@
+wsys.defLine("softfocusing", "softfocus")

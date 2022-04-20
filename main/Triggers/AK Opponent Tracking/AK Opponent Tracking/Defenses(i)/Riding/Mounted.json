@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Mounted",
+    "script": "if matches[2] and IsTargetted(matches[2]) then\n\t if ak.ai() then return end\n   ak.mounted = true  \n   affstrack.score.hamstring = 0\n\t affstrack.score.prone = 0\n\t affstrack.score.paralysis = 0\n   ak.scoreup(matches[2])\nelseif not matches[2] then\n\t if ak.ai() then return end\n   ak.mounted = true\n   ak.scoreup(target)\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) easily vaults onto the back of .*\\.$",
+            "1"
+        ],
+        [
+            "You cannot sweep kick a mounted opponent.",
+            "3"
+        ]
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "get city enemies",
+    "script": "cdb.gettingenemies = true\ntempTimer(5, [[cdb.gettingenemies = false]])\nsend(\"city enemies\", false)",
+    "command": null,
+    "packageName": null,
+    "regex": "^city enemies$"
+}

@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Knocker, Meropis",
+    "script": "knockareacheck = gmcp.Room.Info.num\n\nif knockareacheck == 57177 then\n  cecho(\"\\n<white>+--------- MEROPIS KNOCKER EXITS ---------+\")\n  cecho(\"\\n<white>|    North: Northern Vasnari Mountains    |\")\n  cecho(\"\\n<white>|    Northeast: Squall Cleft              |\")\n  cecho(\"\\n<white>|    East: Daoric Plains                  |\")\n  cecho(\"\\n<white>|    South: Mirror Caves                  |\")\n  cecho(\"\\n<white>|    West: Northern Scrublands            |\")\n  cecho(\"\\n<white>+-----------------------------------------+\")\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t",
+    "matches": [
+        [
+            "The cavernous firmament. (indoors)",
+            "3"
+        ]
+    ]
+}

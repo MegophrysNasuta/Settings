@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Set Target N",
+    "script": "local num = matches[2]\nlocal tar = matches[4]\n\nif tar ~= nil then\n  TargetCallTables.addTarget(num, tar)\nelse\n  TargetCallTables.callTarget(num)\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^st(\\d+)( (\\w+))?$"
+}

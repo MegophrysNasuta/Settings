@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "L {Ctrl + Numpad}",
+    "packageName": null,
+    "script": null,
+    "command": "homunculus look",
+    "keyCode": "16777227",
+    "keyModifier": "603979776"
+}

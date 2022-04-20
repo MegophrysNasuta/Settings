@@ -1,0 +1,44 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Hold Breath situations",
+    "script": "if wsys.settings.havebreathing then\n wsys.keepup(\"heldbreath\", true)\n wsys.report(\"<yellow>HOLDING BREATH\")\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You gasp and clutch at your throat as an unseen force crushes the breath of life out of you.",
+            "3"
+        ],
+        [
+            "As the stinking gas fills your lungs, you vomit violently.",
+            "3"
+        ],
+        [
+            "The deadly black vapour slips inside your lungs. You choke, reeling from the attack.",
+            "3"
+        ]
+    ]
+}

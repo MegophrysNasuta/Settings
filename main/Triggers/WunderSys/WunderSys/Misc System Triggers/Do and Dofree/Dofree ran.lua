@@ -1,0 +1,2 @@
+wsys.dofreeclear()
+deleteFull()

@@ -1,0 +1,1 @@
+wsys.def.horsestance = true

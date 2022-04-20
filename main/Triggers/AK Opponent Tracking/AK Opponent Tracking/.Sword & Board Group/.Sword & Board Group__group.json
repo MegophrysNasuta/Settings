@@ -1,0 +1,31 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "yes",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "triggergroup",
+    "name": "Sword & Board Group",
+    "script": "--\n--Everything that follows was originally written by Klendathu\n\n--I have mildly modified portions of be more up to date with my current offense tracking system,\n--while attempting to leave the majority of it in place so he has to do very little to maintain\n--continued functionality.  If you are a using this section, I strongly encourage you to make sure\n--to spend a few extra seconds and drop him a thank you.\n\n--Thank you.\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": "sword_and_board",
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": null,
+    "regexCodePropertyList": null,
+    "TriggerGroup": "\n\t\t\t\t\t\t"
+}

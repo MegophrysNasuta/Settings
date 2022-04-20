@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Puncture",
+    "script": "if IsTargetted(matches[3]) then\n\t local smashlimb = matches[2]..\"arm\"\n\t ak.limbs.LimbHit(matches[3], \"Me\", \"psion\", smashlimb, \"percent\")\n   OppGainedAff(\"Weariness\")\nend\nif IsTargetted(matches[3]) and affstrack.score.haemophilia > 0 then \t\n\tlocal bleedr = 45\n\tak.bleeding = ak.bleeding + bleedr\n\tcecho(ak.bleeding)\n\tak.scoreup(matches[3])\nend\n-- LIMB HIT: arm",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^With a lightning-fast jab of your blade you puncture the cluster of nerves just below the (right|left) shoulder of ([\\w'\\-]+)\\.$",
+            "1"
+        ]
+    ]
+}

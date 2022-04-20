@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Do List",
+    "script": "wsys.dolist()",
+    "command": null,
+    "packageName": null,
+    "regex": "^dolist$"
+}

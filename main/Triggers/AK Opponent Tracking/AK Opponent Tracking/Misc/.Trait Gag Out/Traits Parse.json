@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "yes",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Traits Parse",
+    "script": "ak.deleteFull()\nif matches[3] then\n   --display(matches[3])\n   if matches[3] == \"Quick-witted             \" then\n      ak.balancemodifier = \"quickwitted\"\n   elseif string.find(matches[3],\"Nimble\") then\n      ak.balancemodifier = \"nimble\"\n   elseif string.find(matches[3],\"Expert Diagnoser\") then\n      --ak.expertdiagnose = true\n   elseif string.find(matches[3],\"Mind Warden\") then\n      ak.contemplator = true\n\t elseif string.find(matches[3],\"Health Inspector\") then\n\t    ak.healthinspector = true\n   end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "----------------------------------------------------------------------",
+            "3"
+        ],
+        [
+            "^Level (\\d+)\\: (.+)\\s+$",
+            "1"
+        ]
+    ]
+}

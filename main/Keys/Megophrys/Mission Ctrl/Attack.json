@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Attack",
+    "packageName": null,
+    "script": "Megophrys.autoAttack()",
+    "command": null,
+    "keyCode": "16777301",
+    "keyModifier": "0"
+}

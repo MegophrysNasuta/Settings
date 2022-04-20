@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Rage",
+    "script": "if ak.ai() then return end\nif not IsTargetted(matches[2]) then return end\naffs = {}\nocured = ocured or {}\nocured[ocured.conversion[\"rage\"]] = {}\nak.occie.aura.parsereduct(\"rage\")\nfor i = 1, #affstrack.eaten[\"rage\"] do\n   if affstrack.score[affstrack.eaten[\"rage\"][i]] > 0 then\n      table.insert(affs, affstrack.eaten[\"rage\"][i])\n   end\nend \nif #affs > 0 then\n   ak.echoForPossibleCures(table.concat(affs, \" \"))\n   for i = 1, #affs do\n      ocured[ocured.conversion[\"rage\"]][affs[i]] = affstrack.score[affs[i]]\n      affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs\n      if affstrack.score[affs[i]] < ak.errorallowance then\n          affstrack.score[affs[i]] = 0\n      end\n   end\nend\nak.scoreup(matches[2])\n \n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+)'s eyes flash with rage\\.$",
+            "1"
+        ]
+    ]
+}

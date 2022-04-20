@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Scour relapse 2",
+    "script": "if IsTargetted(matches[2]) then\n   local aff = \"disloyalty\"\n   OppGainedAff(aff)\n   ak.duress.scourrelapse = true\n\t killTimer(tostring(ak.duress.scourrelapsetimer))\n   ak.duress.scourrelapsetimer = tempTimer(7,[[\n   \t ak.duress.scourrelapse = false\n     ak.scoreup(]]..matches[2]..[[)\n   ]])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^The ruined face of ([\\w'\\-]+) continues to bleed\\.$",
+            "1"
+        ]
+    ]
+}

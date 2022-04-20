@@ -1,0 +1,140 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "yes",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Stupidity symptom",
+    "script": "wsys.affadd(\"stupidity\")",
+    "triggerType": "0",
+    "conditonLineDelta": "39",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ffaa7f",
+    "mBgColor": "#000000",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "\"The voices! The voices! Get them out of my head!!\" you moan, holding your head in pain.",
+            "3"
+        ],
+        [
+            "As horrible thoughts fill your mind, you begin to sob uncontrollably.",
+            "3"
+        ],
+        [
+            "My friend, clearly you know little of the sultry tango, if you think that you can perform it without a partner.",
+            "3"
+        ],
+        [
+            "Tears fill your eyes and begin to slowly run down your face.",
+            "3"
+        ],
+        [
+            "You are far too selfish to throw anything away like that.",
+            "3"
+        ],
+        [
+            "You fall to your knees in worship.",
+            "3"
+        ],
+        [
+            "You flap your arms madly.",
+            "3"
+        ],
+        [
+            "You flip the bird.",
+            "3"
+        ],
+        [
+            "You fondle yourself absently.",
+            "3"
+        ],
+        [
+            "You get down on one knee and serenade the world.",
+            "3"
+        ],
+        [
+            "You give up a round of applause.",
+            "3"
+        ],
+        [
+            "You grunt a bit and then let out a loud 'OINK!'",
+            "3"
+        ],
+        [
+            "You hug yourself compassionately.",
+            "3"
+        ],
+        [
+            "You let out a loud, long 'MOOOOOOOOOOOOOO!",
+            "3"
+        ],
+        [
+            "You make a strangled meowing noise and quickly shut up in embarrassment.",
+            "3"
+        ],
+        [
+            "You pick your nose absently.",
+            "3"
+        ],
+        [
+            "You pull down your pants and moon the world.",
+            "3"
+        ],
+        [
+            "You stumble and poke yourself in the eye.",
+            "3"
+        ],
+        [
+            "You sweep across the floor, leaping and twirling like a true master.",
+            "3"
+        ],
+        [
+            "You sweep your trained eye across the room for the hidden exits.",
+            "3"
+        ],
+        [
+            "You twitch spasmodically.",
+            "3"
+        ],
+        [
+            "You waggle your eyebrows comically.",
+            "3"
+        ],
+        [
+            "You wail like an old woman.",
+            "3"
+        ],
+        [
+            "Your mind is whirling with thoughts - you cannot settle down to sleep.",
+            "3"
+        ],
+        [
+            "You let out a loud, long \"MOOOOOOOOOOO!\"",
+            "3"
+        ],
+        [
+            "You wouldn't want to drink a ",
+            "2"
+        ],
+        [
+            "You drop to one knee.",
+            "3"
+        ]
+    ]
+}

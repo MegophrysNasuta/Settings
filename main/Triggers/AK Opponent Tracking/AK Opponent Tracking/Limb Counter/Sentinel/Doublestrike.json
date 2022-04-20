@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Doublestrike",
+    "script": "if ak.ai() then return end\nlocal weapon = matches[2]\nlocal limb = ak.limbs.standardizeLimb(matches[3])\ntable.insert(ak.limbs.currentbreak.weapon,weapon)\ntable.insert(ak.limbs.currentbreak.limb,limb)\ntable.insert(ak.limbs.currentbreak.attacker,\"Me\")\ntable.insert(ak.limbs.currentbreak.who,matches[4])\ntable.insert(ak.limbs.currentbreak.augment,\"sentinel\")\nenableTrigger(\"Missed Single Removal Limbs\")          \nenableTrigger(\"Confirmed Hit Limbs\")\nenableTrigger(\"Parry locate\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You draw the blade of (.*) in an expert lateral slice across the (right leg|left leg|right arm|left arm|head|torso) of ([\\w'\\-]+)\\.$",
+            "1"
+        ]
+    ]
+}

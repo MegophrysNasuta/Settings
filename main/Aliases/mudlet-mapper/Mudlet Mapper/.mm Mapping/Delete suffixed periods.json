@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Delete suffixed periods",
+    "script": "mmp.echo(\"Deleting removing all periods at the end of room names...\")\nlocal c = 0\n\nfor area, areaname in pairs(mmp.areatabler) do\n  local rooms = getAreaRooms(area) or {}\n  for i = 0, #rooms do\n    local name = getRoomName(rooms[i] or 0)\n    if string.ends(name, \".\") then\n      name = string.sub(name, 1, (#name-1))\n      setRoomName(rooms[i], name)\n      mmp.echo(string.format(\"Patched up room #%s - '%s'\", rooms[i], name))\n      c = c + 1\n    end\n  end\nend\n\nmmp.echo(string.format(\"Fixed up %s room%s.\", c, (c ~= 1 and 's' or '')))",
+    "command": null,
+    "packageName": null,
+    "regex": "^delete suffixed periods$"
+}

@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "Toggle 3",
+    "packageName": null,
+    "script": "(Megophrys[Megophrys.class].toggleThree or Megophrys.toggleThree)()",
+    "command": null,
+    "keyCode": "16777273",
+    "keyModifier": "0"
+}

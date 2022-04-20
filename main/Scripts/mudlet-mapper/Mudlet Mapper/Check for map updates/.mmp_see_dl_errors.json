@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "mmp_see_dl_errors",
+    "packageName": null,
+    "script": "-- this should be off by default\nfunction mmp_see_dl_errors(...)\n  display{...}\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}

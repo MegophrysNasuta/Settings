@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "qwg - get info from qw",
+    "script": "cdb.echo(\"Getting CDB information for everyone online...\")\ncdb.getwho()",
+    "command": null,
+    "packageName": null,
+    "regex": "^qwg$"
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Area",
+    "script": "display(gmcp.Room.Info.area)\ndisplay(gmcp.Room.Info.num)",
+    "command": null,
+    "packageName": null,
+    "regex": "^area$"
+}

@@ -1,0 +1,2 @@
+defadd("lifevision")
+defadd("deathsight")

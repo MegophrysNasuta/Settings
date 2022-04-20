@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Overhand",
+    "script": "if IsTargetted(matches[2]) then\n\tak.twoh.skull = ak.twoh.skull + ak.twoh.modifier\n\tif ak.twoh.skull > 7 then ak.twoh.skull = 7 end\n\tcecho(\"<yellow>skull:<cyan> \"..ak.twoh.skull)\n\tak.skullHit()\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^([\\w'\\-]+) staggers as the blade strikes [\\w'\\-]+ in the side of the head\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) staggers back as the hammer catches (him|her) a glancing blow to the head.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "EnemyWho",
+    "script": "enableTrigger('suppress_enw_spam')\n\nfor _, enemy in pairs(Megophrys.enemies or {}) do \n  send('qw '.. enemy)\nend\n\ntempTimer(.5, function()\n  disableTrigger('suppress_enw_spam')\nend)",
+    "command": null,
+    "packageName": null,
+    "regex": "^enw$"
+}

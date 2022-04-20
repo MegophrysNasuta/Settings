@@ -1,0 +1,92 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Stupidity",
+    "script": "if isTarget(matches[2]) then \n\tbacktrack2(\"stupidity\")\nend\n--need to add these for tracking ASAP",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Tears fill (.+)'s eyes and begin to slowly run down (\\w+) face\\.$",
+            "1"
+        ],
+        [
+            "^(.+) flaps (\\w+) arms madly\\.$",
+            "1"
+        ],
+        [
+            "^(.+) stumbles and pokes (\\w+) in the eye\\.$",
+            "1"
+        ],
+        [
+            "^(.+) makes a strangled meowing noise and quickly shuts up, blushing\\.$",
+            "1"
+        ],
+        [
+            "^(.+) picks (\\w+) nose absently\\.$",
+            "1"
+        ],
+        [
+            "^(.+) breaks down and sobs uncontrollably\\.$",
+            "1"
+        ],
+        [
+            "^(.+) gets down on one knee and serenades the world\\.$",
+            "1"
+        ],
+        [
+            "^(.+) falls to his knees in worship\\.$",
+            "1"
+        ],
+        [
+            "^(.+) hugs himself compassionately\\.$",
+            "1"
+        ],
+        [
+            "^(.+) grunts a bit and then lets out a loud \\\"OINK\\!\\\"$",
+            "1"
+        ],
+        [
+            "^(.+) waggles his eyebrows comically\\.$",
+            "1"
+        ],
+        [
+            "^(.+) wails like an old woman\\.$",
+            "1"
+        ],
+        [
+            "^(.+) moans, holding his head\\.$",
+            "1"
+        ],
+        [
+            "^You cast a net of stupidity over (.+)'s mind\\.$",
+            "1"
+        ],
+        [
+            "^(.+) twitches spasmodically\\.$",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "ChamDown",
+    "script": "if keepChameleonUp then\n  local chamList = {'Joshfire', 'Zadkiel', 'Zbaco', 'Layta', 'Yen', 'Bambi',\n                    'Andraste', 'Andrayas', 'Tianondria', 'Astarod'}\n  chameleonedAsUser = nil\n  for _, identity in pairs(chamList) do\n    if (not table.contains(Megophrys.playersOnline, identity) and\n        math.random() > 0.5) then\n      chameleonedAsUser = identity\n      cecho('\\n<DarkOrange>Chameleon set to '.. identity)\n      send('touch chameleon '.. identity)\n      break\n    end\n  end\n  \n  if not chameleonedAsUser then\n    cecho('\\n<red>WARNING: No suitable chameleon target found.')\n  end\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t",
+    "matches": [
+        [
+            "The effect of your chameleon tattoo slowly fades, and you return to your own",
+            "2"
+        ]
+    ]
+}

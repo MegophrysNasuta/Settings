@@ -1,0 +1,56 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Have to swim",
+    "script": "mmp.swim()",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t",
+    "matches": [
+        [
+            "There's water ahead of you. You'll have to swim in that direction to make it through.",
+            "3"
+        ],
+        [
+            "There's water ahead of you. You'll have to swim in that direction to make it ",
+            "3"
+        ],
+        [
+            "There's water ahead of you. You'll have to SWIM ",
+            "2"
+        ],
+        [
+            "You'll have to swim to make it through the water in that direction.",
+            "3"
+        ],
+        [
+            "The water is too deep for you to walk that way, you must swim.",
+            "3"
+        ],
+        [
+            "You'll have to SWIM",
+            "2"
+        ]
+    ]
+}

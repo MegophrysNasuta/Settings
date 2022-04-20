@@ -1,0 +1,40 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Weapon Envenomed",
+    "script": "if ak.ai() then return end\ncurrentenvenom = matches[3]\nif not currentvenoms then currentvenoms = {} end\nif not currentvenoms[currentenvenom] then currentvenoms[currentenvenom] = {} end\ntable.insert(currentvenoms[currentenvenom],1,matches[2])\n--display(currentvenoms[currentenvenom][1])\nif gmcp.Char.Status.class == \"Magi\" and (inretardation() or inaeon()) then\n   ak.scoreup(target)\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You rub some ([\\w'\\-]+) on (.*)\\.$",
+            "1"
+        ],
+        [
+            "^You secrete ([\\w'\\-]+) and deftly bring (.*) to your mouth, letting the venom drip upon it.$",
+            "1"
+        ]
+    ]
+}

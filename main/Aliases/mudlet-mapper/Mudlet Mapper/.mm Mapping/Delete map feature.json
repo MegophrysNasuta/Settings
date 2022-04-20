@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Delete map feature",
+    "script": "mmp.deleteMapFeature(matches[2]:trim())",
+    "command": null,
+    "packageName": null,
+    "regex": "^feature delete (.+)$"
+}

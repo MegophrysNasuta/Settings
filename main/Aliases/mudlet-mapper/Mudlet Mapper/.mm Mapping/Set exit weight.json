@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Set exit weight",
+    "script": "local room = (matches[2] ~= \"\" and tonumber(matches[2]) or mmp.currentroom)\n\nlocal weight, exit = tonumber(matches[3]), matches[4]\n\nif not roomExists(room) then mmp.echo(\"Room \"..room..\" doesn't exist. It has to before we can set weights on exits.\") return end\n\nsetExitWeight(room, exit, weight)\n\nmmp.echo(string.format(\"Set the weight on the %d room going %s to %s. If it's a two-way exit, please set the reverse exit as well.\", room, exit, weight))",
+    "command": null,
+    "packageName": null,
+    "regex": "^rwe(?: (\\d+))? (\\d+) (.+)$"
+}

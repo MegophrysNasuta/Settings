@@ -1,0 +1,152 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Prone",
+    "script": "if ak.ai() then return end\n--ak.limbs.ParseonLine()\nif IsTargetted(matches[2]) then\n\tEchoForMajorAff(\"PRONE\")\n\tOppGainedAff(\"prone\")\nend\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Sweeping out with a blade hand, [\\w'\\-]+l strikes at the back of ([\\w'\\-]+)'s knee\\.$",
+            "1"
+        ],
+        [
+            "^Drawing an enormous breath\\, [\\w'\\-]+ exhales\\, expelling a gale of wind with such force that ([\\w'\\-]+) is knocked over\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) is knocked forcefully off (?:her|his) feet by the impact of [\\w'\\-]+\\'s huge tail\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+)\\'s eyes close suddenly as (?:she|he) falls asleep\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) is knocked off h(?:is|er) feet by the heaving ground\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ throws (?:his|her) palms forward, releasing a stream of deadly blue light to cripple ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^Drawing an enormous breath, you exhale, expelling a gale of wind with such force that ([\\w'\\-]+) is ",
+            "1"
+        ],
+        [
+            "([\\w'\\-]+) is knocked forcefully off (?:his|her) feet by the impact of your huge tail\\.$",
+            "1"
+        ],
+        [
+            "^You hear two loud snaps and see ([\\w'\\-]+) fall to the ground\\.$",
+            "1"
+        ],
+        [
+            "^You knock the legs out from under ([\\w'\\-]+) and send (him|her) sprawling\\.$",
+            "1"
+        ],
+        [
+            "^You duck low and smash your shield into the knees of ([\\w'\\-]+)\\, causing them to buckle underneath (?:her|him)\\.$",
+            "1"
+        ],
+        [
+            "^Stepping forward, you grab the useless .* of ([\\w'\\-]+), wrench (him|her) violently forward, and throw (him|her) to the ground\\.$",
+            "1"
+        ],
+        [
+            "^You lunge downward, slamming the edge of .+ into the shins of ([\\w'\\-]+)\\.",
+            "1"
+        ],
+        [
+            "^You swiftly sweep ([\\w'\\-]+) feet out from beneath",
+            "1"
+        ],
+        [
+            "^An .* tangles itself in the legs of ([\\w'\\-]+)\\, sending (her|him) sprawling to the ground\\.$",
+            "1"
+        ],
+        [
+            "^A .* tangles itself in the legs of ([\\w'\\-]+)\\, sending (her|him) sprawling to the ground\\.$",
+            "1"
+        ],
+        [
+            "^Dropping into a low crouch\\, you expertly tangle .* with the legs of ([\\w'\\-]+)\\, sending [\\w'\\-]+ sprawling\\.$",
+            "1"
+        ],
+        [
+            "^The staff sweeps the legs out from under ([\\w'\\-]+)\\, sending [\\w'\\-]+ sprawling\\.$",
+            "1"
+        ],
+        [
+            "^The instep of your foot smashes into the [\\w'\\-]+ underarm of ([\\w'\\-]+)\\, throwing [\\w'\\-]+ from [\\w'\\-]+ feet and sending [\\w'\\-]+ spinning to the ground\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ drops low\\, tangling .+ with the legs of ([\\w'\\-]+) and sending [\\w'\\-]+ sprawling\\.$",
+            "1"
+        ],
+        [
+            "^[\\w'\\-]+ drops to the floor and sweeps [\\w'\\-]+ legs round at ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) slips on a thin layer of fluid\\, [\\w'\\-]+ feet flying out from under [\\w'\\-]+\\.$",
+            "1"
+        ],
+        [
+            "^Water thunders down upon ([\\w'\\-]+)\\, driving [\\w'\\-]+ relentlessly to [\\w'\\-]+ knees\\.$",
+            "1"
+        ],
+        [
+            "^The [\\w'\\-]+ leg of ([\\w'\\-]+) buckles under the impact\\, and [\\w'\\-]+ goes sprawling\\.$",
+            "1"
+        ],
+        [
+            " ^[\\w'\\-]+ lunges downward, slamming theedge of .* into the shins of ([\\w'\\-]+)\\.$",
+            "1"
+        ],
+        [
+            "^Sweeping out with a blade hand\\, [\\w'\\-]+ strikes at the back of ([\\w'\\-]+)\\'s knee\\.$",
+            "1"
+        ],
+        [
+            "^As your blow cuts deeply into the leg of ([\\w'\\-]+)\\, you drive savagely forward\\, taking [\\w'\\-]+ clean off [\\w'\\-]+ feet\\.$",
+            "1"
+        ],
+        [
+            "^You strike a savage blow with your quarterstaff at (\\w+)\\'s damaged leg\\, bringing \\w+ crashing to the ground\\.$",
+            "1"
+        ],
+        [
+            "^(\\w+) is flung violently from \\w+ feet\\.$",
+            "1"
+        ],
+        [
+            "^([\\w'\\-]+) has already fallen to the ground\\.$",
+            "1"
+        ]
+    ]
+}

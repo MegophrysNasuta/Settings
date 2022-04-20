@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "5",
+    "packageName": null,
+    "script": "if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then\n   send(\"ql\")\nelseif gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.charstats[3] == \"Spec: Dual Cutting\" then\n\tif ak.stack == \"dwckelp\" then\n\t\tak.stack = \"dwcstupid\"\n\t\tak.scoreup(target)\n\telse\n\t\tak.stack = \"dwckelp\"\n\t\tak.scoreup(target)\n\tend \nend",
+    "command": null,
+    "keyCode": "53",
+    "keyModifier": "536870912"
+}

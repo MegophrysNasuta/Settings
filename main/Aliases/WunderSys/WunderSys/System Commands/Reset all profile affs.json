@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Reset all profile affs",
+    "script": "wsys.resetAllProfileAffs( matches[2] )",
+    "command": null,
+    "packageName": null,
+    "regex": "^wconfig profile resetaffs? all(| confirm)?$"
+}

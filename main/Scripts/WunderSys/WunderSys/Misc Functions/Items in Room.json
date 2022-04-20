@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Items in Room",
+    "packageName": null,
+    "script": "-- roomitems table\nwsys.roomitems = wsys.roomitems or {}\n\n--new Items list on moving rooms\nfunction wsys.updateroomitems()\n  wsys.roomitems = {}\n  for k,v in pairs(gmcp.Char.Items.List.items) do\n    wsys.roomitems[v.id] = v.name\n  end -- for\n  raiseEvent(\"roomitems changed\")\nend\n\nregisterAnonymousEventHandler(\"gmcp.Char.Items.List\", \"wsys.updateroomitems\")\n\n--item added to room\nfunction wsys.addroomitem()\n  --check if item was added to room\n  if gmcp.Char.Items.Add.location == \"room\" then\n    --check if item is already in roomitems table\n    if not table.contains(wsys.roomitems, gmcp.Char.Items.Add.item.id) then\n      wsys.roomitems[gmcp.Char.Items.Add.item.id] = gmcp.Char.Items.Add.item.name\n      raiseEvent(\"roomitems changed\")\n    end\n  end\nend\n\n--manually add item to room\nfunction wsys.manualAddItem(id, name)\n  if not table.contains(wsys.roomitems, id) then\n    wsys.roomitems[id] = name\n    raiseEvent(\"roomitems changed\")\n  end\nend\n\nregisterAnonymousEventHandler(\"gmcp.Char.Items.Add\", \"wsys.addroomitem\")\n\n--item removed from room\nfunction wsys.removeroomitem()\n  if gmcp.Char.Items.Remove.location == \"room\" then\n    if table.contains(wsys.roomitems, gmcp.Char.Items.Remove.item.id) then\n      wsys.roomitems[gmcp.Char.Items.Remove.item.id] = nil\n      raiseEvent(\"roomitems changed\")\n    end\n  end\nend\n\n--manually remove person leaving room from people_here\nfunction wsys.manualRemoveItem(id)\n  if table.contains(wsys.roomitems, id) then\n    wsys.roomitems[id] = nil\n    raiseEvent(\"roomitems changed\")\n  end\nend\n\nregisterAnonymousEventHandler(\"gmcp.Char.Items.Remove\", \"wsys.removeroomitem\")",
+    "eventHandlerList": null
+}

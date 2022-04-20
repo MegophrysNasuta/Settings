@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Minasuta, stop :(",
+    "script": null,
+    "command": "homunculus pacify",
+    "packageName": null,
+    "regex": "^hstop$"
+}

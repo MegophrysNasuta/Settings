@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Hoard",
+    "script": "Megophrys.hoard()",
+    "command": null,
+    "packageName": null,
+    "regex": "^hoard$"
+}

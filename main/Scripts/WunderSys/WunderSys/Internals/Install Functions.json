@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Install Functions",
+    "packageName": null,
+    "script": "function wsys.wunderSysInstall()\n  wsys.wunderSysSetPrompt()\n  wsys.wunderSysCuringInstall()\nend\n\nfunction wsys.wunderSysSetPrompt()\n  send(\"config prompt all\")\nend\n\nfunction wsys.wunderSysCuringInstall()\n  send(\"config screenwidth 0\")\n  send(\"curing on\")\n  send(\"curing afflictions on\")\n  send(\"config advancedcuring on\")\n  send(\"curing batch on\")\n  send(\"curing priority health\")\n  send(\"curing reporting on\")\n  send(\"curing siphealth 80\")\n  send(\"curing sipmana 80\")\n  send(\"curing mosshealth 70\")\n  send(\"curing mossmana 70\")\n  send(\"curing clotat 30\")\nend",
+    "eventHandlerList": null
+}

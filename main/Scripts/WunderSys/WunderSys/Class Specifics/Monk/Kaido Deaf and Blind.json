@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Kaido Deaf and Blind",
+    "packageName": null,
+    "script": "function wsys.deafHerbQueueCount()\n\n\tlocal herbsToGo = 0\n\t\n\tif wsys.aff.paralysis then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.impatience then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.scytherus then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.asthma then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.sensitivity then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.darkshade then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.hypersomnia then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.hallucinations then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.confusion then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.stupidity then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.epilepsy then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.recklessness then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.masochism then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.nausea then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.haemophilia then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.lethargy then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.loneliness then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.shyness then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.recklessness then herbsToGo = herbsToGo + 1 end\n\tif wsys.aff.masochism then herbsToGo = herbsToGo + 1 end\n\tif not wsys.def.blindness then herbsToGo = herbsToGo + 1 end\n\t\n\treturn herbsToGo\n\t\nend\n\n\nfunction wsys.deafOrHerb()\n\tif wsys.deafHerbQueueCount() >= 1 and not wsys.def.deafness and wsys.isClass(\"monk\") then\n\t\tuseDeaf()\n\tend\nend\n\nfunction wsys.useDeaf()\n\tif not wsys.timer.monkdeafing then\n\t\twsys.timer.monkdeafing = tempTimer(6.3, [[wsys.timer.monkdeafing = nil]])\n\t\twsys.osend(\"deaf\")\n\tend\nend\n\nfunction wsys.blindOrHerb()\n\tif wsys.deafHerbQueueCount() >= 3 and not wsys.def.blindness and wsys.isClass(\"monk\") then\n\t\twsys.useBlind()\n\tend\nend\n\nfunction wsys.useBlind()\n\tif not wsys.timer.monkblinding then\n\t\twsys.timer.monkblinding = tempTimer(6.4, [[wsys.timer.monkblinding = nil]])\n\t\twsys.osend(\"blind\")\n\tend\nend",
+    "eventHandlerList": null
+}

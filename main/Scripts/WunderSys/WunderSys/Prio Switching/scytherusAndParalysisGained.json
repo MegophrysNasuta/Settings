@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "scytherusAndParalysisGained",
+    "packageName": null,
+    "script": "function wsys.scytherusAndParalysisGained(event, affliction, class)\n  if event == \"got aff\" then\n    if wsys.aff.scytherus and wsys.aff.paralysis then\n      wsys.switchPrios( \"scytherus\", 2 )\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"got aff\", \"wsys.scytherusAndParalysisGained\")\nregisterAnonymousEventHandler(\"reset aff prios\", \"wsys.scytherusAndParalysisGained\")\n\nfunction wsys.scytherusAndParalysisLost(event, affliction)\n  if event == \"lost aff\" then\n    if affliction == \"scytherus\" and (wsys.affPosition(\"scytherus\") ~= wsys.defaultAffPosition(\"scytherus\")) then\n      wsys.affPrioRestore( \"scytherus\" )\n    end\n  end\nend --func\n\nregisterAnonymousEventHandler(\"lost aff\", \"wsys.scytherusAndParalysisLost\")",
+    "eventHandlerList": null
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Bleed Update",
+    "packageName": null,
+    "script": "-------------------------------------------------\n--         Put your Lua functions here.        --\n--                                             --\n-- Note that you can also use external Scripts --\n-------------------------------------------------\nfunction ak.bleedupdate(pushed)\n\tif gmcp.Char.Status.class == \"Blademaster\" then\n\t\tak.bleeding = pushed -- More Bleeding\n\t\tak.scoreup(target)\n\telse\n\t\tif ak.bleeding < pushed and affstrack.score.haemophilia > 0 then\n\t\t\tif ak.ProTrackingConfirmed and affstrack.score.haemophilia < 100 then \n  \t    ak.ProTrackingConfirmed(\"haemophilia\") \n  \t \tend\n\t\t\tak.bleeding = pushed -- More Bleeding\n\t\telseif ak.bleeding - pushed > 100 then\n\t\t\t--ak.bleeding = pushed --Less Bleeding\n\t\t\tif ak.thoughtIhad and affstrack.score.haemophilia > 0 and not ak.dontremovehaemo then\n\t\t\t\tak.thoughtIhad(\"haemophilia\")\t\n\t\t\tend\n\t\telseif ak.bleeding > 100 and affstrack.score.haemophilia > 0 and ak.ProTrackingConfirmed and affstrack.score.haemophilia < 100 then \n\t\t\tak.ProTrackingConfirmed(\"haemophilia\") \n\t\tend\t\n\tend\n\tak.dontremovehaemo = false\nend\n\nif ak.bloodletbleed then return end\nfunction ak.bloodletbleed()\n\treturn 255\nend\n\n",
+    "eventHandlerList": null
+}

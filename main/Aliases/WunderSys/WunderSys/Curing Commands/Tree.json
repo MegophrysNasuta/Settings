@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Tree",
+    "script": "send(\"curing queue add touch tree\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^tr$"
+}

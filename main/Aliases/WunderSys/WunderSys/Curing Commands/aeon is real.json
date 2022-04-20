@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "aeon is real",
+    "script": "wsys.affadd(\"aeon\")",
+    "command": null,
+    "packageName": null,
+    "regex": "^aeon$"
+}

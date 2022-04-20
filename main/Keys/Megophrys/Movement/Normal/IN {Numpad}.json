@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "key",
+    "name": "IN {Numpad}",
+    "packageName": null,
+    "script": "Megophrys.goDir('in')",
+    "command": null,
+    "keyCode": "47",
+    "keyModifier": "536870912"
+}

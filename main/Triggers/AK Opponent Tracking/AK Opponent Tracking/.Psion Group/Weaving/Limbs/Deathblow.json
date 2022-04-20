@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Deathblow",
+    "script": "if IsTargetted(matches[2]) then\n   OppGainedAff(\"Asthma\")\n\t ak.limbs.LimbHit(matches[2], \"Me\", \"psion\", \"head\", \"percent\")\nend\nif IsTargetted(matches[2]) and affstrack.score.haemophilia > 0 then \n\tlocal bleedr = 0\t\n\tif affstrack.score.prone == 100 then\n\t\tbleedr = 160\n\telse\n\t\tbleedr = 75\n\tend\n\tak.bleeding = ak.bleeding + bleedr\n\tcecho(ak.bleeding)\n\tak.scoreup(matches[2])\nend\n-- LIMB HIT: head",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^Striking like coiled lightning, your hand flashes out and lays open the throat of ([\\w'\\-]+) with a translucent dagger in a spray of crimson\\.$",
+            "1"
+        ]
+    ]
+}

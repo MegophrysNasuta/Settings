@@ -1,0 +1,52 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Mounted -",
+    "script": "wsys.dismountd()\nwsys.def.mounted = false",
+    "triggerType": "0",
+    "conditonLineDelta": "39",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#a26b1e",
+    "mBgColor": "#000000",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You step down off of",
+            "2"
+        ],
+        [
+            "You lose purchase on",
+            "2"
+        ],
+        [
+            "You have no mount on which to jump.",
+            "3"
+        ],
+        [
+            "You are not currently riding anything.",
+            "3"
+        ],
+        [
+            "The feathers of an ebony pegasus's wings brush against your shoulder as you dismount.",
+            "2"
+        ]
+    ]
+}

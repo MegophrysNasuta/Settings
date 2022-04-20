@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Tumble Random Direction",
+    "script": "Megophrys.tumbleRandom()",
+    "command": null,
+    "packageName": null,
+    "regex": "^tum$"
+}

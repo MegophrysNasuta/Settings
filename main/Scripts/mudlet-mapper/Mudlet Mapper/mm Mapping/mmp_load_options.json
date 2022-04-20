@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "mmp_load_options",
+    "packageName": null,
+    "script": "function mmp_load_options()\n\tlocal loadTable = mmp_load_locks()\n\n\tif loadTable.options then\n\t\tfor k, v in pairs(loadTable.options) do\n\t\t\tmmp.settings:setOption(k, v, true)\n\t\tend\n\tend\nend\n\nfunction mmp_load_locks()\n\tlocal loadTable = {}\n\n\tif string.char(getMudletHomeDir():byte()) == \"/\" then _sep = \"/\" else  _sep = \"\\\\\" end\n\tlocal loadFile = getMudletHomeDir() ..  _sep .. \"mapper.options.lua\"\n\n    if io.exists(loadFile) then table.load(loadFile, loadTable) end\n\n\tif loadTable.locked_areas then\n\t\tmmp.locked = loadTable.locked_areas\n\tend\n\n    local lockRoom, getAreaRooms = lockRoom, getAreaRooms\n\tfor area in pairs(mmp.locked) do\n\t\tlocal rooms = getAreaRooms(area)\n\t\tfor _, roomid in pairs(rooms or {}) do\n\t\t\tlockRoom(roomid, true)\n\t\tend\n\tend\n\n\treturn loadTable\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}
