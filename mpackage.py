@@ -6,6 +6,10 @@ import sys
 from xml.etree import ElementTree as ET
 
 
+class BranchTypeError(TypeError):
+    pass
+
+
 class MudletXMLPackageExtractor:
     NUMBERED_JSON_REGEX = re.compile(r'\.?[\d+]*\.json')
     PACKAGE_TAGS = tuple(('%sPackage' % tag for tag in
@@ -27,8 +31,12 @@ class MudletXMLPackageExtractor:
         for pkg_tag in self.PACKAGE_TAGS:
             group_tag = pkg_tag.replace('Package', 'Group')
             node_tag = group_tag.replace('Group', '')
+            group_type = node_tag + ('s' if not node_tag.endswith('s') else 'es')
+            dirpath = os.path.join(dirpath, group_type)
+            os.mkdir(dirpath)
             for group in root.find(pkg_tag) or ():
                 self.extract_group(group, dirpath, node_tag)
+            dirpath = '/' + os.path.join(*os.path.normpath(dirpath).split('/')[:-1])
 
     def extract_group(self, group, dirpath, node_tag):
         group_info = self.get_node_info(group)
@@ -41,6 +49,7 @@ class MudletXMLPackageExtractor:
         except FileExistsError:
             pass
 
+        self.write_node(group, dirpath, append_to_name='__group')
         for node in group.findall(node_tag):
             self.write_node(node, dirpath)
         for subgroup in group.findall('%sGroup' % node_tag):
@@ -49,13 +58,14 @@ class MudletXMLPackageExtractor:
     def get_node_info(self, node):
         self.unknowns = getattr(self, 'unknowns', 1)
         node_info = {'attribs': node.attrib, 'type': node.tag.lower()}
-        node_info.update({child.tag: child.text for child in node})
+        node_info.update({child.tag: child.text for child in node
+                          if node.tag != '%sGroup' % child.tag})
 
         if node_info.get('name') is None:
             node_info['name'] = 'Unknown %s %i' % (node.tag, self.unknowns)
             self.unknowns += 1
 
-        node_info['name'] = (node_info['name'].replace('/', '-')
+        node_info['name'] = (node_info['name'].replace('/', '|')
                                               .replace('\\', '|'))
 
         if node.tag == 'Trigger':
@@ -66,9 +76,9 @@ class MudletXMLPackageExtractor:
 
         return node_info
 
-    def write_node(self, node, dirpath):
+    def write_node(self, node, dirpath, append_to_name=''):
         node_info = self.get_node_info(node)
-        filename = '%s.json' % node_info['name']
+        filename = '%s%s.json' % (node_info['name'], append_to_name)
         filename = self._get_next_available_filename(dirpath, filename)
         is_active = node_info.get('attribs', {}).get('isActive') == 'yes'
         if not is_active:
@@ -83,8 +93,7 @@ class MudletXMLPackageExtractor:
     def _get_next_available_filename(self, dirpath, filename):
         i = 1
         while os.path.exists(os.path.join(dirpath, filename)):
-            filename = self.NUMBERED_JSON_REGEX.sub('.%i.json' % i,
-                                                    filename)
+            filename = self.NUMBERED_JSON_REGEX.sub('.%i.json' % i, filename)
             i += 1
         return filename
 
@@ -104,60 +113,86 @@ class MudletXMLCompiler:
 
         self.package_path = os.path.abspath(package_path or os.getcwd())
 
-    def add_to_package(self, dirpath, filename):
-        with open(os.path.join(dirpath, filename)) as filestore:
-            data = json.loads(filestore.read())
+    @property
+    def package_file(self):
+        return '%s.xml' % self.package_name
 
-        data_type = data.pop('type').title()
-        sub_node_info = self._get_sub_nodes_by_type(data_type, data['name'])
+    def create_groups(self, groups, path):
+        data_type = parent = None
+        for group in groups:
+            path = os.path.join(path, group)
+            cfg_file_path = os.path.join(path, '%s__group.json' % group)
+            is_active, group = not group.startswith('.'), group.lstrip('.')
+            try:
+                with open(cfg_file_path) as cfg_file:
+                    config = json.loads(cfg_file.read())
+            except (IOError, OSError):
+                raise RuntimeError('Missing config file! %s' % cfg_file_path)
+            except json.JSONDecodeError:
+                raise RuntimeError('Malformed config file! %s' % cfg_file_path)
+            else:
+                if data_type is None:
+                    data_type = config['type'].lower().replace('group', '')
+                    parent = self.package.find('%sPackage' % data_type.title())
+                group_tag = '%sGroup' % data_type.title()
+                try:
+                    parent = [g for g in parent.findall(group_tag)
+                              if self.node_name(g) == group][0]
+                except IndexError:
+                    parent = ET.SubElement(parent, group_tag)
+                    parent.attrib.update(config.get('attribs', {}))
+                    parent.attrib['isActive'] = 'yes' if is_active else 'no'
+                    sub_node_info = self._get_sub_nodes_by_type(data_type,
+                                                                group)
+                    for key, default in sub_node_info.items():
+                        subtag = ET.SubElement(parent, key)
+                        subtag.text = config.get(key, default)
+        return parent or None
 
-        lua_filename = filename.replace('.json', '.lua')
+    def create_leaf(self, config_path, config_file, parent=None):
+        full_config_path = os.path.join(config_path, config_file)
+        with open(full_config_path) as cfg_file:
+            config = json.loads(cfg_file.read())
+
         try:
-            with open(os.path.join(dirpath, lua_filename)) as luafile:
-                data['script'] = luafile.read()
+            with open(full_config_path[:-4] + 'lua') as script_cfg_file:
+                config['script'] = script_cfg_file.read()
         except (IOError, OSError):
             pass
 
-        dirpath = (os.path.abspath(dirpath)
-                    .replace(self.package_path, '')
-                    .lstrip('/'))
-        subgroup = self.package.find('%sPackage' % data_type)
-        attribs = data.pop('attribs', self._get_attribs_by_type(data_type))
-        attribs['isFolder'] = 'yes'
-        for key in os.path.normpath(dirpath).split('/'):
-            group, is_active, key = None, key.startswith('.'), key.lstrip('.')
-            for g in subgroup.findall('%sGroup' % data_type):
-                group_name = g.find('name')
-                if group_name is not None and group_name.text == key:
-                    group = g
-                    break
-            if group is None:
-                attribs['isActive'] = self.attrib_bool(is_active)
-                group = ET.SubElement(subgroup, '%sGroup' % data_type, attribs)
-                for tag_name, tag_text in sub_node_info.items():
-                    tag = ET.SubElement(group, tag_name)
-                    if tag_name == 'name':
-                        tag.text = key
-                    else:
-                        tag.text = tag_text
-            subgroup = group
+        data_type = config['type'].lower()
+        default_attribs = self._get_attribs_by_type(data_type)
+        elem = ET.SubElement(parent, data_type.title(),
+                             config.get('attribs', default_attribs))
+        is_active = not config_file.startswith('.')
+        elem.attrib['isActive'] = 'yes' if is_active else 'no'
+        sub_node_info = self._get_sub_nodes_by_type(data_type,
+                                                    config_file.lstrip('.'))
+        for key, default in sub_node_info.items():
+            subtag = ET.SubElement(elem, key)
+            subtag.text = config.get(key, default)
 
-        attribs['isFolder'] = 'no'
-        matches = data.pop('matches', ())
-        sub_node_info.update(data)
-        node = ET.SubElement(group, data_type, attribs)
-        for tag_name, tag_text in sub_node_info.items():
-            tag = ET.SubElement(node, tag_name)
-            tag.text = tag_text
-        for regexCode, regexCodeProperty in matches:
-            tag = ET.SubElement(node.find('regexCodeList'), 'string')
-            tag.text = regexCode
-            tag = ET.SubElement(node.find('regexCodePropertyList'), 'integer')
-            tag.text = regexCodeProperty
+    def compile(self):
+        package_path = os.path.abspath(self.package_path)
+        for subpackage in ('Triggers', 'Timers', 'Aliases', 'Scripts', 'Keys'):
+            subpackage_path = os.path.join(package_path, subpackage)
+            if os.path.exists(subpackage_path):
+                for dirpath, subdirs, filenames in os.walk(subpackage_path):
+                    groups = [dirname for dirname in os.path.normpath(
+                        dirpath.replace(subpackage_path, '')
+                    ).lstrip('/').split('/') if dirname != '.']
+                    parent = self.create_groups(groups, subpackage_path)
+                    for filename in filenames:
+                        if (filename.endswith('.json') and
+                                not filename.endswith('__group.json')):
+                            self.create_leaf(dirpath, filename, parent)
+        pkg_path = os.path.join(package_path, self.package_file)
+        self.tree.write(pkg_path)
+        print('%s successfully written.' % pkg_path)
 
-
-    def attrib_bool(self, value):
-        return 'yes' if bool(value) else 'no'
+    def node_name(self, node):
+        name = node.find('name')
+        return None if name is None else name.text
 
     def _get_attribs_by_type(self, type_):
         return {
@@ -236,23 +271,10 @@ class MudletXMLCompiler:
             }
         }.get(type_.lower(), {})
 
-    @property
-    def package_file(self):
-        return '%s.xml' % self.package_name
-
-    def compile(self):
-        for dirpath, _, filenames in os.walk(self.package_path):
-            for filename in filenames:
-                if filename.endswith('.json'):
-                    self.add_to_package(dirpath, filename)
-        pkg_path = os.path.join(self.package_path, self.package_file)
-        self.tree.write(pkg_path)
-        print('%s successfully written.' % pkg_path)
-
 
 def run_interactive():
     main_menu = """
-    Nasuta's Achaea Packaging Tools
+    Nasuta's Mudlet Packaging Tools
     ===============================
 
     1. Extract a package into files and folders
