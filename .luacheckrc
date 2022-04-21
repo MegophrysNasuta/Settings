@@ -1,17 +1,22 @@
 std = {
     globals = {
         -- these are std lua idk why they have to be here
+        'ipairs',
+        'pairs',
         'tonumber',
         'tostring',
         -- these are namespaces
         'ak',                   -- Austere's AK Opponent Tracking
         'cdb',                  -- Romaen's CDB (name colors database)
         'demonnic',             -- anything demonnic makes
+        'DirPad',               -- My directional pad's namespace
         'lb',                   -- Romaen's limb counter
         'Megophrys',            -- my namespace
         'mmp',                  -- Mudlet Mapper
         'opsec',                -- my opsec package
         'target',               -- common global target variable
+        'target2',              -- occassional 2nd target (multi-target attacks)
+        'target3',              -- occassional 3rd target (multi-target attacks)
         'wsys',                 -- WunderSys Achaea Server-Side Curing namespace
     },
     read_globals = {
@@ -39,6 +44,7 @@ std = {
         'selectCurrentLine',    -- https://wiki.mudlet.org/w/Manual:UI_Functions#selectCurrentLine
         'selectString',         -- https://wiki.mudlet.org/w/Manual:UI_Functions#selectString
         'send',                 -- https://wiki.mudlet.org/w/Manual:Lua_Functions#send
+        'sendAll',              -- https://wiki.mudlet.org/w/Manual:Lua_Functions#sendAll
         'setBold',              -- https://wiki.mudlet.org/w/Manual:UI_Functions#setBold
         'setItalics',           -- https://wiki.mudlet.org/w/Manual:UI_Functions#setItalics
         'setUnderline',         -- https://wiki.mudlet.org/w/Manual:UI_Functions#setUnderline

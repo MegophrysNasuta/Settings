@@ -1,5 +1,5 @@
-if matches[2] == 'l' then 
-  Megophrys.targetLimb = 'left' 
+if matches[2] == 'l' then
+  Megophrys.targetLimb = 'left'
 elseif matches[2] == 'r' then
   Megophrys.targetLimb = 'right'
 else

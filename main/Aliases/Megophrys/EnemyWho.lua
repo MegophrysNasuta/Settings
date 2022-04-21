@@ -1,6 +1,6 @@
 enableTrigger('suppress_enw_spam')
 
-for _, enemy in pairs(Megophrys.enemies or {}) do 
+for _, enemy in pairs(Megophrys.enemies or {}) do
   send('qw '.. enemy)
 end
 

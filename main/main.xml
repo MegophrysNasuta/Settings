@@ -111,14 +111,19 @@ Megophrys.updatePrepGauges()
 end
 </script><triggerType>0</triggerType><conditionLineDelta /><mStayOpen>0</mStayOpen><mCommand /><packageName /><mFgColor>#ff0000</mFgColor><mBgColor>#ffff00</mBgColor><mSoundFile /><colorTriggerFgColor>#000000</colorTriggerFgColor><colorTriggerBgColor>#000000</colorTriggerBgColor><regexCodeList>
 					<string>You are recovering equilibrium and cannot move yet.</string></regexCodeList><regexCodePropertyList>
-					<integer>3</integer></regexCodePropertyList></Trigger><Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no"><name>CFS</name><script>if matches[1] == 'Credits currently available for purchase:' then
-  totalCreditsForSale = 0
-  totalCreditPrice = 0
+					<integer>3</integer></regexCodePropertyList></Trigger><Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no"><name>CFS</name><script>Megophrys = (Megophrys or {})
+if matches[1] == 'Credits currently available for purchase:' then
+  Megophrys._totalCreditsForSale = 0
+  Megophrys._totalCreditPrice = 0
 else
+  local totalCreditsForSale = Megophrys._totalCreditsForSale
+  local totalCreditPrice = Megophrys._totalCreditPrice
   totalCreditsForSale = totalCreditsForSale + tonumber(matches[2])
   totalCreditPrice = totalCreditPrice + (tonumber(matches[2]) * tonumber(matches[3]))
   cecho('\t&lt;cyan&gt;'.. tostring(totalCreditsForSale) ..' credits for '..
         tostring(totalCreditPrice) ..' gold.')
+  Megophrys._totalCreditsForSale = totalCreditsForSale
+  Megophrys._totalCreditPrice = totalCreditPrice
 end
 </script><triggerType>0</triggerType><conditionLineDelta /><mStayOpen>0</mStayOpen><mCommand /><packageName /><mFgColor>#ff0000</mFgColor><mBgColor>#ffff00</mBgColor><mSoundFile /><colorTriggerFgColor>#000000</colorTriggerFgColor><colorTriggerBgColor>#000000</colorTriggerBgColor><regexCodeList>
 					<string>Credits currently available for purchase:</string><string>^\s+(\d+) credits at (\d+) gold per credit\.$</string></regexCodeList><regexCodePropertyList>
@@ -129,6 +134,8 @@ end
 </script><triggerType>0</triggerType><conditionLineDelta /><mStayOpen>0</mStayOpen><mCommand /><packageName /><mFgColor>#ff0000</mFgColor><mBgColor>#ffff00</mBgColor><mSoundFile /><colorTriggerFgColor>#000000</colorTriggerFgColor><colorTriggerBgColor>#000000</colorTriggerBgColor><regexCodeList>
 					<string>You grow still and begin to silently pray for preservation of your soul while</string></regexCodeList><regexCodePropertyList>
 					<integer>2</integer></regexCodePropertyList></Trigger><Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no"><name>Fullsense</name><script>Megophrys.fullSensed = (Megophrys.fullSensed or {})
+Megophrys.fullsenseDisplayTimer = (Megophrys.fullsenseDisplayTimer or nil)
+local fsTimer = Megophrys.fullsenseDisplayTimer
 
 if matches[1]:starts('Focusing') then
   Megophrys.fullSensed = {}
@@ -141,8 +148,8 @@ else
   tbl[#tbl + 1] = matches[2]
 end
 
-if finalDisplayTimer then killTimer(finalDisplayTimer) end
-finalDisplayTimer = tempTimer(0.2, function()
+if fsTimer then killTimer(fsTimer) end
+Megophrys.fullsenseDisplayTimer = tempTimer(0.2, function()
   echo('\n')
   for location, players in spairs(Megophrys.fullSensed) do
     if location:len() &gt; 28 then
@@ -302,27 +309,27 @@ local actualPotency = tonumber(matches[4])
 local actualVolatility = tonumber(matches[5])
 local actualStability = tonumber(matches[6])
 
-for i=actualPotency - 1, targetPotency, -1 do
+for _=actualPotency - 1, targetPotency, -1 do
   send('dilute potency of '.. matches[2])
 end
 
-for i=actualVolatility - 1, targetVolatility, -1 do
+for _=actualVolatility - 1, targetVolatility, -1 do
   send('dilute volatility of '.. matches[2])
 end
 
-for i=actualStability - 1, targetStability, -1 do
+for _=actualStability - 1, targetStability, -1 do
   send('dilute stability of '.. matches[2])
 end
 
-for i=actualPotency + 1, targetPotency do
+for _=actualPotency + 1, targetPotency do
   send('enhance potency of '.. matches[2])
 end
 
-for i=actualVolatility + 1, targetVolatility do
+for _=actualVolatility + 1, targetVolatility do
   send('enhance volatility of '.. matches[2])
 end
 
-for i=actualStability + 1, targetStability do
+for _=actualStability + 1, targetStability do
   send('enhance stability of '.. matches[2])
 end
 </script><triggerType>0</triggerType><conditionLineDelta /><mStayOpen>0</mStayOpen><mCommand /><packageName /><mFgColor>#ff0000</mFgColor><mBgColor>#ffff00</mBgColor><mSoundFile /><colorTriggerFgColor>#000000</colorTriggerFgColor><colorTriggerBgColor>#000000</colorTriggerBgColor><regexCodeList>

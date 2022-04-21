@@ -4,11 +4,13 @@ local cmd = 'buy '
 
 if item == 'letter' or item == 'parcel' then cmd = 'request ' end
 
-elixirs = {'health', 'mana', 'mending', 'immunity', 'epidermal', 'restoration',
-          'caloric', 'mass', 'slike', 'delphinium', 'gecko', 'voyria', 'speed',
-          'venom', 'levitation', 'frost'}
-          
-for _, elixir in pairs(elixirs) do 
+local elixirs = {
+    'health', 'mana', 'mending', 'immunity', 'epidermal', 'restoration',
+    'caloric', 'mass', 'slike', 'delphinium', 'gecko', 'voyria', 'speed',
+    'venom', 'levitation', 'frost'
+}
+
+for _, elixir in pairs(elixirs) do
   if item == elixir then cmd = 'refill rift from ' end
 end
 
