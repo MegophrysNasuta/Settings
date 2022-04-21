@@ -1,4 +1,6 @@
 Megophrys.fullSensed = (Megophrys.fullSensed or {})
+Megophrys.fullsenseDisplayTimer = (Megophrys.fullsenseDisplayTimer or nil)
+local fsTimer = Megophrys.fullsenseDisplayTimer
 
 if matches[1]:starts('Focusing') then
   Megophrys.fullSensed = {}
@@ -11,8 +13,8 @@ else
   tbl[#tbl + 1] = matches[2]
 end
 
-if finalDisplayTimer then killTimer(finalDisplayTimer) end
-finalDisplayTimer = tempTimer(0.2, function()
+if fsTimer then killTimer(fsTimer) end
+Megophrys.fullsenseDisplayTimer = tempTimer(0.2, function()
   echo('\n')
   for location, players in spairs(Megophrys.fullSensed) do
     if location:len() > 28 then
