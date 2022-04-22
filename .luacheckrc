@@ -38,8 +38,9 @@ std = {
         'enableTrigger',                    -- https://wiki.mudlet.org/w/Manual:Mudlet_Object_Functions#enableTrigger
         'expandAlias',                      -- https://wiki.mudlet.org/w/Manual:Miscellaneous_Functions#expandAlias
         'fg',                               -- https://wiki.mudlet.org/w/Manual:UI_Functions#fg
-        'getAreaRooms',                      -- https://wiki.mudlet.org/w/Manual:Mapper_Functions#getAreaRooms
-        'getCurrentLine',                     -- https://wiki.mudlet.org/w/Manual:UI_Functions#getCurrentLine
+        'getAreaRooms',                     -- https://wiki.mudlet.org/w/Manual:Mapper_Functions#getAreaRooms
+        'getCurrentLine',                   -- https://wiki.mudlet.org/w/Manual:UI_Functions#getCurrentLine
+        'getHTTP',                          -- https://wiki.mudlet.org/w/Manual:Networking_Functions#getHTTP
         'getLineCount',                     -- https://wiki.mudlet.org/w/Manual:UI_Functions#getLineCount
         'getRoomArea',                      -- https://wiki.mudlet.org/w/Manual:Mapper_Functions#getRoomArea
         'getRoomName',                      -- https://wiki.mudlet.org/w/Manual:Mapper_Functions#getRoomName
