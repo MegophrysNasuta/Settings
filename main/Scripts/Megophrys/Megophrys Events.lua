@@ -20,7 +20,7 @@ Megophrys.onConnect = function()
   mmp.settings:setOption('dash', false)
   Megophrys.class = gmcp.Char.Status.class
   Megophrys.makeClassToolbars()
-  supportedClass = Megophrys[Megophrys.class]
+  local supportedClass = Megophrys[Megophrys.class]
   if supportedClass then
     supportedClass.onConnect()
     supportedClass.makeClassToolbars()
@@ -118,7 +118,7 @@ Megophrys.hitShield = function()
     return
   end
 
-  brage_dshield = {
+  local brage_dshield = {
     Alchemist='throw caustic at ',
     Blademaster='shin shatter ',
     Magi='cast disintegrate on ',

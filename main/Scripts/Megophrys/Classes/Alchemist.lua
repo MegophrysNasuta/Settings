@@ -72,18 +72,16 @@ Megophrys.Alchemist.gearUp = function()
 end
 
 Megophrys.Alchemist.nextAttack = function()
-  local Alchemist = Megophrys.Alchemist
   local chanceToMouthOff = 0
   local imSoClever = ''
   local killStrat = Megophrys.killStrat
   local nextEduce = ''
   local nextTemper = ''
   local nextWrack = ''
-  local targetAffs = affstrack.score
+  local tarAff = affstrack.score
   local targetHits = Megophrys.targetHits or 0
   local uiColor = Megophrys.fgColors[killStrat]
 
-  local tarAff = affstrack.score
   local targetHumour = {}
   targetHumour.sanguine = (ak.alchemist.humour.sanguine or 0)
   targetHumour.melancholic = (ak.alchemist.humour.melancholic or 0)
@@ -120,7 +118,7 @@ Megophrys.Alchemist.nextAttack = function()
     else
       local targetManaPct = (ak.currentmana or 0) / (ak.maxmana or 1)
       local targetHealthPct = (ak.currenthealth or 0) / (ak.maxhealth or 1)
-      if targetManaPct <= 0.6 and (targetHealthPct <= 0.6 or 
+      if targetManaPct <= 0.6 and (targetHealthPct <= 0.6 or
                                    (targetHealthPct <= 0.66 and targetHumour.choleric > 2) or
                                    (targetHealthPct <= 0.72 and targetHumour.choleric > 4)) then
         nextTemper = 'inundate &tar choleric'
@@ -236,6 +234,7 @@ end
 
 Alchemist.setHumour = function(humour, reason)
   local elem = tostring(humour):lower()
+  local button
 
   if elem == 'melancholic' then
     button = Alchemist.melancholicButton
@@ -261,7 +260,6 @@ Alchemist.setHumour = function(humour, reason)
 end
 
 Megophrys.Alchemist.setMode = function()
-  local Alchemist = Megophrys.Alchemist
   local killStrat = Megophrys.killStrat
 
   Alchemist.resetHumourButtonStyles()
@@ -302,7 +300,7 @@ Megophrys.Alchemist.subMode = function(n)
   end
 end
 
-Megophrys.Alchemist.toggleOne = function(altMode)
+Megophrys.Alchemist.toggleOne = function(_)
   if Alchemist.overdraw then
     Alchemist.overdraw = false
     cecho('\n<cyan>No longer overdrawing.\n')

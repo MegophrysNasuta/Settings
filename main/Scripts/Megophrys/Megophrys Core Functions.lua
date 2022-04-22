@@ -146,6 +146,7 @@ Megophrys.nextLimbPrepAttack = function(onKillConditionAttack,
     }
   end
 
+  local killStrat = Megophrys.killStrat
   local otherLimb = ''
   local targetTorso = false
   local limbIsBroken = false
@@ -153,7 +154,7 @@ Megophrys.nextLimbPrepAttack = function(onKillConditionAttack,
   local limbIsUnderPrepped = false
   local otherLimbIsBroken = false
   local otherLimbIsPrepped = false
-  local otherLlimbIsUnderPrepped = false
+  local otherLimbIsUnderPrepped = false
   local torsoIsBroken = false
   local torsoIsPrepped = false
   local torsoIsUnderPrepped = false
@@ -273,11 +274,9 @@ Megophrys.pursue = function()
     gotoRoom(Megophrys.targetRoom)
     Megophrys.targetRoom = nil
   else
-    local findCmd = ''
+    local findCmd = 'farsee '
     if Megophrys.class == 'Magi' then
       findCmd = 'cast scry at '
-    else
-      findCmd = 'farsee '
     end
     if Megophrys.killStrat == 'raid' and Megophrys.raidLeader then
       send(findCmd .. Megophrys.raidLeader)
@@ -431,16 +430,15 @@ Megophrys.setTarget = function(t)
   end
 
   -- set temp trigger to highlight the target string
-  if hilite_trigger_id then killTrigger(hilite_trigger_id) end
-  if hilite_trigger_id2 then killTrigger(hilite_trigger_id2) end
+  if Megophrys._hilite_trigger_id then killTrigger(Megophrys._hilite_trigger_id) end
+  if Megophrys._hilite_trigger_id2 then killTrigger(Megophrys._hilite_trigger_id2) end
 
-  hilite_target_func = function(needle)
-    idx = 1
-    done = false
+  local hilite_target_func = function(needle)
+    local idx, done = 1, false
     while not done do
       done = true
-      lpos = selectString(needle, idx)
-      if lpos ~= -1 then 
+      local lpos = selectString(needle, idx)
+      if lpos ~= -1 then
         Megophrys.Util.hiliteSelection('OrangeRed')
         done = false
       end
@@ -449,10 +447,10 @@ Megophrys.setTarget = function(t)
   end
 
   if target ~= 'none' then
-    hilite_trigger_id = tempTrigger(target:lower(), function()
+    Megophrys._hilite_trigger_id = tempTrigger(target:lower(), function()
         hilite_target_func(target:lower())
     end)
-    hilite_trigger_id2 = tempTrigger(target, function()
+    Megophrys._hilite_trigger_id2 = tempTrigger(target, function()
         hilite_target_func(target)
     end)
     send('tunnelvision on '.. target)
@@ -590,7 +588,7 @@ Megophrys.toggleFive = Megophrys.toggleLimbsPrepped
 Megophrys.tumbleRandom = function()
   local stopTrying = false
   local lastDir = nil
-  for dir, roomID in pairs(gmcp.Room.Info.exits) do
+  for dir, _ in pairs(gmcp.Room.Info.exits) do
     if math.random(1, 2) % 2 == 0 then
       send('tumble '.. dir)
       stopTrying = true

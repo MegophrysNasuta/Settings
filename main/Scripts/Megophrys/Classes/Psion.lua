@@ -11,7 +11,6 @@ Megophrys.Psion.onConnect = function()
 end
 
 Megophrys.Psion.setMode = function()
-  local Psion = Megophrys.Psion
   local killStrat = Megophrys.killStrat
 
   if killStrat == 'denizen' then
@@ -94,14 +93,13 @@ Megophrys.Psion.setWeavePrep = function(prep)
 end
 
 Megophrys.Psion.nextAttack = function()
-  local Psion = Megophrys.Psion
   local chanceToMouthOff = 0
   local imSoClever = ''
   local killStrat = Megophrys.killStrat
   local nextWeave = 'overhand &tar'
   local nextPsi = ''
   local setNextAttack = 'setalias nextAttack '
-  local targetAffs = affstrack.score
+  local tarAff = affstrack.score
   local targetHits = Megophrys.targetHits or 0
   local targetLimbSet = (Megophrys.targetLimbSet or 'leg')
   local uiColor = Megophrys.fgColors[killStrat]
@@ -109,8 +107,6 @@ Megophrys.Psion.nextAttack = function()
   local unweavingBody = (ak.psion.unweaving.body or 0)
   local unweavingMind = (ak.psion.unweaving.mind or 0)
   local unweavingSpirit = (ak.psion.unweaving.spirit or 0)
-
-  local tarAff = affstrack.score
 
   if not wsys.aff.stupidity then
     setNextAttack = setNextAttack .. 'stand / '
@@ -205,7 +201,7 @@ Megophrys.Psion.nextAttack = function()
         if (ak.bleeding or 0) > 150 then
           table.insert(Megophrys.givingAffs, 'anorexia')
         end
-      elseif (tarAff["impatience"] > 69 and tarAff["bloodfire"] > 80 and 
+      elseif (tarAff["impatience"] > 69 and tarAff["bloodfire"] > 80 and
                 tarAff["anorexia"] > 69) then
         if tarAff["unweavingbody"] < 80 then
           nextWeave = 'unweave &tar body'

@@ -1,6 +1,5 @@
 Megophrys.doWhileSelfish = function(func)
-  cmd = func()
-  send('generosity | '.. cmd ..' | selfishness')
+  send('generosity | '.. func() ..' | selfishness')
 end
 
 Megophrys.dropWhileSelfish = function(item)
@@ -121,13 +120,13 @@ Megophrys.Util._dgradient = function(text, fgColor1, fgColor2, bgColor1, bgColor
   end
 
   local hexToRgb = Megophrys.Util.hexToRgb
-  local fgColor1, fgColor2 = hexToRgb(fgColor1), hexToRgb(fgColor2)
-  local bgColor1, bgColor2 = hexToRgb(bgColor1), hexToRgb(bgColor2)
+  fgColor1, fgColor2 = hexToRgb(fgColor1), hexToRgb(fgColor2)
+  bgColor1, bgColor2 = hexToRgb(bgColor1), hexToRgb(bgColor2)
 
   local function smoothGradient(color1, color2, numSteps)
     local gradient = {color1}
     local colorStep = math.floor(((color2 - color1) / numSteps) + 0.5)
-    for i=1, numSteps do
+    for _=1, numSteps do
       local nextColor = gradient[#gradient] + colorStep
       if nextColor > 255 then nextColor = 255 end
       if nextColor < 0 then nextColor = 0 end

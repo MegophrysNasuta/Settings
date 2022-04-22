@@ -82,7 +82,6 @@ Megophrys.Magi.makeClassToolbars = function()
 end
 
 Megophrys.Magi.setMode = function()
-  local Magi = Megophrys.Magi
   local killStrat = Megophrys.killStrat
 
   Megophrys.specialMoveButton:echo(
@@ -170,7 +169,6 @@ Megophrys.Magi.toggleOne = Magi.toggleSkipTransfix
 Megophrys.Magi.toggleFive = Magi.toggleGolemSmashTarget
 
 Megophrys.Magi.nextAttack = function()
-  local Magi = Megophrys.Magi
   local killStrat = Megophrys.killStrat
   local staffCasts = Magi.staffCasts
   local setNextAttack = 'setalias nextAttack '
@@ -181,7 +179,7 @@ Megophrys.Magi.nextAttack = function()
   local staffSpell = staffCasts[Magi.element]
   if killStrat == 'denizen' then
     Megophrys.nextMoveButton:echo('Staffcast', Megophrys.fgColors[killStrat], 'c')
-    sendAll((setNextAttack ..'cast dilation at &tar / staffcast '.. staffSpell 
+    sendAll((setNextAttack ..'cast dilation at &tar / staffcast '.. staffSpell
              ..' at &tar / golem squeeze &tar'),
             'queue addclear eqbal nextAttack')
   else
@@ -317,6 +315,7 @@ end
 
 Magi.setElement = function(element, reason)
   local elem = tostring(element):lower()
+  local button
 
   if elem == 'earth' then
     button = Magi.earthButton
@@ -342,6 +341,8 @@ Magi.setElement = function(element, reason)
 end
 
 Magi.setGolemStrat = function()
+  local killStrat = Megophrys.killStrat
+  local tarAff = affstrack.score
   Magi.golemSmashTarget = 'arms'
   Magi.golemSmashButton:echo('Arms', Megophrys.fgColors[Megophrys.killStrat], 'c')
   if tarAff["timeflux"] > 80 then

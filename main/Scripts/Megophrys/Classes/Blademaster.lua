@@ -137,16 +137,15 @@ Megophrys.Blademaster.nextAttack = function()
     setNextAttack = setNextAttack ..'infuse '.. infuseElem .. ' / '
   end
 
+  local targetSide, prepStatus
   if killStrat == 'denizen' then
     setNextAttack = setNextAttack .. 'leapstrike &tar / spinslash &tar / '
     nextSlash = 'drawslash'
   elseif killStrat == 'raid' then
     nextSlash = 'balanceslash'
   else
-    local prepStatus = Megophrys.nextLimbPrepAttack('impale', 65)
+    prepStatus = Megophrys.nextLimbPrepAttack('impale', 65)
     local targetLimb = prepStatus.targetLimb
-    local targetTorso = prepStatus.targetTorso
-    local targetSide = nil
     Megophrys.nextMoveButton:echo('Staffstrike', Megophrys.fgColors[killStrat], 'c')
 
     if Megophrys.killPreConditionsMet and tarAff["impaled"] < 80 then
@@ -175,9 +174,9 @@ Megophrys.Blademaster.nextAttack = function()
   if killStrat ~= 'denizen' then
     if prepStatus.prepConditionsMet then
       Blademaster.setNextStrike('knee')
-    elseif (targetAffs.hamstring or 0) < 90 then
+    elseif (tarAff["hamstring"] or 0) < 90 then
       Blademaster.setNextStrike('hamstring')
-    elseif (targetAffs.paralyzed or 0) < 90 then
+    elseif (tarAff["paralyzed"] or 0) < 90 then
       Blademaster.setNextStrike('neck')
     else
       Blademaster.setNextStrike('sternum')
@@ -216,9 +215,9 @@ Blademaster.resetInfuseElementButtonStyles = function()
 end
 
 Blademaster.setElement = function(element, reason, infuse)
-  local elem = tostring(element):lower()
-  if not elem then return end
-  local elem_for = nil
+  local el = tostring(element):lower()
+  if not el then return end
+  local elem_for
 
   local getButtonByElement = function(elem, infuseVersion)
     if not elem then return end
@@ -251,10 +250,10 @@ Blademaster.setElement = function(element, reason, infuse)
   end
 
   if infuse then
-    Blademaster.infuseElem = elem
+    Blademaster.infuseElem = el
     elem_for = 'infuse'
   else
-    Blademaster.element = elem
+    Blademaster.element = el
     elem_for = 'stance'
     send(Blademaster.stances[Blademaster.element])
   end
@@ -273,9 +272,9 @@ Blademaster.setElement = function(element, reason, infuse)
   end
 
   if reason then
-    cecho('\n<cyan>Element for '.. elem_for ..' set to: '.. elem ..' ('.. reason ..')\n')
+    cecho('\n<cyan>Element for '.. elem_for ..' set to: '.. el ..' ('.. reason ..')\n')
   else
-    cecho('\n<cyan>Element for '.. elem_for ..' set to: '.. elem ..'\n')
+    cecho('\n<cyan>Element for '.. elem_for ..' set to: '.. el ..'\n')
   end
 end
 

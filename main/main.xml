@@ -14819,7 +14819,7 @@ sendAll('setalias activeHeal '.. table.concat(healTries, ' / '),
 </script><command /><packageName /><regex>^port (\w+)$</regex></Alias><Alias isActive="yes" isFolder="no"><name>Enemy List</name><script>Megophrys.setEnemies(matches[2])
 </script><command /><packageName /><regex>^enem (\w+(, a?n?d? ?\w+)*){1}\.?$</regex></Alias><Alias isActive="yes" isFolder="no"><name>Journal QQ</name><script /><command>get journal279704 from hat405053 | write journal279704</command><packageName /><regex>^jj$</regex></Alias><Alias isActive="yes" isFolder="no"><name>EnemyWho</name><script>enableTrigger('suppress_enw_spam')
 
-for _, enemy in pairs(Megophrys.enemies or {}) do 
+for _, enemy in pairs(Megophrys.enemies or {}) do
   send('qw '.. enemy)
 end
 
@@ -14850,7 +14850,7 @@ end
 | 11 | | 12 | | 13 | | 14 | | 15 |
 |    | |    | |    | |    | |    |
 '----' '----' '----' '----' '----'
- ____   ____   ____   ____ 
+ ____   ____   ____   ____
 | 16 | | 17 | | 18 | | 19 |      x  x
 |    | |    | |    | |    |    x      x
 '----' '----' '----' '----'   x   21   x
@@ -14932,11 +14932,13 @@ local cmd = 'buy '
 
 if item == 'letter' or item == 'parcel' then cmd = 'request ' end
 
-elixirs = {'health', 'mana', 'mending', 'immunity', 'epidermal', 'restoration',
-          'caloric', 'mass', 'slike', 'delphinium', 'gecko', 'voyria', 'speed',
-          'venom', 'levitation', 'frost'}
-          
-for _, elixir in pairs(elixirs) do 
+local elixirs = {
+    'health', 'mana', 'mending', 'immunity', 'epidermal', 'restoration',
+    'caloric', 'mass', 'slike', 'delphinium', 'gecko', 'voyria', 'speed',
+    'venom', 'levitation', 'frost'
+}
+
+for _, elixir in pairs(elixirs) do
   if item == elixir then cmd = 'refill rift from ' end
 end
 
@@ -14970,7 +14972,7 @@ else
 end
 </script><command /><packageName /><regex>^hg (\w+)(?: (\w+))?$</regex></Alias><Alias isActive="yes" isFolder="no"><name>Homunculus say</name><script>send('homunculus say '.. (matches[2] or 'Merp!'))
 </script><command /><packageName /><regex>^hs(?: (.*))?</regex></Alias><Alias isActive="yes" isFolder="no"><name>Homunculus Drop</name><script>send('homunculus drop '.. matches[2])
-</script><command /><packageName /><regex>^hd (\w+)$</regex></Alias><Alias isActive="yes" isFolder="no"><name>Minasuta, stop :(</name><script /><command>homunculus pacify</command><packageName /><regex>^hstop$</regex></Alias><Alias isActive="yes" isFolder="no"><name>Homunculus Remote Control</name><script>local tbl = {f='follow', l='look', L='listen on', LL='listen off', 
+</script><command /><packageName /><regex>^hd (\w+)$</regex></Alias><Alias isActive="yes" isFolder="no"><name>Minasuta, stop :(</name><script /><command>homunculus pacify</command><packageName /><regex>^hstop$</regex></Alias><Alias isActive="yes" isFolder="no"><name>Homunculus Remote Control</name><script>local tbl = {f='follow', l='look', L='listen on', LL='listen off',
              r='return', x='exits'}
 send('homunculus '.. tbl[matches[2]])
 </script><command /><packageName /><regex>^h(f|l|x|L|LL|r)$</regex></Alias><AliasGroup isActive="yes" isFolder="yes"><name>Offense</name><script /><command /><packageName /><regex /><Alias isActive="yes" isFolder="no"><name>Alchemist PK Mode</name><script>Megophrys.setMode('alch')
@@ -14993,8 +14995,8 @@ end
 </script><command /><packageName /><regex>^(intox|devit|incen|tox|vap|mon)(?: (n|e|s|w|ne|nw|se|sw|in|out|up|down|u|d|))?$</regex></Alias></AliasGroup></AliasGroup><AliasGroup isActive="yes" isFolder="yes"><name>Who Console</name><script /><command /><packageName /><regex /><Alias isActive="yes" isFolder="no"><name>qw manual</name><script>disableTrigger("Who Console")
 send('qw')
 tempTimer(.25, function() enableTrigger("Who Console") end)
-</script><command /><packageName /><regex>^qw$</regex></Alias></AliasGroup><AliasGroup isActive="yes" isFolder="yes"><name>Magi</name><script /><command /><packageName /><regex /><Alias isActive="yes" isFolder="no"><name>Set target limb</name><script>if matches[2] == 'l' then 
-  Megophrys.targetLimb = 'left' 
+</script><command /><packageName /><regex>^qw$</regex></Alias></AliasGroup><AliasGroup isActive="yes" isFolder="yes"><name>Magi</name><script /><command /><packageName /><regex /><Alias isActive="yes" isFolder="no"><name>Set target limb</name><script>if matches[2] == 'l' then
+  Megophrys.targetLimb = 'left'
 elseif matches[2] == 'r' then
   Megophrys.targetLimb = 'right'
 else

@@ -78,7 +78,7 @@ end
 
 Megophrys.showTime = function()
   if not Megophrys.calendarLabel then return end
-  local tl = gmcp.IRE.Time.List
+  local tl = table.deepcopy(gmcp.IRE.Time.List)
   if not tl then return end
 
   for key, _ in pairs(tl) do
@@ -86,7 +86,7 @@ Megophrys.showTime = function()
     if updated then tl[key] = updated end
   end
 
-  local d = ''
+  local d = tl.day .."th"
   if tl.day == "1" then
     d = "1st"
   elseif tl.day == "2" then
@@ -101,8 +101,6 @@ Megophrys.showTime = function()
     d = "23rd"
   elseif tl.day == "31" then
     d = "31st"
-  else
-    d = tl.day .."th"
   end
 
   local seasons = {
@@ -170,39 +168,81 @@ Megophrys.updateBars = function()
   end
 
   -- literally from https://wiki.mudlet.org/w/manual:geyser#Styling_a_gauge
-  Megophrys.hpGauge.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f04141, stop: 0.1 #ef2929, stop: 0.49 #cc0000, stop: 0.5 #a40000, stop: 1 #cc0000);
+  Megophrys.hpGauge.front:setStyleSheet([[
+    background-color: QLinearGradient(x1: 0, y1: 0,
+                                      x2: 0, y2: 1,
+                                      stop: 0 #f04141,
+                                      stop: 0.1 #ef2929,
+                                      stop: 0.49 #cc0000,
+                                      stop: 0.5 #a40000,
+                                      stop: 1 #cc0000);
     border-top: 1px black solid;
     border-left: 1px black solid;
     border-bottom: 1px black solid;
     border-radius: 7;
     padding: 3px;]])
-  Megophrys.hpGauge.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #bd3333, stop: 0.1 #bd2020, stop: 0.49 #990000, stop: 0.5 #700000, stop: 1 #990000);
+  Megophrys.hpGauge.back:setStyleSheet([[
+    background-color: QLinearGradient(x1: 0, y1: 0,
+                                      x2: 0, y2: 1,
+                                      stop: 0 #bd3333,
+                                      stop: 0.1 #bd2020,
+                                      stop: 0.49 #990000,
+                                      stop: 0.5 #700000,
+                                      stop: 1 #990000);
     border-width: 1px;
     border-color: black;
     border-style: solid;
     border-radius: 7;
     padding: 3px;]])
 
-  Megophrys.mpGauge.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #98f041, stop: 0.1 #8cf029, stop: 0.49 #66cc00, stop: 0.5 #52a300, stop: 1 #66cc00);
+  Megophrys.mpGauge.front:setStyleSheet([[
+    background-color: QLinearGradient(x1: 0, y1: 0,
+                                      x2: 0, y2: 1,
+                                      stop: 0 #98f041,
+                                      stop: 0.1 #8cf029,
+                                      stop: 0.49 #66cc00,
+                                      stop: 0.5 #52a300,
+                                      stop: 1 #66cc00);
     border-top: 1px black solid;
     border-left: 1px black solid;
     border-bottom: 1px black solid;
     border-radius: 7;
     padding: 3px;]])
-  Megophrys.mpGauge.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #78bd33, stop: 0.1 #6ebd20, stop: 0.49 #4c9900, stop: 0.5 #387000, stop: 1 #4c9900);
+  Megophrys.mpGauge.back:setStyleSheet([[
+    background-color: QLinearGradient(x1: 0, y1: 0,
+                                      x2: 0, y2: 1,
+                                      stop: 0 #78bd33,
+                                      stop: 0.1 #6ebd20,
+                                      stop: 0.49 #4c9900,
+                                      stop: 0.5 #387000,
+                                      stop: 1 #4c9900);
     border-width: 1px;
     border-color: black;
     border-style: solid;
     border-radius: 7;
     padding: 3px;]])
 
-  Megophrys.affPrGauge.front:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #4141f0, stop: 0.1 #2929ef, stop: 0.49 #0000cc, stop: 0.5 #0000a4, stop: 1 #0000cc);
+  Megophrys.affPrGauge.front:setStyleSheet([[
+    background-color: QLinearGradient(x1: 0, y1: 0,
+                                      x2: 0, y2: 1,
+                                      stop: 0 #4141f0,
+                                      stop: 0.1 #2929ef,
+                                      stop: 0.49 #0000cc,
+                                      stop: 0.5 #0000a4,
+                                      stop: 1 #0000cc);
     border-top: 1px black solid;
     border-left: 1px black solid;
     border-bottom: 1px black solid;
     border-radius: 7;
     padding: 3px;]])
-  Megophrys.affPrGauge.back:setStyleSheet([[background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #3333bd, stop: 0.1 #2020bd, stop: 0.49 #000099, stop: 0.5 #000070, stop: 1 #000099);
+  Megophrys.affPrGauge.back:setStyleSheet([[
+    background-color: QLinearGradient(x1: 0, y1: 0,
+                                      x2: 0, y2: 1,
+                                      stop: 0 #3333bd,
+                                      stop: 0.1 #2020bd,
+                                      stop: 0.49 #000099,
+                                      stop: 0.5 #000070,
+                                      stop: 1 #000099);
     border-width: 1px;
     border-color: black;
     border-style: solid;
@@ -241,14 +281,12 @@ Megophrys.updateBars = function()
   }
   Megophrys.affPrGauge:setValue(affPressure, 5, affPressureDesc[affPressure])
 
-  local tgtAffTable = '<b>Tgt Affs:</b><ul>'
   local addToTgtAffTable = function(tgtAffTable, affList)
+    local tarAff = affstrack.score
     for _, aff in pairs(affList) do
-      local entry = ''
-      if tarAff(aff) then
+      local entry = '<i><s>'.. aff ..'</s></i>'
+      if tarAff[aff] then
         entry = '<b>'.. aff ..'</b>'
-      else
-        entry = '<i><s>'.. aff ..'</s></i>'
       end
       tgtAffTable = (tgtAffTable ..'<li>'.. entry ..'</li>')
     end
@@ -256,6 +294,7 @@ Megophrys.updateBars = function()
     return tgtAffTable
   end
 
+  local tgtAffTable = '<b>Tgt Affs:</b><ul>'
   local trueLockAffs = {
     "paralysis",
     "anorexia",
@@ -459,17 +498,15 @@ Megophrys.updatePrepGauges = function()
   Megophrys.bottomGauge:setFontSize(11)
   local targetLimb = (Megophrys.targetLimb or 'left')
   local targetLimbSet = (Megophrys.targetLimbSet or 'leg')
-  local otherLimb = ''
+  local otherLimb = 'right'
 
   if targetLimb == 'right' then
     otherLimb = 'left'
-  else
-    otherLimb = 'right'
   end
 
   local topLabel = targetLimb:upper() ..' '.. targetLimbSet:upper()
   local middleLabel = 'NONE'
-  local bottomLabel = ''
+  local bottomLabel = 'TORSO'
   local targetLimbWounds = 0
   local otherLimbWounds = 0
   local targetOtherWounds = 0
@@ -480,8 +517,6 @@ Megophrys.updatePrepGauges = function()
     else
       bottomLabel = 'HEAD'
     end
-  else
-    bottomLabel = 'TORSO'
   end
 
   if lb[target] then
@@ -509,7 +544,7 @@ Megophrys.updateWhatHere = function()
   setFontSize(win, 12)
   clearWindow(win)
 
-  local infoHere = gmcp.Char.Items.List.items
+  local infoHere = table.deepcopy(gmcp.Char.Items.List.items)
   if gmcp.Char.Items.Add.location == 'room' then
     local found = false
     for _, item in pairs(infoHere) do
@@ -596,6 +631,7 @@ Megophrys.updateWhoHere = function()
 end
 
 Megophrys.updateWhosOnline = function(_, url, online)
+  if url ~= "http://api.achaea.com/characters.json" then return end
   local win = "Who's Online (Achaea)"
   openUserWindow(win, true, false, "f")
   setWindowWrap(win, 80)

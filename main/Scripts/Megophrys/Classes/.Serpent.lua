@@ -5,7 +5,6 @@ Megophrys.Serpent.onConnect = function()
 end
 
 Megophrys.Serpent.setMode = function()
-  local Serpent = Megophrys.Serpent
   local killStrat = Megophrys.killStrat
 
   if killStrat == 'denizen' then
@@ -14,7 +13,6 @@ Megophrys.Serpent.setMode = function()
 end
 
 Megophrys.Serpent.nextAttack = function()
-  local Serpent = Megophrys.Serpent
   local killStrat = Megophrys.killStrat
   local setNextAttack = 'setalias nextAttack stand / wield whip / '
 

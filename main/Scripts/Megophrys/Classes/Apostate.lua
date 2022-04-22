@@ -51,15 +51,12 @@ Megophrys.Apostate.gearUp = function()
 end
 
 Megophrys.Apostate.nextAttack = function()
-  local Apostate = Megophrys.Apostate
   local chanceToMouthOff = 0
   local imSoClever = ''
   local killStrat = Megophrys.killStrat
-  local targetAffs = affstrack.score
+  local tarAff = affstrack.score
   local targetHits = Megophrys.targetHits or 0
   local uiColor = Megophrys.fgColors[killStrat]
-
-  local tarAff = affstrack.score
 
   local setNextAttack = 'setalias nextAttack '
   if killStrat ~= 'denizen' then
@@ -93,7 +90,7 @@ Megophrys.Apostate.nextAttack = function()
         stupidity = 'stupid',         -- eat goldenseal
         weariness = 'weariness',      -- eat kelp
       }
-      for aff, humour in pairs(affPrios) do
+      for aff, _ in pairs(affPrios) do
         if ignoreAff ~= aff and tarAff[aff] < 80 then return aff end
       end
     end
@@ -166,7 +163,6 @@ Megophrys.Apostate.nextAttack = function()
 end
 
 Megophrys.Apostate.setMode = function()
-  local Apostate = Megophrys.Apostate
   local killStrat = Megophrys.killStrat
 
   Apostate.resetHumourButtonStyles()
