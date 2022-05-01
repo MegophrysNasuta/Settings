@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "register_lusternias_envdata",
+    "packageName": null,
+    "script": "function register_lusternias_envdata(_, game)\n  if game ~= \"Lusternia\" then return end\n\n  mmp.envids =\n  {\n    [\"constructed underground\"] = 2,\n    [\"deep ocean\"]              = 24,\n    [\"natural underground\"]     = 3,\n    [\"constructed underwater\"]  = 41,\n    aether                      = 36,\n    astral                      = 35,\n    beach                       = 5,\n    chaos                       = 39,\n    clouds                      = 37,\n    concordance                 = 38,\n    darkness                    = 1,\n    desert                      = 6,\n    divine                      = 33,\n    farmlands                   = 30,\n    flesh                       = 18,\n    forest                      = 4,\n    freshwater                  = 22,\n    garden                      = 21,\n    grasslands                  = 7,\n    hills                       = 9,\n    jungle                      = 17,\n    mountains                   = 14,\n    netherworld                 = 34,\n    ocean                       = 20,\n    path                        = 11,\n    polar                       = 27,\n    reef                        = 25,\n    river                       = 10,\n    road                        = 12,\n    ruins                       = 19,\n    sewer                       = 23,\n    swamp                       = 15,\n    trees                       = 28,\n    tundra                      = 16,\n    urban                       = 8,\n    valley                      = 13,\n    volcanic                    = 32,\n    wasteland                   = 29,\n    badlands                    = 40,\n    wetlands                    = 31,\n  }\n\n  mmp.waterenvs = {}\n  local waterids = { \"river\", \"ocean\", \"freshwater\", \"deep ocean\" }\n  for i = 1, #waterids do mmp.waterenvs[mmp.envids[waterids[i]]] = true end\n\n  mmp.envidsr = {};\n  for name, id in pairs(mmp.envids) do mmp.envidsr[id] = name end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t\t"
+}

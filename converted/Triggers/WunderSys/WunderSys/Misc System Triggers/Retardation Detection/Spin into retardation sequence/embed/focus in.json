@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "focus in",
+    "script": "focusVibes = true\n\n--turn off the flag after 3s\nif focusVibesTimer then killTimer(focusVibesTimer) end\nfocusVibesTimer = tempTimer(3, [[focusVibesTimer = nil;focusVibes = false]])\n\n\n--turn off chain gates\nsetTriggerStayOpen(\"embed\", 0)\nsetTriggerStayOpen(\"Spin into retardation sequence\", 0)",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "A chorus of vibrating tones can be heard.",
+            "3"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Stat Evals",
+    "script": "if matches[3] == \"health\" then\n\tak.currenthealth = tonumber(matches[4])\n\tak.maxhealth = tonumber(matches[5])\n\tak.healthpercent = ak.currenthealth / ak.maxhealth * 100\n\tcecho(\"<green>\"..ak.healthpercent..\"%\")\n\tak.knownmaxhealth[target] = tonumber(matches[5])\nelseif matches[3] == \"mana\" then\n\tak.currentmana = tonumber(matches[4])\n\tak.maxmana = tonumber(matches[5])\n\tak.manapercent = ak.currentmana / ak.maxmana * 100\n\tcecho(\"<blue>\"..ak.manapercent..\"%\")\nend\n\nif ak.healthpercent <= 60 and ak.manapercent <= 60 then\n\tsend(\"queue prepend eqbal aurify \" .. target)\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^(His|Her) (health|mana) is at (\\d+) out of (\\d+).$",
+            "1"
+        ]
+    ]
+}

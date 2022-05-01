@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "asteria_stop_speedwalk_for_wrong_dir",
+    "packageName": null,
+    "script": "function asteria_stop_speedwalk_for_wrong_dir()\n  if mmp.game and mmp.game ~= \"asteria\" then\n    return\n  end\n  if #mmp.speedWalkPath > 0 then\n    echo(\"Can't go \\\"\" .. gmcp.Room.WrongDir .. \"\\\". Stopping speedwalk.\")\n    mmp.stop()\n  end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t\t"
+}

@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Right Arm",
+    "script": "if ak.ai() then return end\nak.deleteFull()\nenableTrigger(\"Confirmed Hit Limbs\")\nif #ak.limbs.parriedlimbs>0 then\n\ttable.remove(ak.limbs.parriedlimbs,1)\nend\ndisableTrigger(\"Monk Parry\")\nak.limbs.ScoreRun = false\nak.limbs.LimbHit(target, \"Me\", \"spp\", \"rightarm\", \"none\")",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "You connect to the right arm!",
+            "3"
+        ]
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "mmp_center_roominfo",
+    "packageName": null,
+    "script": "function mmp_center_roominfo()\n  -- lusternia has gmcp.Room.Players before gmcp.Room.Info is created\n  if gmcp.Room.Info then centerview(gmcp.Room.Info.num) end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}

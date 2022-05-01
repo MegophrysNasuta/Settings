@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Fix exit locking funcs",
+    "packageName": null,
+    "script": "do\nlocal oldlockExit = lockExit\nlocal oldhasExitLock = hasExitLock\n\nlocal exitmap = {\n  n = 1,\n  north = 1,\n  ne = 2,\n  northeast = 2,\n  nw = 3,\n  northwest = 3,\n  e = 4,\n  east = 4,\n  w = 5,\n  west = 5,\n  s = 6,\n  south = 6,\n  se = 7,\n  southeast = 7,\n  sw = 8,\n  southwest = 8,\n  u = 9,\n  up = 9,\n  d = 10,\n  down = 10,\n  [\"in\"] = 11,\n  out = 12\n}\n\nfunction lockExit(from, direction, status)\n  if type(direction) == \"string\" and not exitmap[direction] then return false end\n\n  return oldlockExit(from, type(direction) == \"string\" and exitmap[direction] or direction, status)\nend\n\nfunction hasExitLock(from, direction)\n  if type(direction) == \"string\" and not exitmap[direction] then return false end\n\n  return oldhasExitLock(from, type(direction) == \"string\" and exitmap[direction] or direction)\nend\nend",
+    "eventHandlerList": null
+}

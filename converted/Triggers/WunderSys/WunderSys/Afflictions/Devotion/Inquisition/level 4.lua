@@ -1,0 +1,5 @@
+--wsys.affadd("brokenleftleg")
+--wsys.affadd("brokenrightleg")
+--wsys.affadd("brokenrightarm")
+--wsys.affadd("brokenleftarm", "devotion")
+wsys.affadd("inquisition")

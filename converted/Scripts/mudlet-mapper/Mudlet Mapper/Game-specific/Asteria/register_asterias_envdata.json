@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "register_asterias_envdata",
+    "packageName": null,
+    "script": "function register_asterias_envdata(_, game)\n  if game ~= \"Asteria\" then\n    return\n  end\n  mmp.envids =\n    {\n      Air = 20,\n      Airship = 21,\n      Badland = 22,\n      Beach = 23,\n      Carriage = 24,\n      Cave = 25,\n      City = 26,\n      Coast = 27,\n      Default = 28,\n      Desert = 29,\n      Field = 30,\n      Forest = 31,\n      Ghetto = 32,\n      Hills = 33,\n      Home = 34,\n      Inn = 35,\n      Inside = 36,\n      Marsh = 37,\n      Mountain = 38,\n      Road = 39,\n      Ship = 40,\n      Shop = 41,\n      Temple = 42,\n      Tundra = 43,\n      Underwater = 44,\n      Vehicle = 45,\n      Water = 46,\n    }\n  mmp.waterenvs = {}\n  mmp.envidsr = {}\n  for name, id in pairs(mmp.envids) do\n    mmp.envidsr[id] = name\n  end\n\n\nmmp.colorcodes = {}\nmmp.colorcodes[20] = {176, 224, 230, 255}\nmmp.colorcodes[21] = {160, 82, 45, 255}\nmmp.colorcodes[22] = {205, 133, 63, 255}\nmmp.colorcodes[23] = {218, 165, 32, 255}\nmmp.colorcodes[24] = {132, 112, 255, 255}\nmmp.colorcodes[25] = {47, 79, 79, 255}\nmmp.colorcodes[26] = {190, 190, 190, 255}\nmmp.colorcodes[27] = {210, 180, 140, 255}\nmmp.colorcodes[28] = {255, 69, 0, 255}\nmmp.colorcodes[29] = {255, 215, 0, 255}\nmmp.colorcodes[30] = {127, 255, 0, 255}\nmmp.colorcodes[31] = {0, 100, 0, 255}\nmmp.colorcodes[32] = {184, 134, 11, 255}\nmmp.colorcodes[33] = {50, 205, 50, 255}\nmmp.colorcodes[34] = {102, 205, 170, 255}\nmmp.colorcodes[35] = {0, 128, 128, 255}\nmmp.colorcodes[36] = {255, 250, 205, 255}\nmmp.colorcodes[37] = {107, 142, 35, 255}\nmmp.colorcodes[38] = {139, 69, 19, 255}\nmmp.colorcodes[39] = {112, 128, 144, 255}\nmmp.colorcodes[40] = {265, 42, 42, 255}\nmmp.colorcodes[41] = {0, 190, 255, 255}\nmmp.colorcodes[42] = {138, 43, 226, 255}\nmmp.colorcodes[43] = {255, 250, 250, 255}\nmmp.colorcodes[44] = {65, 105, 225, 255}\nmmp.colorcodes[45] = {90, 158, 160, 255}\nmmp.colorcodes[46] = {30, 144, 255, 255}\n\nfunction set_asteria_colorcodes()\n  for id, rgba in pairs(mmp.colorcodes) do\n    setCustomEnvColor(id, rgba[1], rgba[2], rgba[3], rgba[4])\n  end\n end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t\t"
+}

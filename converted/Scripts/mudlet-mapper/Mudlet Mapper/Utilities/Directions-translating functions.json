@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "Directions-translating functions",
+    "packageName": null,
+    "script": "-- translates n to north and so forth\nlocal temp = {\n    n = \"north\",\n    e = \"east\",\n    s = \"south\",\n    w = \"west\",\n    ne = \"northeast\",\n    se = \"southeast\",\n    sw = \"southwest\",\n    nw = \"northwest\",\n    u = \"up\",\n    d = \"down\",\n    i = \"in\",\n    o = \"out\",\n    [\"in\"] = \"in\"\n}\nlocal anytolongmap = {}\nfor s, l in pairs(temp) do anytolongmap[l] = l; anytolongmap[s] = l end\nfunction mmp.anytolong(exit)\n\n  return anytolongmap[exit]\nend\n\nfunction mmp.anytoshort(exit)\n  local t = {\n    n = \"north\",\n    e = \"east\",\n    s = \"south\",\n    w = \"west\",\n    ne = \"northeast\",\n    se = \"southeast\",\n    sw = \"southwest\",\n    nw = \"northwest\",\n    u = \"up\",\n    d = \"down\",\n    [\"in\"] = \"in\",\n    out = \"out\"\n  }\n  local rt = {}\n  for s,l in pairs(t) do\n    rt[l] = s; rt[s] = s\n  end\n\n  return rt[exit]\nend\n\n\nfunction mmp.ranytolong(exit)\n  local t = {\n    n = \"south\",\n    north = \"south\",\n    e = \"west\",\n    east = \"west\",\n    s = \"north\",\n    south = \"north\",\n    w = \"east\",\n    west = \"east\",\n    ne = \"southwest\",\n    northeast = \"southwest\",\n    se = \"northwest\",\n    southeast = \"northwest\",\n    sw = \"northeast\",\n    southwest = \"northeast\",\n    nw = \"southeast\",\n    northwest = \"southeast\",\n    u = \"down\",\n    up = \"down\",\n    d = \"up\",\n    down = \"up\",\n    i = \"out\",\n    [\"in\"] = \"out\",\n    o = \"in\",\n    out = \"in\"\n  }\n\n  return t[exit]\nend\n\n-- returns nil or the room number relative to this one\nfunction mmp.relativeroom(from, dir)\n  if not mmp.roomexists(from) then return end\n\n  local exits = getRoomExits(tonumber(from))\n  return exits[mmp.anytolong(dir)]\nend\n",
+    "eventHandlerList": null
+}

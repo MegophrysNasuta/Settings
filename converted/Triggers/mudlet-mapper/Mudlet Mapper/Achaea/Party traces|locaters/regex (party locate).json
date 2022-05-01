@@ -1,0 +1,60 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "regex (party locate)",
+    "script": "mmp.locateAndEcho(matches[3], matches[2], matches[4])",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^\\(Party\\): \\w+ says, \"(\\w+) moved to (.+)\\.\"$",
+            "1"
+        ],
+        [
+            "^\\(Party\\): \\w+ says, \"(\\w+) is at (.+), in (.+)\\.\"",
+            "1"
+        ],
+        [
+            "^\\(Party\\): \\w+ says, \"Trace: (\\w+) moved to (.+)\\.\"",
+            "1"
+        ],
+        [
+            "^\\(Party\\): \\w+ says, \"(\\w+) - (.+), in (.+)\\.\"$",
+            "1"
+        ],
+        [
+            "^\\(Party\\): \\w+ says, \"(\\w+) is at (.+) \\(.+\\)\\.\"",
+            "1"
+        ],
+        [
+            "^\\(Party\\): \\w+ says, \"Trace: (\\w+) entered (.+) in (.+)\\.\"",
+            "1"
+        ],
+        [
+            "^\\(Party\\): \\w+ says, \"Trace: (\\w+) entered (.+)\\.\"",
+            "1"
+        ]
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "mmp.mapdata_changed",
+    "packageName": null,
+    "script": "-- aggregates map load and such events into one\nfunction mmp.mapdata_changed()\n  raiseEvent(\"mmapper map reloaded\")\nend\n\t\t\t\t\t",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}

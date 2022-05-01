@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "asteria_can_move",
+    "packageName": null,
+    "script": "-- Asteria's GMCP butts heads with existing GMCP 'able' checks in the speedwalking script. This works around it.\n\nfunction asteria_can_move(_, game)\n  if game ~= \"Asteria\" then\n    return\n  end\n\n  function mapper_can_move()\n    return gmcp.Char and gmcp.Char.Balance and gmcp.Char.Balance.balance == 0\n  end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t\t"
+}

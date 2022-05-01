@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "dragonswords_stop_speedwalk_for_wrong_dir",
+    "packageName": null,
+    "script": "function dragonswords_stop_speedwalk_for_wrong_dir()\n  if mmp.game and mmp.game ~= \"dragonswords\" then\n    return\n  end\n  if #mmp.speedWalkPath > 0 then\n    echo(\"The way \\\"\" .. gmcp.Room.WrongDir .. \"\\\" is blocked. Stopping speedwalk.\")\n    mmp.stop()\n  end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t\t"
+}

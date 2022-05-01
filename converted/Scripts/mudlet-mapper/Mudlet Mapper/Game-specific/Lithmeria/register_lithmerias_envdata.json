@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "register_lithmerias_envdata",
+    "packageName": null,
+    "script": "function register_lithmerias_envdata(_, game)\n  if game ~= \"Lithmeria\" then return end\n\n  mmp.envids =\n  {\n    [\"deep water\"] = 4,\n    beach          = 11,\n    bridge         = 6,\n    building       = 13,\n    cliffs         = 1,\n    desert         = 11,\n    forest         = 2,\n    highway        = 6,\n    jungle         = 10,\n    mountain       = 1,\n    ocean          = 4,\n    path           = 6,\n    plains         = 3,\n    river          = 4,\n    road           = 6,\n    shallowwater   = 4,\n    swamp          = 2,\n    tundra         = 7,\n    underground    = 8,\n    urban          = 8,\n    water          = 4,\n  }\n\n  for name, number in pairs(mmp.envids) do\n    mmp.envids[name] = number+256 -- adjust for in-built colors\n  end\n\n  mmp.waterenvs = {}\n  local waterids = { \"shallowwater\", \"river\", \"water\", \"deep water\", \"ocean\" }\n  for i = 1, #waterids do mmp.waterenvs[mmp.envids[waterids[i]]] = true end\n\n  mmp.envidsr = {};\n  for name, id in pairs(mmp.envids) do mmp.envidsr[id] = name end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t\t"
+}

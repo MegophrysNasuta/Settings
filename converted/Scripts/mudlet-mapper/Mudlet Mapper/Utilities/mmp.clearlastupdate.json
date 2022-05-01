@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "mmp.clearlastupdate",
+    "packageName": null,
+    "script": "function mmp.clearlastupdate()\n  -- reset mmp.pdb_lastupdate on the prompt\n  enableTrigger\"Mudlet Mapper prompt trigger\"\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}

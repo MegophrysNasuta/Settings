@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "mmp.wormholesfix",
+    "packageName": null,
+    "script": "function mmp.wormholesfix()\n  local c = 0\n  local weight = 10\n  for _, area in pairs(getAreaTable()) do\n    local rooms = getAreaRooms(area) or {}\n    for i = 0, #rooms do\n      local exits = getSpecialExits(rooms[i] or 0)\n\n       if exits and next(exits) then\n         for exit, cmd in pairs(exits) do\n           if type(cmd) == \"table\" then cmd = next(cmd) end\n\n           if (cmd:lower():find(\"worm warp\", 1, true)) then\n\t\t\t\tsetExitWeight(rooms[i], cmd, weight)\n             c = c + 1\n           end\n         end\n       end\n    end\n  end\n\n  if c > 0 then mmp.echo(string.format(\"%s wormholes weighted to %s (so we don't take them over too short distances).\", c, weight)) end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}

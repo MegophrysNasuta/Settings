@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "mmp.ferriesfix",
+    "packageName": null,
+    "script": "function mmp.ferriesfix()\n  if table.is_empty(mmp.ferry_rooms) then\n    local tmp = getRoomUserData(1, \"ferry rooms\")\n    if tmp ~= \"\" then\n      for _, i in ipairs(yajl.to_value(tmp)) do\n        mmp.ferry_rooms[i] = true\n      end\n    end\n  end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}

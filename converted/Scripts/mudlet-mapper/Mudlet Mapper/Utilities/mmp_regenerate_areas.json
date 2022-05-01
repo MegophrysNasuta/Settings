@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "mmp_regenerate_areas",
+    "packageName": null,
+    "script": "function mmp_regenerate_areas()\n  -- cached data\n  mmp.areatable = getAreaTable() -- this translates an area name to an ID\n  mmp.areatabler = {} -- this translates an ID to an area name\n\n  local t = getAreaTable()\n  for k,v in pairs(t) do\n    mmp.areatabler[tonumber(v)] = k\n  end\n\n  mmp.clearpathcache()\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}

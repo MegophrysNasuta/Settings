@@ -1,0 +1,1 @@
+setTriggerStayOpen("Pipelist", 0)

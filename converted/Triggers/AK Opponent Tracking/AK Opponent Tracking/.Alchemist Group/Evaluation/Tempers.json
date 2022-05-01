@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Tempers",
+    "script": "if matches[3] == \"sanguine\" then\n\tak.alchemist.humour.sanguine = tonumber(matches[4])\nelseif matches[3] == \"phlegmatic\" then\n\tak.alchemist.humour.phlegmatic = tonumber(matches[4])\nelseif matches[3] == \"choleric\" then\n\tak.alchemist.humour.choleric = tonumber(matches[4])\nelseif matches[3] == \"melancholic\" then\n\tak.alchemist.humour.melancholic = tonumber(matches[4])\nend",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^(His|Her) ([\\w'\\-]+) humour has been tempered a total of (\\d+) times.$",
+            "1"
+        ]
+    ]
+}
