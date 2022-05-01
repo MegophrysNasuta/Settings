@@ -14,7 +14,7 @@
     },
     "type": "trigger",
     "name": "dealt limb damage",
-    "script": "lb.addHit(matches.name, matches.limb, tonumber(matches.amount))",
+    "script": "raiseEvent('Achaea.limbDamageDealt', matches.name, matches.limb, tonumber(matches.amount))",
     "triggerType": "0",
     "conditonLineDelta": "0",
     "mStayOpen": "0",

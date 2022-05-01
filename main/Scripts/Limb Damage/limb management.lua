@@ -17,6 +17,8 @@ function lb.addHit(name, ltar, amount)
   raiseEvent("limb hits updated", name, ltar, amount)
 end
 
+registerNamedEventHandler('Achaea', 'lb_addHit', 'Achaea.limbDamageDealt', lb.addHit)
+
 function lb.resetLimb(name, ltar)
   name = name:lower():title()
   if not lb[name].hits[ltar] then
