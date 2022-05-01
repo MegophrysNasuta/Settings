@@ -60,6 +60,7 @@ std = {
         'openUserWindow',                   -- https://wiki.mudlet.org/w/Manual:UI_Functions#openUserWindow 
         'raiseEvent',                       -- https://wiki.mudlet.org/w/Manual:Event_Engine
         'registerAnonymousEventHandler',    -- https://wiki.mudlet.org/w/Manual:Miscellaneous_Functions#registerAnonymousEventHandler
+        'registerNamedEventHandler',        -- https://wiki.mudlet.org/w/Manual:Miscellaneous_Functions#registerNamedEventHandler
         'resetFormat',                      -- https://wiki.mudlet.org/w/Manual:UI_Functions#resetFormat
         'searchRoom',                       -- https://wiki.mudlet.org/w/Manual:Mapper_Functions#unHighlightRoom
         'selectCaptureGroup',               -- https://wiki.mudlet.org/w/Manual:UI_Functions#selectCaptureGroup
@@ -76,6 +77,7 @@ std = {
         'setBorderTop',                     -- https://wiki.mudlet.org/w/Manual:UI_Functions#setBorderTop
         'setFontSize',                      -- https://wiki.mudlet.org/w/Manual:UI_Functions#setFontSize
         'setItalics',                       -- https://wiki.mudlet.org/w/Manual:UI_Functions#setItalics
+        'setTriggerStayOpen',               -- https://wiki.mudlet.org/w/Manual:Lua_Functions#setTriggerStayOpen
         'setUnderline',                     -- https://wiki.mudlet.org/w/Manual:UI_Functions#setUnderline
         'setWindowWrap',                    -- https://wiki.mudlet.org/w/Manual:UI_Functions#setWindowWrap
         'spairs',                           -- https://wiki.mudlet.org/w/Manual:Table_Functions#spairs
