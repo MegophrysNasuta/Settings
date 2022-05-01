@@ -1,8 +1,0 @@
-deleteLine()
-cecho("<red>IMPALESLASH turtle turtle turtle IMPALESLASH")
-cecho("\n<red>IMPALESLASH turtle turtle turtle IMPALESLASH")
-cecho("\n<red>IMPALESLASH turtle turtle turtle IMPALESLASH")
-cecho("\n<red>IMPALESLASH turtle turtle turtle IMPALESLASH")
---send("clot;clot;clot;clot;clot")
-wsys.bleedingfor(200, "health")
---wsys.osend("show bleeding",false)

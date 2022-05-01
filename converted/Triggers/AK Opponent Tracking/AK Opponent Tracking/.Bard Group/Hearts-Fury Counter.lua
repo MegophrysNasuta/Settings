@@ -1,1 +1,0 @@
-enableTrigger("Confirmed Counter Hit")

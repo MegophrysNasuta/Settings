@@ -8,8 +8,7 @@ end
 						<string>^(?&lt;name&gt;\w+) takes some salve from a vial and rubs it on (?:her|his) (?&lt;area&gt;.+).$</string></regexCodeList><regexCodePropertyList>
 						<integer>1</integer></regexCodePropertyList></Trigger><TriggerGroup isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no"><name>open limb hit gate</name><script /><triggerType>0</triggerType><conditionLineDelta /><mStayOpen>25</mStayOpen><mCommand /><packageName /><mFgColor>#ff0000</mFgColor><mBgColor>#ffff00</mBgColor><mSoundFile /><colorTriggerFgColor>#000000</colorTriggerFgColor><colorTriggerBgColor>#000000</colorTriggerBgColor><regexCodeList>
 						</regexCodeList><regexCodePropertyList>
-						</regexCodePropertyList><Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no"><name>dealt limb damage</name><script>lb.addHit(matches.name, matches.limb, tonumber(matches.amount))
-</script><triggerType>0</triggerType><conditionLineDelta /><mStayOpen>0</mStayOpen><mCommand /><packageName /><mFgColor>#ff0000</mFgColor><mBgColor>#ffff00</mBgColor><mSoundFile /><colorTriggerFgColor>#000000</colorTriggerFgColor><colorTriggerBgColor>#000000</colorTriggerBgColor><regexCodeList>
+						</regexCodePropertyList><Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no"><name>dealt limb damage</name><script>raiseEvent('Achaea.limbDamageDealt', matches.name, matches.limb, tonumber(matches.amount))</script><triggerType>0</triggerType><conditionLineDelta /><mStayOpen>0</mStayOpen><mCommand /><packageName /><mFgColor>#ff0000</mFgColor><mBgColor>#ffff00</mBgColor><mSoundFile /><colorTriggerFgColor>#000000</colorTriggerFgColor><colorTriggerBgColor>#000000</colorTriggerBgColor><regexCodeList>
 							<string>^As your blow lands with a crunch, you perceive that you have dealt (?&lt;amount&gt;.+)% damage to (?&lt;name&gt;\w+)'s (?&lt;limb&gt;.+)\.$</string><string>^As you carve into (?&lt;name&gt;\w+), you perceive that you have dealt (?&lt;amount&gt;.+)% damage to (?:his|her) (?&lt;limb&gt;.+).$</string></regexCodeList><regexCodePropertyList>
 							<integer>1</integer><integer>1</integer></regexCodePropertyList></Trigger><Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no"><name>end prompt</name><script>setTriggerStayOpen("open limb hit gate", 0)
 </script><triggerType>0</triggerType><conditionLineDelta /><mStayOpen>0</mStayOpen><mCommand /><packageName /><mFgColor>#ff0000</mFgColor><mBgColor>#ffff00</mBgColor><mSoundFile /><colorTriggerFgColor>#000000</colorTriggerFgColor><colorTriggerBgColor>#000000</colorTriggerBgColor><regexCodeList>
@@ -50,6 +49,8 @@ end
             .. ((lb[name].hits[ltar] &gt; 100 and "&lt;firebrick&gt;") or "&lt;ansi_yellow&gt;") .. ")")
   raiseEvent("limb hits updated", name, ltar, amount)
 end
+
+registerNamedEventHandler('Achaea', 'lb_addHit', 'Achaea.limbDamageDealt', lb.addHit)
 
 function lb.resetLimb(name, ltar)
   name = name:lower():title()

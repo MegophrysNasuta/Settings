@@ -1,1 +1,0 @@
-demonnic.chat:append("Clans")

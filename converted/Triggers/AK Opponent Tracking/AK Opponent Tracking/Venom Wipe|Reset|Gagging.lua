@@ -1,2 +1,0 @@
-currentvenoms = {}
-ak.deleteFull()

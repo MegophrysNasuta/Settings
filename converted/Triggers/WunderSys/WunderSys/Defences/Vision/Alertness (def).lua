@@ -1,1 +1,0 @@
-wsys.defLine("alertness")

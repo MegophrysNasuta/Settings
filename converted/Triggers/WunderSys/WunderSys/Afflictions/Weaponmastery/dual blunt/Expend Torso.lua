@@ -1,1 +1,0 @@
--- paralysis has its own aff line on expend torso, so don't worry about it

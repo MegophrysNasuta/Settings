@@ -1,1 +1,0 @@
--- nope, another class that gives you buffs. Damn bastards, should just classlead nerfs

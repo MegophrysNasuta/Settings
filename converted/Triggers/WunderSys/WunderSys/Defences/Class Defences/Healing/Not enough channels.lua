@@ -1,7 +1,0 @@
-wsys.cannotdef("earthshield")
-wsys.cannotdef("enduranceblessing")
-wsys.cannotdef("willpowerblessing")
-wsys.cannotdef("thermalshield")
-wsys.cannotdef("frostshield")
-wsys.cannotdef("bedevilaura")
-wsys.lostallchannels()

@@ -1,1 +1,0 @@
-wsys.deffed("toughness")

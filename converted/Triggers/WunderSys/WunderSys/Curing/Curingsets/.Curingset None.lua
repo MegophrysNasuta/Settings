@@ -1,2 +1,0 @@
-deleteFull()
-wsys.addCuringSets()

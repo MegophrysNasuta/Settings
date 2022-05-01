@@ -1,5 +1,0 @@
-selectCurrentLine()
-replace("")
-mmp.echon("Personal wormhole at " .. multimatches[2][2])
-mmp.roomEcho(multimatches[2][2])
-echo(". It is attached to " .. multimatches[2][3] .. ".\n")

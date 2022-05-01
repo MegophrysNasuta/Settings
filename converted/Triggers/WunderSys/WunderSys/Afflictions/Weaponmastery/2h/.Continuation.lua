@@ -1,2 +1,0 @@
--- para cure. Can't use fitness for a while.
---only use to cure if tree balance or wsys.aff.slickness and not wsys.aff.anorexia

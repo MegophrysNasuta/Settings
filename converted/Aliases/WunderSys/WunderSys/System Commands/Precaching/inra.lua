@@ -1,1 +1,0 @@
-wsys.osend("inrift all")

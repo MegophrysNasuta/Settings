@@ -1,1 +1,0 @@
-wsys.def.eaglestance = true

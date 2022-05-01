@@ -1,5 +1,0 @@
-selectString("DOR", 1)
-bg("black") fg("SkyBlue")
-replace(wsys.dorSub)
-resetFormat()
-deselect()

@@ -1,3 +1,0 @@
-
-  wsys.affadd("dizziness")
-

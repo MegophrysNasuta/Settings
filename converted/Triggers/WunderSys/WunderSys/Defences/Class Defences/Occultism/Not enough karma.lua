@@ -1,6 +1,0 @@
-wsys.cannotdef("devilmark")
-wsys.cannotdef("distortedaura")
-wsys.cannotdef("tentacles")
-wsys.cannotdef("lifevision")
-wsys.cannotdef("astralvision")
-wsys.cannotdef("astralform")

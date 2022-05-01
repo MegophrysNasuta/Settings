@@ -1,1 +1,0 @@
-wsys.settings.useinsomnia = true

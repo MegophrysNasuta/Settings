@@ -1,1 +1,0 @@
---gz.landed_venom("delphinium")

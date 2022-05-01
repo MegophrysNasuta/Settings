@@ -1,1 +1,0 @@
-wsys.channels.earth = true

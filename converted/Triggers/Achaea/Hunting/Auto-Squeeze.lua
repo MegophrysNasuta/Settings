@@ -1,1 +1,0 @@
-send('golem squeeze '.. target)

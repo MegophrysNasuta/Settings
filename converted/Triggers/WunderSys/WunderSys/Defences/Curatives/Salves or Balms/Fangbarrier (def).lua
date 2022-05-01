@@ -1,2 +1,0 @@
-wsys.defLine("fangbarrier", "sileris")
-

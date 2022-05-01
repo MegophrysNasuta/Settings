@@ -1,1 +1,0 @@
-Megophrys.Psion.clarityUp = false

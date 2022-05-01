@@ -1,1 +1,0 @@
-setTriggerStayOpen("Pipelist", 0)

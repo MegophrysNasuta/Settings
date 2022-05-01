@@ -1,2 +1,0 @@
-OppGainedAff("Prone")
-

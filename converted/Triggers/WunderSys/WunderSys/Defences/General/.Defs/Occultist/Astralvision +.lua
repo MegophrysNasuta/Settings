@@ -1,2 +1,0 @@
-defadd("lifevision")
-defadd("deathsight")

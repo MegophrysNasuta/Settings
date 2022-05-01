@@ -1,1 +1,0 @@
-wsys.affadd("stupidity", "blademaster")

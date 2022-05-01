@@ -1,1 +1,0 @@
-wsys.affadd("disrupted", "magi")

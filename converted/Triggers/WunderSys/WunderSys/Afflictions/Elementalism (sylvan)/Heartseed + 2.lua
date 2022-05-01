@@ -1,2 +1,0 @@
-wsys.affadd("heartseed", "sylvan")
-

@@ -1,2 +1,0 @@
-wsys.dosent("dor")
-deleteFull()

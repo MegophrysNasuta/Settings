@@ -1,1 +1,0 @@
-Megophrys.setOpponentClass('magi')
