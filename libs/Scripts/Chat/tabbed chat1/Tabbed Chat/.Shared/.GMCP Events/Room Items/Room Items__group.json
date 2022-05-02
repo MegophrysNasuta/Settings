@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "scriptgroup",
+    "name": "Room Items",
+    "packageName": null,
+    "script": "--[[\nThe events kept within this folder will populate demonnic.roomItems on entering a room or doing 'look'\nIt also adds items to the list as they enter the room (or get dropped)\nAnd removes them when they get picked up\nyou can do display(demonnic.roomItems) to see the format to work with\n]]",
+    "eventHandlerList": null,
+    "ScriptGroup": "\n\t\t\t\t\t\t\t\t\t"
+}

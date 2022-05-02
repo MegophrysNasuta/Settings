@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Talisman Item",
+    "script": "talisman.add(matches[5], matches[4], tonumber(matches[3]), matches[2])\ntalisman.deleteLineP()\n-- 1 a Blue Dragon's claw                   5     Dragon     bluedragonclaw\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^(P|Q|B|F|R)?\\s*(\\d+) .+\\s+(\\d+)\\s+(?:\\w+\\s+)?(\\w+)",
+            "1"
+        ]
+    ]
+}

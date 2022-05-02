@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Show Current Target Prio List",
+    "script": "cecho('\\n<'.. TargetCallTables.Config.EchoColor ..'>Current target prios:\\n')\nfor prio, tgt in pairs(TargetCallTables.targetPrios) do\n  cecho(('<'.. TargetCallTables.Config.EchoColor ..'>'.. tostring(prio) ..': '\n         .. tgt ..'\\n'))\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^stlist$"
+}

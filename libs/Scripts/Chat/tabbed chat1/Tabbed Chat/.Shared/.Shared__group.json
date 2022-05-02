@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "no",
+        "isFolder": "yes"
+    },
+    "type": "scriptgroup",
+    "name": "Shared",
+    "packageName": null,
+    "script": "--Bootstrapping variables/etc. Don't touch this unless you really know what you're doing\n\n--I mean it. I'll point. AND laugh. loudly. \ndemonnic = demonnic or {}\ndemonnic.config = demonnic.config or {}\ndemonnic.balances = demonnic.balances or {}\ndemonnic.balances.balance = demonnic.balances.balance or 1\ndemonnic.balances.equilibrium = demonnic.balances.equilibrium or 1\ndemonnic.debug = demonnic.debug or {}\ndemonnic.debug.active = demonnic.debug.active or nil\ndemonnic.debug.categories = demonnic.debug.categories or { }\n\n\nfunction demonnic:echo(msg)\n cecho(string.format(\"\\n<blue>(<green>Demonnic<blue>):<white> %s\", msg))\nend",
+    "eventHandlerList": null,
+    "ScriptGroup": "\n\t\t\t\t\t\t\t"
+}

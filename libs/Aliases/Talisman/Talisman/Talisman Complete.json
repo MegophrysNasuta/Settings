@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Talisman Complete",
+    "script": "talisman.complete(matches[2])",
+    "command": null,
+    "packageName": null,
+    "regex": "^tcomplete (\\w+)$"
+}

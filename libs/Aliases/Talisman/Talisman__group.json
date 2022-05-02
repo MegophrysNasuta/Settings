@@ -1,0 +1,13 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "yes"
+    },
+    "type": "aliasgroup",
+    "name": "Talisman",
+    "script": null,
+    "command": null,
+    "packageName": "Talisman",
+    "regex": null,
+    "AliasGroup": "\n\t\t\t\t"
+}

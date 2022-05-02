@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "demonnic_rileave",
+    "packageName": null,
+    "script": "function demonnic_rileave()\n  local item = gmcp.Char.Items.Remove\n  if item.location == \"room\" then\n    for name,items in pairs(demonnic.roomItems) do\n      for i,id in ipairs(items) do\n        if id == tostring(item.item) then\n          table.remove(demonnic.roomItems[name],i) \n          if #demonnic.roomItems[name] == 0 then\n            demonnic.roomItems[name] = nil\n          end\n        end\n      end\n    end\n  end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t\t\t\t\t"
+}

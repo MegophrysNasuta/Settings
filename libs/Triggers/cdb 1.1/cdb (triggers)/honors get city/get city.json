@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "no",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "get city",
+    "script": "cdb.honors.city = matches[2]:lower()",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ff0000",
+    "mBgColor": "#ffff00",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^(?:She|He) is an? \\w+ in (\\w+)\\.$",
+            "1"
+        ]
+    ]
+}

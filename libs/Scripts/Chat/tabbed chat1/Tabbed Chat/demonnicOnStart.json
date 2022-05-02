@@ -1,0 +1,11 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "script",
+    "name": "demonnicOnStart",
+    "packageName": null,
+    "script": "function demonnicOnStart()\n  if demonnic.chat.use then\n    demonnic.chat:create()\n  end\nend",
+    "eventHandlerList": "\n\t\t\t\t\t\t\t"
+}

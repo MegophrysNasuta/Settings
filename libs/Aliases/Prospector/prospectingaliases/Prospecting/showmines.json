@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "showmines",
+    "script": "mineowners = {}\ncounter= 0\nfor k,v in pairs(minetable) do \n\ncecho(\"\\n\\nMaterial type: \" ..k)\n\nfor m,n in pairs(v) do \n  for p,o in pairs(n) do\n\n    cecho(\"\\nRoom number: \" ..p.. \"\\n\")\n\n\n    for b,r in pairs(o) do\n      echo(b..\": \"..r..\",  \")\n\t\tif b == 2 then\n\t\t\t\tmineowners[counter] = r\n\t\t\t\tcounter = counter+1\n\t\tend\n    end\n  end\n\nend\n\nend\n\n\ncecho(\"\\n\\n--STRONGHOLDS--\\n\")\nfor k,v in pairs(strongholdtable) do\n\ncecho(\"\\n Room number: \" ..k.. \"\\n \")\n\tfor m,n in pairs(v) do\n\t\tcecho(m.. \": \" ..n.. \", \")\n\tend\n\nend",
+    "command": null,
+    "packageName": null,
+    "regex": "^showmines$"
+}

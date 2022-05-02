@@ -1,0 +1,36 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no",
+        "isTempTrigger": "no",
+        "isMultiline": "no",
+        "isPerlSlashGOption": "no",
+        "isColorizerTrigger": "yes",
+        "isFilterTrigger": "no",
+        "isSoundTrigger": "no",
+        "isColorTrigger": "no",
+        "isColorTriggerFg": "no",
+        "isColorTriggerBg": "no"
+    },
+    "type": "trigger",
+    "name": "Lode found",
+    "script": "lodesize = matches[2]\nlodetype = matches[3]\nif lodesize == \"small\" or lodesize == \"medium\" or lodesize == \"tiny\" then\n\nelse\nmmp.stop() --Mudlet mapper command\nprospecting = 0\nkillTimer(tostring(prospectingtimer))\nsend(\"clan erc tell \" ..lodetype .. \" found at \" .. gmcp.Room.Info.name.. \" (\" ..gmcp.Room.Info.num.. \") SIZE: \" ..lodesize)\nend\n\n\nlodetable[gmcp.Room.Info.num] = {lodesize, lodetype, gmcp.Room.Info.name, gmcp.Room.Info.area}\n",
+    "triggerType": "0",
+    "conditonLineDelta": "0",
+    "mStayOpen": "0",
+    "mCommand": null,
+    "packageName": null,
+    "mFgColor": "#ffff00",
+    "mBgColor": "#ff55ff",
+    "mSoundFile": null,
+    "colorTriggerFgColor": "#000000",
+    "colorTriggerBgColor": "#000000",
+    "regexCodeList": "\n\t\t\t\t\t\t\t",
+    "regexCodePropertyList": "\n\t\t\t\t\t\t\t",
+    "matches": [
+        [
+            "^You determine that there is a (\\w+) lode of (.*) here.",
+            "1"
+        ]
+    ]
+}

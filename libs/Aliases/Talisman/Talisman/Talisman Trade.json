@@ -1,0 +1,12 @@
+{
+    "attribs": {
+        "isActive": "yes",
+        "isFolder": "no"
+    },
+    "type": "alias",
+    "name": "Talisman Trade",
+    "script": "if matches[2]:lower()==\"set\" then\n\ttalisman.tradeset(matches[3], matches[4], matches[6])\nelseif matches[2]:lower()==\"talisman\" then\n\ttalisman.tradetalisman(matches[3], matches[4], matches[6])\nelse\n\ttalisman.trade(matches[3], matches[4], (tonumber(matches[5]) or 1), matches[6])\nend\n",
+    "command": null,
+    "packageName": null,
+    "regex": "^(?:ttrade|TTRADE)(?: (set|SET|talisman|TALISMAN))? (\\w+) (\\w+)(?: (\\d+))?(?: (R|P))?$"
+}
